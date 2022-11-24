@@ -1,0 +1,64 @@
+/* stlye sheet additions for OIPF draft specifications */
+
+body {
+  padding: 2em 1em 2em 70px;
+  margin: 0;
+  font-family: serif;
+  color: black;
+  background: white;
+  background-position: top left;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-image: url(http://www.oipf.tv/web-spec/styles/banner-draft.png);
+}
+
+a.apiRef {
+	color: red;
+	text-decoration: none;
+	font-family: "Lucida Console";
+	font-size: 95%;
+}
+code a.apiRef {
+	color: green;
+	text-decoration: none;
+	font-family: "Lucida Console";
+}
+
+a.sectionRef {
+	 color: blue;
+	 text-decoration:none;
+	 white-space: nowrap;
+}
+a.sectionTitleRef {
+	 color: blue;
+	 text-decoration:none;
+}
+a.figureRef  {
+	 color: blue;
+	 text-decoration:none;
+}
+a.tableRef, a.tableTitleRef {
+	 color: blue;
+	 text-decoration:none;
+}
+a.sectionRef:link a.sectionRef:visited a.sectionTitleRef:link a.sectionTitleRef:visited {
+	 color: blue;
+	 text-decoration:none;
+}
+a.figureRef:link a.figureRef:visited  {
+	 color: blue;
+	 text-decoration:none;
+}
+a.tableRef:link a.tableRef:visited {
+	 color: blue;
+	 text-decoration:none;
+}
+
+
+code { 
+	font-family: "Lucida Console";
+	white-space:nowrap; 
+	font-size: 90%;
+	color: orange;
+}
+code.wrap { white-space: initial; } 

@@ -1,0 +1,823 @@
+<!DOCTYPE html>	
+<html lang="en" xml:lang="en">
+<head>
+<title>overwritten</title>
+	<script src='js/respec.js' class='remove'></script>
+	<script class='remove'>				
+		var respecConfig = {
+					 
+          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+          specStatus:           "OIPF-FINAL",
+
+		  OIPFrelease: "2",	
+		  OIPFversion: "2.3",
+		  OIPFvolume: "2",
+          
+          // the specification's short name, as in http://www.w3.org/TR/short-name/
+          shortName:            "volume2",
+
+          // if your specification has a subtitle that goes below the main
+          // formal title, define it here
+		  title: "Media Formats",
+          subtitle   :  "",
+
+          // if you wish the publication date to be other than today, set this
+          publishDate:  "2014-01-24",
+
+          // if the specification's copyright date is a range of years, specify
+          // the start date here:
+          //copyrightStart: "2005",
+		
+		  //additionalCopyrightHolders: "",
+		  
+		  overrideCopyright: " ",
+		  
+		  
+          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+          // and its maturity status
+          // previousPublishDate:  "1977-03-15",
+          // previousMaturity:  "WD",
+
+          // if there a publicly available Editor's Draft, this is the link
+          edDraftURI:           "",
+
+          // if this is a LCWD, uncomment and set the end of its review period
+          // lcEnd: "2009-08-05",
+
+          // editors, add as many as you like
+          // only "name" is required
+          editors:  [
+              { name: "Editor", url: "contact@oipf.tv",
+                company: "Open IPTV Forum", companyURL: "http://www.oipf.tv/" },
+          ],
+		  
+          // authors, add as many as you like. 
+          // This is optional, uncomment if you have authors as well as editors.
+          // only "name" is required. Same format as editors.
+
+          //authors:  [
+          //    { name: "Your Name", url: "http://example.org/",
+          //      company: "Your Company", companyURL: "http://example.com/" },
+          //],
+          
+          // name of the WG
+          wg:           "OIPF Solutions WG",
+          
+          // URI of the public WG page
+          wgURI:        "http://www.oipf.tv",
+          
+          // name (with the @w3c.org) of the public mailing to which comments are due
+          wgPublicList: "contact@oipf.tv",
+          
+          // URI of the patent status for this WG, for Rec-track documents
+          // !!!! IMPORTANT !!!!
+          // This is important for Rec-track documents, do not copy a patent URI from a random
+          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+          // Team Contact.
+          wgPatentURI:  "",
+          		  
+		  maxTocLevel:	4,
+		  maxSectionNumberingLevel: 9,		  
+				
+		  localBiblio: {
+			"DTS" : "ETSI TS 102 114 V1.4.1 (2012-09), \"DTS Coherent Acoustics; Core and Extensions\".",
+			"DVBSUBT":"ETSI EN 300 743 V1.4.1 (2011-10), \"Digital Video Broadcasting (DVB); Subtitling systems\".",
+			
+			"DLNAMEDIA":"IEC, 62481-2, Digital living network alliance (DLNA) home networked device interoperability guidelines – Part 2: Media Formats, ed1.0 (2007-08).",
+		  },
+		};
+	</script>
+</head>
+<body>
+
+<section id="abstract">
+<p>This Technical Specification (TS) has been produced by the Open IPTV Forum.</p>
+<p>This specification provides multiple options for some features. The Open IPTV Forum Profiles specification complements the Release 2 specifications by defining the Open IPTV Forum implementation and deployment profiles. Any implementation based on Open IPTV Forum specifications that does not follow the Profiles specification cannot claim Open IPTV Forum compliance.</p>
+</section>
+<section id="Introduction" class="introductory">
+<h2>Introduction</h2>
+The Open IPTV Forum Release 2 Specification consists of ten volumes: <ul>
+<li>Volume 1 – Overview [[.OIPF_OVIEW2]],
+<li>Volume 2 – Media Formats (the present volume),
+<li>Volume 2a – HTTP Adaptive Streaming [[.OIPF_HAS2]],
+<li>Volume 3 – Content Metadata [[.OIPF_META2]],
+<li>Volume 4 – Protocols [[.OIPF_PROT2]],
+<li>Volume 4a – Examples of Protocol Sequences [[.OIPF_PROT_EX2]],
+<li>Volume 5 – Declarative Application Environment [[.OIPF_DAE2]],
+<li>Volume 5a – Web Standards TV Profile [[.OIPF_WSTVP2]], 
+<li>Volume 6 – Procedural Application Environment [[.OIPF_PAE2]], and
+<li>Volume 7 – Authentication, Content Protection and Service Protection [[.OIPF_CSP2]].
+</ul>
+<p>The present volume defines the set of media formats and their usage, available for the implementation of Release 2 Open IPTV Forum compliant services and devices.</p>
+The set of media formats comprises:<ul>
+<li>Audio-video media formats (section <a href="#media-section" class="sectionRef"></a>), being combinations of the individual formats below.
+<li>Systems layer formats (section <a href="#system-layer-section" class="sectionRef"></a>),
+<li>Video codecs and their usage (section <a href="#video-section" class="sectionRef"></a>),
+<li>Subtitle formats and their usage (section <a href="#subtitle-section" class="sectionRef"></a>),
+<li>Teletext formats and their usage (section <a href="#teletext-section" class="sectionRef"></a>),
+<li>Audio codecs and their usage (section <a href="#audio-section" class="sectionRef"></a>), and
+<li>Graphics and still image codecs and formats (section <a href="#image-section" class="sectionRef"></a>).
+</ul>
+<p>For each of these it is described how they apply to the IPTV solution and to the various Release 2 services (described in [[.OIPF_OVIEW2]]), and the implications for interoperability are discussed.</p>
+<p>Figure <a href="#media-fmts-fig" class="figureRef">ddd</a> summarises the set of media formats specified by the present document in the form of a media formats stack. Media formats are specified at the content (audio, video, etc.) layers and for the systems layer. Transport protocols below the systems layer are specified in Volume 4 [[.OIPF_PROT2]].</p>
+<figure id='media-fmts-fig'>
+<img src="images/Media_Formats_Stack.jpg" alt="figure 1" style="width:100%"/>
+<figcaption>Figure ####: Media formats stack</figcaption>
+</figure>
+<p>This volume specifies formats for the A/V content provided by IPTV services using fixed line access networks or mobile access networks and voice and video telephony services. It does not apply to the broadcast channel input of hybrid devices except where explicitly specified.</p>
+<p>This specification defines formats for the delivery of 3D video. At the present time, delivery to fixed terminals is targeted. No special provision is made for mobile or portable devices.</p>
+<p>This specification defines the media formats utilised on the UNI Reference Point UNIT-17 of the Open IPTV Forum Functional Architecture [[.OIPF_ARCH2]].</p>
+</section>
+
+<section id='references'>
+<h2>References</h2>
+</section>
+
+<section>
+<h2>Conventions and Terminology</h2>
+<section><h3>Conventions</h3>
+<p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [[RFC2119]]. </p>
+<p>All sections and appendixes, except "Introduction", are normative, unless they are explicitly indicated to be informative.</p>
+</section>
+<section><h3>Terminology</h3>
+<section><h4>Definitions</h4>
+<p>In addition to the Definitions provided in <a href="volume1.html#definitions" class="extRef">Volume 1</a>, the following abbreviations are used in this Volume.</p>
+<table class="definitions">
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Mobile A/V Service</td><td>An IPTV service delivered using mobile access networks and protocols.</td></tr>
+</table>
+</section>
+<section><h4>Abbreviations</h4>
+<p>In addition to the Abbreviations provided in <a href="volume1.html#abbreviations" class="extRef">Volume 1</a>, the following abbreviations are used in this Volume.</p>
+<table class="definitions">
+<tr><th>Acronym</th><th>Explanation</th></tr>
+<tr><td>AAC</td><td>Advanced Audio Coding</td></tr>
+<tr><td>AAC LC</td><td>AAC Low Complexity</td></tr>
+<tr><td>ADPCM</td><td>Adaptive Differential Pulse-Code Modulation</td></tr>
+<tr><td>AIT</td><td>Application Information Table</td></tr>
+<tr><td>AMR</td><td>Adaptive Multi-Rate</td></tr>
+<tr><td>AMR-WB</td><td>Adaptive Multi-Rate Wideband</td></tr>
+<tr><td>ATSC</td><td>Advanced Television Systems Committee</td></tr>
+<tr><td>DSM-CC</td><td>Digital Storage Media - Command and Control</td></tr>
+<tr><td>DVB</td><td>Digital Video Broadcasting</td></tr>
+<tr><td>DVB-SI</td><td>DVB Service Information</td></tr>
+<tr><td>EBU</td><td>European Broadcasting Union</td></tr>
+<tr><td>EIT</td><td>Event Information Table</td></tr>
+<tr><td>ETSI</td><td>European Telecommunications Standards Institute</td></tr>
+<tr><td>fps</td><td>Frames per Second</td></tr>
+<tr><td>GIF</td><td>Graphics Interchange Format</td></tr>
+<tr><td>GOP</td><td>Group Of Pictures</td></tr>
+<tr><td>HE-AAC</td><td>High Efficiency-AAC</td></tr>
+<tr><td>JPEG</td><td>Joint Photographic Experts Group</td></tr>
+<tr><td>MPEG</td><td>Moving Pictures Expert Group</td></tr>
+<tr><td>MPS</td><td>MPEG Surround</td></tr>
+<tr><td>PCM</td><td>Pulse-Code Modulation</td></tr>
+<tr><td>PID</td><td>Packed Identifier</td></tr>
+<tr><td>PMT</td><td>Program MapTable</td></tr>
+<tr><td>PNG</td><td>Portable Network Graphics</td></tr>
+<tr><td>PS</td><td>Parametric Stereo</td></tr>
+<tr><td>PSI</td><td>Programme Specific Information</td></tr>
+<tr><td>SBR</td><td>Spectral Band Replication</td></tr>
+<tr><td>SI</td><td>Service Information</td></tr>
+<tr><td>S/PDIF</td><td>Sony/Philips Digital Interconnect Format</td></tr>
+<tr><td>UDP</td><td>User Datagram Protocol</td></tr>
+</table>
+</section>
+</section>
+</section>
+
+<section id='media-section'>
+<h2>A/V Media Formats</h2>
+<p>A set of A/V media formats is defined, being combinations of audio, video and systems layer formats defined in the following sections.</p>
+<p>The TS and TTS systems layer formats are specified in section <a href="#system-mpeg2-ts" class="sectionRef"></a>. The protection layers BBTS and PF are specified in Volume 7 [[.OIPF_CSP2]]. </p>
+<p>MP4 systems layer format is specified in section <a href="#system-mp4-file-format" class="sectionRef"></a>. The protection layers PDCF, MIPMP, CENC and DCF are specified in Volume 7 [[.OIPF_CSP2]].</p>
+<p>Video Formats are defined in section <a href="#video-formats" class="sectionRef"></a> and Audio Formats in section <a href="#audio-formats" class="sectionRef"></a>.</p>
+<p>Volume 3 [[.OIPF_META2]] describes how the media format of content is signalled in the metadata.</p>
+<p>For A/V content in 25Hz systems the following A/V media format combinations are defined:</p>
+<table class="simple" id="av25">
+<caption>Table ####: A/V Media Formats for 25Hz video system</caption>
+<tr>
+<th>System Format</th><th>Video Format</th><th>Audio Format</th><th>Mime Type</th>
+</tr>
+<tr>
+<td>TS</td>
+<td>AVC_HD_25<br>AVC_SD_25<br>AVC_SP_25<br>AVC_3D_25</td>
+<td>HEAAC<br>HEAAC2<br>HEAAC_MPS<br>MPEG1_L2<br>MPEG1_L2_MPS<br>AC3<br>E-AC3<br>DTS</td>
+<td>video/mpeg or video/mp2t</td>
+</tr>
+<tr>
+<td>TTS</td>
+<td>AVC_HD_25<br>AVC_SD_25<br>AVC_SP_25<br>AVC_3D_25</td>
+<td>HEAAC<br>HEAAC2<br>HEAAC_MPS<br>MPEG1_L2<br>MPEG1_L2_MPS<br>AC3<br>E-AC3<br>DTS</td>
+<td>video/vnd.dlna.mpeg-tts</td>
+</tr>
+<tr>
+<td>MP4</td>
+<td>AVC_HD_25<br>AVC_SD_25<br>AVC_SP_25<br>AVC_3D_25</td>
+<td>HEAAC<br>HEAAC2<br>HEAAC_MPS<br>MPEG1_L2<br>MPEG1_L2_MPS<br>AC3<br>E-AC3<br>DTS</td>
+<td>video/mp4</td>
+</tr>
+<tr>
+<td>TS</td>
+<td>MPEG2_HD_25<br>MPEG2_SD_25<br>MPEG2_SP_25</td>
+<td>AC3<br>E-AC3<br>MPEG1_L2<br>MPEG1_L2_MPS</td>
+<td>video/mpeg or video/mp2t</td>
+</tr>
+<tr>
+<td>TTS</td>
+<td>MPEG2_HD_25<br>MPEG2_SD_25<br>MPEG2_SP_25</td>
+<td>AC3<br>E-AC3<br>MPEG1_L2<br>MPEG1_L2_MPS</td>
+<td>video/vnd.dlna.mpeg-tts</td>
+</tr>
+</table>
+<p>For A/V content in 30Hz systems the following A/V media format combinations are defined:</p>
+<table class="simple" id="av30">
+<caption>Table ####: A/V Media Formats for 30Hz video system</caption>
+<tr>
+<th>System Format</th><th>Video Format</th><th>Audio Format</th><th>Mime Type</th>
+</tr>
+<tr>
+<td>TS</td>
+<td>AVC_HD_30<br>AVC_SD_30<br>AVC_SP_30<br>AVC_3D_30</td>
+<td>HEAAC<br>HEAAC2<br>HEAAC_MPS<br>AC3<br>E-AC3<br>DTS</td>
+<td>video/mpeg or video/mp2t</td>
+</tr>
+<tr>
+<td>TTS</td>
+<td>AVC_HD_30<br>AVC_SD_30<br>AVC_SP_30<br>AVC_3D_30</td>
+<td>HEAAC<br>HEAAC2<br>HEAAC_MPS<br>AC3<br>E-AC3<br>DTS</td>
+<td>video/vnd.dlna.mpeg-tts</td>
+</tr>
+<tr>
+<td>MP4</td>
+<td>AVC_HD_30<br>AVC_SD_30<br>AVC_SP_30<br>AVC_3D_30</td>
+<td>HEAAC<br>HEAAC2<br>HEAAC_MPS<br>AC3<br>E-AC3<br>DTS</td>
+<td>video/mp4</td>
+</tr>
+</table>
+<p>For protected A/V contents, the following protected A/V media format combinations are defined: </p>
+<table class="simple" id="protav">
+<caption>Table ####: Protected A/V media formats</caption>
+<tr>
+<th>System Format</th><th>Protection Format</th><th>Video Format</th><th>Audio Format</th><th>Mime Type</th>
+</tr>
+<tr>
+<td>TS</td>
+<td>BBTS<br>PF</td>
+<td colspan=2>(a combination of video format and audio format used for TS system, as defined by Table <a href="#av25" class="tableRef"></a> and Table <a href="#av30" class="tableRef"></a>)</td>
+<td>video/mpeg  or  video/mp2t</td>
+</tr><tr>
+<td>TTS</td>
+<td>BBTS<br>PF</td>
+<td colspan=2>(a combination of video format and audio format used for TTS system, as defined by Table <a href="#av25" class="tableRef"></a> and Table <a href="#av30" class="tableRef"></a>)</td>
+<td>video/vnd.dlna.mpeg-tts</td>
+</tr>
+<tr>
+<td rowspan=2>MP4</td>
+<td>PDCF<br>MIPMP</td>
+<td colspan=2>(a combination of video format and audio format used for MP4 system, as defined by Table <a href="#av25" class="tableRef"></a> and Table <a href="#av30" class="tableRef"></a>)</td>
+<td>video/mp4</td>
+</tr>
+<tr>
+<td>DCF</td>
+<td colspan=2>(a combination of video format and audio format used for MP4 system, as defined by Table <a href="#av25" class="tableRef"></a> and Table <a href="#av30" class="tableRef"></a>)</td>
+<td>application/vnd.oma.drm.dcf</td>
+</tr>
+</table>
+
+<p>The following audio media formats are defined that are independent of the video system:</p>
+<table class="simple" id="pureaudio">
+<caption>Table ####: Pure audio media formats</caption>
+<tr>
+<th>Audio Format</th><th>Mime Type</th>
+</tr>
+<tr><td>MPEG1_L3</td><td>audio/mpeg</td></tr>
+<tr><td>HEAAC</td><td>audio/mp4  or  audio/3gpp</td></tr>
+<tr><td>WAV</td><td>audio/x-wav</td></tr>
+<tr><td>DTS</td><td>audio/vnd.dts.hd</td></tr>
+<tr><td>AMR</td><td>audio/amr</td></tr>
+<tr><td>AMR-WB</td><td>audio/amr-wb</td></tr>
+<tr><td>AMR-WB+</td><td>audio/amr-wb+</td></tr>
+<tr><td>HEAAC2</td><td>audio/mp4  or  audio/3gpp</td></tr>
+<tr><td>AC3</td><td>audio/ac3</td></tr>
+<tr><td>E-AC3</td><td>audio/eac3</td></tr>
+</table>
+<p>NOTE: The HEAAC and HEAAC2 pure audio media formats imply carriage of the respective audio content inside the MP4 system format container.</p>
+
+<p>The following graphics formats are defined for usage as specified in section <a href="#image-section" class="sectionRef"></a>:</p>
+<table class="simple" id="graphics">
+<caption>Table ####: Graphics media formats</caption>
+<tr>
+<th>Image Format</th><th>Mime Type</th>
+</tr>
+<tr><td>JPEG</td><td>image/jpeg</td></tr>
+<tr><td>GIF</td><td>image/gif</td></tr>
+<tr><td>PNG</td><td>image/png</td></tr>
+</table>
+
+<p>The following video media formats are defined for video telephony services:</p>
+<table class="simple" id="av-for-video-telephony">
+<caption>Table ####: A/V Media Formats for video telephony</caption>
+<tr>
+<th>Video Format</th><th>Mime Type</th>
+</tr>
+<tr><td>H263</td><td>video/H263<br>video/H263-1998<br>video/H263-2000</td></tr>
+<tr><td>MP4V</td><td>video/MP4V-ES</td></tr>
+<tr><td>AVC_VDC</td><td>video/H264</td></tr>
+</table>
+
+<p>The following audio media formats are defined for Narrow-Band voice and video telephony services:</p>
+<table class="simple" id="audio-for-nb-video-telephony">
+<caption>Table ####: Audio Formats for voice and video telephony (Narrow-Band)</caption>
+<tr>
+<th>Audio Format</th><th>Mime Type</th>
+</tr>
+<tr><td>G711</td><td>audio/PCMA<br>audio/PCMU</td></tr>
+<tr><td>AMR</td><td>audio/AMR</td></tr>
+<tr><td>G729A</td><td>audio/G729</td></tr>
+</table>
+
+<p>The following audio media formats are defined for Wide-Band voice and video telephony services:</p>
+<table class="simple" id="audio-for-wb-video-telephony">
+<caption>Table ####: Audio Formats for voice and video telephony (Wide-Band)</caption>
+<tr>
+<th>Audio Format</th><th>Mime Type</th>
+</tr>
+<tr><td>G722</td><td>audio/G722</td></tr>
+<tr><td>AMRWB</td><td>audio/AMR-WB</td></tr>
+<tr><td>G7291</td><td>audio/G7291</td></tr>
+</table>
+
+<p>The following audio media formats are defined for Super-Wideband voice and video telephony services:</p>
+<table class="simple" id="audio-for-swb-video-telephony">
+<caption>Table ####: Audio Formats for voice and video telephony (Super-Wideband)</caption>
+<tr>
+<th>Audio Format</th><th>Mime Type</th>
+</tr>
+<tr><td>AACLD</td><td>audio/mpeg4-generic</td></tr>
+<tr><td>AACELD</td><td>audio/mpeg4-generic</td></tr>
+<tr><td>G719</td><td>audio/G719</td></tr>
+</table>
+
+<p>The following text format is defined for subtitles provided for Mobile A/V Services:</p>
+<table class="simple" id="mobile-av-subtitles">
+<caption>Table ####: Subtitle Format for Mobile A/V Services (Super-Wideband)</caption>
+<tr>
+<th>Subtitle Format</th><th>Mime Type</th>
+</tr>
+<tr><td>3GPP-TT</td><td>video/3gpp-tt</td></tr>
+</table>
+
+
+</section>
+
+
+<section id='system-layer-section'><h2>Systems Layer</h2>
+<p>At the systems layer, two formats for the carriage of A/V content are defined, namely MPEG-2 Transport Stream and MP4 File Format.</p>
+<p>A/V content protection is performed at the systems layer, as defined in [[.OIPF_CSP2]]. The present volume of the specification describes the protected formats in relation to the total set of media format definitions.</p>
+<section id='system-mpeg2-ts'><h3>MPEG-2 Transport Stream</h3>
+<p>The carriage of A/V content and related information (e.g. subtitles) in an MPEG-2 transport stream SHALL be in compliance with [[!TS101154]] clause 4, with the following additional constraints:</p>
+<ul>
+<li>Only a single program SHALL be contained in the transport stream. The transport stream SHALL contain only one Program Map Table (PMT).
+<li>The "TS Optional-SI" profile of PSI/SI carriage, as defined in [[!TS102034]] SHALL be applied, i.e. the Program Association Table (PAT) and Program Map Table (PMT) are REQUIRED, and DVB-SI [[!DVBSI]] is OPTIONAL. However, the carriage of EIT for the associated content is RECOMMENDED, as specified in <a href="volume3.html#event-information-tables" class="extRef">section 4.1.3</a> of Volume 3 [[.OIPF_META2]].
+<li>The transport stream MAY contain EIT as specified in <a href="volume3.html#event-information-tables" class="extRef">section 4.1.3</a> of Volume 3 [[.OIPF_META2]].
+<li>
+The transport stream MAY contain  MPEG-2 encoded AIT as defined in section 5.3 of [[!TS102809]]. This SHALL be supported as defined in [[.OIPF_DAE2]] and below:
+<ul>
+<li>The application type used for DAE applications in section 5.2.2 of [[!TS102809]] SHALL be 0x0011 (to signal "OIPF DAE").
+<li>If the optional <code>data_broadcast_id_descriptor</code> is used for carousels carrying DAE applications then the value to be used for the <code>data_broadcast_id field</code> of SHALL be 0x0150 (to signal "OIPF Object Carousel").
+<li>A maximum of one sub-table (i.e. using only one PID) signalling DAE applications shall be transmitted per service.
+<li>All sections of the AIT sub-table for DAE applications shall be transmitted at least once every second.
+</ul>
+<li>The transport stream MAY contain DAE applications transmitted using the DSM-CC object carousel as defined in section 7.1 of [[!TS102809]].
+<li>The transport stream MAY contain "do-it-now" DSM-CC stream events as defined by section 8.1 of [[!TS102809]].
+<li>The maximum streaming bitrate for a transport stream carrying SD content SHALL NOT exceed 8.0 Mbit/s.
+<li>The maximum streaming bitrate for a transport stream carrying HD content SHALL NOT exceed 24.0 Mbit/s.
+<li>Transport streams MAY contain media zone information (zone map), possibly including navigation constraints, using the signalling mechanisms specified in [[!MRL-DMZ]]. Rules about the handling of Marlin media zone information by the OITF, for both unprotected and protected content, are contained in <a href="volume7.html#forced-playout-using-media-zones" class="extRef">section 6</a> of [[.OIPF_CSP2]]. Note: this means an MPEG-2 transport stream may contain a DMZ descriptor in the PMT and one or more private_sections in the stream, with PID as signalled in DMZ descriptor, and containing  zone map information (i.e., navigation constraints), all according to [[!MRL-DMZ]] section 7.2.
+<li>Transport streams containing 3D content SHALL comply with the following requirements:
+<ul>
+<li>The PMT SHALL include the <code>AVC_video_descriptor</code> according to [[!DVB3D]] section 6.1.
+<li>If SDT and/or EIT are present, it SHALL meet the requirements of [[!DVB3D]] section 6.2.
+</ul>
+</ul>
+<p>The preceding specification of the MPEG-2 transport stream format is referred to as the TS systems layer format.</p>
+<p>An additional variant of the TS format is defined, namely the time stamped MPEG-2 transport stream, as defined in [[!DLNAMEDIA]] section 9.3.4.4, applied to the TS systems layer format.</p>
+<p>The time stamped MPEG-2 transport stream format is referred to as the TTS systems layer format.</p>
+<p>The methods to protect (encrypt) MPEG-2 transport streams are specified in Volume 7 [[.OIPF_CSP2]]. Volume 7 specifies two approaches for content and service protection, namely the terminal-centric approach and the gateway-centric approach. </p>
+<p>For the terminal-centric approach and for the output of the CSP gateway in the gateway-centric approach, the protected MPEG-2 transport stream SHALL comply with protection system signalling as specified in [[!MPEG2TS]] and MAY use the Conditional Access Table (CAT) as defined therein. This protected format is referred to generically as PF. </p>
+<p>For the gateway-centric approach, the input stream to the CSP gateway is not specified, except in the case of the CI+ gateway-centric approach, where the input stream SHALL comply with the PF format. PF applies to both the TS and TTS systems layer formats.</p>
+<p>The protected MPEG-2 transport stream format for the terminal-centric approach is further defined in [[!MRL-BBTS]] and is referred to as BBTS. BBTS applies to both the TS and TTS systems layer formats.</p>
+<p>The OITF SHALL support the application signaling and in-band delivery of DAE applications via the IP channel, as defined above. In environments where the broadcast channel is based on DVB network technologies and uses DVB-SI as specified in [[!DVBSI]], the OITF SHALL also support the application signaling and in-band delivery of DAE applications via the broadcast channel.</p>
+</section>
+<section id='system-mp4-file-format'><h3>MP4 File Format</h3>
+<p>The carriage of A/V content and related information (e.g. subtitles) in file-based formats (systems layer format: MP4) SHALL use the MP4 File Format [[!MP4FF]] and ISO Base Media File Format [[!ISOFF]] standards with the constraints defined in section 9.4.4.3 of [[!DLNAMEDIA]], except for 9.4.4.3.3 and 9.4.4.3.10. This is the preferred format for MP4 based unprotected content. </p>
+<p>For services that allow the real-time playback of downloaded content before the download has been completed (e.g. Progressive Download), the following additional constraints apply:</p><ul>
+<li>The <i>moof</i> box SHALL be used according to section 9.4.3.3.8 of [[!DLNAMEDIA]].
+<li>The size of the <i>moov</i> box SHALL be equal to or less than 2Mbytes.
+<li>Use of the <i>pdin</i> box, defined in 8.43 of [[!ISOFF]], is RECOMMENDED.
+</ul>
+<p>A service MAY apply the additional constraint on <i>moov</i> box size according to section 9.4.4.3.11 of [[!DLNAMEDIA]], in order to provide content compliant to the DLNA specification.</p>
+<p>In addition, carriage of H.264/AVC content in the MP4 systems layer SHALL be conformant to the AVC File Format standard [[!AVCFF]].</p>
+<p>In addition, carriage of MPEG-4 AAC/HE-AAC content in the MP4 systems layer SHALL be conformant to the MP4 File Format standard [[!MP4FF]].</p>
+<p>The storage of AC-3 and Enhanced AC-3 content in the MP4 file format shall be conformant to Annex F of [[!AC3]].</p>
+<p>MP4 files MAY contain media zone information (zone map), possibly including navigation constraints, using the signalling mechanisms specified in [[!MRL-DMZ]]. Rules about the handling of Marlin media zone information by the OITF, for both unprotected and protected content, are contained in <a href="volume7.html#forced-playout-using-media-zones" class="extRef">section 6</a> of [[.OIPF_CSP2]]. Note: this means an MP4 file may contain one or more mDMZ boxes containing zone parameters and zone properties (i.e., navigation constraints) according to [[!MRL-DMZ]] section 7.1,</p>
+<p>The methods to protect (encrypt) MP4-based file formats are specified in [[.OIPF_CSP2]]. Four protection methods are specified and they are allocated the protection format labels as follows:</p><ul>
+<li>OMA PDCF [[!OMARLIN]] is referred to as PDCF,
+<li>OMA DCF [[!OMARLIN]] is referred to as DCF,
+<li>Marlin IP MP [[!MRL-FF]] format is referred to as MIPMP.
+<li>Common encryption in ISO base media file format files [[!CENC]] is referred to as CENC.
+</ul>
+<p>MP4 files containing 3D content SHALL comply with section 8.15 of [[!ISOFF]], i.e. the 3D video sample SHALL be signalled as restricted video (‘resv’) with stereoscopic video scheme type (‘stvi’).</p>
+</section>
+
+<section id="service-usage">
+<h3>Service Usage</h3>
+<p>Multicast IPTV services (Scheduled Content) SHALL use either the TS or the TTS systems layer format.</p>
+<p>Unicast streamed IPTV services (Scheduled Content, CoD) using the Direct UDP or RTP/UDP transport protocols SHALL use either the TS or the TTS systems layer format.</p>
+<p>Unicast streamed IPTV services (Scheduled Content, CoD) using the HTTP transport protocol (including adaptive streaming) SHALL use either the TS, the TTS, or the MP4 systems layer format.</p>
+<p>Download IPTV services (CoD) SHALL use either the TS, the TTS, or the MP4 systems layer format. </p>
+<p>Voice and video telephony services using the RTP/UDP transport protocol do not require any specific systems layer format. </p>
+<p>Mobile A/V services do not require any specific systems layer format.</p>
+<p>The systems layer formats used for content services are summarised in the following table.</p>
+<table class="simple" id="systemslayer">
+<caption>Table ####: Systems layer formats for content services</caption>
+<tr>
+<th>Service</th><th>Transport Protocol</th><th>Systems layer format</th>
+</tr>
+<tr><td>Scheduled content</td><td>Multicast Direct UDP or RTP/UDP</td><td>TS, TTS</td></tr>
+<tr><td>Scheduled content</td><td>Unicast Direct UDP or RTP/UDP</td><td>TS, TTS</td></tr>
+<tr><td>Scheduled content</td><td>HTTP (including adaptive streaming)</td><td>TS, TTS</td></tr>
+<tr><td>Streamed CoD</td><td>Unicast Direct UDP or RTP/UDP</td><td>TS, TTS</td></tr>
+<tr><td>Streamed CoD</td><td>HTTP (including adaptive streaming)</td><td>TS, TTS, MP4</td></tr>
+<tr><td>Download CoD</td><td>HTTP</td><td>TS, TTS, MP4</td></tr>
+</table>
+</section>
+</section>
+
+
+<section id='video-section'>
+<h2>Video</h2>
+<p>The specification of video formats and codec profiles is based upon the DVB A/V codec usage specification for applications based on MPEG-2 transport streams [[!TS101154]]. The present specification further profiles the DVB specification by mandating certain codec choices and video formats. </p>
+<p>H.264/AVC [[!H264]] (video format label: AVC) is the preferred video codec for both standard definition and high definition content and is the mandatory video content format. Decoding support for AVC is a mandatory minimum OITF capability with regard to A/V media formats. </p>
+<p>MPEG-2 video [[!H262]] (video format label: MPEG2) MAY be used when appropriate, for example when legacy equipment or content in that format has already been deployed, or due to regulatory or contractual considerations. </p>
+<p>H.264/AVC [[!H264]] (video format label: AVC_VDC), MPEG-4 Part 2 Visual [[!MP4V]] (video format label: MP4V) and H.263 [[!H263]] (video format label: H263) MAY be used for video telephony services. If video telephony services are supported on the OITF, encoding and decoding of H.264 (video format label AVC_VDC) SHALL be supported and encoding and decoding of H.263 (video format label: H263) is RECOMMENDED.</p>
+<p>H.264/AVC [[!H264]] (video format label: AVC_VDC), MPEG-4 Part 2 Visual [[!MP4V]] (video format label: MP4V) and H.263 [[!H263]] (video format label: H263) MAY be used for Mobile A/V services.</p>
+<p>Plano-stereoscopic 3D TV is supported using H.264/AVC, using side-by-side and top-bottom formats.</p>
+<section id='video-formats'><h3>Formats</h3>
+<p>Five profiles of video content are defined and described in the following sub-sections:</p>
+<ul>
+<li>High Definition (HD), 
+<li>Standard Definition (SD),
+<li>3D,
+<li>Video Telephony,
+<li>Sub-Picture.
+</ul>
+<p>Additionally, Video formats for Mobile A/V Services are defined.</p>
+<section id='video-hd'><h3>High Definition Profile</h3>
+<section id='video-hd-h264'><h4>H.264/AVC</h4>
+<p>H.264/AVC HD video content SHALL comply with [[!TS101154]] clauses 5.5 and 5.7.</p>
+<p>This format corresponds to video format label AVC_HD_25 in 25Hz systems, and AVC_HD_30 in 30Hz systems.</p>
+</section>
+<section id='video-hd-mpeg2'><h4>MPEG-2</h4>
+<p>MPEG-2 HD video content in 25Hz systems SHALL comply with [[!TS101154]] clause 5.2 with the following exceptions:</p>
+<ul><li>The 2.21:1 Aspect Ratio SHALL NOT be used.</ul>
+<p>This format corresponds to video format label MPEG2_HD_25.</p>
+<p>MPEG-2 HD video content in 30Hz systems SHALL comply with [[!TS101154]] clause 5.4 with the following exceptions:</p>
+<ul><li>The 2.21:1 Aspect Ratio SHALL NOT be used.</ul>
+<p>This format corresponds to video format label MPEG2_HD_30.</p>
+</section>
+</section>
+<section id='video-sd'><h3>Standard Definition Profile</h3>
+<section id='video-sd-h264'><h4>H.264/AVC</h4>
+<p>H.264/AVC SD video content SHALL comply with [[!TS101154]] clauses 5.5 and 5.6.</p>
+<p>This format corresponds to video format label AVC_SD_25 in 25Hz systems, and AVC_SD_30 in 30Hz systems.</p>
+</section>
+<section id='video-sd-mpeg2'><h4>MPEG-2</h4>
+<p>MPEG-2 SD video content in 25Hz systems SHALL comply with [[!TS101154]] clause 5.1 with the following exceptions:</p>
+<ul><li>The 2.21:1 Aspect Ratio SHALL NOT be used.</ul>
+<p>This format corresponds to video format label MPEG2_SD_25.</p>
+<p>MPEG-2 SD video content in 30Hz systems SHALL comply with [[!TS101154]] clause 5.3 with the following exceptions:</p>
+<ul><li>The 2.21:1 Aspect Ratio SHALL NOT be used.</ul>
+<p>This format corresponds to video format label MPEG2_SD_30.</p>
+</section>
+</section>
+<section id='video-telephony'><h3>Video Telephony Profile</h3>
+<section id='video-telephony-h264'><h4>H.264/AVC</h4>
+<p>H.264/AVC video content SHALL comply with [[!TS126114]] clause 5.2.2.</p>
+<p>This format corresponds to video format label AVC_VDC.</p>
+</section>
+<section id='video-telephony-mpeg4'><h4>MPEG-4 Part-2 Visual</h4>
+<p>MPEG-4 Part-2 Visual video content SHALL comply with [[!TS126114]] clause 5.2.2.</p>
+<p>This format corresponds to video format label MP4V.</p>
+</section>
+<section id='video-telephony-h263'><h4>H.263</h4>
+<p>H.263 video content SHALL comply with [[!TS126114]] clause 5.2.2.</p>
+<p>This format corresponds to video format label H263.</p>
+</section>
+</section>
+<section id='video-subpicture'><h3>Sub-Picture Profile</h3>
+The following table list the supported coding parameters for sub-picture video
+<table class="simple" id="subpicture-formats">
+<caption>Table ####: Sub-Picture formats</caption>
+<tr>
+<th>Horizontal Resolution<br>(pixels)</th><th>Vertical Resolution<br>(lines)</th><th>Scan Type</th><th>Frame Rate (fps)</th><th>Aspect Ratio</th><th>System</th>
+</tr>
+<tr><td>192</td><td>192</td><td>p</td><td>23.976, 24, 59.94</td><td>16:9</td><td>30Hz</td></tr>
+<tr><td>192</td><td>144</td><td>p</td><td>23.976, 24, 59.94</td><td>16:9</td><td>30Hz</td></tr>
+<tr><td>128</td><td>96</td><td>p</td><td>23.976, 24, 59.94</td><td>16:9</td><td>30Hz</td></tr>
+<tr><td>192</td><td>192</td><td>p</td><td>29.97</td><td>16:9, 4:3</td><td>30Hz</td></tr>
+<tr><td>192</td><td>144</td><td>p</td><td>29.97</td><td>16:9, 4:3</td><td>30Hz</td></tr>
+<tr><td>128</td><td>96</td><td>p</td><td>29.97</td><td>16:9, 4:3</td><td>30Hz</td></tr>
+<tr><td>192</td><td>192</td><td>p</td><td>25</td><td>16:9, 4:3</td><td>25Hz</td></tr>
+<tr><td>192</td><td>144</td><td>p</td><td>25</td><td>16:9, 4:3</td><td>25Hz</td></tr>
+<tr><td>128</td><td>96</td><td>p</td><td>25</td><td>16:9, 4:3</td><td>25Hz</td></tr>
+<tr><td>192</td><td>192</td><td>p</td><td>50</td><td>16:9</td><td>25Hz</td></tr>
+<tr><td>192</td><td>144</td><td>p</td><td>50</td><td>16:9</td><td>25Hz</td></tr>
+<tr><td>128</td><td>96</td><td>p</td><td>50</td><td>16:9</td><td>25Hz</td></tr>
+</table>
+<section id='video-subpicture-h264'><h4>H.264/AVC</h4>
+<p>The IPTV solution SHALL utilize the following encoded video media profile for content used in Sub Picture streams.</p>
+<ul><li>H.264/AVC Main Profile @ Level 1.3</ul>
+<p>This format corresponds to video format label AVC_SP_25 in 25Hz systems, and AVC_SP_30 in 30Hz systems.</p>
+</section>
+<section id='video-subpicture-mpeg2'><h4>MPEG-2</h4>
+<p>The MPEG-2 Main Profile @ Low Level as defined in [[!H262]] shall be used for Sub-Picture video streams. The DVB codec toolbox [[!TS101154]] does not provide constraints applicable to Sub-Picture formats.</p>
+<p>This format corresponds to video format label MPEG2_SP_25 in 25Hz systems, and MPEG2_SP_30 in 30Hz systems.</p>
+</section>
+</section>
+<section id='video-mobile'><h3>Video formats for Mobile A/V Services</h3>
+<section id='video-mobile-h263'><h4>H.263</h4>
+<p>H.263 video content SHALL comply with [[!3GPPTS26234]] section 7.4.</p>
+</section>
+<section  id='video-mobile-h264'><h4>H.264/AVC</h4>
+<p>H.264/AVC video content SHALL comply with [[!3GPPTS26234]] section 7.4. </p>
+</section>
+<section  id='video-mobile-mpeg4'><h4>MPEG-4 Part-2 Visual</h4>
+<p>MPEG-4 Part-2 Visual video content SHALL comply with [[!3GPPTS26234]] section 7.4.</p>
+</section>
+</section>
+<section id='video-gop'><h3>H.264/AVC GOP Structure</h3>
+<p>All AVC format content provided in IPTV services SHALL conform to the following constraints in GOP structure:</p>
+<ul>
+<li>I  picture:  A picture with <i>slice_type=7</i> or <i>slice_type=2</i> for all the slices composing that picture or IDR picture
+<li>P picture: A picture with <i>slice_type=5</i> or <i>slice_type=0</i> for all the slices composing that picture.
+<li>B picture: A picture with <i>slice_type=6</i> or <i>slice_type=1</i> for all the slices composing that picture.
+<li>Decoding order among I or P pictures SHALL be kept in their display order.
+<li>P picture SHALL NOT refer to B pictures.
+<li>Complementary reference field pair that includes I/P field SHALL NOT include B field.
+<li>Reference B picture SHALL refer to the following.
+<ul>
+<li>I or P frames or complementary reference field pairs of I or P pictures that immediately precedes/follows in display order.
+</ul>
+<li>Non-reference B picture SHALL refer to the following.
+<ul>
+<li>I or P frames or complementary reference field pairs of I or P pictures that immediately precedes/follows in display order. 
+<li>A reference B frame or a complementary reference field pair of reference B pictures that immediately precedes/follows in display order and is present between "pic1" and "pic2" in display order. Here, "pic1" is immediately preceding I or P picture and "pic2" is immediately following I or P picture.
+</ul>
+</ul>
+
+</section>
+<section id='video-3d'><h3>3D</h3>
+<section id='video-3d-h264'><h4>H.264/AVC</h4>
+<p>3D content SHALL comply with [[!DVB3D]] section 5.1. The coded video stream SHALL apply the frame packing arrangement supplemental enhancement information (SEI) message according to [[!DVB3D]] section 6.4.</p>
+<p>This format corresponds to video format label AVC_3D_25 in 25Hz systems, and AVC_3D_30 in 30Hz systems.</p>
+<p>The following formats are specified by [[!DVB3D]]:</p>
+<ul>
+<li>720p @ 50Hz Top-and-Bottom (TaB);
+<li>720p @ 50Hz Side-by-Side (SbS) (*);
+<li>1080i @ 25Hz Side-by-Side (SbS);
+<li>720p @ 59.94 / 60 Hz Top-and-Bottom (TaB);
+<li>720p @ 59.94 / 60 Hz Side-by-Side SbS (SbS) (*);
+<li>1080i @ 29.97 / 30 Hz Side-by-Side (SbS);
+<li>1080p @ 23.98 / 24 Hz Top-and-Bottom (TaB);
+<li>1080p @ 23.98 / 24 Hz Side-by-Side (SbS) (*).
+</ul>
+<p>(*): these formats are optional for compliance with HDMI. Some 3DTV capable display devices might not support these 3DTV video formats.</p>
+</section>
+</section>
+</section>
+<section id='video-service-usage'><h3>Service Usage</h3>
+<p>The video formats specified in the Standard Definition Profile and in the High Definition Profile are applicable to A/V content provided within any of the Release 2 IPTV services. The video formats for Mobile A/V Services are applicable to any of the Release 2 IPTV services. The video formats specified in the Video Telephony Profile are applicable to content provided within Video Telephony services. The video formats specified in the Sub Picture Profile are applicable for use with Picture-in-Picture function.</p>
+</section>
+</section>
+
+<section id='subtitle-section'>
+<h2>Subtitles</h2>
+<p>This section defines the formats of subtitle streams for the purpose of providing alternative language subtitles and closed captions for A/V services. The decision on the use and format of subtitle streams is made by the service provider or content provider. Subtitle content MAY be provided with any IPTV service.</p>
+<section id='subtitle-formats'><h3>Formats</h3>
+<p>For an IPTV service delivered using the TS or TTS system formats, any of the following subtitle formats SHALL be used:</p>
+<ul>
+<li>Based on DVB subtitles [[!DVBSUBT]] using format label DVB-SUBT. This format includes support for subtitles in 3D video content.
+<li>Based on EBU Teletext [[!DVBTTXT]] using format label EBU-SUBT. 
+<li>Based on CEA-708-C [[!CEACC]] using format label CEA-SUBT.
+</ul>
+<p>If other subtitle formats are used, e.g. for market specific or regulatory reasons, their usage is outside the scope of the present specification.</p>
+<p>For Mobile A/V Services, the Timed Text [[!3GPPTS26245]] format SHALL be used. This format corresponds to video format label 3GPP-TT.</p>
+</section>
+<section id='subtitle-service-usage'><h3>Service Usage</h3>
+<p>Subtitle streams within an IPTV service MAY be used for the provision of:</p>
+<ul>
+<li>Subtitles for foreign-language content,
+<li>Closed captions for enhanced accessibility,
+<li>Any other purpose where such streams form part of a service offering.
+</ul>
+</section>
+</section>
+
+<section id='teletext-section'><h2>Teletext</h2>
+<p>This section defines the formats of teletext for the purpose of providing an information service together with the A/V stream. Teletext is a legacy sub-service of Scheduled Content Services utilised in some parts of the European market. </p>
+<p>Teletext information MAY be supported by the Scheduled Content Service. </p>
+<p>It is expected that in the future such information services will be provided by the Declarative Application Environment [[.OIPF_DAE2]].</p>
+<section id='teletext-formats'><h3>Formats</h3>
+<p>For an IPTV scheduled content service delivered using the TS or TTS system formats, the Teletext information SHALL be based on EBU Teletext [[!DVBTTXT]]. This format corresponds to the format label EBU-TTXT.</p>
+</section>
+<section id='teletext-service-usage'><h3>Service Usage</h3>
+<p>The Scheduled Content service MAY include teletext information.</p>
+<p>Teletext information SHALL NOT be provided with content delivered by the Content on Demand services.</p>
+</section>
+</section>
+
+
+<section id='audio-section'><h2>Audio</h2>
+<p>The specification of audio formats and codec profiles is based upon the DVB A/V codec usage specification for applications based on MPEG-2 transport streams [[!TS101154]]. The present specification further profiles the DVB specification by mandating certain codec choices and audio formats. </p>
+<p>MPEG-4 AAC or HE-AAC [[!AAC]] (audio format label: HEAAC) is the preferred audio codec for A/V content and is the mandatory audio content format. Decoding support for HE-AAC is a mandatory minimum OITF capability with regard to A/V media formats. </p>
+<p>MPEG 4 HE-AAC v2 [[!AAC]] (audio format label: HEAAC2) MAY be used when appropriate, as designated by systems requirements. </p>
+<p>MPEG-1 Audio Layer II [[!MPEG1]] (audio format label: MPEG1_L2) or AC-3 (Dolby Digital) [[!AC3]] (audio format label: AC3) MAY be used when appropriate, for example when legacy equipment or content in that format has already been deployed, or due to regulatory or contractual considerations.</p>
+<p>DTS-HD [[!DTS]] (audio format label: DTS) MAY be used when appropriate, as designated by systems requirements.</p>
+<p>Enhanced AC-3 (Dolby Digital Plus) [[!AC3]] (audio format label: E-AC3) MAY be used when appropriate, as designated by systems requirements. </p>
+<p>MPEG Surround [[!MPS]] (audio format label: MPS) may be used in combination with MPEG-4 AAC or HE-AAC or MPEG-1 Layer II. This combination implements scalability from a stereo (or mono) core bitstream to multichannel and will thus play at least in stereo (or mono) on MPEG-4 AAC-only (respectively MPEG-4 HE-AAC or MPEG-1 Layer II) decoding devices.</p>
+<p>AMR [[!3GPPAMR]] (audio format label: AMR) and AMR-WB [[!3GPPAMRWB]] (audio format label: AMR-WB) MAY be used for Mobile A/V Services. MPEG-4 AAC or HE-AAC [[!AAC]] (audio format label: HEAAC), enhanced aacPlus [[!3GPPEAAC+]] (audio format label: HEAAC2) and Extended AMR-WB [[!3GPPAMRWB+]] (audio format label: AMR-WB+) MAY be used for Mobile A/V Services.</p>
+<p>For audio-only services, the MPEG-1 Audio Layer III (MP3) codec [[!MPEG1]] MAY also be used.</p>
+<p>Profiles of audio are also used to provide audible notifications and audio clips within the Declarative [[.OIPF_DAE2]] and Procedural Application Environments [[.OIPF_PAE2]], as specified in section <a href="#audio-notifications-clips" class="sectionRef"></a>.</p>
+<p>For voice and video telephony services the following audio media formats MAY be used:</p>
+<ul>
+<li>G.711 [[!G711]] (audio format label: G711) MAY be used for narrow-band voice telephony. 
+<li>AMR [[!3GPPAMR]] (audio format label: AMR) MAY be used for narrow-band voice telephony. 
+<li>G.729.A [[!G729]] Annex A (audio format label: G729A) MAY be used for narrow-band voice telephony. 
+<li>G722 [[!G722]] (audio format label: G722) MAY be used for wide-band voice telephony. 
+<li>AMR-WB/G.722.2 [[!3GPPAMRWB]] (audio format label: AMRWB) MAY be used for wide-band voice telephony. 
+<li>G.729.1 [[!G729-1]] (audio format label: G7291) MAY be used for wide-band voice telephony. 
+<li>MPEG-4 AAC LD [[!AAC]] (audio format label: AACLD) MAY be used for super-wideband voice and video telephony. 
+<li>MPEG-4 AAC ELD [[!AAC]] (audio format label: AACELD) MAY be used for super-wideband voice and video telephony.
+<li>G.719 [[!G719]] (audio format label: G719) MAY be used for super-wideband voice and video telephony
+</ul>
+<p>If voice or video telephony services are supported on the OITF, encoding and decoding of G.711 and AMR for narrow-band and G.722 and AMR-WB/G722.2 for wide-band SHALL be supported.</p>
+<section id='audio-formats'><h3>Formats</h3>
+<section id='audio-he-aac-and-aac'><h4>HE-AAC and AAC</h4>
+<p>AAC, HE-AAC and HE-AAC v2 audio coding SHALL be in accordance with [[!AAC]], which contains the audio object types AAC LC, SBR and PS. Its use is constrained according to [[!TS101154]] clause 6.4.</p>
+<p>AAC and HE-AAC formats correspond to the audio format label HEAAC.</p>
+<p>HE-AAC v2 format corresponds to the audio format label HEAAC2.</p>
+<section><h5>A/V Content</h5>
+<p>HEAAC format audio for A/V content SHALL utilise Level 4 encoding as specified in [[!AAC]].</p>
+<p>If used in combination with MPEG Surround, HE AAC format audio for A/V content SHALL utilise Level 2 encoding or Level 4 encoding as specified in [[!AAC]].</p>
+</section>
+<section><h5>Audio clips</h5>
+<p>HEAAC format audio for audible notifications and audio clip content SHALL utilise Level 2 encoding as specified in [[!AAC]], consisting of a sequence of single of multiple audio frames whereby an audio frame consists of an ADTS header and an audio frame data pair.</p>
+</section>
+<section><h5>HE-AAC Metadata</h5>
+<p>HEAAC format audio MAY contain metadata as specified in [[!AAC]] or [[!TS101154]], specifically:</p>
+<ul>
+<li>Dynamic Range Control parameters as defined in [[!AAC]] section 4.5.2.7 or [[!TS101154]] section 6.4.3 and Annex C.5
+<li>Down-mix parameters as defined in [[!AAC]] section 4.5.1.2.2 or [[!TS101154]] Annex C.5.
+</ul>
+<p>The Dynamic Range Control metadata SHALL be used, if present in the encoded audio data.</p>
+<p>For stereo output of 5.1 surround audio streams, the down-mix parameters SHALL be used, if present in the encoded audio data.</p>
+</section>
+</section>
+<section id='audio-ac3'><h4>AC3</h4>
+<p>AC-3 audio coding SHALL be compliant with [[!AC3]], constrained according to [[!TS101154]] clause 6.2, with the following additional constraints:</p>
+<ul><li>AC-3 audio streams shall be encoded at a sample rate of 48 kHz</ul>
+<p>This format corresponds to the audio format label AC3.</p>
+</section>
+<section id='audio-enhanced-ac3'><h4>Enhanced AC-3</h4>
+<p>Enhanced AC-3 audio coding SHALL be compliant with [[!AC3]], constrained according to [[!TS101154]] clause 6.2, with the following additional constraints:</p>
+<ul><li>Enhanced AC-3 audio streams shall be encoded at a sample rate of 48 kHz</ul>
+<p>This format corresponds to the audio format label E-AC3</p>
+</section>
+<section id='audio-mpeg1-l2'><h4>MPEG-1 Layer II</h4>
+<p>MPEG-1 Layer II audio coding SHALL be compliant with [[!MPEG1]] constrained according to [[!TS101154]] clause 6.1.</p>
+<p>This format corresponds to the audio format label MPEG1_L2.</p>
+</section>
+<section id='audio-mpeg1-l3'><h4>MPEG-1 Layer III</h4>
+<p>MPEG-1 Layer III audio coding SHALL only be used for audio only services. It SHALL NOT be used in conjunction with a video stream to form an A/V service.</p>
+<p>MPEG-1 Layer III encoding SHALL be compliant with [[!MPEG1]], constrained according to [[!DLNAMEDIA]]. Either of the MP3 and MP3X profiles from [[!DLNAMEDIA]] MAY be used.</p>
+<p>This format corresponds to the audio format label MPEG1_L3.</p>
+</section>
+<section id='audio-wave'><h4>WAVE</h4>
+<p>Wave format (Audio Format: WAV) audio coding MAY be used for audible notifications and audio clips within the Declarative Application Environment [[.OIPF_DAE2]]. The following characteristics SHALL be supported by the OITF.</p>
+<table class="alignment">
+<tr><td style="border:0px none transparent;"><b>Sampling Frequency:</b></td><td style="border:0px none transparent;">From 12 kHz up to 16 kHz</td></tr>
+<tr><td style="border:0px none transparent;"><b>Codec(s):</b></td><td style="border:0px none transparent;">Uncompressed (PCM), ADPCM</td></tr>
+<tr><td style="border:0px none transparent;"><b>Quantisation Bit Rate:</b></td><td style="border:0px none transparent;">16 bits</td></tr>
+<tr><td style="border:0px none transparent;"><b>Channels:</b></td><td style="border:0px none transparent;">From mono up to 5.1 channels</td></tr>
+</table>
+<p>This format corresponds to the audio format label WAV.</p>
+</section>
+<section id='audio-dts-hd'><h4>DTS-HD</h4>
+<p>DTS-HD is an expansion on the original DTS Coherent Acoustics definition. DTS-HD maintains support for Coherent Acoustics and extends the range of capabilities, which have been commercialized as:</p>
+<ul>
+<li>DTS Express&reg;
+<li>DTS-HD High Resolution Audio&reg;
+<li>DTS-HD Master Audio&reg;
+</ul>
+<p>This is in addition to the original DTS family which were commercialized as:</p>
+<ul>
+<li>DTS&reg;
+<li>DTS-ES&reg;
+<li>DTS 96/24&reg;
+</ul>
+<p>Using the DTS-HD audio descriptor, as defined in [[!DVBSI]], and transport requirements as defined in [[!TS101154]], support for DTS-HD is seamless across the variations.</p>
+<p>DTS-HD format (Audio Format: DTS) audio coding shall be compliant with [[!DTS]] and according to [[!TS101154]] section 6.3.</p>
+<ul><li>Usage of DTS-HD in ISOBMFF is defined in Annex E of [[!DTS]].</ul>
+</section>
+
+<section id='audio-mpeg-surround'><h4>MPEG Surround</h4>
+<p>MPEG Surround SHALL be compliant with [[!MPS]] and SHALL be used in combination with MPEG-4 AAC or HE AAC constrained according to section <a href="#audio-he-aac-and-aac" class="sectionRef"></a> or in combination with MPEG-1 Layer II constrained according to section <a href="#audio-mpeg1-l2" class="sectionRef"></a>. Its use is further constrained according to [[!TS101154]] clause 6.1 and clause 6.4 and the following:</p>
+<ul>
+<li>Sampling frequency
+<ul>
+<li><b>Encoding:</b> For audio encoded using MPEG Surround, the sampling frequency of the MPEG Surround data SHALL be equal to the sampling frequency of the core audio stream.
+</ul>
+</ul>
+<p>The combination of MPEG Surround and MPEG-4 AAC or HE-AAC corresponds to the audio format label HEAAC_MPS.</p>
+<p>The combination of MPEG Surround and MPEG-1 Layer II corresponds to the audio format label MPEG1_L2_MPS.</p>
+</section>
+<section id='audio-telephony'><h4>Audio Formats for voice and video telephony</h4>
+<p>G.711 audio coding SHALL be compliant with [[!G711]] according to [[!TS181005]] clause 6.2; this format corresponds to the audio format label G711.</p>
+<p>AMR audio coding SHALL be compliant with [[!3GPPAMR]] according to [[!TS126114]] clause 5.2.1 and [[!TS181005]] clause 6.2; this format corresponds to the audio format label AMR.</p>
+<p>G.729 audio coding SHALL be compliant with [[!G729]] according to [[!TS181005]] clause 6.2; this format corresponds to the audio format label G729A.</p>
+<p>G.722 audio coding SHALL be compliant with [[!G722]] according to [[!TS181005]] clause 6.3.2; this format corresponds to the audio format label G722.</p>
+<p>AMR-WB/G.722.2 audio coding SHALL be compliant with [[!3GPPAMRWB]] according to [[!TS181005]] clause 6.3.2; this format corresponds to the audio format label AMRWB.</p>
+<p>G.729.1 audio coding SHALL be compliant with [[!G729-1]] according to [[!TS181005]] clause 6.3.2; this format corresponds to the audio format label G7291.</p>
+<p>G.719 audio coding SHALL be compliant with [[!G719]]; this format corresponds to the audio format label G719.</p>
+<section><h5>MPEG-4 AAC LD and ELD</h5>
+<p>MPEG-4 AAC LD audio coding SHALL be compliant with the Low Delay AAC Profile as defined in clause 1.5.2.1 of [[!AAC]] (profile-level-id=52 as defined in clause 1.5.2.4, table 1.4 of [[!AAC]]); this format corresponds to the audio format label AACLD.</p>
+<p>MPEG-4 AAC ELD audio coding SHALL be compliant with AAC Enhanced Low Delay as defined in clause 1.5.1, Table 1.1 of [[!AAC]] and described in clause 1.5.1.2.37 of [[!AAC]] (audio object type = "ER AAC ELD", object type ID = 39); this format corresponds to the audio format label AACELD.</p>
+</section>
+</section>
+<section id='audio-mobile'><h4>Audio Formats for Mobile A/V Services</h4>
+<p>For Mobile A/V Services the following applies:</p>
+<ul>
+<li>AMR content SHALL be compliant with [[!3GPPAMR]]. This format corresponds to label AMR.
+<li>AMR-WB content SHALL be compliant with [[!3GPPAMRWB]]. This format corresponds to label AMR-WB.
+<li>AAC and HE-AAC content SHALL be compliant with [[!3GPPEAAC+]]. This format corresponds to label HEAAC.
+<li>Enhanced aacPlus content SHALL be compliant with [[!3GPPEAAC+]]. This format corresponds to label HEAAC2.
+<li>Extended AMR-WB SHALL be compliant with [[!3GPPAMRWB+]]. This format corresponds to label AMR-WB+.
+</ul>
+</section>
+</section>
+<section><h3>Platform Usage</h3>
+<section id='audio-notifications-clips'><h4>Audible Notifications and Audio Clips</h4>
+<p>IPTV Service Providers MAY utilize the following audio formats for audible notifications and audio clips within either declarative or procedural applications used to provide services, as specified in [[.OIPF_DAE2]] and [[.OIPF_PAE2]]:</p>
+<ul>
+<li>AAC formatted files with a maximum file size of 512KB identified with the MIME type "audio/mp4",
+<li>WAV formatted files with a maximum file size of 512KB identified with the MIME type "audio/x-wav" (DAE only),
+<li>MPEG1_L3 formatted files identified with the MIME type "audio/mpeg" (PAE only).
+</ul>
+</section>
+
+<section id='audio-description'><h4>Audio Description</h4>
+<p>If audio description is provided for the service, then the method to provide Audio Description SHALL be either the provision of a pre-mixed combination of audio description and the main audio as a suitably signalled HE-AAC stream or according to Annex E of [[!TS101154]]. In either case, either the HE-AAC, MPEG-1 Audio Layer II or Enhanced E-AC3 audio codec MAY be used (the latter two codecs only when supported).</p>
+<p>However, if the optional MPEG-1 Audio Layer II codec is supported, then the method for Audio Description defined in Annex E of [[!TS101154]] MAY be applied.</p>
+<p>If the service platform requires the deployment of any other of the optional audio codec for A/V services, then that optional codec MAY also be used to provide audio description as a pre-mixed combination of audio description and the main audio as a suitably signalled stream.</p>
+</section>
+<section id='audio-clean'><h4>Clean Audio</h4>
+<p>Clean Audio is a supplementary audio service that enhances the listening experience for the hearing impaired. If Clean Audio is provided for the IPTV service then it SHALL be provided as specified in [[!TS101154]] Annex E.4.</p>
+</section>
+
+<section id='audio-outputs'><h4>Audio output interfaces</h4>
+<p>For stereo output interfaces, 5.1 surround audio streams SHALL be down-mixed to stereo. </p>
+<p>For digital outputs (e.g. S/PDIF or HDMI) one of the following conversions MAY be used:</p>
+<ul>
+<li>Conversion of the received Enhanced AC-3 audio streams to AC-3 [[!AC3]]
+<li>Transcoding of the received HEAAC, HEAAC_MPS or MPEG1_L2_MPS audio streams to the AC3 [[!AC3]] or DTS-HD [[!DTS]] formats
+<li>Decoding of the received DTS, HEAAC, HEAAC_MPS or MPEG1_L2_MPS audio streams and output of PCM multi-channel over HDMI 
+</ul>
+</section>
+</section>
+</section>
+
+<section id='image-section'><h2>Still Pictures and Graphics</h2>
+<section id='image-formats'><h3>Formats</h3>
+<p>Still pictures and graphics content are used within both the Declarative (DAE) and the Procedural Application Environments (PAE).</p>
+<p>The usage of still pictures and graphics formats within declarative applications is specified in [[.OIPF_DAE2]]. The formats adopted in the DAE are defined in [[!CEA-2014-A]].</p>
+<p>The usage of still pictures and graphics formats within procedural applications is specified in [[.OIPF_PAE2]]. The formats adopted in the PAE are defined in [[!GEM]].</p>
+<p>The present volume just notes the labels applied to the used formats – JPEG [[!JFIF]], GIF [[!GIF]] and PNG [[!PNG]].</p>
+<section id='image-format-jpeg'><h4>JPEG</h4>
+<p>This format corresponds to the graphics format label JPEG.</p>
+<p>The mime type of "image/jpeg" SHALL be used for compliant JPEG images.</p>
+</section>
+<section id='image-format-gif'><h4>GIF</h4>
+<p>This format corresponds to the graphics format label GIF.</p>
+<p>The mime type of "image/gif" SHALL be used for compliant GIF images.</p>
+</section>
+<section id='image-format-png'><h4>PNG</h4>
+<p>This format corresponds to the graphics format label PNG.</p>
+<p>The mime type of "image/png" SHALL be used for compliant PNG images.</p>
+</section>
+</section>
+</section>
+
+
+</body>
+</html>

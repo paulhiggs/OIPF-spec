@@ -1,0 +1,21 @@
+
+
+p.inline-header {
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
+p.indent {
+	padding-left: 0.55cm;
+}
+
+tr.compliant {}
+tr.partial-compliant { background-color: rgba(255,255,0,0.3); }
+tr.not-compliant { background-color: rgba(255,255,0,0.3); }
+
+p.notebox {
+	border-style: solid;
+    border-spacing: 5px;
+	border-width: 1px;
+	padding: 5px;
+}

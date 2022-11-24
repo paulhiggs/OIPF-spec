@@ -1,0 +1,1630 @@
+<!DOCTYPE html>	
+<html lang="en" xml:lang="en">
+<head>
+<title>overwritten</title>
+	<script src='js/respec.js' class='remove'></script>
+	<script class='remove'>				
+		var respecConfig = {
+					 
+          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+          specStatus:           "OIPF-FINAL",
+
+		  OIPFrelease: "2",	
+		  OIPFversion: "2.3",
+		  OIPFvolume: "3",
+		  
+		  OIPFAppendixLabel: "Annex",
+          
+          // the specification's short name, as in http://www.w3.org/TR/short-name/
+          shortName:            "volume3",
+
+          // if your specification has a subtitle that goes below the main
+          // formal title, define it here
+		  title: "Content Metadata",
+          subtitle   :  "",
+
+          // if you wish the publication date to be other than today, set this
+          publishDate:  "2014-01-24",
+
+          // if the specification's copyright date is a range of years, specify
+          // the start date here:
+          //copyrightStart: "2005",
+		
+		  //additionalCopyrightHolders: "",
+		  
+		  overrideCopyright: " ",
+		  
+		  
+          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+          // and its maturity status
+          // previousPublishDate:  "1977-03-15",
+          // previousMaturity:  "WD",
+
+          // if there a publicly available Editor's Draft, this is the link
+          edDraftURI:           "",
+
+          // if this is a LCWD, uncomment and set the end of its review period
+          // lcEnd: "2009-08-05",
+
+
+
+          // editors, add as many as you like
+          // only "name" is required
+          editors:  [
+              { name: "Editor", url: "contact@oipf.tv",
+                company: "Open IPTV Forum", companyURL: "http://www.oipf.tv/" },
+          ],
+		  
+          // authors, add as many as you like. 
+          // This is optional, uncomment if you have authors as well as editors.
+          // only "name" is required. Same format as editors.
+
+          //authors:  [
+          //    { name: "Your Name", url: "http://example.org/",
+          //      company: "Your Company", companyURL: "http://example.com/" },
+          //],
+          
+          // name of the WG
+          wg:           "OIPF Solutions WG",
+          
+          // URI of the public WG page
+          wgURI:        "http://www.oipf.tv",
+          
+          // name (with the @w3c.org) of the public mailing to which comments are due
+          wgPublicList: "contact@oipf.tv",
+          
+          // URI of the patent status for this WG, for Rec-track documents
+          // !!!! IMPORTANT !!!!
+          // This is important for Rec-track documents, do not copy a patent URI from a random
+          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+          // Team Contact.
+          wgPatentURI:  "",
+          		  
+		  maxTocLevel:	3,
+		  
+				
+		  localBiblio: {
+			"SDNS":"DVB, BlueBook A86 (future ETSI TS 102 034 V1.5.1), \"Digital Video Broadcasting: Transport of MPEG-2 Based DVB Services over IP Based Networks\"",
+			"FCC":"DVB, Blue book A152 \"Server-based Fast Channel Change\", July 2010",
+			"TVA-UNID":"ETSI, TS 102 822-3-2 V1.6.1 (2012-07), \"Broadcast and On-line Services: Search, select and rightful use of content on personal storage systems (“TV-Anytime”); Part 3: Metadata; Sub-part 2: System aspects in a uni-directional environment\"",
+			"TVA":"ETSI, TS 102 822-3-1 V1.7.1 (2011-11), \"Broadcast and On-line Services: Search, select and rightful use of content on personal storage systems (“TV-Anytime”); Part 3: Metadata; Sub-part 1: Phase 1 - Metadata schemas\"",
+			"MPEG-7":"ISO/IEC 15938-5, \"Multimedia Content Description Interface - Part 5:Multimedia description schemes\", May 2003",
+			"TVA-BID":"ETSI, TS 102 822-6-1 V1.7.1 (2011-11), \"Broadcast and On-line Services: Search, select, and rightful use of content on personal storage systems (“TV-Anytime”); Part 6: Delivery of metadata over a bi-directional network; Sub-part 1: Service and transport\"",
+			"DVBSI":"ETSI, EN 300 468 V1.13.1 (2012-08), \"Digital Video Broadcasting: Specification for Service Information (SI) in DVB systems\"",
+			"DVBTRANS":"ETSI, TS 102 323 V1.2.1 (2005-11) \"Digital Video Broadcasting (DVB); Carriage and signalling of TV-Anytime information in DVB transport streams\"",
+			"DATACAST":"ETSI, TS 102 472 V1.2.1 (2006-12), \"Digital Video Broadcasting (DVB); IP Datacast over DVB-H: Content Delivery Protocols\"",
+			"IEC62455":"IEC, IEC 62455, \"Internet protocol (IP) and transport stream (TS) based service access\", June 2007",
+			"DVB-ID":"DVB Services (DVB-SI | CA_System_ID), <a href=\"http://www.dvbservices.com/identifiers/ca_system_id\" class=\"reference-link\">http://www.dvbservices.com/identifiers/ca_system_id</a>",
+		  },
+		};
+	</script>
+</head>
+<body>
+
+<section id="abstract">
+<p>This Technical Specification (TS) has been produced by the Open IPTV Forum.</p>
+<p>This specification provides multiple options for some features. The Open IPTV Forum Profiles specification complements the Release 2 specifications by defining the Open IPTV Forum implementation and deployment profiles. This document is Volume 3 in the 10 Volume set of specifications that define the Open IPTV Forum Release 2 Solution.</p>
+<p>The other Volumes in the set are: </p><ul>
+<li>Volume 1 – Overview [[.OIPF_OVIEW2]],
+<li>Volume 2 – Media Formats [[.OIPF_MEDIA2]],
+<li>Volume 2a – HTTP Adaptive Streaming [[.OIPF_HAS2]],
+<li>Volume 3 – Content Metadata (the present volume),
+<li>Volume 4 – Protocols [[.OIPF_PROT2]],
+<li>Volume 4a – Examples of Protocol Sequences [[.OIPF_PROT_EX2]],
+<li>Volume 5 – Declarative Application Environment [[.OIPF_DAE2]],
+<li>Volume 5a – Web Standards TV Profile [[.OIPF_WSTVP2]], 
+<li>Volume 6 – Procedural Application Environment [[.OIPF_PAE2]], and
+<li>Volume 7 – Authentication, Content Protection and Service Protection [[.OIPF_CSP2]].
+</ul>
+
+</section>
+
+<section id='references'>
+<h2>References</h2>
+</section>
+
+<section>
+<h2>Conventions and Terminology</h2>
+<section><h3>Conventions</h3>
+<p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [[RFC2119]]. </p>
+<p>All sections and appendixes, except "Introduction", are normative, unless they are explicitly indicated to be informative.</p>
+</section>
+<section><h3>Terminology</h3>
+<section><h4>Definitions</h4>
+
+<section><h5>Metadata</h5>
+<p>This clause describes the metadata associated with various Open IPTV Forum services.</p>
+<ul>
+<li><b>Linear TV metadata</b><br />Metadata that is associated with the content items provided in the Scheduled Content Service. In the Scheduled Content Service the content playout time is determined by the service provider.
+<li><b>CoD metadata</b><br />Metadata describing the attributes of content items available to the user on an on-demand nature. The CoD Metadata is typically organised as a catalog which may be presented in different perspectives such as alphabetical listing or grouped by genre.
+<li><b>Interactive Services metadata</b><br />Metadata describing interactive applications that may be available to the user.
+<li><b>Stored Content metadata</b><br />Metadata describing scheduled content items that have been recorded by the user and are available for playback either from network storage or local storage.
+<li><b>File Delivery metadata</b><br />Metadata describing a file delivery session over the unidirectional network.
+</ul>
+</section>
+<section><h5>Metadata Formats</h5>
+<p>The Open IPTV Forum metadata is based on two ETSI Standard specifications:</p>
+<ul>
+<li><b>Service Discovery and Selection (SD&amp;S)</b><br />SD&amp;S Metadata is a set of data related to the Service Discovery and Selection (SD&amp;S) mechanism as defined by [[!SDNS]]. This metadata allows the OITF to retrieve information to select Linear TV services (i.e. multicast address, channel name, package ...), BCG services (for linear TV or CoD) or other DVB services. For FCC/RET services, the appropriate SD&amp;S records are defined in [[!FCC]].
+<li><b>Broadband Content Guide (BCG)</b><br />The BCG is a set of data related to the description of Linear TV events and services, and/or CoD content as defined by [[!BCG]].
+</ul>
+
+</section>
+</section>
+<section><h4>Abbreviations</h4>
+<p>In addition to the Abbreviations provided in <a href="volume1.html#abbreviations" class="extRef">Volume 1</a>, the following abbreviations are used in this Volume.</p>
+<table class="definitions">
+<tr>
+<th>Acronym</th><th>Explanation</th>
+</tr>
+<tr><td>AV</td><td>Audio/Video</td></tr>
+<tr><td>CE-HTML</td><td>Consumer Equipment HTML</td></tr>
+<tr><td>CRID</td><td>Content Reference Identifier</td></tr>
+<tr><td>DVBSTP</td><td>DVB SD&amp;S Transport Protocol</td></tr>
+<tr><td>DVB</td><td>Digital Video Broadcast</td></tr>
+<tr><td>EIT</td><td>Event Information Table</td></tr>
+<tr><td>EIT P/F</td><td>EIT Present/Following</td></tr>
+<tr><td>FCC</td><td>Fast Channel Change</td></tr>
+<tr><td>FDT</td><td>File Delivery Table</td></tr>
+<tr><td>HNED</td><td>Home Network End Device</td></tr>
+<tr><td>IMI</td><td>Instance Metadata Identifier</td></tr>
+<tr><td>NG</td><td>Network Generated</td></tr>
+<tr><td>RET</td><td>Retransmission</td></tr>
+<tr><td>SDT</td><td>Service Description Table</td></tr>
+<tr><td>SOAP</td><td>Simple Object Access Protocol</td></tr>
+<tr><td>SPTS</td><td>Single Program Transport Stream</td></tr>
+<tr><td>SVG</td><td>Scalable Vector Graphics</td></tr>
+<tr><td>TS</td><td>Transport Stream</td></tr>
+<tr><td>XSD</td><td>XML Schema Definition</td></tr>
+</table>
+</section>
+</section>
+</section>
+
+<section id='metadata-content'>
+<h2>Metadata Content</h2>
+<p>This clause defines the Open IPTV Forum extensions to the SD&amp;S and BCG schemas and the AV classification schemes. Please refer to the SD&amp;S [[!SDNS]] and BCG [[!BCG]] specifications for the base schemas.</p>
+<section id="schema-extension-and-validation">
+<h3>Schema Extension and Validation</h3>
+<p>Open IPTV Forum metadata is in the form of instance document which is validated against a schema defined in this specification. The Open IPTV Forum XML schema is obtained by extending SD&amp;S [[!SDNS]] and BCG [[!BCG]] schemas.</p>
+<section id="metadata-extensibility">
+<h4>Metadata Extensibility</h4>
+<p>This specification provides schema descriptions of those elements and attributes that are extended from original schema defined in [[!SDNS]] for SD&amp;S or [[!BCG]] for BCG. The extension rule adopted in this specification follows the “forward compatibility” constraints specified for extending BCG Schema [[!TVA-UNID]].</p>
+</section>
+<section id="metadata-validation">
+<h4>Metadata Validation</h4>
+<p>No specific XSD validation tool is mentioned in [[!SDNS]] for SD&amp;S or [[!BCG]] for BCG. Content that is purported to conform to the extension specified in this specification must pass a validation test using any widely-accepted XSD validation engine. In cases where the narrative description of this specification conflicts with the extended schema, the narrative will be considered authoritative. A companion schema (.xsd) documents associated with this specification provides the consolidated XML schema definition of SD&amp;S and BCG metadata extended as the Open IPTV Forum metadata.</p>
+</section>
+</section>
+<section id="sdns-extensions">
+<h3>SD&amp;S (Service Discovery and Selection) Extensions</h3>
+<p>This clause describes the Open IPTV Forum extensions to the SD&amp;S schema described in [[!SDNS]] in conjunction with the generic application signalling defined in [[!TS102809]]. SD&amp;S records provide an XML-based description of Service Providers and their Services. They enable OITFs to discover and select appropriate services. In addition to [[!TS102809]], the Open IPTV Forum provides extensions which provide a means to signal web-based applications from within SD&amp;S records. There are also Open IPTV Forum extensions provided for</p><ul>
+<li>Bandwidth renegotiation,
+<li>Purchasing a Broadcast Service,
+<li>Indicating Container Format.
+</ul>
+<p>For FCC/RET, no extensions are required, but the definition of one SD&amp;S element is extended in order to indicate to the OITF to use the cookie signalling method for FCC/RET services, without breaking the interpretation of this SD&amp;S element for non-OIPF deployments.</p>
+<p>All schema extensions are described in Annex <a href="#sdns-schema-extension" class="sectionRef"></a>. For details of the original SD&amp;S schema, please see [[!SDNS]].</p>
+<section id="service-provider-discovery-extensions">
+<h4>Service Provider Discovery Extensions</h4>
+<p>Service Provider Discovery information contains information about Service Providers including references to the Service offerings as along with any OIPF specific services (e.g. emergency notification service) they provide. Further details of the Service Provider XML schema can be found in clause 5.2.13.7 of [[!SDNS]].</p>
+<p>The Service Provider Type is extended by Open IPTV Forum to signal the access information for the Emergency Notification service.</p>
+<p>The schema for the extension is provided in Annex <a href="#sdns-serviceprovidertype-schema" class="sectionRef"></a>.</p>
+<figure id="serviceprovidertype-schema-diagram">
+<img src="images/ServiceProviderType_Schema_Diagram.png"  alt="Figure 1" />
+<figcaption>Figure ####: Outline of Service Provider Record updates</figcaption>
+</figure>
+<section id="emergency-notification-service">
+<h5>Emergency Notification Service</h5>
+<p>EmergencyNotificationService contains SDP-based session description that the terminal needs in order to receive emergency notification message. Two methods are used to carry session information:</p><ul>
+<li>Inline: where the SDP file is inlined in the Service Provider XML document as element content. This is useful for situations where the contents of the SDP file are fixed.
+<li>Out of band: where the SDP file is delivered independently of the Service Provider XML document. This is useful for situations where the contents of the SDP file are not necessarily fixed. In this case, the SDP file can be delivered via unicast or multicast. 
+</ul>
+<p>For unicast, an URL is provided; for multicast, a SDPStream together with a SDPURI are provided.
+The schema for the extension is provided in Annex <a href="#sdns-emergencynotificationservice-schema" class="sectionRef"></a>. The following table provides a description of the parameters.</p>
+<table class="simple" id="EmergencyNotificationService-semantics">
+<caption>Table ####: Extract of EmergencyNotificationService Type Sementics</caption>
+
+<tr><th>Element / Attribute Name</th><th>Element / Attribute Description</th></tr>
+
+<tr><td><i>EmergencyNotificationService</i></td><td><i>A complex type to describe access information for emergency notification service of a specific Service Provider.</i></td></tr>
+<tr><td>SDPURL</td><td>An element specifying unicast location of SDP file describing the access information for Emergency Notification Service.</td></tr>
+<tr><td>inlineSDP</td><td>An element specifying embedding the SDP file describing the access information for Emergency Notification Service.</td></tr>
+<tr><td><i>SDPRef</i></td><td><i>A complex type to describe multicast location for the SDP of emergency notification service.</i></td></tr>
+<tr><td>SDPStream</td><td>An element specifying embedding the SDP file describing the access information of a multicast file delivery session.</td></tr>
+<tr><td>SDPURI</td><td>An element specifying URI of a SDP file.</td></tr>
+</table>
+<figure id="emergencynotificationservicetype-schema-diagram">
+<img src="images/EmergencyNotificationServiceType_Schema_Diagram.png" alt="Figure 2" />
+<figcaption>Figure ####: Emergency Notification structure</figcaption>
+</figure>
+
+</section>
+</section>
+
+<section id="service-discovery-extensions">
+<h4>Service Discovery Extensions</h4>
+<p>Service Discovery records provide descriptive information about and access details to the services (e.g. service name, service URL, etc.) offered by a service provider, for example, linear TV broadcasts or BCG(s).</p>
+<p>Three types of extension are defined by the Open IPTV Forum:</p><ul>
+<li>Bandwidth renegotiation
+<li>Purchasing broadcast services
+<li>Indicating Container Format
+</ul>
+
+<section id="bandwidth-renegotiation">
+<h5>Bandwidth Renogiation</h5>
+<p>The MaxBitrate element in the IPService Record of SD&amp;S [[!SDNS]] SHALL be provided in case of scheduled content services with SIP session management provided in managed networks relying on IMS. It is used during session initiation or session modification to ensure that the necessary bandwidth is available in the network.</p>
+
+<table class="simple" id="maxbitrate-in-bdr">
+<caption>Table ####: Extract of Broadcast Discovery Record Indicating MaxBitrate Extension</caption>
+<tr><th>Element / Attribute Name</th><th>Element / Attribute Description</th><th>Mandated/ Optional</th></tr>
+<tr><td><i>BroadcastOffering type:</i></td><td colspan="2"><i>/BroadcastDiscovery</i></td></tr>
+<tr><td style="padding-left:1cm"><i>IPService type (one entry per service):</i></td><td colspan="2"><i>/BroadcastDiscovery/ServiceList/SingleService</i></td></tr>
+<tr><td style="padding-left:2cm">MaxBitrate</td><td>Specifies the maximum bitrate of the overall stream carrying the service.</td><td>O</td></tr>
+</table>
+
+<p>The IPService Record of SD&amp;S [[!SDNS]] is extended for scheduled content services with SIP session management with an optional TimeToRenegotiate element that when present is used to determine when down-sizing of the reserved bandwidth for the content session is performed.</p>
+<p>See Annex <a href="#sdns-IPServiceType-schema" class="sectionRef"></a> for the IPServiceType schema extension.</p>
+<table class="simple" id="timetorenegotiate-in-bdr">
+<caption>Table ####: Extract of Broadcast Discovery Record Indicating TimeToRenegotiate Extension</caption>
+<tr><th>Element / Attribute Name</th><th>Element / Attribute Description</th><th>Mandated/ Optional</th></tr>
+<tr><td><i>BroadcastOffering type:</i></td><td colspan="2"><i>/BroadcastDiscovery</i></td></tr>
+<tr><td style="padding-left:1cm"><i>IPService type (one entry per service):</i></td><td colspan="2"><i>/BroadcastDiscovery/ServiceList/SingleService</i></td></tr>
+<tr><td style="padding-left:2cm">TimeToRenegotiate</td><td>This element provides the duration in seconds to be used in conjunction with MaxBitrate to determine when renegotiation of network bandwidth is to occur.</td><td>O</td></tr>
+</table>
+<p>Each service is represented by an IPService structure in the Broadcast Discovery Record. When the service is changed, typically through a user initiated channel change request, the TimeToRenegotiate value will be used for scheduled content services with SIP session management in conjunction with the MaxBitrate to determine how bandwidth re-negotiation will be performed.</p>
+<p>Note that at every channel change if there is a pending timeout for session modification due to a previous service change then it is cancelled. The OITF may initiate a new session modification as described below.</p>
+<p>The TimeToRenegotiate element SHOULD only be provided in an IPService structure representing a scheduled content service with SIP session management. When the TimeToRenegotiate element is provided with the IPService record then</p><ul>
+<li>If the MaxBitrate of the new service is greater than the reserved bandwidth, network bandwidth reservation using the MaxBitrate of the new service SHALL occur immediately to ensure sufficient bandwidth is made available for the new service.
+<li>If the MaxBitrate of the new service is equal to the reserved bandwidth, network bandwidth reservation procedures SHALL NOT be performed as sufficient bandwidth is already available for the new service.
+<li>If the MaxBitrate of the new service is less than the reserved bandwidth, network bandwidth reservation using the MaxBitrate of the new service SHALL occur after the period (in seconds) provided by the TimeToRenegotiate element of the new service.
+</ul>
+</section>
+<section id="purchasing-broadcast-services">
+<h5>Purchasing Broadcast Services</h5>
+<p>The IPService Record of SD&amp;S [[!SDNS]] is extended to include an optional PurchaseItem element. The PurchaseItem element allows conditions to be placed on the availability of purchased content.</p>
+<p>See Annex <a href="#sdns-IPServiceType-schema" class="sectionRef"></a> for the IPServiceType schema extension.</p>
+
+<table class="simple" id="purchaseitem-in-bdr">
+<caption>Table ####: Extract of Broadcast Discovery Record Indicating PurchaseItem Extension</caption>
+<thead><tr><th>Element / Attribute Name</th><th>Element / Attribute Description</th><th>Mandated/ Optional</th></tr></thead>
+<tr><td><i>BroadcastOffering type:</i></td><td colspan="2"><i>/BroadcastDiscovery</i></td></tr>
+<tr><td style="padding-left:1cm"><i>IPService type (one entry per service):</i></td><td colspan="2"><i>/BroadcastDiscovery/ServiceList/SingleService</i></td></tr>
+<tr><td style="padding-left:2cm">PurchaseItem</td><td>This element provides a means to purchase a service. This element has extended the tva:PurchaseItemType in order to include DRM control information.</td><td>O</td></tr>
+</table>
+<p>For further details about PurchaseItem type, refer to section 3.3.2 of this document.</p>
+
+
+</section>
+
+<section id="container-format-indication">
+<h5>Container Format Indication</h5>
+<p>The IPService Record of SD&amp;S [[!SDNS]] is extended to include an optional FileFormat element as defined in “AVAttributesType” defined in clause 6.3.5 of TV-Anytime specification [[!TVA]]. This element provides a means to indicate file format.</p>
+<p>See Annex <a href="#sdns-IPServiceType-schema" class="sectionRef"></a> for the IPServiceType schema extension.</p>
+<table class="simple" id="fileformat-in-bdr">
+<caption>Table ####: Extract of Broadcast Discovery Record Indicating FileFormat Extension</caption>
+<thead><tr><th>Element / Attribute Name</th><th>Element / Attribute Description</th><th>Mandated/ Optional</th></tr></thead>
+<tr><td><i>BroadcastOffering type:</i></td><td colspan="2"><i>/BroadcastDiscovery</i></td></tr>
+<tr><td style="padding-left:1cm"><i>IPService type (one entry per service):</i></td><td colspan="2"><i>/BroadcastDiscovery/ServiceList/SingleService</i></td></tr>
+<tr><td style="padding-left:2cm">FileFormat</td><td>This element provides a means to indicate file format.</td><td>O</td></tr>
+</table>
+<p>The FileFormat element SHALL be provided in case of scheduled content services with SIP session management provided in networks relying on IMS, to signal the use of SIP session management.</p>
+</section>
+
+<section id="fcc-ret-definition">
+<h5>FCC/RET Attribute Definition</h5>
+<p>The SD&amp;S FCC/RET attributes are defined in [[!FCC]].</p>
+<table class="simple" id="ret-and-fec-in-bdr">
+<caption>Table ####: Extract of Broadcast Discovery Record indicating redefined FCC/RET attributes</caption>
+<thead><tr><th>Element / Attribute Name</th><th>Element / Attribute Description</th><th>Mandated/ Optional</th></tr></thead>
+<tr><td><i>BroadcastOffering type:</i></td><td colspan="2"><i>/BroadcastDiscovery</i></td></tr>
+<tr><td style="padding-left:1cm"><i>IPService type (one entry per service):</i></td><td colspan="2"><i>/BroadcastDiscovery/ServiceList/SingleService/ServiceLocation/IPMulticastAddress/Server-based LMB Enhancement Service</i></td></tr>
+<tr><td style="padding-left:2cm">Retransmission_session@SourcePort</td><td>See below Open IPTV extended definition</td><td>O</td></tr>
+<tr><td style="padding-left:2cm">Retransmission_session@DestinationPort</td><td>See below Open IPTV extended definition</td><td>O</td></tr>
+</table>
+<p>The Retransmission_session@DestinationPort SD&amp;S attribute defined in [[!FCC]] shall be interpreted by an OITF as</p>
+<p style="text-align: center;">“UDP Destination Port of unicast RTP Retransmission session packets.”</p>
+<p>If the Retransmission_session@DestinationPort attribute is not present, AND neither is the Retransmission_session@SourcePort attribute, the destination port of unicast RTP Retransmission session packets matches the source port of the RTCP packets issued by the OITF for RTCP reporting in the primary/original multicast session.</p>
+<p>If the Retransmission_session@DestinationPort attribute is not present, but the Retransmission_session@SourcePort attribute is present, the destination port for the FCC/RET packets may be determined by means of an in-band RTCP port mapping request message exchange of the OITF with the FCC/RET server on the port Retransmission_session@SourcePort (using symmetrical RTP, with RTP and RTCP mixed on a single port).</p>
+<p>This means that when the OITF must operate according to the cookie signaling method, the Retransmission_session@DestinationPort attribute SHALL NOT be present, whereas the Retransmission_session@SourcePort attribute SHALL be present, with the latter indicating the destination port on which the OITF must issue its port mapping request message.</p>
+</section>
+</section>
+
+<section id="application-announcement-and-signalling">
+<h4>Application Announcement &amp; Signaling</h4>
+<p>This section describes how to signal applications with [[!TS102809]]. Two types of applications can be signalled; service provider related applications and broadcast related applications. Those two types of applications SHALL be signalled either at the phase of Service Provider Discovery or Service Discovery Record such as Broadcast Discovery Record, Package Discovery Record, and Application Discovery Record.</p>
+<p>In the Service Provider Discovery record, a service provider can only signal service provider related applications. However, in the service discovery phase, both service provider related applications and broadcast related applications can be signalled. The detailed description of how to signal is described in the following sections.</p>
+<p>The definition of XML schema for signalling applications is defined in [[!TS102809]].</p>
+
+<section id="service-provider-related-application-signalling">
+<h5>Service Provider Related Application Signalling</h5>
+<p>There are two approaches to signal service provider related applications. One approach is to use the AbstractService element at the Service Provider Discovery Record level. The other approach is to use the Application Discovery Record at the service discovery level.</p>
+<p>For signalling service provider related applications with the AbstractService element, the Service Provider Discovery Record SHALL embed applications information in the ApplicationList element defined in [[!TS102809]] where they are referred to as “unbound applications.”</p>
+<p>On the other hand, the Service Provider Discovery Record SHALL embed application reference id values in the ApplicationList element defined in [[!TS102809]] for signalling the broadcast independent applications with the Application Discovery Record. The actual information of applications SHALL be described in the Application Discovery Record. When OITF receives the Service Provider Discovery Record and the Application Discovery Record, OITF SHALL link the application reference id values in the Service Provider Discovery Record to the application identifier values in the Application Discovery Record.</p>
+<p>If a service provider wants to signal the below applications with these two approaches, the ApplicationUsage value defined in section <a href="#applicationusage-in-applicationusagedescriptor" class="sectionRef"></a> SHALL be used with the application location value defined in section <a href="#applicationspecificdescriptor-extensions" class="sectionRef"></a>.</p>
+<ul>
+<li>ServiceDiscovery Application – Application containing IPTV service discovery information like a service provider’s web portal page. In case of DAE application, this application can contain other service applications such as communication application or content guide application.
+<li>Communication Application – Application for communication service. In case of DAE application, this application enables communication service
+<li>EPG Application – Application for EPG service. In case of DAE application, this application can be either a grid-type epg application or a mosaic epg application.
+<li>VoD Application – Application for VoD service. VoD application can also include content information for downloadable contents.
+<li>Non-native HNI-IGI Application – Application that implements the HNI-IGI interface functionality via a DAE application.
+</ul>
+</section>
+
+<section id="broadcast-related-application-signalling">
+<h5>Broadcast Related Application Signalling</h5>
+<p>There are two approaches to signal broadcast related applications. One approach is to use either the extended IPService element in the Broadcast Discovery Record or the extended Package element in the Package Discovery Record. The other approach is to use the Application Discovery Record at the service discovery level. Broadcast related applications SHALL NOT be signalled with the Service Provider Discovery Record.</p>
+<p>For signalling broadcast related applications with the extended IPService and Package elements, the Broadcast Discovery Record and the Package Discovery Record SHALL embed applications information in the ApplicationList element defined in [[!TS102809]] where they are referred to as “Service bound application.” The extended IPService and Package element are defined in [[!TS102809]].</p>
+<p>When broadcast related applications are signalled with the Application Discovery Record, the extended IPService element in the Broadcast Discovery Record and the extended Package element in the Package Discovery Record SHALL embed application reference id values in the ApplicationList element defined in [[!TS102809]]. The actual information about applications SHALL be contained in the Application Discovery Record. When OITF receives the application reference id values in the extended IPService or Package element, the OITF SHALL link the application reference id values in the extended IPService and Package elements to the application identifier values in the Application Discovery Record.</p>
+<p>If a service provider wants to signal the below broadcast related applications with these two approaches, the ApplicationUsage value defined in section <a href="#applicationusage-in-applicationusagedescriptor" class="sectionRef"></a> SHALL be used with the application location value defined in section <a href="#applicationspecificdescriptor-extensions" class="sectionRef"></a>.</p><ul>
+<li>Communication Application – Application for communication service. In case of DAE application, this application enables communication service
+<li>EPG Application – Application for EPG service. In case of DAE application, this application can be either a grid-type epg application or a mosaic epg application.
+<li>VoD Application – Application for VoD service. VoD application can also include content information for downloadable contents.
+<li>NG Notification – Application for NG notification service.
+</ul>
+</section>
+
+<section id="platform-specific-definitions">
+<h5>Platform Specific Definitions</h5>
+<p>ETSI TS 102 809 [[!TS102809]] requires this specification to provide the following platform specific definitions: application types, application profiling, profile versioning, and the graphic formats used for application icons. These properties are contained in the Application descriptor.</p>
+
+<section id="type-element-of-applicationdescriptor">
+<h6>Type Element of ApplicationDescriptor</h6>
+<p>The type element of the application descriptor defines the actual application environment that is used by the application [[!TS102809]]. The MIME type of the application is carried in the OtherApp element of the type element and takes one of the following values:</p><ul>
+<li>for DAE CE-HTML applications this value SHALL be "<code>application/vnd.oipf.dae.xhtml+xml</code>"
+<li>for DAE SVG applications this value shall "<code>application/vnd.oipf.dae.svg+xml</code>"
+<li>for PAE applications this value SHALL be "<code>application/vnd.oipf.pae.gem</code>"
+</ul>
+</section>
+
+<section id="mhpversion-element-of-applicationdescriptor">
+<h6>mhpVersion Element of ApplicationDescriptor</h6>
+<p>The mhpVersion element defines the actual profile and profile version of the platform which is required to run an application. If the mhpVersion element is used in the ApplicationDescriptor [[!TS102809]], the below values SHALL be set.</p><ul>
+<li>profile: as specified in the OIPF Profiles Specification
+<li>versionMajor: 2
+<li>versionMinor: 3
+<li>versionMicro: 0
+</ul>
+<p>Note that the name mhpVersion is historic.</p>
+</section>
+
+<section id="applicationusage-in-applicationusagedescriptor">
+<h6>Specific ApplicationUsage Element of ApplicationUsageDescriptor</h6>
+<p>OIPF defines specific application usages for ServiceDiscovery, Communication and ContentGuide applications. This is signalled using the ApplicationUsageDescriptor as defined in [[!TS102809]]. If the ApplicationUsage element is used in the ApplicationDescriptor, it SHALL be set to one of the following values:</p><ul>
+<li>A Service Discovery application SHALL be signalled with a value of "<code>urn:oipf:cs:ApplicationUsageCS:2010:servicediscovery</code>".
+<li>A Communication application SHALL be signalled with a value of "<code>urn:oipf:cs:ApplicationUsageCS:2010:communication</code>".
+<li>An EPG application SHALL be signalled with a value of "<code>urn:oipf:cs:ApplicationUsageCS:2010:epg</code>".
+<li>A VoD application SHALL be signalled with a value of "<code>urn:oipf:cs:ApplicationUsageCS:2010:vod</code>".
+<li>An HNI-IGI application SHALL be signalled with a value of "<code>urn:oipf:cs:ApplicationUsageCS:2010:hni-igi</code>".
+<li>An NG Notification application SHALL be signalled with a value of "<code>urn:oipf:cs:ApplicationUsageCS:2010:ngnotification</code>".
+</ul>
+<p>The ApplicationUsageCS can be found in Annex <a href="#classification-schemes-extension" class="sectionRef"></a>.</p>
+</section>
+
+<section id="graphic-format-for-application-icons">
+<h6>Graphic Format for Application Icons</h6>
+<p>The graphic formats used for application icons are defined in [[!OIPF_MEDIA2]].</p>
+</section>
+
+<section id="application-extensions">
+<h6>Application Extensions</h6>
+<p>In addition to the transport protocols defined in [[!TS102809]], OIPF defines a multicast transport method using FLUTE. In order to signal this transport method the Application element of [[!TS102809]] is extended by the FLUTESessionDescriptor. The schema extension of the Application element and the definition of the FLUTESessionDescriptor can be found in Annex <a href="#sdns-FLUTESessionDescriptor-schema" class="sectionRef"></a>.</p>
+</section>
+
+<section id="applicationspecificdescriptor-extensions">
+<h6>ApplicationSpecificDescriptor Extensions</h6>
+<p>The applicationSpecificDescriptor [[!TS102809]] SHALL be used in order to signal the application location with following extension.</p><ul>
+<li>DAE applications [[!OIPF_DAE2]] SHALL be signalled using the SimpleApplicationLocationDescriptorType from [[!TS102809]].
+<li>PAE applications [[!OIPF_PAE2]] SHALL be signalled using the DVBJDescriptor defined in [[!GEM]].
+</ul>
+</section>
+</section>
+
+</section>
+
+</section>
+
+<section id="bcg-extensions">
+<h3>BCG (Broadband Content guide) Extensions</h3>
+<p>BCG metadata instance SHALL conform to the profile of options that are either mandatory, optional or not used, as defined in BCG [[!BCG]]. This section describes extended elements and classification scheme to be applied for Open IPTV Forum services. It provides descriptions, structural diagrams and semantics definitions of elements and attributes that extend their original BCG counterparts. The Open IPTV Forum extended XML schema is defined in the Annex <a href="#bcg-schema-extension" class="sectionRef"></a> and Open IPTV Forum classification scheme definitions are defined in Annex <a href="#classification-schemes-extension" class="sectionRef"></a>.</p>
+<section id="signalling-and-media-transport-protocol-extension">
+<h4>Signalling and Media Transport Protocol Extension</h4>
+<section>
+<h5>OnDemandProgramType Extension</h5>
+<p>Content on Demand can be delivered in Open IPTV Forum using a combination of different signalling and media transport protocols. Information about the protocols used MAY be signalled in the OnDemandProgramType using the following extension.</p>
+<table class="simple" id="protocol-in-ondemandprogram">
+<caption>Table ####: Extract of OnDemandProgram Type Indicating Protocol Type Extension</caption>
+<thead><tr><th>Element / Attribute Name</th><th>Element / Attribute Description</th></tr></thead>
+<tr><td><i>OnDemandProgramType</i></td><td><i>A complex type derived from ProgramLocationType used to describe instances that can be acquired on demand (as opposed to broadcast).</i></td></tr>
+<tr><td style="padding-left:1cm">Protocol</td><td>An element specifying the protocol for content item delivery. This element refers to the term defined in Protocol Classification Scheme, defined in Annex <a href="#protocolCS" class="sectionRef"></a></td></tr>
+</table>
+<p>Extended OnDemandProgramType, defined in Annex <a href="#bcg-ondemandprogramtype-schema" class="sectionRef"></a>, has the following structure:</p>
+<figure>
+<img alt="Figure 3" src="images/OnDemandProgramType_Extension_Schema_Diagram.png" />
+<figcaption>Figure ####: OnDemandProgramType Extension for the protocol element</figcaption>
+</figure>
+
+</section>
+
+<section id="extension-for-notification-information-table">
+<h5>Extension for Notification Information Table</h5>
+<p>The Service Information Type from [[!BCG]] is extended by Open IPTV Forum to define the Notification Information Table for use by the Network Generated Notification service and User Notification service.</p>
+<p>The Notification Information Table SHALL be carried in BCG as a new table under “ProgramDescription”, as depicted in Figure <a href="#programdescriptiontype-for-notification" class="figureRef"></a>. Program description and schedule event description for notification service SHALL refer to the notification service fragment by “serviceIDRef”. The schema and semantics for notification program description and notification schedule event description SHALL be the same as those for scheduled content service.</p>
+<figure id="programdescriptiontype-for-notification">
+<img alt="Figure 4a" src="images/ProgramDescriptionType_notification-part1.png" />
+<img alt="Figure 4b" src="images/ProgramDescriptionType_notification-part2.png" />
+<figcaption>Figure ####: ProgramDescriptionType Extension for the notification information</figcaption>
+</figure>
+</section>
+
+<section id="elements-in-relatedmaterialtype">
+<h5>Definition of Elements in RelatedMaterialType</h5>
+<p>The elements of the TV-Anytime RelatedMaterialType are used by the Open IPTV Forum to indicate the relationship between scheduled content and the related notification service, as described in the following table.</p>
+<table class="simple" id="use-of-relatedmaterialtype">
+<caption>Table ####: Use of elements from RelatedMaterialType</caption>
+<thead><tr><th>Element</th><th>Semantics</th></tr></thead>
+<tr><td>HowRelated</td><td>Specifies the nature of the relationship between the described fragment and the related media assets. The value of this field can use the terms available in the classification scheme urn:tva:metadata:cs:HowRelatedCS:2007. In particular, term 24 “IsPartOf” SHALL be used to indicate the main service of the described notification service.</td></tr>
+<tr><td>MediaLocator</td><td>Specifies the location of the media asset. Defined as an MPEG-7 datatype, MediaLocatorType (see clause 6.5.2 of ISO/IEC 15938-5 [[!MPEG-7]] for a detailed description).<br />
+When the HowRelated takes the term 24, it specifies the ID of the referred Service or ScheduleEvent of a regular service.</td></tr>
+<tr><td>PromotionalText</td><td>Specifies promotional information about the link, which can be used as an additional attractor (e.g. record "Pride and Prejudice" series).</td></tr>
+<tr><td>PromotionalMedia</td><td>Specifies non-text promotional information such as a logo.</td></tr>
+</table>
+</section>
+
+</section>
+<!-- -->
+<section id="drm-control-information-extension">
+<h4>DRM Control Information Extension</h4>
+<section id="purchaseitemtype-extension">
+<h5>PurchaseItemType Extension</h5>
+<p>The BCG is extended to hold the elements used as DRM control parameters. The PurchaseItemType as defined in clause 6.3.4 of TV-Anytime specification [[!TVA]] is extended by the following DRMControlInformation schema to signal those parameters. The usage of those parameters is described in volume 7 [[!OIPF_CSP2]].</p>
+<p>The existing DRMDeclaration element in the BCG SHALL NOT be used in Open IPTV Forum services.</p>
+
+<table class="simple" id="drmcontrolinformation-type">
+<caption>Table ####: DRMControlInformation Type Semantics</caption>
+<thead><tr><th>Element / Attribute Name</th><th>Element / Attribute Description</th></tr></thead>
+<tr><td colspan="2">DRMControlInformation</td></tr>
+<tr><td style="padding-left:1cm">DRMSystemID</td><td>URN with the DVB CA System ID (16 bit number) in there or URN described in <a href="volume7.html#tca-drmsystemid" class="extRef">section 4.1.7.1</a> of [[!OIPF_CSP2]]. Allocations of the DVB CA System ID value of this field are found in [[!DVB-ID]]. DRMSystemID with the DVB CA System ID shall be signalled by prefixing the decimal number format of CA_System_ID with "urn:dvb:casystemid:". For example, hexadecimal 0x4AF4 is assigned as CA_System_ID for “Marlin” by DVB, “Marlin” DRMSystemID is encoded as “urn:dvb:casystemid:19188”. Note that the decimal number format of CA_System_ID SHALL not have leading zeroes.</td></tr>
+<tr><td style="padding-left:1cm">DRMContentID</td><td>DRM Content ID for CoD or scheduled content item, e.g. the Marlin Content ID</td></tr>
+<tr><td style="padding-left:1cm">RightsIssuerURL</td><td>A URL used by OITF to obtain rights for this content item</td></tr>
+<tr><td style="padding-left:1cm">SilentRightsURL</td><td>A URL used by OITF to obtain rights silently, e.g. a Marlin Action Token.</td></tr>
+<tr><td style="padding-left:1cm">PreviewRightsURL</td><td>A URL used by OITF to obtain rights silently for preview of this content item, e.g. a Marlin Action Token.</td></tr>
+<tr><td style="padding-left:1cm">DoNotRecord</td><td>A flag indicates this content item is recordable or not. True means this content is not recordable.</td></tr>
+<tr><td style="padding-left:1cm">DoNotTimeShift</td><td>A flag indicates this content item is allowed for time shift play back. True means time shift playback is not allowed.</td></tr>
+<tr><td style="padding-left:1cm">DRMGenericData</td><td>Placeholder for generic data that is applicable to all DRM schemes to be applied for this content item.</td></tr>
+<tr><td style="padding-left:1cm">DRMPrivateData</td><td>Private data for the DRM scheme indicated in DRMSystemID to be applied for this content item. This structure can be substituted by DRM system specific structure.</td></tr>
+</table>
+<p>The extended PurchaseItemType, defined in Annex <a href="#bcg-purchaseitemtype-schema" class="sectionRef"></a>, has the following structure.</p>
+<figure>
+<img alt="Figure 5" src="images/PurchaseItemTypeExtension_DRMControlInformation.png" style="width:90%" />
+<figcaption>Figure ####: PurchaseItemType extension for the DRMControlInformation</figcaption>
+</figure>
+</section>
+</section>
+
+<section id="oipf-classification-schemes">
+<h4>Open IPTV Forum Classification Schemes</h4>
+<p>The following classification schemes wholly replace the BCG equivalent classification schemes.</p>
+<section id="videocodingformat-cs">
+<h5>VideoCodingFormat Classification Scheme</h5>
+<p>The element “coding” in “VideoAttributesType” defined in clause 6.3.5 of TV-Anytime specification [[!TVA]] shall refer to the terms listed in VisualCodingFormatCS (Annex <a href="#visualcodingformatCS" class="sectionRef"></a>) of this specification.</p>
+</section>
+<section id="audiocodingformat-cs">
+<h5>AudioCodingFormat Classification Scheme</h5>
+<p>The element “coding” in “AudioAttributesType” defined in clause 6.3.5 of TV-Anytime specification [[!TVA]] shall refer to the terms listed in AudioCodingFormatCS (Annex <a href="#avmediaformatCS" class="sectionRef"></a>) of this specification.</p>
+</section>
+<section id="avmediaformat-cs">
+<h5>AVMediaFormat Classification Scheme</h5>
+<p>The element “FileFormat” in “AVAttributesType” defined in clause 6.3.5 of TV-Anytime specification [[!TVA]] shall refer to the terms listed in AVMediaFormatCS (Annex <a href="#avmediaformatCS" class="sectionRef"></a>) of this specification.</p>
+</section>
+<section id="protocol-cs">
+<h5>Protocol Classification Scheme</h5>
+<p>The element “Protocol” in “OnDemandProgramType” defined in clause <a href="#signalling-and-media-transport-protocol-extension" class="sectionRef"></a> of this specification shall refer to the terms listed in ProtocolCS (Annex <a href="#protocolCS" class="sectionRef"></a>).</p>
+</section>
+<section id="parentalrating-cs">
+<h5>Reference to Parental Guidance Classification Scheme</h5>
+<p>The element “ParentalGuidance” in “BasicContentDescriptionType” defined in TV-Anytime specification [[!TVA]] clause 6.3.4 shall refer to the terms referred by the description for “ParentalGuidance” and also the terms listed in GermanyFSKCS (Annex <a href="#germanyfskCS" class="sectionRef"></a>).</p>
+</section>
+</section>
+
+<section id="program-information-extension">
+<h4>Program Information Extension</h4>
+<p>The ProgramInformationType as defined in clause 6.3.6 of TV-Anytime specification [[!TVA]] is extended to indicate the availability of bookmarking for content.</p>
+<table class="simple" id="donotblock-in-program-information">
+<caption>Table ####: Use of DoNotBookmark element in Program Information</caption>
+<thead><tr><th>Element / Attribute Name</th><th>Element / Attribute Description</th></tr></thead>
+<tr><td><i>ProgramInformationType</i></td><td><i>A complex type that describes a programme</i></td></tr>
+<tr><td>DoNotBookmark</td><td>A flag indicating if this content item is allowed for bookmarking or not. True means bookmarking is not allowed.</td></tr>
+</table>
+</section>
+<section id="service-information-extension">
+<h4>Service Information Extension</h4>
+<p>The ServiceInformationType as defined in clause 6.4.3 of TV-Anytime specification [[!TVA]] is extended to indicate the availability of bookmarking for all programs of a service. When it conflicts with program level indication, then program level indication has higher priority.</p>
+<table class="simple" id="donotbookmark-in-service-information">
+<caption>Table ####: Use of DoNotBookmark element in Service Information</caption>
+<thead><tr><th>Element / Attribute Name</th><th>Element / Attribute Description</th></tr></thead>
+<tr><td><i>ServiceInformationType</i></td><td><i>A complex type that describes a service</i></td></tr>
+<tr><td>DoNotBookmark</td><td>A flag indicating if content items delivered in this service are allowed for bookmarking or not. True means bookmarking is not allowed.</td></tr>
+</table>
+</section>
+</section>
+</section>
+
+<!-- 4 -->
+<section id="metadata-control-and-delivery">
+<h2>Metadata Control and Delivery</h2>
+<p>This clause explains how to deliver metadata to the client and how the client may handle it, including how to manage metadata updates.</p>
+<section id="metadata-delivery-mechanism">
+<h3>Metadata Delivery Mechanism</h3>
+<p>This clause explains how SD&amp;S and BCG XML metadata is carried over the network.</p>
+<p>Delivery of SD&amp;S and BCG metadata SHALL be as described in the respective SD&amp;S [[!SDNS]] and BCG [[!BCG]] specifications, with the following extensions.</p>
+<section id="carriage-of-sdns-metadata">
+<h4>Carriage of SD&amp;S metadata</h4>
+<p>This clause specifies the protocols that are used to deliver SD&amp;S metadata information for multicast and unicast. For the delivery over multicast, the DVBSTP protocol SHALL be used as defined in clause 5.4.1 of SD&amp;S [[!SDNS]]. For unicast delivery, the HTTP protocol SHALL be used as defined in clause 5.4.2 of SD&amp;S [[!SDNS]].</p>
+<section id="encoding-sdns-metadata">
+<h5>Encoding SD&amp;S metadata</h5>
+<p>Encoding SD&amp;S metadata MAY be supported as described in clause 5.5 of SD&amp;S [[!SDNS]].</p>
+</section>
+<section id="update-mechanism-for-sdns">
+<h5>Update mechanism for SD&amp;S</h5>
+<p>The Update mechanism SHALL be supported as described in clause 5.4.3 of SD&amp;S [[!SDNS]].</p>
+</section>
+</section>
+
+<section id="carriage-of-bcg-metadata">
+<h4>Carriage of BCG metadata</h4>
+<p>BCG metadata has two different transport means to carry BCG metadata: Container Based delivery, and Text Based delivery based on Query mechanism.</p>
+<p>Container based delivery of BCG metadata SHALL conform to clause 4.1 of [[!BCG]].</p>
+<p>The OITF MAY support the SOAP Query mechanism for text-based delivery.</p>
+<section>
+<h5>Container based delivery</h5>
+<p>This clause specifies the protocols that are used to deliver BCG metadata information for multicast and unicast. For the delivery over the multicast, the DVBSTP protocol SHALL be used as defined in clause 4.1.2.2.1 of BCG [[!BCG]]. For unicast delivery, the HTTP protocol SHALL be used as defined in clause 4.1.2.2.2 of BCG [[!BCG]].</p>
+<section>
+<h6>Encoding BCG metadata</h6>
+<p>Encoding BCG metadata MAY be supported as described in BCG [[!BCG]]. BCG metadata can also be delivered without encoding.</p>
+</section>
+<section>
+<h6>Update mechanism for BCG</h6>
+<p>The lifecycle of delivered metadata is managed through a fragment updating method. The instance is identified through individual fragment id and its versioning is managed by fragment version. The details of update management and the unit of fragment are described in TV-Anytime specification [[!TVA-UNID]]. OITF client is able to detect the changes of fragment version through the method described in clause 5.4.3 of SD&amp;S [[!SDNS]].</p>
+</section>
+</section>
+<section id="SOAP-query-mechanism">
+<h5>SOAP Query Mechanism</h5>
+<p>The query mechanism for metadata acquisition is described in this clause. It SHALL be implemented according to clause 4.2 of BCG [[!BCG]].</p>
+<p>As indicated in Table 4 of BCG [[!BCG]], the mandatory SOAP methods (described in TV-Anytime specification [[!TVA-BID]]) SHALL be:</p>
+<table class="simple" id="methods-of-soap">
+<caption>Table ####: Methods of SOAP</caption>
+<thead><tr><th>Method</th><th>Service Provider</th><th>HNED</th></tr></thead>
+<tr><td>get_Data</td><td>M</td><td>M</td></tr>
+<tr><td>describe_Get_Data</td><td>M</td><td>M</td></tr>
+</table>
+<p>The following clauses outline each of these methods. The TV-Anytime specification [[!TVA-BID]] should be referred to for more detailed guidelines.</p>
+<p>In all examples the SOAP and HTTP wrappers are omitted for clarity.</p>
+<section>
+<h6>get_Data (informative)</h6>
+<p>The get_Data method allows a client to query a server in order to retrieve BCG data for a set of programmes or programme groups. The flexibility of the query syntax enables simple or complex queries to best restrict the set and size of the metadata response. For example, a simple query could request program information for a specific content identifier or program title. Alternatively, more powerful queries can be generated by combining these simple queries, for example, to create an EPG a request can be made for all program and schedule information across a range of services between specific dates. Content resolution can also be performed using the same method to retrieve content referencing information for one or more content identifiers.</p>
+<p>Optional parameters are available to limit the number of results (e.g. 10 results) and to sort them (e.g., sort alphabetically by title). Support for these features is optional on the server and indicated to the client in a describe_Get_Data response (see Example 4 in clause <a href="#describe_get_data-example" class="sectionRef"></a>).</p>
+<p>The query mechanism is fully defined in clause 5.1 of TV-Anytime specification [[!TVA-BID]], with many examples of potential requests given in Annex C of TV-Anytime specification [[!TVA-BID]].</p>
+<p>The following is an example client get_Data request for the program information of all programs with a title equal to “News”:</p>
+<div class="example">
+<pre>
+&lt;get_Data xmlns="urn:tva:transport:2007" ...&gt;
+  &lt;QueryConstraints&gt;
+    &lt;BinaryPredicate fieldID="tvaf:Title" fieldValue="News"/&gt;
+  &lt;/QueryConstraints&gt;
+  &lt;RequestedTables&gt;
+    &lt;Table type="ProgramInformationTable"/&gt;
+  &lt;/RequestedTables&gt;
+&lt;/get_Data&gt;
+</pre>
+<div class="caption">Example 1: Client get_Data request [[!TVA-BID]]</div>
+</div>
+<p>And the Server’s response to this request:</p>
+<div class="example">
+<pre>
+&lt;get_Data_Result serviceVersion="1" xmlns="urn:tva:transport:2007"...&gt;
+  &lt;TVAMain&gt;
+    &lt;ProgramDescription&gt;
+      &lt;ProgramInformationTable&gt;
+        &lt;ProgramInformation programId="CRID://www.broadcaster.com/News1"&gt;
+          &lt;BasicDescription&gt;
+            &lt;Title&gt;News&lt;/Title&gt;
+            &lt;Genre href="urn:tva:metadata:cs:ContentCS:2007" type="main"&gt;
+              &lt;Name&gt;News&lt;/Name&gt;
+            &lt;/Genre&gt;
+          &lt;/BasicDescription&gt;
+        &lt;/ProgramInformation&gt;
+        &lt;ProgramInformation programId="CRID://www.broadcaster.com/News2"&gt;
+          &lt;BasicDescription&gt;
+            &lt;Title&gt;News&lt;/Title&gt;
+            &lt;Genre href="urn:tva:metadata:cs:ContentCS:2007" type="main"&gt;
+              &lt;Name&gt;News&lt;/Name&gt;
+            &lt;/Genre&gt;
+          &lt;/BasicDescription&gt;
+        &lt;/ProgramInformation&gt;
+      &lt;/ProgramInformationTable&gt;
+    &lt;/ProgramDescription&gt;
+  &lt;/TVAMain&gt;
+&lt;/get_Data_Result&gt;
+</pre>
+<div class="caption">Example 2: Server response to get_Data request [[!TVA-BID]]</div>
+</div>
+</section>
+<section id="describe_get_data-example">
+<h6>describe_Get_Data (informative)</h6>
+<p>The describe_Get_Data method provides a client with information concerning the server’s capabilities in terms of get_Data requests. For example, it will specify the metadata tables available to be queried, possibly also listing the particular fields that can be searched or sorted on.</p>
+<p>The following example is a request for the Server’s get_Data capabilities:</p>
+<div class="example">
+<pre>
+&lt;describe_Get_Data xmlns="urn:tva:transport:2007"/&gt;
+</pre>
+<div class="caption">Example 3: Client describe_Get_Data request [[!TVA-BID]]</div>
+</div>
+<p>The response (shown below) provides a description of the BCG provider along with its capabilities, such as supported domains, table types, specific fields that can be queried and sorted, and for which Services it provides metadata:</p>
+<div class="example">
+<pre>
+&lt;describe_get_Data_Result serviceVersion="1" xmlns="urn:tva:transport:2007"
+    xlmns:tva="urn:tva:metadata:2007"
+    ulmns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;Name&gt;Metadata Service&lt;/Name&gt;
+  &lt;Description&gt;A Metadata Service&lt;/Description&gt;
+  &lt;AuthorityList&gt;
+    &lt;Authority&gt;broadcaster.com&lt;/Authority&gt;
+  &lt;/AuthorityList&gt;
+  &lt;AvailableTables xmlns:tvaf="urn:tva:transport:fieldIDs:2007"&gt;
+    &lt;Table xsi:type="ProgramInformationTable"
+      canQuery="tvaf:CRID tvaf:Synopsis tvaf:KeyWord tvaf:Genre"/&gt;
+    &lt;Table xsi:type="ServiceInformationTable"
+      canQuery="tvaf:serviceID tvaf:Name tvaf:ServiceURL"/&gt;
+    &lt;Table xsi:type="ProgramLocationTable"
+        canQuery="tvaf:ServiceURL tvaf:PublishedTime"
+        canSort="tvaf:ServiceURL tvaf:PublishedTime"&gt;
+      &lt;AvailableLocations&gt;
+        &lt;Availability&gt;P7D&lt;/Availability&gt;
+        &lt;ServiceURL&gt;dvb://2.7d1.13&lt;/ServiceURL&gt;
+        &lt;ServiceURL&gt;dvb://2.7d1.14&lt;/ServiceURL&gt;
+      &lt;/AvailableLocations&gt;
+    &lt;/Table&gt;
+  &lt;/AvailableTables&gt;
+&lt;/describe_get_Data_Result&gt;
+</pre>
+<div class="caption">Example 4: Server’s describe_Get_Data Response [[!TVA-BID]]</div>
+</div>
+</section>
+<section>
+<h6>SOAP Update mechanism for BCG</h6>
+<p>The overall BCG XML document MAY have a version number associated with it. In addition, the BCG fragments MAY have an ID and version number associated with them, allowing the client to request fragment updates using the SOAP Query mechanism [[!TVA-BID]]. Server support for fragment updates is indicated through the server’s describe_Get_Data capabilities. See clause 5.1.2.4 of TV-Anytime [[!TVA-BID]] for further details.</p>
+</section>
+</section>
+
+</section>
+<section id="event-information-tables">
+<h4>Event Information Tables (EIT)</h4>
+<p>This section is related to the extension of TS Optional SI profile with EIT p/f (without SDT). The scope of this section is to allow an OITF to retrieve metadata embedded in a DVB Transport Stream.</p>
+<p>A unicast mechanism for metadata retrieval can provoke server overload when a large number of OITFs try to access the same information at the same time (i.e. request information for an event during frequent channel changes). As EITs are synchronized with the content at TV head end level, EIT allows the OITF to have up-to-date information even if the content changes at the last minute or is longer than originally defined (e.g., prolongation in a football match) without any request to a server. The information contained in EIT can be used, for example, to show the title and duration of an item of content in a zapper application.</p>
+<p>For IPTV services, if the OITF is able to use EIT embedded in a DVB Transport Stream, then the following section applies. This section is restricted to DVB world and is only applicable for MPEG-2 Transport Streams.</p>
+<p>The EIT p/f contains metadata concerning events such as event name, start time, duration, etc. These metadata related to a piece of contents should be transported and synchronized directly into the transport stream using the EITs tables as describe in DVB-SI specification [[!DVBSI]].</p>
+<p>For Open IPTV Forum, EIT information is restricted to the following two main types of table:</p><ul>
+<li>actual TS, present/following event information = table_id = "0x4E";
+<li>other TS, present/following event information = table_id = "0x4F";
+</ul>
+<p>The schedule informations table_id = "0x5F" and "0x6F" are not in the scope of this specification.</p>
+<section id="link-eit-with-sdns-without-sdt">
+<h5>How to link EIT p/f with SD&amp;S without SDT</h5>
+<p>As there is no SDT in the MPEG-2 TS optional SI profile, the EIT p/f information is linked to the content using the "DVBTriplet" present in the SD&amp;S information with the Original Network Id, TS Id, Service Id present in the EITs.</p>
+<table class="simple" id="dvbtriplet-explanation">
+<caption>Table ####: DVBTriplet ID Explanation</caption>
+<tr><td>DVBTriplet@Original Network Id</td><td>Identifies the network Id of the originating delivery system</td><td>M</td></tr>
+<tr><td>DVBTriplet@TS Id</td><td>Identifies the Transport Stream</td><td>M</td></tr>
+<tr><td>DVBTriplet@Service Id</td><td>Identifies a service from any other service within the TS. The service Id is the same as the program number in the corresponding program map table.</td><td>M</td></tr>
+</table>
+</section>
+<section id="optimize-transport-of-eit">
+<h5>How to optimize the transport of EIT p/f (informative)</h5>
+<p>This section is an informative part that provides guidance in order to optimize the transport of EIT p/f actual/other tables over IP in MPEG-2 TS.</p>
+<p>In this specification the usage of EIT p/f Actual TS and Other TS can be optimized to give the Open IPTV Forum user a better user experience. To achieve this goal, the cycle time of the EIT p/f actual TS can be reduced to 1second and a Service Provider may also choose to send more than one EIT p/f Actual table by SPTS.</p>
+<p>Sending more than one EIT p/f Actuals tables allows the Service Provider to send a set of metadata related to some channels that are frequently used, at a quick cycle time (e.g. 1 or 2 second). For other channels that are less frequently viewed EIT p/f can be sent at a lower cycle time by using the EIT p/f other tables.</p>
+</section>
+
+</section>
+</section>
+<section id="link-between-sdns-and-bcg">
+<h3>Link between SD&amp;S and BCG (informative)</h3>
+<p>This clause details how to link from SD&amp;S metadata [[!SDNS]] to BCG [[!BCG]] metadata, useful for creating EPGs (Electronic Program Guides). More detailed definitions and descriptions can be found in SD&amp;S [[!SDNS]], BCG [[!BCG]], and TV-Anytime specification [[!TVA]].</p>
+<p>The SD&amp;S metadata describes all services for each service provider such as broadcasting services, CoD services, BCG services, and so on. BCG metadata describes detailed information about pieces of content and services. If BCG service information is present, it SHALL take precedence over SD&amp;S service information as described in clause 6.6 of BCG [[!BCG]].</p>
+<p>In order to make an EPG, some elements of SD&amp;S metadata information and BCG metadata information should be linked.</p>
+<section id="locating-a-bcg">
+<h4>Locating a BCG for a Service using SD&amp;S</h4>
+<p>Access to a BCG service is described in a BCG Discovery Record, which is linked to from a Broadcast Discovery Record. To enable this, the following SD&amp;S elements should be used:</p><ul>
+<li>Broadcast Discovery<ul>
+<li>URI identifier of a BCG Discovery record. Either:<ul>
+<li><i>BroadcastDiscovery/SI/ServiceDescriptionLocation</i> or
+<li><i>BroadcastDiscovery/ServicesDescriptionLocation</i>
+</ul></ul></ul>
+<p>In accordance with clause 5.2.13.2 of SD&amp;S [[!SDNS]], if present, SI/ServiceDescriptionLocation shall take precedence. Furthermore, if more than one BCG Discovery record is specified, a single preferred record may optionally be signalled using the “preferred” attribute.</p><ul>
+<li>BCG Discovery<ul>
+<li>Identifier of BCG Record<ul>
+<li><i>BCGDiscovery/BCG@Id</i>
+</ul>
+<li>One of delivery information of BCG metadata<ul>
+<li><i>BCGDiscovery/TransportMode/DVBSTP</i>
+<li><i>BCGDiscovery/TransportMode/HTTP@Location</i> or <i>BCGDiscovery/TransportMode/HTTP@SOAP</i>
+</ul></ul></ul>
+<p>Figure <a href="#link-a-service-in-bcg" class="figureRef"></a> indicates how to receive BCG metadata relating to a single service or a couple of services in Broadcast Discovery information. In order to signal BCG metadata for a single service or services’ list, the value of “ServiceDescriptionLocation” or “ServicesDescriptionLocation” in Broadcast Discovery must be the same. The transport address of BCG metadata is described in the children nodes of “TransportMode” element in the BCG Discovery. With this address, the OITF can receive BCG metadata for a single service or a couple of services (either through push or pull container based mechanism, or through SOAP querying).</p>
+<figure id="link-a-service-in-bcg">
+<img alt="Figure 6" src="images/LinkAServiceInBCG.png" style="width:90%" />
+<figcaption>Figure ####: How to link a service in Broadcast Discovery with BCG Discovery</figcaption>
+</figure>
+</section>
+<section id="linking-sdns-service-with-bcg">
+<h4>Linking SD&amp;S Service Information with BCG</h4>
+<p>The BCG Discovery record allows the OITF to receive all BCG metadata relating to a single service or a couple of services.</p>
+<p>To create an EPG, for example, with the received BCG metadata and SD&amp;S metadata, the following BCG metadata elements should be used:</p><ul>
+<li>ServiceInformationTable<ul>
+<li><i>TVAMain/ProgramDescription/ServiceInformationTable/ServiceInformation@serviceId</i><ul>
+<li>Unique Identifier of Service whose syntax is defined in clause 5.2.1.2 of SD&amp;S [[!SDNS]] - equals the ServiceName attribute in the associated SD&amp;S Broadcast Discovery record (See clause 6.4 in BCG [[!BCG]]).
+</ul></ul>
+<li>Schedule Element in ProgramLocationTable<ul>
+<li><i>ProgramLocationTable/Schedule@serviceIDRef</i><ul>
+<li>Reference of a serviceId
+<li><i>serviceIDRef</i> value must be the same as the associated <i>serviceId</i> in <i>ServiceInformationTable</i>
+</ul>
+<li><i>ProgramLocationTable/Schedule/ScheduleEvent/Program@crid</i><ul>
+<li>CRID information of a program in a service. Provides link to detailed program description, found in the ProgramInformationTable.
+</ul>
+<li><i>ProgramLocationTable/Schedule/ScheduleEvent/PublishedStartTime</i><ul>
+<li>Advertised start time of a single program in a service
+</ul>
+<li><i>ProgramLocationTable/Schedule/ScheduleEvent/PublishedDuration</i><ul>
+<li>Advertised duration of a single program.
+</ul></ul>
+<li>ProgramInformationTable<ul>
+<li><i>ProgramInformationTable/ProgramInformation@programId</i><ul>
+<li>CRID value of a single program
+<li><i>programId</i> value should be the same with one of CRID values in ProgramLocationTable
+</ul></ul></ul>
+<p>Figure <a href="#description-information-in-bcg" class="figureRef"></a> describes how to find description information in BCG from a single service of Broadcast Discovery. Service information in SD&amp;S and BCG metadata is linked as described in clause 6.4 of BCG [[!BCG]] (BCG ServiceInformation@serviceId = SD&amp;S BroadcastDiscovery ServiceName attribute). Once the serviceId value in ServiceInformationTable is found, a single service’s schedule events can be retrieved from the ProgramLocationTable. Then, Program@CRIDs in ScheduleEvent values can be used to find detailed information of a single content by referencing ProgramInformation@programId.</p>
+<figure id="description-information-in-bcg">
+<img alt="Figure 7" src="images/DescriptionInformationInBCG.png" style="width:90%" />
+<figcaption>Figure ####: How to Find Description Information in BCG from SD&amp;S Metadata</figcaption>
+</figure>
+<p>In summary, an OITF can receive a single service, for example broadcaster1, from SD&amp;S’s Broadcast Discovery record. With BCG@Id value in BCG Discovery, the OITF can collect BCG metadata which has all EPG information of <b><i>broadcaster1</i></b> service. OITF compares serviceId values in ServiceInformationTable of BCG metadata in order to find a match with the same value of broadcaster1’s ServiceName attribute of Broadcast Discovery record. Once OITF finds the same service from the ServiceInformationTable, OITF can find the ScheduleEvents of <b><i>broadcaster1</i></b>’s service, allowing the OITF to create the EPG’s time table of a single channel. The detailed information of a single event can be described by BasicDescription using ProgramInformation@programId of ProgramInformationTable.</p>
+</section>
+</section>
+<section id="crid-location-resolution">
+<h3>CRID Location Resolution</h3>
+<p>BCG CRID Location Resolution is the process of mapping a CRID to other CRIDs (e.g. for a series) or to a Locator (e.g. RTSP URL). A Locator provides accurate location and timing information for where and when to retrieve the content.</p>
+<p>The OITF that supports BCG SHALL support content resolution:</p><ul>
+<li>The OITF MAY support terminal-side resolution. If so, it SHALL be delivered using the container-based mechanisms, as specified by clause 5 of BCG [[!BCG]].
+<li>The OITF SHALL support server-side resolution using the protocol defined in [[!TVA-BID]].
+</ul>
+<p>A service provider MAY provide content resolution information.</p>
+
+<section>
+<h4>CoD Service with SIP session management</h4>
+<p>The BCG provides two approaches to identifying each instance of content (e.g. HD and SD versions of <i>InterestingMovie</i>):</p><ol>
+<li>one CRID per instance (e.g. a “HD InterestingMovie CRID” and an “SD InterestingMovie CRID”)
+<li>one CRID for the content (e.g. a “InterestingMovie CRID”) and two IMIs for each instance (e.g. a “HD IMI” and an “SD IMI”); the combination of CRID and IMI identifies the appropriate instance.
+</ol>
+<p>It is a service provider decision as to which approach is used.</p>
+<p>To enable either approach to be used for Content on Demand services using SIP session management provided in managed networks relying on IMS, CoD session setup and initiation SHALL use the CRID and an Instance Metadata Identifier (where one exists) in conjunction with the process defined in <a href="volume4.html#s5-3-2" class="extRef">clause 5.3.2</a> of the Protocol specification [[.OIPF_PROT2]].</p>
+<p>This clause defines the format of the wild card portion of the “Request URI”.</p>
+<p>The wild card part (*) of the Request URI SHALL be constructed from the CoD’s CRID and Instance Metadata Identifier (IMI), as signalled in the BCG, in accordance with the following format, as specified in clause 12.1.4 of [[!DVBTRANS]]</p>
+<p style="text-align: center;"><code>&lt;CRID&gt;[#&lt;IMI&gt;]</code></p>
+<p>As a CRID is composed of an &lt;authority&gt; and &lt;data&gt; section and an IMI is composed of a &lt;name&gt; and &lt;data&gt; section, the above construction can be represented in greater detail as:</p>
+<p style="text-align: center;"><code>&lt;CRID_authority&gt;/&lt;CRID_data&gt;[#[&lt;IMI_name&gt;/]&lt;IMI_data&gt;]</code></p>
+<p>The “CRID://” and “imi:” portions of the respective identifiers SHALL be omitted.</p>
+<p>The IMI portion of the Request URI is optional; however, if an IMI is signalled in the BCG for a CoD instance, it SHALL be included in the Request URI.</p>
+<p>For example:<br />
+In the case where the HD version of InterestingMovie is signalled with a CRID of “CRID://newstudio.com/InterestingMovieHD”, the wild card part of the Request URI would be:</p>
+<p style="text-align: center;"><code>newstudio.com/InterestingMovieHD</code></p>
+<p>If however, InterestingMovie is signalled with a CRID of “CRID://newstudio.com/InterestingMovie”, and has a HD instance with the IMI: “imi:hd”, the wild card part of the Request URI for the HD instance would be:</p>
+<p style="text-align: center;"><code>newstudio.com/InterestingMovie#hd</code></p>
+</section>
+</section>
+</section>
+
+<section class="appendix" id="sdns-data-model">
+<h2>Open IPTV Forum SD&amp;S Data Model (Informative)</h2>
+<p>The Open IPTV Forum service discovery model is represented in the Figure <a href="#sdns-data-model-fig" class="figureRef"></a>.</p>
+<figure id="sdns-data-model-fig">
+<img alt="Figure 8" src="images/OIPF_SDnS_Data_Model.png" />
+<figcaption>Figure ####: Open IPTV Forum SD&amp;S Data Model</figcaption>
+</figure>
+</section>
+
+<section class="appendix" id="sdns-schema-extension">
+<h2>Schema Extension for SD&amp;S</h2>
+<section id="sdns-namespace-schema"><h3>Namespace</h3>
+<p>The namespace for Open IPTV Forum is “urn:oipf:service:sdns:2010-1”.</p>
+<pre class="xml-schema">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xs:schema targetNamespace="urn:oipf:service:sdns:2010-1"
+  xmlns:tns="urn:oipf:service:sdns:2010-1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:tva="urn:tva:metadata:2011"
+  xmlns:oipfbcg="urn:oipf:service:bcg:2010-1"
+  xmlns:mis="urn:dvb:mhp:2009"&gt;
+&lt;!-- schema filename is service-sdns.xsd --&gt;
+</pre>
+</section>
+<section id="sdns-import-schema"><h3>Import namespace and schema</h3>
+<pre class="xml-schema">&lt;xs:import namespace="urn:tva:metadata:2011"
+  schemaLocation="imports/tva_metadata_3-1_v171.xsd"/&gt;
+&lt;xs:import namespace="urn:oipf:service:bcg:2010" schemaLocation="service-bcg.xsd"/&gt;
+&lt;xs:import namespace="urn:dvb:mhp:2009" schemaLocation="imports/mis_xmlait.xsd"/&gt;
+</pre>
+</section>
+<section id="sdns-serviceprovidertype-schema"><h3>Extension for ServiceProvider Type</h3>
+<pre class="xml-schema">&lt;xs:complexType name="ServiceProviderType"&gt;
+  &lt;xs:complexContent&gt;
+    &lt;xs:extension base="mis:ServiceProviderType"&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="EmergencyNotificationService"
+          type="tns:EmergencyNotificationServiceType" minOccurs="0"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:extension&gt;
+  &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;
+</pre>
+</section>
+<section id="sdns-emergencynotificationservice-schema"><h3>EmergencyNotificationService Type</h3>
+<pre class="xml-schema">&lt;xs:complexType name="EmergencyNotificationServiceType"&gt;
+  &lt;xs:choice&gt;
+    &lt;xs:element name="SDPURL" type="xs:anyURI"/&gt;
+    &lt;xs:element name="inlineSDP" type="tns:inlineSDPType"/&gt;
+    &lt;xs:element name="SDPRef" type="tns:SDPRefType"/&gt;
+  &lt;/xs:choice&gt;
+&lt;/xs:complexType&gt;
+&lt;xs:simpleType name="inlineSDPType"&gt;
+  &lt;!--- Note: the InlinedSDP below must be embedded in a CDATA section --&gt;
+  &lt;xs:restriction base="xs:string"/&gt;
+&lt;/xs:simpleType&gt;
+&lt;xs:complexType name="SDPRefType"&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="SDPStream" type="tns:inlineSDPType"/&gt;
+    &lt;xs:element name="SDPURI" type="xs:anyURI"/&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+</pre>
+</section>
+<section id="sdns-application-extension-schema"><h3>Application Extension</h3>
+<p>The following extension to the Application type (see section 5.4.4.2 of [[!TS102809]] for the latest version of this specification) is defined to incorporate a FLUTESessionDescriptor (see Annex <a href="#sdns-FLUTESessionDescriptor-schema" class="sectionRef"></a>)</p>
+<pre class="xml-schema">&lt;xs:complexType name="OIPFApplication"&gt;
+  &lt;xs:complexContent&gt;
+    &lt;xs:extension base="mis:Application"&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="fluteSessionDescriptor" type="tns:FLUTESessionDescriptor" 
+		  minOccurs="0" maxOccurs="unbounded" /&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:extension&gt;
+  &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;
+</pre>
+</section>
+<section id="sdns-FLUTESessionDescriptor-schema"><h3>FLUTESessionDescriptor</h3>
+<p>The following extension is defined to the XML AIT to signal the session parameters needed for delivery of applications using FLUTE.</p>
+<p>Parameters SHALL be as defined in section 6.1.13 ‘File delivery session description with SDP’ of [[!DATACAST]].</p>
+<p>This element is optional; if it is not supported, it SHALL be silently ignored without causing an error.</p>
+<pre class="xml-schema">&lt;xs:complexType name="FLUTESessionDescriptor"&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="senderIP" type="xs:string"/&gt;
+    &lt;xs:element name="numChannels" type="xs:unsignedInt"/&gt;
+    &lt;xs:element name="destIP" type="xs:string"/&gt;
+    &lt;xs:element name="TSI" type="xs:unsignedInt"/&gt;
+    &lt;xs:element name="sessionTimeParam" type="xs:string"/&gt;
+    &lt;xs:element name="lang" type="xs:string"/&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+</pre>
+</section>
+<section id="sdns-IPServiceType-schema"><h3>Extension for IPServiceType</h3>
+<p>The IPServiceType defined in [[!TS102809]] is an extension of the IPService type defined in [[!SDNS]].</p>
+<pre class="xml-schema">&lt;xs:complexType name="OIPFIPServiceType"&gt;
+  &lt;xs:complexContent&gt;
+    &lt;xs:extension base="mis:IPServiceType"&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="TimeToRenegotiate" type="xs:duration" minOccurs="0"/&gt;
+        &lt;xs:element name="PurchaseItem" type="oipfbcg:PurchaseItemType" minOccurs="0"/&gt;
+        &lt;xs:element name="FileFormat" type="tva:ControlledTermType" minOccurs="0"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:extension&gt;
+  &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;
+</pre>
+</section>
+</section>
+
+<section class="appendix" id="bcg-schema-extension">
+<h2>Schema Extension for BCG</h2>
+<section id="bcg-namespace-schema"><h3>Namespace</h3>
+<p>The namespace for Open IPTV Forum is “urn:oipf:service:bcg:2010-1”.</p>
+<pre class="xml-schema">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xs:schema targetNamespace="urn:oipf:service:bcg:2010-1"
+  xmlns:tns="urn:oipf:service:bcg:2010-1"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:tva="urn:tva:metadata:2011"
+  elementFormDefault="qualified" attributeFormDefault="unqualified"&gt;
+&lt;!-- schema filename is service-bcg.xsd --&gt;
+</pre>
+</section>
+<section id="bcg-import-schema"><h3>Import namespace and schema</h3>
+<pre class="xml-schema">&lt;xs:import namespace="urn:tva:metadata:2011"
+schemaLocation="imports/tva_metadata_3-1_v171.xsd"/&gt;
+</pre>
+</section>
+<section id="bcg-include-schema"><h3>Include definitions</h3>
+<pre class="xml-schema">&lt;xs:include schemaLocation="csp-MarlinPrivateDataType.xsd"/&gt;
+&lt;xs:include schemaLocation="csp-DRMPrivateDataType.xsd"/&gt;
+&lt;xs:include schemaLocation="csp-HexBinaryPrivateDataType.xsd"/&gt;
+</pre>
+</section>
+<section id="bcg-purchaseitemtype-schema"><h3>Extension for PurchaseItem Type</h3>
+<pre class="xml-schema">&lt;xs:complexType name="PurchaseItemType"&gt;
+  &lt;xs:complexContent&gt;
+    &lt;xs:extension base="tva:PurchaseItemType"&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="DRMControlInformation" type="tns:DRMControlInformationType"
+          minOccurs="0" maxOccurs="unbounded"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:extension&gt;
+  &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;
+&lt;xs:complexType name="DRMControlInformationType"&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="DRMSystemID" type="xs:anyURI"/&gt;
+    &lt;xs:element name="DRMContentID" type="xs:anyURI"/&gt;
+    &lt;xs:element name="RightsIssuerURL" type="xs:anyURI" minOccurs="0"/&gt;
+    &lt;xs:element name="SilentRightsURL" type="xs:anyURI" minOccurs="0"/&gt;
+    &lt;xs:element name="PreviewRightsURL" type="xs:anyURI" minOccurs="0"/&gt;
+    &lt;xs:element name="DoNotRecord" type="xs:boolean" minOccurs="0"/&gt;
+    &lt;xs:element name="DoNotTimeShift" type="xs:boolean" minOccurs="0"/&gt;
+    &lt;xs:element ref="tns:DRMGenericData" minOccurs="0" maxOccurs="unbounded"/&gt;
+    &lt;xs:element ref="tns:DRMPrivateData" minOccurs="0" maxOccurs="unbounded"/&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;xs:element name="DRMGenericData" type="tns:DRMGenericDataType"/&gt;
+&lt;xs:element name="DRMPrivateData" type="tns:DRMPrivateDataType"/&gt;
+&lt;xs:element name="MarlinPrivateData" type="tns:MarlinPrivateDataType"
+  substitutionGroup="tns:DRMPrivateData"/&gt;
+&lt;xs:element name="HexBinaryPrivateData" type="tns:HexBinaryPrivateDataType"
+  substitutionGroup="tns:DRMPrivateData"/&gt;
+&lt;xs:complexType name="DRMGenericDataType"&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:any namespace="##any" processContents="lax" minOccurs="0"
+      maxOccurs="unbounded"/&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+</pre>
+</section>
+<section id="bcg-ondemandprogramtype-schema"><h3>Extension for OnDemandProgram Type</h3>
+<pre class="xml-schema">&lt;xs:complexType name="OnDemandProgramType"&gt;
+  &lt;xs:complexContent&gt;
+    &lt;xs:extension base="tva:OnDemandProgramType"&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="Protocol" type="tva:ControlledTermType" minOccurs="0"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:extension&gt;
+  &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;
+</pre>
+</section>
+<section id="bcg-programdescriptiontype-schema"><h3>Extension for ProgramDescription Type</h3>
+<p>The following extensions are used to describe Notification service information</p>
+<pre class="xml-schema">&lt;xs:complexType name="ProgramDescriptionType"&gt;
+  &lt;xs:complexContent&gt;
+    &lt;xs:extension base="tva:ProgramDescriptionType"&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="NotificationInformationTable"
+          type="tns:NotificationInformationTableType" minOccurs="0"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:extension&gt;
+  &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;
+&lt;xs:complexType name="NotificationInformationTableType"&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="NotificationService" type="tns:NotificationServiceType"
+      maxOccurs="unbounded"/&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;xs:complexType name="NotificationServiceType"&gt;
+  &lt;xs:complexContent&gt;
+    &lt;xs:extension base="tva:ServiceInformationType"&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="NotificationServiceCategory"
+          type="tns:NotificationServiceCategoryType"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:extension&gt;
+  &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;
+&lt;xs:simpleType name="NotificationServiceCategoryType"&gt;
+  &lt;xs:restriction base="xs:string"&gt;
+    &lt;xs:enumeration value="NGNotification"/&gt;
+    &lt;xs:enumeration value="UserNotification"/&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</pre>
+</section>
+<section id="bcg-programinformationtype-schema"><h3>Extension for ProgramInformation Type</h3>
+<pre class="xml-schema">&lt;xs:complexType name="ProgramInformationType"&gt;
+  &lt;xs:complexContent&gt;
+    &lt;xs:extension base="tva:ProgramInformationType"&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="DoNotBookmark" type="xs:boolean" default="false" 
+		  minOccurs="0"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:extension&gt;
+  &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;
+</pre>
+</section>
+<section id="bcg-serviceinformationtype-schema"><h3>Extension for ServiceInformation Type</h3>
+<pre class="xml-schema">&lt;xs:complexType name="ServiceInformationType"&gt;
+  &lt;xs:complexContent&gt;
+    &lt;xs:extension base="tva:ServiceInformationType"&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="DoNotBookmark" type="xs:boolean" default="false"
+          minOccurs="0"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:extension&gt;
+  &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;
+</pre>
+</section>
+</section>
+
+<section class="appendix" id="classification-schemes-extension">
+<h2>Classification Schemes Extensions</h2>
+<p>An informative set of Classification Schemes has been developed by Open IPTV Forum to provide default set of classification terms to be applied in the context of Open IPTV Forum services.</p>
+<section id="visualcodingformatCS"><h3>VisualCodingFormatCS</h3>
+<p>The following Classification Scheme is introduced according to the <a href="volume2.html#av25" class="extRef">Table 1</a> and <a href="volume2.html#av30" class="extRef">Table 2</a> defined in <a href="volume2.html#media-section" class="extRef">clause 3</a> of Media Formats Specification [[.OIPF_MEDIA2]].</p>
+<pre class="xml-document">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ClassificationScheme uri="urn:oipf:cs:VisualCodingFormatCS:2013"&gt;
+  &lt;!-- schema file is cs-VisualCodinfFormatCS.xml --&gt;
+  &lt;Term termId="AVC_HD_25"&gt;
+    &lt;Name xml:lang="en"&gt;AVC_HD_25&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      H.264/AVC video coding, High Definition, 25Hz systems
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="AVC_HD_30"&gt;
+    &lt;Name xml:lang="en"&gt;AVC_HD_30&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      H.264/AVC video coding, High Definition, 30Hz systems
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="AVC_SD_25"&gt;
+    &lt;Name xml:lang="en"&gt;AVC_SD_25&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      H.264/AVC video coding, Standard Definition, 25Hz systems
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="AVC_SD_30"&gt;
+    &lt;Name xml:lang="en"&gt;AVC_SD_30&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      H.264/AVC video coding, Standard Definition, 30Hz systems
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="AVC_SP_25"&gt;
+    &lt;Name xml:lang="en"&gt;AVC_SP_25&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      H.264/AVC video coding, Sub-Picture, 25Hz systems
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="AVC_SP_30"&gt;
+    &lt;Name xml:lang="en"&gt;AVC_SP_30&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      H.264/AVC video coding, Sub-Picture, 30Hz systems
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="AVC_3D_25"&gt;
+    &lt;Name xml:lang="en"&gt;AVC_3D_25&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      H.264/AVC video coding, 3D, 25Hz systems
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="AVC_3D_30"&gt;
+    &lt;Name xml:lang="en"&gt;AVC_3D_30&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      H.264/AVC video coding, 3D, 30Hz systems
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="MPEG2_HD_25"&gt;
+    &lt;Name xml:lang="en"&gt;MPEG2_HD_25&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      MPEG-2 video coding, High Definition, 25Hz systems
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="MPEG2_SD_25"&gt;
+    &lt;Name xml:lang="en"&gt;MPEG2_SD_25&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      MPEG-2 video coding, Standard Definition, 25Hz systems
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="MPEG2_SP_25"&gt;
+    &lt;Name xml:lang="en"&gt;MPEG2_SP_25&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      MPEG-2 video coding, Sub-Picture, 25Hz systems
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+&lt;/ClassificationScheme&gt;
+</pre>
+</section>
+<section id="audiocodingformatCS"><h3>AudioCodingFormatCS</h3>
+<p>The following Classification Scheme is introduced according to the <a href="volume2.html#av25" class="extRef">Table 1</a> and <a href="volume2.html#av30" class="extRef">Table 2</a> defined in <a href="volume2.html#media-section" class="extRef">clause 3</a> of Media Formats Specification [[.OIPF_MEDIA2]].</p>
+<pre class="xml-document">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ClassificationScheme uri="urn:oipf:cs:AudioCodingFormatCS:2010"&gt;
+  &lt;!-- schema file is cs-AudioCodingFormatCS.xml --&gt;
+  &lt;Term termId="HE_AAC"&gt;
+    &lt;Name xml:lang="en"&gt;HE_AAC&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;HE-AAC and AAC audio coding&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="HE_AAC2"&gt;
+    &lt;Name xml:lang="en"&gt;HE_AAC2&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;HE-AACv2 audio coding&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="HE_AAC_MPS"&gt;
+    &lt;Name xml:lang="en"&gt;HE_AAC_MPS&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;HE-AAC with MPEG surround audio coding&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="AC3"&gt;
+    &lt;Name xml:lang="en"&gt;AC3&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;AC3 audio coding&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="EAC3"&gt;
+    &lt;Name xml:lang="en"&gt;EAC3&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;Enhanced AC3 audio coding&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="MPEG1_L2"&gt;
+    &lt;Name xml:lang="en"&gt;MPEG1_L2&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;MPEG-1 Layer II audio coding&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="MPEG1_L2_MPS"&gt;
+    &lt;Name xml:lang="en"&gt;MPEG1_L2_MPS&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      MPEG-1 Layer II with MPEG surround audio coding
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="MPEG1_L3"&gt;
+    &lt;Name xml:lang="en"&gt;MPEG1_L3&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;MPEG-1 Layer III audio coding&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="WAV"&gt;
+    &lt;Name xml:lang="en"&gt;WAV&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;WAV audio coding&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="DTS"&gt;
+    &lt;Name xml:lang="en"&gt;DTS&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;DTS audio coding&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="AMR"&gt;
+    &lt;Name xml:lang="en"&gt;AMR&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;AMR audio coding&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="AMR_WB"&gt;
+    &lt;Name xml:lang="en"&gt;AMR_WB&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;AMR Wideband audio coding&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="AMR_WB+"&gt;
+    &lt;Name xml:lang="en"&gt;AMR_WB+&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;Extended AMR Wideband audio coding&lt;/Definition&gt;
+  &lt;/Term&gt;
+&lt;/ClassificationScheme&gt;
+</pre>
+</section>
+<section id="avmediaformatCS"><h3>AVMediaFormatCS</h3>
+<p>The following Classification Scheme is introduced according to the <a href="volume2.html#protav" class="extRef">Table 3</a> defined in <a href="volume2.html#media-section" class="extRef">clause 3</a> of Media Formats Specification [[.OIPF_MEDIA2]].</p>
+<pre class="xml-document">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ClassificationScheme uri="urn:oipf:cs:AVMediaFormatCS:2008"&gt;
+  &lt;!-- schema file is cs-AVMediaFormatCS.xml --&gt;
+  &lt;Term termId="TS"&gt;
+    &lt;Name xml:lang="en"&gt;TS&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;MPEG-2 transport stream&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="TS_BBTS"&gt;
+    &lt;Name xml:lang="en"&gt;TS_BBTS&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      MPEG-2 transport stream, Marlin BB TS with AES encryption
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="TS_PF"&gt;
+    &lt;Name xml:lang="en"&gt;TS_PF&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;MPEG-2 protected transport stream&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="TTS"&gt;
+    &lt;Name xml:lang="en"&gt;TTS&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;MPEG-2 time stamped transport stream&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="TTS_BBTS"&gt;
+    &lt;Name xml:lang="en"&gt;TTS_BBTS&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      MPEG-2 time stamped transport stream, Marlin BB TS with AES encryption
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="TTS_PF"&gt;
+    &lt;Name xml:lang="en"&gt;TTS_PF&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      MPEG-2 time stamped protected transport stream
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="MP4"&gt;
+    &lt;Name xml:lang="en"&gt;MP4&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;MP4 File Format&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="MP4_PDCF"&gt;
+    &lt;Name xml:lang="en"&gt;MP4_PDCF&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;MP4 File Format, OMA PDCF&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="MP4_MIPMP"&gt;
+    &lt;Name xml:lang="en"&gt;MP4_MIPMP&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;MP4 File Format, Marlin IP MP format&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="MP4_DCF"&gt;
+    &lt;Name xml:lang="en"&gt;MP4_DCF&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;MP4 File Format, OMA DCF&lt;/Definition&gt;
+  &lt;/Term&gt;
+&lt;/ClassificationScheme&gt;
+</pre>
+</section>
+<section id="protocolCS"><h3>ProtocolCS</h3>
+<p>The following Classification Scheme is introduced according to the protocols defined in <a href="volume4.html#annex-e-1" class="extRef">Annex E.1</a> of the Protocols specification [[.OIPF_PROT2]].</p>
+<pre class="xml-document">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ClassificationScheme uri="urn:oipf:cs:ProtocolCS:2012"&gt;
+  &lt;!-- schema file is cs-ProtocolCS.xml --&gt;
+  &lt;Term termId="sip-igmp-rtp-udp"&gt;
+    &lt;Name xml:lang="en"&gt;sip-igmp-rtp-udp&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      Multicast Streaming over RTP with SIP session management
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="sip-igmp-udp"&gt;
+    &lt;Name xml:lang="en"&gt;sip-igmp-udp&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      Multicast Streaming over UDP with SIP session management
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="sip-rtsp-rtp-udp"&gt;
+    &lt;Name xml:lang="en"&gt;sip-rtsp-rtp-udp&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      Unicast CoD Streaming over RTP with SIP session management
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="sip-rtsp-udp"&gt;
+    &lt;Name xml:lang="en"&gt;sip-rtsp-udp&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      Unicast Streaming over direct UDP with SIP session management
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="igmp-rtp-udp"&gt;
+    &lt;Name xml:lang="en"&gt;igmp-rtp-udp&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;Multicast Streaming over RTP&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="igmp-udp"&gt;
+    &lt;Name xml:lang="en"&gt;igmp-udp&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;Multicast Streaming over UDP&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="rtsp-rtp-udp"&gt;
+    &lt;Name xml:lang="en"&gt;rtsp-rtp-udp&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;Unicast Streaming over RTP&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="http-get"&gt;
+    &lt;Name xml:lang="en"&gt;http-get&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;Unicast Streaming/Download over HTTP&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="dash"&gt;
+    &lt;Name xml:lang="en"&gt;dash&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;Dynanic adaptive streaming over HTTP&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="has"&gt;
+    &lt;Name xml:lang="en"&gt;has&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;OIPF HTTP Adaptive Streaming&lt;/Definition&gt;
+  &lt;/Term&gt;
+&lt;/ClassificationScheme&gt;
+</pre>
+</section>
+<section id="germanyfskCS"><h3>GermanyFSKCS</h3>
+<p>The following Classification Scheme is introduced according to the rating type 9, GermanyFSK rating system defined in Table 11 in [[!IEC62455]] clause 7.2.1.1</p>
+<pre class="xml-document">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ClassificationScheme uri="urn:oipf:cs:GermanyFSKCS:2008"
+    domain="//CreationInformation/Classification/ParentalGuidance/ParentalRating"&gt;
+  &lt;!-- schema file is cs-GermanyFSKCS.xml --&gt;
+  &lt;Description xml:lang="en"&gt;Thesaurus for movie rating&lt;/Description&gt;
+  &lt;Term termId="0"&gt;
+    &lt;Name xml:lang="en"&gt;0&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;Released without age restriction&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="6"&gt;
+    &lt;Name xml:lang="en"&gt;6&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;Released to age 6 or older&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="12"&gt;
+    &lt;Name xml:lang="en"&gt;12&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      Released to age 12 or older and to age 6 or older with parental guidance
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="16"&gt;
+    &lt;Name xml:lang="en"&gt;16&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;Released to age 16 or older&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="18"&gt;
+    &lt;Name xml:lang="en"&gt;18&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      No release to youths (released to age 18 or older)
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+&lt;/ClassificationScheme&gt;
+</pre>
+</section>
+<section id="applicationusageCS"><h3>ApplicationUsageCS</h3>
+<p>The following Classification Scheme is introduced to signal specific application usages.</p>
+<pre class="xml-document">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ClassificationScheme uri="urn:oipf:cs:ApplicationUsageCS:2010"&gt;
+  &lt;!-- schema file is cs-ApplicationUsageCS.xml --&gt;
+  &lt;Term termId="servicediscovery"&gt;
+    &lt;Name xml:lang="en"&gt;Service Discovery&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      Application provides Service Discovery information
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="vod"&gt;
+    &lt;Name xml:lang="en"&gt;VoD Guide Application&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;Application providing VoD content guide&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="epg"&gt;
+    &lt;Name xml:lang="en"&gt;EPG Guide Application&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;Application providing EPG content guide&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="communication"&gt;
+    &lt;Name xml:lang="en"&gt;Communication Application&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;Application providing communication services.&lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="hni-igi"&gt;
+    &lt;Name xml:lang="en"&gt;HNI-IGI Application&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      Application providing non-native HNI-IGI functionality.
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+  &lt;Term termId="ngnotification"&gt;
+    &lt;Name xml:lang="en"&gt;NG Notification Application&lt;/Name&gt;
+    &lt;Definition xml:lang="en"&gt;
+      Application providing NG notification services.
+    &lt;/Definition&gt;
+  &lt;/Term&gt;
+&lt;/ClassificationScheme&gt;
+</pre>
+</section>
+</section>
+
+<section class="appendix" id="xml-examples">
+<h2>Service Provider and Service Discovery XML examples (informative)</h2>
+<section id="spd-example"><h3>Service Provider Discovery</h3>
+<p>Upon determination of the Service Provider Discovery entry point (see [[.OIPF_ARCH2]] <a href="#architecture.html#s6-2" class="extRef">section 6.2</a>) the OITF creates an HTTP request as follows to obtain the Service Provider Discovery information</p>
+<pre>GET /dvb/sdns/sp_discovery?id=ALL
+HOST: 195.238.226.224</pre>
+<p>The following is an example of XML document returned</p>
+<pre class="xml-document">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;dvb12:ServiceDiscovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:oipf:service:sdns:2010 service-sdns.xsd"
+    xmlns:oipf="urn:oipf:service:sdns:2010"
+    xmlns:dvb="urn:dvb:metadata:iptv:sdns:2008-1"
+    xmlns:dvb12="urn:dvb:metadata:iptv:sdns:2012-1"
+    xmlns:mis="urn:dvb:mhp:2009"&gt;
+  &lt;dvb12:ServiceProviderDiscovery &gt;
+    &lt;dvb:ServiceProvider DomainName="tv.service.com"
+        LogoURI="http://195.238.226.223/img/logo_service.gif" Version="00"
+        xsi:type="oipf:ServiceProviderType"&gt;
+      &lt;dvb:Name Language="ENG"&gt;Service Provider&lt;/dvb:Name&gt;
+      &lt;dvb:Description Language="ENG"&gt;
+        Service Provider IPTV Offer
+      &lt;/dvb:Description&gt;
+      &lt;dvb:Offering&gt;
+	    &lt;!-- Broadcast Discovery Information --&gt;
+        &lt;dvb:Pull Location="195.238.226.223/dvb/sdns"&gt;
+          &lt;dvb:PayloadId Id="2"&gt;
+            &lt;dvb:Segment ID="1" Version="01"/&gt;
+          &lt;/dvb:PayloadId&gt;
+        &lt;/dvb:Pull&gt;
+        &lt;!-- Package Discovery Information --&gt;
+        &lt;dvb:Pull Location="195.238.226.223/dvb/sdns"&gt;
+          &lt;dvb:PayloadId Id="5"&gt;
+            &lt;dvb:Segment ID="1" Version="01"/&gt;
+          &lt;/dvb:PayloadId&gt;
+        &lt;/dvb:Pull&gt;
+        &lt;!-- Application Discovery Information --&gt;
+        &lt;dvb:Pull Location="195.238.226.223/dvb/sdns"&gt;
+          &lt;dvb:PayloadId Id="C1"&gt;
+            &lt;dvb:Segment ID="1" Version="01"/&gt;
+          &lt;/dvb:PayloadId&gt;
+        &lt;/dvb:Pull&gt;
+      &lt;/dvb:Offering&gt;
+      &lt;mis:AbstractService&gt;
+        &lt;mis:svcName Language="ENG"&gt;TV Service Portal&lt;/mis:svcName&gt;
+        &lt;mis:svcId&gt;A1B2C3&lt;/mis:svcId&gt;
+        &lt;mis:isAutoSelect&gt;true&lt;/mis:isAutoSelect&gt;
+        &lt;mis:ApplicationList&gt;
+          &lt;mis:ApplicationReference&gt;
+            &lt;mis:orgId&gt;100&lt;/mis:orgId&gt;
+            &lt;mis:appId&gt;002&lt;/mis:appId&gt;
+          &lt;/mis:ApplicationReference&gt;
+        &lt;/mis:ApplicationList&gt;
+      &lt;/mis:AbstractService&gt;
+      &lt;EmergencyNotificationService&gt;
+        &lt;SDPURL&gt;195.238.226.223/ems/emergency_svcs.spd&lt;/SDPURL&gt;
+      &lt;/EmergencyNotificationService&gt;
+    &lt;/dvb:ServiceProvider&gt;
+  &lt;/dvb12:ServiceProviderDiscovery&gt;
+&lt;/dvb12:ServiceDiscovery&gt;
+</pre>
+<p>In this example, a single service provider is indicated by the name “<code>Service Provider</code>” with an offering titled “<code>Service Provider IPTV Offer</code>” and the domain “<code>tv.service.com</code>”. A logo file for the Service Provider’s offering is available at the URL specified by the LogoURI attribute. Information for the OITF to connect to the Emergency Service Notifications from the Service Provider can be retrieved from the URL specified in the <code>EmergencyNotificationService</code> element.</p>
+<p>Three service types are available to the terminal</p><ul>
+<li>Broadcast Discovery, designated by <code>Payload Id="02"</code>
+<li>Package Discovery, designated by <code>Payload Id="05"</code>
+<li>Application Discovery, designated by <code>Payload Id="C1"</code>
+</ul>
+<p>Information on the Payload Id values are given in clause 5.4.4.1 of [[!SDNS]].</p>
+</section>
+<section id="bdr-example"><h3>Broadcast Discovery</h3>
+<p>If the Service Provider Discovery record indicates that Broadcast Discovery information is available (i.e. there is a <code>dvb:Offering</code> with <code>Payload Id="02"</code>) about the Scheduled Content Services offered by the Service Provider, further interrogation by the OITF is required. This procedure would also be utilized when updated Broadcast Discovery records are available according to section <a href="#update-mechanism-for-sdns" class="sectionRef"></a>.</p>
+<p>In the Service Provider information, the Broadcast Discovery records are retrievable by HTTP GET operation (the offering only provides a dvb:Pull mechanism), the OITF creates an HTTP request as follows</p>
+<pre>GET /dvb/sdns/service_discovery?id=tv.service.com&amp;Payload=02&amp;Segment=0001&amp;Version=01 
+HOST: 195.238.226.223</pre>
+<p>The HTTP response will contain the Broadcast Discovery records similar to those in the following XML instance document</p>
+<pre class="xml-document">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;dvb12:ServiceDiscovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:oipf:service:sdns:2010 service-sdns.xsd"
+    xmlns:oipf="urn:oipf:service:sdns:2010"
+    xmlns:dvb="urn:dvb:metadata:iptv:sdns:2008-1"
+    xmlns:dvb12="urn:dvb:metadata:iptv:sdns:2012-1"
+    xmlns:tva="urn:tva:metadata:2011"&gt;
+  &lt;dvb12:BroadcastDiscovery DomainName="tv.service.com" Version="01"&gt;
+    &lt;dvb:ServiceList&gt;
+      &lt;dvb:SingleService&gt;
+        &lt;dvb:ServiceLocation&gt;
+          &lt;dvb:IPMulticastAddress Address="239.255.42.42" Port="50002"/&gt;
+        &lt;/dvb:ServiceLocation&gt;
+        &lt;dvb:TextualIdentifier ServiceName="CHANNEL_MOVIE1"/&gt;
+        &lt;dvb:DVBTriplet OrigNetId="167" ServiceId="1" TSId="1001"/&gt;
+        &lt;dvb:MaxBitrate&gt;3000&lt;/dvb:MaxBitrate&gt;
+        &lt;dvb:SI ServiceType="16"&gt;
+          &lt;dvb:Name Language="ENG"&gt;Family channel&lt;/dvb:Name&gt;
+        &lt;/dvb:SI&gt;
+      &lt;/dvb:SingleService&gt;
+      &lt;dvb:SingleService xsi:type="oipf:OIPFIPServiceType"&gt;
+        &lt;dvb:ServiceLocation&gt;
+          &lt;dvb:IPMulticastAddress Address="239.255.42.42" Port="50000"/&gt;
+        &lt;/dvb:ServiceLocation&gt;
+        &lt;dvb:TextualIdentifier ServiceName="CHANNEL_MOVIE2"/&gt;
+        &lt;dvb:DVBTriplet OrigNetId="167" ServiceId="1" TSId="11002"/&gt;
+        &lt;dvb:MaxBitrate&gt;8000&lt;/dvb:MaxBitrate&gt;
+        &lt;dvb:SI ServiceType="19"&gt;
+          &lt;dvb:Name Language="ENG"&gt;Scary Movies&lt;/dvb:Name&gt;
+        &lt;/dvb:SI&gt;
+        &lt;oipf:TimeToRenegotiate&gt;PT30S&lt;/oipf:TimeToRenegotiate&gt;
+      &lt;/dvb:SingleService&gt;
+      &lt;dvb:SingleService&gt;
+        &lt;dvb:ServiceLocation&gt;
+          &lt;dvb:IPMulticastAddress Address="239.255.42.42" Port="50006"/&gt;
+        &lt;/dvb:ServiceLocation&gt;
+        &lt;dvb:TextualIdentifier ServiceName="CHANNEL_SPORT_SD"/&gt;
+        &lt;dvb:DVBTriplet OrigNetId="167" ServiceId="10" TSId="4029"/&gt;
+        &lt;dvb:MaxBitrate&gt;3000&lt;/dvb:MaxBitrate&gt;
+        &lt;dvb:SI ServiceType="16"&gt;
+          &lt;dvb:Name Language="ENG"&gt;Sport&lt;/dvb:Name&gt;
+        &lt;/dvb:SI&gt;
+      &lt;/dvb:SingleService&gt;
+      &lt;dvb:SingleService xsi:type="oipf:OIPFIPServiceType"&gt;
+        &lt;dvb:ServiceLocation&gt;
+          &lt;dvb:IPMulticastAddress Address="239.255.42.42" Port="50004"
+            Streaming="udp"/&gt;
+        &lt;/dvb:ServiceLocation&gt;
+        &lt;dvb:TextualIdentifier ServiceName="CHANNEL_SPORT_HD"/&gt;
+        &lt;dvb:DVBTriplet OrigNetId="167" ServiceId="10" TSId="11003"/&gt;
+        &lt;dvb:MaxBitrate&gt;8000&lt;/dvb:MaxBitrate&gt;
+        &lt;dvb:SI ServiceType="19"&gt;
+          &lt;dvb:Name Language="ENG"&gt;Sport HD&lt;/dvb:Name&gt;
+        &lt;/dvb:SI&gt;
+        &lt;oipf:FileFormat href="urn:oipf:cs:ProtocolCS:2010"&gt;
+          &lt;tva:Name&gt;igmp-udp&lt;/tva:Name&gt;
+        &lt;/oipf:FileFormat&gt;
+      &lt;/dvb:SingleService&gt;
+    &lt;/dvb:ServiceList&gt;
+  &lt;/dvb12:BroadcastDiscovery&gt;
+&lt;/dvb12:ServiceDiscovery&gt;
+</pre>
+<p>The broadcast service entry for the CHANNEL_MOVIE2 service uses the OIPF extended definition and includes the TimeToRegnotiate value of 30 seconds.</p>
+<p>The broadcast service entry for the CHANNEL_SPORT_HD service uses the OIPF extended definition and includes the FileFormat element indicating that the content delivery does not use RTP encapsulation over UDP.</p>
+</section>
+<section id="pdr-example"><h3>Package Discovery</h3>
+<p>If the Service Provider Discovery record indicates that Broadcast Discovery information is available (i.e. there is a <code>dvb:Offering</code> with <code>Payload Id="05"</code>) about the Scheduled Content Services offered by the Service Provider, further interrogation by the OITF is required. This procedure would also be utilized when updated Package Discovery records are available according to section <a href="#update-mechanism-for-sdns" class="sectionRef"></a>.</p>
+<p>In the Service Provider information, the Package Discovery records are retrievable by HTTP GET operation (the offering only provides a dvb:Pull mechanism), the OITF creates an HTTP request as follows</p>
+<pre>GET /dvb/sdns/service_discovery?id=tv.service.com&amp;Payload=05&amp;Segment=00001&amp;Version=01 
+HOST: 195.238.226.223</pre>
+<p>The HTTP response will contain the Package Discovery records similar to those in the following XML instance document</p>
+<pre class="xml-document">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;dvb12:ServiceDiscovery Version="00"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:oipf:service:sdns:2010 service-sdns.xsd"
+    xmlns:dvb="urn:dvb:metadata:iptv:sdns:2008-1"
+    xmlns:dvb12="urn:dvb:metadata:iptv:sdns:2012-1"&gt;
+  &lt;dvb12:PackageDiscovery DomainName="tv.service.com" Version="01"&gt;
+    &lt;dvb:Package Visible="true" Id="2"&gt;
+      &lt;dvb:PackageName Language="ENG"&gt;Premium bouquet&lt;/dvb:PackageName&gt;
+      &lt;dvb:Service&gt;
+        &lt;dvb:TextualID ServiceName="CHANNEL_MOVIE1"/&gt;
+        &lt;dvb:LogicalChannelNumber&gt;1&lt;/dvb:LogicalChannelNumber&gt;
+      &lt;/dvb:Service&gt;
+      &lt;dvb:Service&gt;
+        &lt;dvb:TextualID ServiceName="CHANNEL_MOVIE2"/&gt;
+        &lt;dvb:LogicalChannelNumber&gt;2&lt;/dvb:LogicalChannelNumber&gt;
+      &lt;/dvb:Service&gt;
+      &lt;dvb:Service&gt;
+        &lt;dvb:TextualID ServiceName="CHANNEL_SPORT_SD"/&gt;
+        &lt;dvb:LogicalChannelNumber&gt;3&lt;/dvb:LogicalChannelNumber&gt;
+      &lt;/dvb:Service&gt;
+      &lt;dvb:Service&gt;
+        &lt;dvb:TextualID ServiceName="CHANNEL_SPORT"/&gt;
+        &lt;dvb:LogicalChannelNumber&gt;4&lt;/dvb:LogicalChannelNumber&gt;
+      &lt;/dvb:Service&gt;
+    &lt;/dvb:Package&gt;
+  &lt;/dvb12:PackageDiscovery&gt;
+&lt;/dvb12:ServiceDiscovery&gt;
+</pre>
+</section>
+<section id="adr-example"><h3>Application Discovery</h3>
+<p>If the Service Provider Discovery record indicates that Broadcast Discovery information is available (i.e. there is a <code>dvb:Offering</code> with <code>Payload Id="C1"</code>) about the Scheduled Content Services offered by the Service Provider, further interrogation by the OITF is required. This procedure would also be utilized when updated Application Discovery records are available according to section <a href="#update-mechanism-for-sdns" class="sectionRef"></a>.</p>
+<p>In the Service Provider information, the Application Discovery records are retrievable by HTTP GET operation (the offering only provides a dvb:Pull mechanism), the OITF creates an HTTP request as follows</p>
+<pre>GET /dvb/sdns/service_discovery?id=tv.service.com&amp;Payload=C1&amp;Segment=0001&amp;Version=01 
+HOST: 195.238.226.223</pre>
+<p>The HTTP response will contain the Application Discovery records similar to those in the following XML instance document</p>
+<pre class="xml-document">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;mis:ServiceDiscovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:oipf:service:sdns:2010 service-sdns.xsd"
+    xmlns:mis="urn:dvb:mhp:2009"&gt;
+  &lt;mis:ApplicationDiscovery DomainName="tv.service.com"&gt;
+    &lt;mis:ApplicationList&gt;
+      &lt;mis:Application&gt;
+        &lt;mis:appName Language="ENG"&gt;TV Service Portal&lt;/mis:appName&gt;
+        &lt;mis:applicationIdentifier&gt;
+          &lt;mis:orgId&gt;100&lt;/mis:orgId&gt;
+          &lt;mis:appId&gt;002&lt;/mis:appId&gt;
+        &lt;/mis:applicationIdentifier&gt;
+        &lt;mis:applicationDescriptor&gt;
+          &lt;mis:type&gt;
+            &lt;mis:OtherApp&gt;application/vnd.oipf.dae+xml&lt;/mis:OtherApp&gt;
+          &lt;/mis:type&gt;
+          &lt;mis:controlCode&gt;AUTOSTART&lt;/mis:controlCode&gt;
+          &lt;mis:visibility&gt;VISIBLE_ALL&lt;/mis:visibility&gt;
+          &lt;mis:serviceBound&gt;false&lt;/mis:serviceBound&gt;
+          &lt;mis:priority&gt;1&lt;/mis:priority&gt;
+          &lt;mis:version&gt;01&lt;/mis:version&gt;
+          &lt;!-- Required - values for mhpversion are defined in section 3.2.3.3.2 --&gt;
+          &lt;mis:mhpVersion&gt;
+            &lt;mis:profile&gt;1&lt;/mis:profile&gt;
+            &lt;mis:versionMajor&gt;2&lt;/mis:versionMajor&gt;
+            &lt;mis:versionMinor&gt;1&lt;/mis:versionMinor&gt;
+            &lt;mis:versionMicro&gt;0&lt;/mis:versionMicro&gt;
+          &lt;/mis:mhpVersion&gt;
+          &lt;mis:icon mis:filename="http://195.238.226.223/img/logo_application.gif"
+            mis:aspectRatio="1_1" /&gt;
+        &lt;/mis:applicationDescriptor&gt;
+        &lt;!-- Required - application Boundary defines the URL prefix - Any URLs
+             matching this prefix are considered to be within the application
+             boundary --&gt;
+        &lt;mis:applicationBoundary&gt;
+          &lt;mis:BoundaryExtension&gt;http://195.238.226.223/&lt;/mis:BoundaryExtension&gt;
+        &lt;/mis:applicationBoundary&gt;
+        &lt;!-- Required - applicationTransport defines transport type, here HTTP --&gt;
+        &lt;mis:applicationTransport xsi:type="mis:HTTPTransportType"&gt;
+          &lt;mis:URLBase&gt;http://195.238.226.223/app/&lt;/mis:URLBase&gt;
+        &lt;/mis:applicationTransport&gt;
+        &lt;!-- Required - applicationLocation defines the location of first page --&gt;
+        &lt;mis:applicationLocation&gt;index.html&lt;/mis:applicationLocation&gt;
+      &lt;/mis:Application&gt;
+    &lt;/mis:ApplicationList&gt;
+  &lt;/mis:ApplicationDiscovery&gt;
+&lt;/mis:ServiceDiscovery&gt;
+</pre>
+</section>
+
+</section>
+</body>
+</html>

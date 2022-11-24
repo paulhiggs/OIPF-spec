@@ -1,0 +1,223 @@
+table.dae-constant-table, table.dae-constant-table-novalue {
+    border-spacing: 0;
+    border-collapse:  collapse;
+    border-bottom:  3px solid #005a9c;
+	border-top:  3px solid #005a9c;
+	border-left:  3px solid #005a9c;
+	border-right:  3px solid #005a9c;
+    margin-left:auto; 
+    margin-right:auto;
+	font-size: 90%;
+	vertical-align: top;
+	margin-bottom: 12pt;
+	font-family: sans-serif;
+}
+.dae-constant-table th, .dae-constant-table-novalue th {
+    background: #E0E0E0;
+    color:  black;
+    padding:    3px 5px;
+    text-align: left;
+}
+.dae-constant-table td, .dae-constant-table-novalue td  {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	vertical-align: top;
+}
+.dae-constant-table td:first-child, .dae-constant-table-novalue td:first-child {
+	font-family: "Lucida Console";
+	font-size: 95%;
+	padding-top: 7px;
+}
+.dae-constant-table td:nth-child(2) {
+	text-align: center;
+}
+
+.dae-constant-table-novalue td p:first-child { margin-top: 0em; }
+.dae-constant-table td p:first-child { margin-top: 0em; }
+/* ----------------------------------------------------------------------------- */
+
+table.dae-event-table {
+    border-spacing: 0;
+    border-collapse:  collapse;
+    border-bottom:  3px solid #005a9c;
+	border-top:  3px solid #005a9c;
+	border-left:  3px solid #005a9c;
+	border-right:  3px solid #005a9c;
+    margin-left:auto; 
+    margin-right:auto;
+	font-size: 90%;
+	vertical-align: top;
+	margin-bottom: 12pt;
+	font-family: sans-serif;
+}
+
+.dae-event-table th {
+    background: #E0E0E0;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+.dae-event-table td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	vertical-align: top;
+}
+
+.dae-event-table td:first-child {
+	font-family: "Lucida Console";
+}
+
+.dae-event-table td:nth-child(2) {
+	font-family: "Lucida Console";
+	font-size: 95%
+}
+/* ----------------------------------------------------------------------------- */
+
+
+table.dae-method-table {
+	margin-bottom: 18pt;
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  2px solid #005a9c;
+	border-top:  2px solid #005a9c;
+	border-left:  2px solid #005a9c;
+	border-right:  2px solid #005a9c;
+	width:100%;
+	font-size: 90%;
+	vertical-align: top;
+	font-family: sans-serif;
+}
+/*
+.dae-method-table th {
+    background: #E0E0E0;
+    color:  black;
+    padding:    3px 5px;
+    text-align: left;
+}
+*/
+.dae-method-table td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	vertical-align: top;
+}
+/*
+.dae-method-table tr:first-child {
+    font-family: monospace;
+	font-size: 130%;
+	color: green;
+	font-weight: normal;
+}
+*/
+.dae-method-table td.dae-method-table-label {
+	font-size: 80%;
+	font-style: normal;
+	width: 9%;
+	vertical-align: top;
+}
+
+.dae-method-table td p:first-child {
+	margin-top: 0em;
+}
+
+.dae-method-table td p:last-child {
+	margin-bottom: 0em;
+}
+.dae-method-table td.dae-method-table-argument {
+	font-style: italic;
+	min-width: 10%;
+}
+
+/* ----------------------------------------------------------------------------- */
+table.dae-property-table {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  2px solid #005a9c;
+	border-top:  2px solid #005a9c;
+	border-left:  2px solid #005a9c;
+	border-right:  2px solid #005a9c;
+	width:100%;
+	font-size: 90%;
+	vertical-align: top;
+	margin-bottom: 18pt;
+	font-family: sans-serif;
+}
+
+.dae-property-table td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	vertical-align: top;
+}
+
+.dae-property-table td p:first-child {
+	margin-top: 0em;
+}
+.dae-property-table td p:last-child {
+	margin-bottom: 0em;
+}
+.dae-property-table td ul:last-child {
+	margin-bottom: 0em;
+}
+/* ----------------------------------------------------------------------------- */
+
+td.api-signature {
+    font-family: "Lucida Console";
+	font-size: 110%;
+}
+
+a.apiRef:link a.apiRef:visited  {
+	 color: inherit;
+	 text-decoration:none;
+}
+pre a.apiRef {font-size: 100%;}
+/* ----------------------------------------------------------------------------- */
+
+table.dae-api-values-table, table.dae-api-left-values-table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    border:  2px solid black;
+	font-size: 100%;
+	margin-left:1cm; 
+    margin-right:auto;
+	margin-top: 6pt;
+	margin-bottom: 6pt;
+}
+
+.dae-api-values-table th, .dae-api-left-values-table th {
+	border-bottom:  1px solid black;
+	border-left:  1px solid #ddd;
+	border-right:  1px solid #ddd;
+	padding-left: 3px;
+	padding-right: 3px;
+	font-weight: bold;
+	font-size: 100%; 
+}
+
+.dae-api-values-table td, .dae-api-left-values-table td {
+	border:  1px solid #ddd;
+}
+.dae-api-values-table td:first-child {
+	text-align:  center;
+}
+/*
+.dae-api-left-values-table th {
+	border-bottom:  1px solid black;
+	padding-left: 3px;
+	padding-right: 3px;
+	font-weight: bold;
+	font-size: 100%; 
+}
+
+.dae-api-left-values-table td {
+	border:  1px solid #ddd;
+}
+*/
+.dae-api-left-values-table td:first-child {
+//	font-family: "Lucida Console";
+}
+
+
+ul p:last-child { margin-top: 0em; }

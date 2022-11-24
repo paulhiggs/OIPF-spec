@@ -1,0 +1,22 @@
+
+table.compliance {
+	width:90%;
+}
+.compliance td { text-align: center; }
+.compliance th  { text-align: center; }
+
+.compliance td:first-child, .compliance th:first-child { text-align: left; }
+.compliance td:last-child , .compliance td:nth-last-child(2), .compliance td:nth-last-child(3) { width:10%; }
+.compliance td:nth-child(2) { width:14%; }
+
+
+table.legend { }
+.legend td:first-child { 	text-align: center; }
+
+table.note-table {
+	font-size: 90%;
+	font-family: sans-serif;
+}
+.note-table tr {
+	vertical-align: top;
+}

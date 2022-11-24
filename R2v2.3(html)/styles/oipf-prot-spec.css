@@ -1,0 +1,157 @@
+
+table.interface-protocol-table {
+    border-spacing: 0;
+    border-collapse:  collapse;
+    border-bottom:  3px solid #005a9c;
+	border-top:  3px solid #005a9c;
+	border-left:  3px solid #005a9c;
+	border-right:  3px solid #005a9c;
+    margin-left:auto; 
+    margin-right:auto;
+	font-size: 90%;
+	vertical-align: top;
+	margin-bottom: 12pt;
+	width: 90%;
+}
+
+.interface-protocol-table td:first-child {
+	width: 10%;
+}
+.interface-protocol-table td:nth-child(2) {
+	width: 55%
+}
+.interface-protocol-table td:nth-child(3) {
+	width: 15%;
+}
+
+.interface-protocol-table td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	vertical-align: top;
+	text-align: left;
+/*	font-family: sans-serif; */
+}
+.interface-protocol-table th {
+    background: #E0E0E0;
+    color:  black;
+    padding:    3px 5px;
+    text-align: left;
+	font-family: sans-serif;
+}
+
+
+
+pre.abnf {
+    font-family: sans-serif;
+    border:  1px solid black;
+	padding:    5px;
+}
+pre.sip-signalling-example {
+	background-color: #f6f6f6;
+	border:  1px solid black;
+	padding: 5px;
+}
+
+table.http-element {
+	border: none;
+	font-family: sans-serif;
+	font-size:90%
+}
+
+.http-element ul { margin: 0px; }
+.http-element ul li:last-child { margin-bottom: 0em; }
+
+
+table.mapping {
+    border-spacing: 0;
+    border-collapse:  collapse;
+    border-bottom:  3px solid #005a9c;
+	border-top:  3px solid #005a9c;
+	border-left:  3px solid #005a9c;
+	border-right:  3px solid #005a9c;
+    margin-left:auto; 
+    margin-right:auto;
+	font-size: 90%;
+	vertical-align: top;
+	margin-bottom: 12pt;
+	width: 90%;
+}
+
+.mapping th {
+    background: #E0E0E0;
+    color:  black;
+    padding:    3px 5px;
+    text-align: left;
+	font-family: sans-serif;
+}
+
+.mapping th[scope="row"] {
+    background: inherit;
+    color:  inherit;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+.mapping td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	vertical-align: top;
+	text-align: left;
+	font-family: sans-serif;
+}
+
+.mapping td:first-child { width: 60%; }
+
+.mapping td p:first-child {
+	margin-top: 0em;
+}
+.mapping td p:last-child {
+	margin-bottom: 0em;
+}
+.mapping caption {
+	caption-side: top;
+	font-weight: bold;
+}
+
+table.hni-igi-mapping {
+    border-spacing: 0;
+	vertical-align: top;
+    border-collapse:  collapse;
+    border-bottom:  3px solid #005a9c;
+	border-top:  3px solid #005a9c;
+	border-left:  3px solid #005a9c;
+	border-right:  3px solid #005a9c;
+	width: 95%;
+	margin-bottom: 12pt;
+}
+.hni-igi-mapping th {
+    background: #E0E0E0;
+    color:  black;
+    padding:    3px 5px;
+    text-align: left;
+	font-family: sans-serif;
+}
+.hni-igi-mapping th[scope="row"] {
+    background: inherit;
+    color:  inherit;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+.hni-igi-mapping td {
+    padding:    3px 10px;
+	vertical-align: top;
+    text-align: left;
+	font-family: sans-serif;
+	font-size: 90%;
+}
+.hni-igi-mapping td:first-child { width: 50%; }
+.hni-igi-mapping td:nth-child(2) { width: 50%; }
+
+
+ul.liststart-2 {list-style-type: circle;}
+
+p.notes-list {margin-bottom: 0em; font-size:90%;}
+td ol.notes-list {margin-top: 0em;}
+td ol.notes-list:last-child {margin-top: 0em; margin-bottom: 0em;}

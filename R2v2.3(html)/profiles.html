@@ -1,0 +1,898 @@
+<!DOCTYPE html>	
+<html lang="en" xml:lang="en">
+<head>
+<title>overwritten</title>
+	<script src='js/respec.js' class='remove'></script>
+	<script class='remove'>				
+		var respecConfig = {
+					 
+          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+          specStatus:           "OIPF-FINAL",
+		  
+		  OIPFrelease: "2",	
+		  OIPFversion: "2.3",
+		  OIPFvolume: "",
+          
+          
+          // the specification's short name, as in http://www.w3.org/TR/short-name/
+          shortName:            "profiles",
+
+          // if your specification has a subtitle that goes below the main
+          // formal title, define it here
+		  title: "Profiles",
+          subtitle   :  "",
+
+          // if you wish the publication date to be other than today, set this
+          publishDate:  "2014-01-24",
+
+          // if the specification's copyright date is a range of years, specify
+          // the start date here:
+          //copyrightStart: "2005",
+		
+		  //additionalCopyrightHolders: "",
+		  
+		  overrideCopyright: " ",
+		  
+		  
+          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+          // and its maturity status
+          // previousPublishDate:  "1977-03-15",
+          // previousMaturity:  "WD",
+
+          // if there a publicly available Editor's Draft, this is the link
+          edDraftURI:           "",
+
+          // if this is a LCWD, uncomment and set the end of its review period
+          // lcEnd: "2009-08-05",
+
+
+
+          // editors, add as many as you like
+          // only "name" is required
+          editors:  [
+              { name: "Editor", url: "contact@oipf.tv",
+                company: "Open IPTV Forum", companyURL: "http://www.oipf.tv/" },
+          ],
+		  
+          // authors, add as many as you like. 
+          // This is optional, uncomment if you have authors as well as editors.
+          // only "name" is required. Same format as editors.
+
+          //authors:  [
+          //    { name: "Your Name", url: "http://example.org/",
+          //      company: "Your Company", companyURL: "http://example.com/" },
+          //],
+          
+          // name of the WG
+          wg:           "OIPF Solutions WG",
+          
+          // URI of the public WG page
+          wgURI:        "http://www.oipf.tv",
+          
+          // name (with the @w3c.org) of the public mailing to which comments are due
+          wgPublicList: "contact@oipf.tv",
+          
+          // URI of the patent status for this WG, for Rec-track documents
+          // !!!! IMPORTANT !!!!
+          // This is important for Rec-track documents, do not copy a patent URI from a random
+          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+          // Team Contact.
+          wgPatentURI:  "",
+          		  
+		  maxTocLevel:	3,
+		  
+				
+		  localBiblio: {
+		  },
+      };
+	</script>
+<link rel="stylesheet" href="styles/oipf-profile-spec.css" type="text/css" />
+</head>
+<body>
+
+<section id="abstract">
+<p>This specification has been produced by the Open IPTV Forum (OIPF).</p>
+<p>This specification accompanies the set of specifications (Volumes 1-7) that define the Open IPTV Forum Release 2 IPTV Solution.</p>
+<p>This specification defines three profiles for the OIPF Release 2 IPTV Solution:</p><ul>
+<li>The Open Internet Profile,
+<li>The Baseline Managed Profile, and
+<li>The Enhanced Managed Profile.</ul>
+<p>The three profiles are heirarchical in the sense that the Open Internet Profile is formed of a sub-set of the features of the Baseline Managed Profile, and that the Baseline Managed Profile is formed of a sub-set of the features of the Enhanced Managed Profile.</p>
+<p>Note that these profile names are defined as technical terms and as such are not intended to be used for any logo mark or similar purpose.</p>
+<p>If additional profiles are defined for the Release 2 IPTV Solution, these will be included in future revisions of this specification.</p>
+</section>
+
+<!--<section id='sotd'></section>-->
+
+<section id="scope">
+<h2>Scope (Informative)</h2>
+<p>The Open IPTV Forum Release 2 IPTV Solution provides the specification for an end-to-end platform for the deployment of the set of Release 2 IPTV Services. The Open IPTV Forum has developed an end-to-end solution to allow any consumer end-device, compliant to the Open IPTV Forum specifications, to access enriched and personalised IPTV services either in a managed or a non-managed network.</p> 
+<p>The Release 2 IPTV Solution specification provides multiple options for some features. This specification complements the IPTV Solution specification by defining OIPF implementation and deployment profiles that remove uncertainty about what features are required in an implementation. Any implementation based on the Release 2 IPTV Solution specification must be in adherence to one of the profiles defined in the present specification in order to claim Open IPTV Forum compliance.</p> 
+<p>Profiles define the minimum set of features that a terminal must support in order to be able to claim compliance to that profile, and the maximum set of features that a service can rely on being present in the OITF. Some features are optional within a profile, and a service can use capability exchange protocols to determine if a terminal supports such features. Some features are mandatory or optional depending on the configuration of the OITF, for example whether the OITF is equipped with local storage or a broadcast tuner.</p> 
+<p>It is expected that this specification will be used as a key input to the interoperability and certification programs that will be defined for the Release 2 Solution by the Open IPTV Forum.</p> 
+</section>
+
+<section id='references'>
+<h2>References</h2>
+</section>
+
+<section id="terminology-and-conventions">
+<h2>Terminology and Conventions</h2>
+<section id="conventions">
+<h3>Conventions</h3>
+<p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in [[RFC2119]].</p>
+<p>All sections and appendixes are normative, unless they are explicitly indicated to be informative.</p>
+</section>
+<section id="definitions">
+<h3>Definitions</h3>
+<table class="definitions">
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Access Network</td><td>The network infrastructure used by the Access Provider to deliver IPTV services to the Consumer.
+<p>The access network infrastructure is used for the delivery of the content and may include quality of service management to ensure that appropriate network resources are available for the delivery of the content.</p></td></tr>
+<tr><td>Application</td><td>Collection of assets and logic that together provide a Service to the User. Assets and logic may reside either in an application Server or in the ITF or both.</td></tr>
+<tr><td>Consumer Domain</td><td>The domain where the IPTV services are consumed. A consumer domain can consist of a single terminal or a network of terminals and related devices for service consumption.</td></tr>
+<tr><td>Consumer Network</td><td>The local area network in which the IPTV Terminal Function is located. Consumer Networks include Residential Networks, hot spots, hotel networks etc.</td></tr>
+<tr><td>Consumer(s)</td><td>See End User(s).</td></tr>
+<tr><td>Content</td><td>An instance of audio, video, audio-video information, or data.</td></tr>
+<tr><td>Content Guide</td><td>An on-screen guide to Scheduled Content and Content on Demand, allowing a User to navigate, select, and discover content by time, title, channel, genre, etc.</td></tr>
+<tr><td>Content on Demand (CoD)</td><td>A Content on Demand service is a service where a user can select the individual content items they want to watch from the list of available content. Consumption of the content is started upon user request.</td></tr>
+<tr><td>Content Protection</td><td>Means to protect content from unauthorized usage such as re-distribution, recording, playback, duplication etc</td></tr>
+<tr><td>Content Provider</td><td>Entity that provides Content and associated usage rights to the IPTV Service Provider.</td></tr>
+<tr><td>End User(s)</td><td>The individual(s) (e.g., members of the same family) who actually use the IPTV Services.</td></tr>
+<tr><td>Internet</td><td>The Internet is the worldwide, publicly accessible network of interconnected computer networks that transmit data by packet switching using the standard Internet Protocol (IP).</td></tr>
+<tr><td>IPTV Service Provider</td><td>Entity that offers IPTV Services and which has a contractual relationship with the Subscriber.</td></tr>
+<tr><td>IPTV Solution</td><td>Defined by the Forum’s specifications.</td></tr>
+<tr><td>IPTV Terminal Function (ITF)</td><td>The functionality within the Consumer Network that is responsible for terminating the media and control for an IPTV Service.</td></tr>
+<tr><td>Local Storage</td><td>Content storage within the administrative realm of the IPTV Service Provider, but not in their physical environment (for example, local storage could be a partition of storage located in the residential network and allocated to the Service Provider to pre-load CoD).</td></tr>
+<tr><td>native HNI-IGI function</td><td>The procedures for interactions on the HNI-IGI interface are provided as part of the OITF implementation - typically in native code.</td></tr>
+<tr><td>non-native HNI-IGI function</td><td>The procedures for interactions on the HNI-IGI interface are provided by a service provider in JavaScript as part of a DAE application.</td></tr>
+<tr><td>nPVR</td><td>Network based Personal Video Recorder. Provision of PVR functionality whereby the content is stored in the IPTV Service Provider domain. The nPVR allows a user to schedule recording of scheduled content programs. The user can later select the content they want to watch from the recorded content.</td></tr>
+<tr><td>Portal</td><td>A function of a Service Platform that provides an entry point to individual IPTV Services to Users via a GUI.</td></tr>
+<tr><td>Program</td><td>A segment of Scheduled Content with a defined beginning and end. </td></tr>
+<tr><td>Program Guide</td><td>See Content Guide.</td></tr>
+<tr><td>Push CoD</td><td>A type of Content on Demand where the content is pre-loaded to the ITF local storage by the Service Provider. The user has no direct control of what content is pre-loaded; however the Service Provider may make the choice based on user preferences and habits. Content is available for direct consumption after the user selection is confirmed.</td></tr>
+<tr><td>Residential Network</td><td>The local network of devices (gateways and terminals) at the End User’s premises.</td></tr>
+<tr><td>Scheduled Content</td><td>An IPTV Service where the playout schedule is fixed by an entity other than the User. The Content is delivered to the user for immediate consumption.</td></tr>
+<tr><td>Service</td><td>Content and Applications provided by Service Platform Providers and Service Providers.</td></tr>
+<tr><td>Service Access Protection</td><td>Means to protect IPTV Services from unauthorized usage/access, such as<ul><li>Access from unauthorized users<li>DOS attack</ul></td></tr>
+<tr><td>Service Platform Provider</td><td>Entity which, based on a contractual relationship with IPTV Service Providers, provides the supporting functions for the delivery of IPTV Services, such as charging, access control and other functions which are not part of the IPTV Service, but required for managing its delivery.</td></tr>
+<tr><td>Service Protection</td><td>Means to protect Contents (files or streams) during their delivery.</td></tr>
+<tr><td>Session Portability</td><td>Ability of a given Service/Application to be switched from one device to another for a continuation of a session in real time.</td></tr>
+<tr><td>Subscriber</td><td>The individual that makes the contract (subscription) with a Service Provider for the consumption of certain Services.</td></tr>
+<tr><td>Subscriber Profile</td><td>Information associated with a subscription.</td></tr>
+<tr><td>Trick Mode</td><td>Facility to allow the User to control the playback of Content, such as pause, fast and slow playback, reverse playback, instant access, replay, forward and reverse skipping.</td></tr>
+<tr><td>User Profile</td><td>Information (e.g., viewing preferences) associated with a specific User who is a part of a subscription.</td></tr>
+<tr><td>User(s)</td><td>See End User(s).</td></tr>
+</table>
+</section>
+<section id="abbreviations">
+<h3>Abbreviations</h3>
+<table class="definitions">
+<tr><th>Abbreviation</th><th>Definition</th></tr>
+<tr><td>AG</td><td>Application Gateway</td></tr>
+<tr><td>API</td><td>Application Programming Interface</td></tr>
+<tr><td>AL-FEC</td><td>Application Layer FEC</td></tr>
+<tr><td>A/V</td><td>Audio and Video</td></tr>
+<tr><td>BCG</td><td>Broadband Content Guide (specified by the DVB Project)</td></tr>
+<tr><td>BMP</td><td>Baseline Managed Profile</td></tr>
+<tr><td>CAS</td><td>Conditional Access System</td></tr>
+<tr><td>CDN</td><td>Content Delivery Network</td></tr>
+<tr><td>CDNC</td><td>CDN Controller</td></tr>
+<tr><td>CDS</td><td>Content Directory Service</td></tr>
+<tr><td>CG</td><td>Content Guide</td></tr>
+<tr><td>CoD</td><td>Content on Demand</td></tr>
+<tr><td>CPE</td><td>Customer Premise Equipment</td></tr>
+<tr><td>CSP</td><td>Content and Service Protection</td></tr>
+<tr><td>CSPG</td><td>Content and Service Protection Gateway</td></tr>
+<tr><td>DAE</td><td>Declarative Application Environment</td></tr>
+<tr><td>DHCP</td><td>Dynamic Host Configuration Protocol</td></tr>
+<tr><td>DRM</td><td>Digital Rights Management</td></tr>
+<tr><td>DSCP</td><td>DIFFServ Code Point</td></tr>
+<tr><td>DTCP-IP</td><td>Digital Transmission Content Protection over Internet Protocol</td></tr>
+<tr><td>DVB-IP</td><td>Digital Video Broadcasting (over) Internet Protocol</td></tr>
+<tr><td>ECMA</td><td>European Computer Manufacturers Association, ECMA International - European association for standardizing information and communication systems </td></tr>
+<tr><td>EIT</td><td>Event Information Table</td></tr>
+<tr><td>EMP</td><td>Enhanced Managed Profile</td></tr>
+<tr><td>EPG</td><td>Electronic Program Guide </td></tr>
+<tr><td>FE</td><td>Functional Entity</td></tr>
+<tr><td>FCC</td><td>Fast Channel Change</td></tr>
+<tr><td>FEC</td><td>Forward Error Correction</td></tr>
+<tr><td>GBA</td><td>Generic Bootstrapping Architecture</td></tr>
+<tr><td>GCA</td><td>Gateway-Centric Approach (for CSP)</td></tr>
+<tr><td>GUI</td><td>Graphical User Interface</td></tr>
+<tr><td>HAS</td><td>HTTP Adaptive Streaming</td></tr>
+<tr><td>HD</td><td>High Definition</td></tr>
+<tr><td>HTTP</td><td>Hypertext Transfer Protocol</td></tr>
+<tr><td>IG</td><td>IMS Gateway</td></tr>
+<tr><td>IGMP</td><td>Internet Group Management Protocol</td></tr>
+<tr><td>IMS</td><td>IP Multimedia Subsystem</td></tr>
+<tr><td>IP</td><td>Internet Protocol</td></tr>
+<tr><td>IPTV</td><td>Internet Protocol Television</td></tr>
+<tr><td>ISP</td><td>Internet Service Provider</td></tr>
+<tr><td>ITF</td><td>IPTV Terminal Function</td></tr>
+<tr><td>LAN</td><td>Local Area Network</td></tr>
+<tr><td>MAC</td><td>Message Authentication Code</td></tr>
+<tr><td>NAT</td><td>Network Address Translation</td></tr>
+<tr><td>nPVR</td><td>Network Personal Video Recorder</td></tr>
+<tr><td>OIP</td><td>Open Internet Profile</td></tr>
+<tr><td>OIPF</td><td>Open IPTV Forum</td></tr>
+<tr><td>OITF</td><td>Open IPTV Terminal Function</td></tr>
+<tr><td>OMA</td><td>Open Mobile Alliance</td></tr>
+<tr><td>PAE</td><td>Procedural Application Environment</td></tr>
+<tr><td>PVR</td><td>Personal Video Recorder</td></tr>
+<tr><td>QoS</td><td>Quality of Service</td></tr>
+<tr><td>RET</td><td>Retransmission</td></tr>
+<tr><td>RTP</td><td>Real Time Protocol</td></tr>
+<tr><td>RTCP</td><td>Real Time Control Protocol</td></tr>
+<tr><td>RTSP</td><td>Real Time Streaming Protocol</td></tr>
+<tr><td>RMS</td><td>Remote Management System</td></tr>
+<tr><td>SD</td><td>Standard Definition</td></tr>
+<tr><td>SD&amp;S</td><td>Service Discovery and Selection</td></tr>
+<tr><td>SDP</td><td>Session Description Protocol</td></tr>
+<tr><td>SIP</td><td>Session Initiation Protocol</td></tr>
+<tr><td>SP</td><td>Service Provider</td></tr>
+<tr><td>SPI</td><td>Service Provider Interface</td></tr>
+<tr><td>SPP</td><td>Service Platform Provider</td></tr>
+<tr><td>SSO</td><td>Single Sign-On</td></tr>
+<tr><td>STB</td><td>Set Top Box</td></tr>
+<tr><td>TBD</td><td>To Be Determined</td></tr>
+<tr><td>TCA</td><td>Terminal-Centric Approach (for CSP)</td></tr>
+<tr><td>TCP/IP</td><td>Transmission Control Protocol/Internet Protocol</td></tr>
+<tr><td>UI</td><td>User Interface</td></tr>
+<tr><td>UNI</td><td>User Network Interface</td></tr>
+<tr><td>URI</td><td>Uniform Resource Identifier</td></tr>
+<tr><td>URL</td><td>Uniform Resource Locator</td></tr>
+<tr><td>VoD</td><td>Video on Demand</td></tr>
+<tr><td>WG</td><td>WAN Gateway</td></tr>
+<tr><td>WAN</td><td>Wide Area Network </td></tr>
+<tr><td>XHTML</td><td>eXtensible Hypertext Markup Language</td></tr>
+<tr><td>XML</td><td>eXtensible Markup Language</td></tr>
+</table>
+</section>
+</section>
+
+<section id="solution-profiles">
+<h1>Release 2 IPTV Solution Profiles (Informative)</h1>
+<p>An OIPF Release 2 IPTV Solution profile is a set of features and elements, as specified in the Open IPTV Forum Release 2 Solution specification, that will be used by any OIPF-defined interoperability and certification program to define equipment or services as being “OIPF compliant”.</p>
+<p>The overall objective is to enable the best possible capability and flexibility for Service Providers to deploy Services to terminals that are available in the horizontal (i.e., non-subsidized) market in the near-term time frame. In selecting a set of features and elements that constitute a profile, a balance is made between the following factors:</p><ul>
+<li>Time to market of the compliant OITF within a non-subsidised, horizontal-market device;
+<li>Viability of implementation of the selected technologies;
+<li>Flexibility in the provision of the envisaged Release 2 IPTV Services;
+<li>Enabling a wide range of services to be accessible to the User.</ulL
+<p>Three profiles are specified in the present document:</p><ul>
+<li>The Open Internet Profile (OIP). This profile is intended for “over-the-top” services that do not utilise any QoS provision or terminal management features.
+<li>The Baseline Managed Profile (BMP). This profile adds support for multicast and unicast content streaming services including all associated features that facilitate QoS provision for content delivery in a managed network, compared to the OIP.
+<li>The Enhanced Managed Profile (EMP). This profile adds native support for advanced managed-network features like IMS, Broadband Content Guide and TR-069 based remote management, compared to the BMP.</ul>
+<p>Sections <a href="#oip" class="sectionRef">5</a>, <a href="#bmp" class="sectionRef">6</a> and <a href="#emp" class="sectionRef">7</a> provide normative descriptions of the OIP, BMP and EMP respectively.</p>
+<p>Section <a href="#profile-features" class="sectionRef">8</a> provides a normative specification of the set of features of each Profile in tabular form, with cross-references to the relevant clauses of the volumes in the Release 2 IPTV Solution specification.</p>
+<p>It is believed that Sections <a href="#oip" class="sectionRef">5</a>, <a href="#bmp" class="sectionRef">6</a> and <a href="#emp" class="sectionRef">7</a> are consistent with Section <a href="#profile-features" class="sectionRef">8</a>, but in the case of an inadvertent discrepancy, the normative requirements in section <a href="#profile-features" class="sectionRef">8</a> shall take precedence.</p>
+</section>
+
+<section id="oip"><h1>Open Internet Profile</h1>
+<p>In the present document the Open Internet Profile is referred to as “OIP”.</p>
+<p>An OITF that is compliant with the OIP is referred to as an OIP-OITF.</p>
+<p>In the Release 2 IPTV Solution specification, the terms “Unmanaged Network” and “Open Internet” are used interchangeably, to refer to the ability to access any Service Provider using any Access Network Provider without any quality of service guarantees.</p>
+<p>Open Internet IPTV Services are accessed via the Internet, without QoS guarantees. They may be accessed via a service platform (e.g., a portal).</p>
+<p>The OIP-OITF enables access to compliant services that do not provide QoS guarantees over at least one network segment between the IPTV Service Provider and the OITF, independently from their ISP – i.e. “over the top” (OTT) mode.</p>
+<p>The OIP is a sub-set of the BMP and of the EMP in terms of the features included.</p>
+<p>The following sub-sections summarise the features of the OIP.</p>
+<section id="oip-iptv-services"><h2>IPTV Services</h2>
+<p>The OIP-OITF SHALL support the Scheduled Content Service, using the HTTP transport method. Support of the multicast and unicast streamed via RTSP/RTP variants is OPTIONAL.</p>
+<p>The OIP-OITF SHALL support the Streamed CoD Service, using the HTTP transport method. Support of the Streamed CoD Service via RTSP/RTP is OPTIONAL.</p>
+<p>The OIP-OITF SHALL support Information Services, which are realised as DAE applications.</p>
+<p>Support for the Download CoD and Local PVR services in the OIP-OITF is OPTIONAL and depends on the provision of persistent storage in the OITF.</p>
+<p>Support for the Hybrid Broadcast Broadband service in the OIP-OITF is OPTIONAL and depends on the provision of at least one broadcast tuner in the OITF.</p>
+</section>
+<section id="oip-residential-network"><h2>Residential Network</h2>
+<section id="oip-wg"><h3>WAN Gateway</h3>
+<p>If an OIPF-compliant WAN Gateway is present then it MAY fulfill the relevant network attachment functions as specified in Volume 4 [[.OIPF_PROT2]] <a href="volume4.html#s12-1" class="extRef">section 12.1</a> in order to provide additional Service Provider discovery entry points as described in section <a href="#oip-sp-discovery" class="sectionRef">5.3</a>.</p>
+</section>
+<section id="oip-ig"><h3>IMS Gateway</h3>
+<p>The IMS Gateway (IG) functional entity is not necessary for access to services not relying on IMS using an OIP-OITF. However, if an IG is present, an OIP-OITF MAY use it to access some IMS-based managed network services.</p>
+</section>
+<section id="oip-ag"><h3>Application Gateway</h3>
+<p>The AG functional entity, as generally for the IPTV Release 2 Solution, is OPTIONAL in the OIP.</p>
+</section>
+<section id="oip-oitf"><h3>OITF</h3>
+<p>The REQUIRED features for the OIP-OITF are described in the following sub-sections, which deal with specific aspects of the IPTV Solution.</p>
+<p>Section <a href="#profile-features" class="sectionRef">8</a> provides details about the IPTV Solution features that SHALL be supported by the OIP-OITF.</p>
+</section>
+</section>
+<section id="oip-sp-discovery"><h2>Service Provider discovery entry points</h2>
+<p>The Release 2 IPTV Solution defines three methods for the provision of Service Provider discovery entry points to the OITF. The availability of these various methods enables the User to access various Service Providers’ IPTV Services in a convenient manner, namely entry points that are pre-configured in the OITF, manually entered or acquired entry points, and entry points provided by the Access Network Service Provider.</p>
+<p>The WAN Gateway MAY provide Service Provider discovery entry points via DHCP, as specified in Volume 4 [[.OIPF_PROT2]] <a href="volume4.html#s12-1-1-1-3" class="extRef">section 12.1.1.1.3</a>.</p>
+<p>The OIP-OITF MAY provide pre-configured Service Provider discovery entry points, as specified in the Release 2 Architecture [[.OIPF_ARCH2]] <a href="architecture.html#s6-2-1-2" class="extRef">section 6.2.1.2</a>.</p>
+<p>The OIP-OITF MAY provide means by which the User is able to enter his own chosen Service Provider discovery entry points via the OITF user interface, as specified in the Release 2 Architecture [[.OIPF_ARCH2]] <a href="architecture.html#s6-2-1-2" class="extRef">section 6.2.1.2</a>.</p>
+<p>The OIP-OITF SHALL offer the complete set of Service Provider discovery entry points acquired by all of the three above methods, if any are provided, but the method of presentation and relative positioning of the various Service Provider discovery entry points in the user interface is out of scope of the OIPF specifications.</p>
+</section>
+<section id="oip-service-discovery"><h2>Service discovery and content metadata</h2>
+<p>If the OIP-OITF provides persistent storage and supports the Download CoD service then it SHALL support the provision of content metadata via the Content Access Descriptor for that service, otherwise all service discovery data and content metadata SHALL be embedded within the DAE application CE-HTML pages.</p>
+</section>
+<section id="oip-authentication"><h2>Authentication methods</h2>
+<p>The OIP-OITF SHALL support the following authentication methods specified in the indicated sections of Volume 7 [[.OIPF_CSP2]]:</p><ul>
+<li>HTTP basic and digest authentication (Volume 7 [[.OIPF_CSP2]] <a href="volume7.html#http-basic-and-digest-authentication" class="extRef">section 5.4.1</a>), and
+<li>Web based authentication (Volume 7 [[.OIPF_CSP2]] <a href="volume7.html#web-based-authentication" class="extRef">section 5.4.3</a>).
+</ul>
+</section>
+<section id="oip-csp"><h2>Content and Service Protection</h2>
+<p>The OIP-OITF SHALL support at least one of the CSP solutions specified in Volume 7 [[.OIPF_CSP2]], i.e. it SHALL support either the TCA and/or CSPG-DTCP and/or CSPG-CI+, in order to support compliant services that deliver protected content.</p>
+</section>
+<section id="oip-svg"><h2>SVG Tiny V1.2</h2>
+<p>The use of SVG Tiny 1.2 enables advanced graphics capabilities within a DAE application, but it is expected that not all terminals will be able to support SVG Tiny 1.2, hence the support of SVG Tiny 1.2 in the OIP-OITF is OPTIONAL.</p>
+<p>A DAE application MAY use SVG Tiny 1.2 as specified in Volume 5 [[.OIPF_DAE2]], but it is RECOMMENDED that Service Providers ensure that an OITF that does not support SVG Tiny 1.2 is nevertheless able to offer the full functionality of the Service to the User, except for the enhanced user interface.</p>
+</section>
+<section id="oip-remote-management"><h2>Remote management</h2>
+<p>The remote management feature for the OIP facilitates the function of basic inventory of OITFs that are accessing services, without the presence of a remote management server that provisions the OITF.</p>
+<p>The OITF SHALL support the remote management API as specified in <a href="volume5.html#remote-management-apis" class="extRef">section 7.11</a> of Volume 5 [[.OIPF_DAE2]].</p>
+<p>The OITF SHALL support an upgrade process that can be triggered via the DAE remote management API. The upgrade process remains manufacturer-specific and the provision of upgrades is subject to deployment needs.</p>
+</section>
+</section>
+
+
+<section id="bmp"><h1>Baseline Managed Profile</h1>
+<p>In the present document the Baseline Managed Profile is referred to as “BMP”.</p>
+<p>An OITF that is compliant with the BMP is referred to as a BMP-OITF.</p>
+<p>The BMP is a super-set of the OIP, and a sub-set of the EMP in terms of the features included. All features that are MANDATORY in the OIP are also MANDATORY in the BMP.</p>
+<p>The BMP-OITF extends the functions needed to provide the pure “Over-The-Top” (OTT) service support of the OIP with functions that make it able to access content delivery services with full QoS provision in a managed network environment. These functions are chosen in order to allow a BMP-OITF to be able to access the full range of IPTV content services, and act as a near-term intermediate step towards the full range of capabilities offered by the Enhanced Managed Profile (EMP), described in section <a href="#emp" class="sectionRef">7</a>.</p>
+<p>Thus, the BMP-OITF enables access to several kinds of IPTV Service:</p><ul>
+<li>Compliant services that do not provide QoS guarantees over at least one network segment between the IPTV Service Provider and the OITF, independently from their ISP – i.e. “over the top” (OTT) mode;
+<li>Services where the ISP is also an IPTV Service Provider that offers compliant services making use of network-side enhancements, including multicast and unicast content streaming with full QoS provision.</ul>
+<p>The following sub-sections summarise the features of the BMP.</p>
+<section id="bmp-iptv-services"><h2>IPTV Services</h2>
+<p>IPTV services support in the BMP is the same as for the OIP, except that in addition to those services the BMP-OITF SHALL support the Scheduled Content and Streamed CoD Services, using the tools described in section <a href="#bmp-service-enablers" class="sectionRef">6.4</a>.</p>
+</section>
+<section id="bmp-residential-network"><h2>Residential Network</h2>
+<section id="bmp-wg"><h3>WAN Gateway</h3>
+<p>The WAN Gateway SHALL fulfill the relevant network attachment functions as specified in Volume 4 [[.OIPF_PROT2]] <a href="volume4.html#s12-1" class="extRef">section 12.1</a>.</p>
+<p>If an OIPF compliant WAN Gateway is not present, for example when a non-OIPF compliant home broadband router is deployed instead, then the BMP-OITF might not be able to access the Scheduled Content and Streamed CoD services.</p>
+</section>
+<section id="bmp-ig"><h3>IMS Gateway</h3>
+<p>The IMS Gateway (IG) functional entity is not necessary for access to services using a BMP-OITF. However, if an IG is present, a BMP-OITF MAY use it to access IMS-based managed network services.</p>
+</section>
+<section id="bmp-ag"><h3>Application Gateway</h3>
+<p>The AG functional entity, as generally for the IPTV Release 2 Solution, is OPTIONAL in the BMP.</p>
+</section>
+<section id="bmp-oitf"><h3>OITF</h3>
+<p>A DAE application in a BMP-OITF SHALL implement the non-native HNI-IGI interface, as specified in Volumes 4 [[.OIPF_PROT2]] and 5 [[.OIPF_DAE2]] of the Release 2 IPTV Solution specification, if it intends to make to use of IMS-based services.</p>
+<p>Further REQUIRED features for the BMP-OITF are contained in the following sub-sections, which deal with specific aspects of the IPTV Solution.</p>
+<p>Section <a href="#profile-features" class="sectionRef">8</a> provides details about the IPTV Solution features that SHALL be supported by the BMP-OITF.</p>
+</section>
+</section>
+<section id="bmp-sp-discovery"><h2>Service Provider discovery entry points</h2>
+<p>The provisions for Service Provider discovery entry points for the BMP-OITF are the same as those specified for the OIP-OITF in section <a href="#oip-sp-discovery" class="sectionRef">5.3</a>.</p>
+</section>
+<section id="bmp-service-enablers"><h2>Scheduled Content and Streamed CoD service enablers</h2>
+<p>The Scheduled Content and Streamed CoD services are generally associated with managed networks, where the streamed content is provided within a distribution and delivery network that is managed by the Service Provider, so that the necessary level of QoS can be assured for those services.</p>
+<p>The BMP-OITF includes support of the features that enable the reception of such services. These include:</p><ul>
+<li>Mandatory support of multicast (IGMPv3) or unicast delivery of content carried in MPEG-2 TS over RTP/UDP or unicast delivery of content carried in MPEG-2 TS or MP4FF over HTTP;
+<li>Mandatory support of RTSP as specified in Volume 4 [[.OIPF_PROT2]] <a href="volume4.html#s7-1-1-1" class="extRef">section 7.1.1.1</a>.
+<li>Mandatory support of Fast Channel Change (FCC), DVB packet retransmission protocol (RET), and DVB base level application-layer FEC.</ul>
+<p>The service list for the Scheduled Content service in the BMP MAY be provided by various methods:</p><ul>
+<li>Embedded within the DAE application CE-HTML pages;
+<li>Delivery within the DVB SD&amp;S Broadcast Discovery Information record, which may be transported by unicast (HTTP) or multicast (DVBSTP).</ul>
+<p>The Service Provider MAY use either or both of these methods. The BMP-OITF SHALL support both of these methods.</p>
+<p>Content metadata in addition to the service list MAY be provided within the DAE application or via in-band DVB Service Information (EIT), which SHALL be supported by the BMP-OITF.</p>
+</section>
+<section id="bmp-authentication"><h2>Authentication methods</h2>
+<p>The provisions for authentication methods for the BMP-OITF are the same as those specified for the OIP-OITF in section <a href="#oip-authentication" class="sectionRef">5.5</a>.</p>
+</section>
+<section id="bmp-csp"><h2>Content and Service Protection</h2>
+<p>The provisions for content and service protection for the BMP-OITF are the same as those specified for the OIP-OITF in section <a href="#oip-csp" class="sectionRef">5.6</a>.</p>
+</section>
+<section id="bmp-oitf-caps"><h2>OITF capabilities</h2>
+<section><h3>Multiple concurrent video stream decoding support</h3>
+<p>It is RECOMMENDED that the BMP-OITF support the concurrent decoding and rendering of one HD video stream and one SD video stream.</p>
+<p>Services and DAE applications that foresee the concurrent rendering of more than one video stream (e.g. EPG with embedded video preview) SHOULD make provision for replacing the video display with an alternative asset e.g. still picture, in case the OITF does not support multiple video stream decoding and rendering.</p>
+</section>
+</section>
+<section id="bmp-remote-management"><h2>Remote management</h2>
+<p>The provisions for remote management for the BMP-OITF are the same as those specified for the OIP-OITF in section <a href="#oip-remote-management" class="sectionRef">5.8</a>.</p>
+</section>
+</section>
+
+
+<section id="emp"><h1>Enhanced Managed Profile</h1>
+<p>The Enhanced Managed Profile is defined as the combination of both Open Internet and IMS-based Managed Network models of IPTV service operation. In the present document the Enhanced Managed Profile is referred to as “EMP”.</p>
+<p>An OITF that is compliant with the EMP is referred to as an EMP-OITF.</p>
+<p>The EMP is a super-set of the BMP (also of the OIP), i.e. all features that are MANDATORY in the BMP are also MANDATORY in the EMP. The EMP adds IMS-based functionality, enhanced content delivery features and more extensive management capabilities of the residential network’s functional entities.</p>
+<p>The following sub-sections summarise the features of the EMP.</p>
+<section id="emp-iptv-services"><h2>IPTV Services</h2>
+<p>In addition to the requirements around IPTV Services support in the BMP, the EMP-OITF SHALL support the communications services, namely messaging, chat sessions and presence as specified in Volume 4 [[.OIPF_PROT2]] section <a href="volume4#s5-5" class="extRef">5.5</a>. The support of audio and audio/video communication services is an OITF implementation are optional, also depending on the integration of corresponding audio and video input devices on the OITF.</p>
+</section>
+<section id="emp-residential-network"><h2>Residential Network</h2>
+<section id="emp-wg"><h3>WAN Gateway</h3>
+<p>The WAN Gateway SHALL fulfill the relevant network attachment functions as specified in Volume 4 [[.OIPF_PROT2]] sections <a href="volume4#s12-1" class="extRef">12.1</a> and <a href="volume4.html#annex-g-3" class="extRef">G.3</a>.</p>
+</section>
+<section id="emp-ig"><h3>IMS Gateway</h3>
+<p>The IMS Gateway (IG) SHALL implement the relevant procedures specified in Volume 4 [[.OIPF_PROT2]].</p>
+</section>
+<section id="emp-ag"><h3>Application Gateway</h3>
+<p>The Application Gateway (AG) functional entity, as is the case generally for the IPTV Release 2 Solution, is OPTIONAL in the EMP.</p>
+</section>
+<section id="emp-oitf"><h3>OITF</h3>
+<p>The EMP-OITF SHALL implement the HNI-IGI interface natively, as specified in Volume 4 [[.OIPF_PROT2]], except in the case that a device implements both the OITF and the IG, where the use of the HNI-IGI interface is OPTIONAL, as specified in <a href="volume4.html#s3-1" class="extRef">section 3.1</a> of Volume 4 [[.OIPF_PROT2]].</p>
+<p>The EMP-OITF SHALL provide the capability for User input of text in order to use the messaging and chat services. A facility for text input MAY be included in DAE applications.</p>
+</section>
+</section>
+<section id="emp-sp-discovery"><h2>Service Provider discovery entry points</h2>
+<p>The provisions for Service Provider discovery entry points for the EMP-OITF are the same as those specified for the OIP-OITF in section <a href="#oip-sp-discovery" class="sectionRef">5.3</a>.</p>
+</section>
+<section id="emp-service-enablers"><h2>Scheduled Content and Streamed CoD service enablers</h2>
+<p>The Scheduled Content and Streamed CoD services for the EMP are associated with the IMS control layer for managed networks. Therefore the necessary level of QoS is assured transparently (for the OITF) for those services.</p>
+<p>The EMP-OITF includes support of the features that enable the reception of such services, namely:</p><ul>
+<li>Service Provider Discovery and User Registration with the natively implemented HNI-IGI interface.
+<li>The HNI-IGI functions, either natively or non-natively, for supporting the initiation, modification and termination of a Scheduled Content service session, as specified in Volume 4 [[.OIPF_PROT2]] <a href="volume4.html#s5-3-1" class="extRef">section 5.3.1</a>;
+<li>The HNI-IGI functions natively for supporting the initiation, modification and termination of a CoD service session, as as specified in Volume 4 [[.OIPF_PROT2]] <a href="volume4.html#s5-3-2" class="extRef">section 5.3.2</a>;
+<li>Support of multicast (IGMPv3) delivery of content carried in MPEG-2 TS, both over RTP/UDP, and via direct encapsulation on UDP.
+<li>Support of unicast delivery of content carried in MPEG-2 TS, both over RTP/UDP, and via direct encapsulation on UDP.
+<li>Support of RTSP as specified in Volume 4 [[.OIPF_PROT2]] <a href="volume4.html#s7-1-1-2" class="extRef">section 7.1.1.2</a>.
+<li>Support the XCAP application usage for manipulating the data of the IPTV User profile, as specified in Volume 4 [[.OIPF_PROT2]] <a href="volume4.html#s5-4-4-1-1" class="extRef">section 5.4.4.1.1</a>.
+<li>Support for integration of Scheduled Content and Streamed CoD with Communication Services (Caller ID, Messaging (Chat, Presence) implemented natively, as specified in Volume 4 [[.OIPF_PROT2]] sections <a href="volume4.html#s5-5" class="extRef">5.5</a> and <a href="volume4.html#s6-2-4" class="extRef">6.2.4</a>.
+</section>
+<section id="emp-bcg"><h2>Broadband Content Guide</h2>
+<p>The EMP-OITF SHALL support the DVB Broadband Content Guide (BCG), and extensions to it as specified in Volume 3 [[.OIPF_META2]] <a href="volume3.html#bcg-extensions" class="extRef">section 3.3</a>.</p>
+</section>
+<section id="emp-authentication"><h2>Authentication methods</h2>
+<p>In addition to the authentication methods mentioned for the OIP, the EMP-OITF SHALL support the GBA authentication method as specified in <a href="volume4.html#s5-4-6-2" class="extRef">section 5.4.6.2</a> of Volume 4 [[.OIPF_PROT2]] when the HNI-IGI function is implemented natively in the EMP-OITF.</p>
+</section>
+<section id="emp-csp"><h2>Content and Service Protection</h2>
+<p>The provisions for content and service protection for the EMP-OITF are the same as those specified for the OIP-OITF.</p>
+</section>
+<section id="emp-remote-management"><h2>Remote management</h2>
+<p>In addition to the “DAE method” mentioned for the OIP, Remote Management SHALL be supported also via the Broadband Forum TR-069 based approach, as specified in Volume 4 [[.OIPF_PROT2]] <a href="volume4.html#s5-4-5-1-2" class="extRef">section 5.4.5.1.2</a>.</p>
+<p>The TR-069 based method defines a similar level of monitoring and diagnostics capability as that specified in the DAE method, but it allows more convenient re-use of existing TR-069 based remote management infrastructure commonly used by managed network service providers.</p>
+</section>
+</section>
+
+
+<section id="profile-features"><h1>Specification of Profile Features</h1>
+<p>Section <a href="#oitf-services-support" class="sectionRef">8.1</a> specifies the status of IPTV Services support for each of the profiles.
+The subsequent sub-sections specify the status of features grouped according to the Volume of the Release 2 Solution specification in which the respective features are specified. The reference to the specific section in the respective specification volume is provided, along with the status of that service or feature in each of the profiles.
+Table <a href="#t1" class="tableRef">1</a> gives the legend used for denoting the service and feature status in the following sub-sections.
+Requirements for the provision of IPTV Services are not described in sections <a href="#oip" class="sectionRef">5</a>, <a href="#bmp" class="sectionRef">6</a> and <a href="#emp" class="sectionRef">7</a>. Unless explicitly stated otherwise, a compliant IPTV Service (as listed in Table <a href="#t2" class="tableRef">2</a>) SHALL support at least one of the options for each feature necessary to run the IPTV Service on the correspondingly profiled OITF.</p>
+<table class="simple legend" id="t1">
+<caption>Table ####: Legend for status in the Profiles</caption>
+<tr><th>Status in<br />Profiles</th><th>Meaning</th></tr>
+<tr><td>M</td><td>Feature is MANDATORY for the Profile</td></tr>
+<tr><td>M-D</td><td>Feature is MANDATORY for the Profile if the Download CoD Service is supported</td></tr>
+<tr><td>M-H</td><td>Feature is MANDATORY for the Profile if the Hybrid broadcast-broadband Service is supported</td></tr>
+<tr><td>M-P</td><td>Feature is MANDATORY for the Profile if the PVR Service is supported</td></tr>
+<tr><td>M-C</td><td>Feature is MANDATORY for the Profile if audio/video communication services are supported</td></tr>
+<tr><td>O</td><td>Feature is OPTIONAL for the Profile</td></tr>
+<tr><td>O-D</td><td>Feature is OPTIONAL for the Profile if the Download CoD Service is supported</td></tr>
+<tr><td>O-H</td><td>Feature is OPTIONAL for the Profile if the Hybrid broadcast-broadband Service is supported</td></tr>
+<tr><td>O-P</td><td>Feature is OPTIONAL for the Profile if the PVR Service is supported</td></tr>
+<tr><td>O-C</td><td>Feature is OPTIONAL for the Profile if audio/video communication services are supported</td></tr>
+</table>
+
+<section id="oitf-services-support"><h2>IPTV Services support in the OITF</h2>
+Table <a href="#t2" class="tableRef">2</a> lists the status of each Release 2 IPTV Service with respect to its support by the OITF in each profile.
+<table class="simple compliance" id="t2">
+<caption>Table ####: Release 2 IPTV Service support profiling</caption>
+<tr><th>IPTV Service</th><th>Status in OIP</th><th>Status in BMP</th><th>Status in EMP</th></tr>
+<tr><td>Scheduled Content</td><td>M<sup>(4)</sup></td><td>M<sup>(1)</sup></td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;Hybrid broadcast-broadband</td><td>O<sup>(2)</sup></td><td>O<sup>(2)</sup></td><td>O<sup>(2)</sup></td></tr>
+<tr><td>&nbsp;&nbsp;Local PVR and time-shift</td><td>O<sup>(3)</sup></td><td>O<sup>(3)</sup></td><td>O<sup>(3)</sup></td></tr>
+<tr><td>&nbsp;&nbsp;Network PVR and time-shift</td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>Streamed CoD</td><td>M<sup>(4)</sup></td><td>M<sup>(1)</sup></td><td>M</td></tr>
+<tr><td>Download CoD</td><td>O<sup>(3)</sup></td><td>O<sup>(3)</sup></td><td>O<sup>(3)</sup></td></tr>
+<tr><td>Information Services</td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Communication services (text-based - Caller ID, Chat Messaging, Presence Status)</td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td><td>M</td></tr>
+<tr><td>Communication services (audio and audio/video communications)</td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td><td>O<sup>(6)</sup></td></tr>
+</table>
+<p>Notes:</p>
+<table class="note-table">
+<tr><td>1.</td><td>The Scheduled Content and Streamed CoD services are realised using a profiled set of service enablers for BMP, specified in sections <a href="#features-metadata" class="sectionRef">8.4</a>, <a href="#features-protocols" class="sectionRef">8.5</a>, and <a href="#features-dae" class="sectionRef">8.6</a>.</td></tr>
+<tr><td>2.</td><td>The hybrid broadcast-broadband service relies on the presence of a broadcast tuner in the OITF. The OITF MAY support the hybrid broadcast-broadband service if a broadcast tuner is equipped in the OITF.</td></tr>
+<tr><td>3.</td><td>The local PVR, local time-shift and download CoD services rely on the presence of persistent local storage in the OITF. The OITF MAY support the local PVR and/or Local time-shift and/or download CoD services if persistent local storage is equipped in the OITF.</td></tr>
+<tr><td>4.</td><td>The Scheduled Content and Streamed CoD services are realised in the OIP using HTTP transport, as specified in section <a href="#features-protocols" class="sectionRef">8.5</a>.</td></tr>
+<tr><td>5.</td><td>Communication services may be provided natively, or non-natively within a DAE application.</td></tr>
+<tr><td>6.</td><td>Communication services are provided via IMS.</td></tr>
+</table>
+</section>
+<section><h2>Media Formats</h2>
+<p>Table <a href="#t3" class="tableRef">3</a> lists the status of Media Formats support for each profile, referring to Volume 2 [[.OIPF_MEDIA2]]. Note that Volume 2 contains general Solution-wide stipulations for some of these features. The features subtitles, teletext, and supported video frame rate (25 or 30Hz) are orthogonal to the Profile definitions and thus retain their status as implementation choices.</p>
+<p>Volume 2 [[.OIPF_MEDIA2]] also identifies audio and video codecs for IPTV services delivered to mobile terminals via mobile networks. These, however, are not considered in the present Profiles specification.</p>
+<table class="simple compliance" id="t3">
+<caption>Table ####: Media formats profiling</caption>
+<tr><th>Feature</th><th>Reference in<br />Volume 2</th><th>Status in OIP</th><th>Status in BMP</th><th>Status in EMP</th></tr>
+
+<tr><td><b>Systems Layer</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MPEG-2 transport stream (TS)</td><td><a href="volume2.html#system-mpeg2-ts" class="extRef">4.1</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Time-stamped TS (TTS)</td><td><a href="volume2.html#system-mpeg2-ts" class="extRef">4.1</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>MP4 file format (MP4)</td><td><a href="volume2.html#system-mp4-file-format" class="extRef">4.2</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Application signaling (TS)</td><td><a href="volume2.html#system-mpeg2-ts" class="extRef">4.1</a></td><td>M-H<sup>(1)</sup></td><td>M</td><td>M</td></tr>
+<tr><td>DAE application delivery via DSM-CC (TS)</td><td><a href="volume2.html#system-mpeg2-ts" class="extRef">4.1</a></td><td>M-H<sup>(1)</sup></td><td>M</td><td>M</td></tr>
+<tr><td>“Do it now” DSM-CC streaming events (TS)</td><td><a href="volume2.html#system-mpeg2-ts" class="extRef">4.1</a></td><td>M-H<sup>(1)</sup></td><td>M</td><td>M</td></tr>
+<tr><td>Media zones (TS and MP4)</td><td><a href="volume2.html#system-mpeg2-ts" class="extRef">4.1</a>, <a href="volume2.html#system-mp4-file-format" class="extRef">4.2</a></td><td>O</td><td>O</td><td>O</td></tr>
+
+<tr><td><b>Video for content services</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>H.264/AVC HD video</td><td><a href="volume2.html#video-hd-h264" class="extRef">5.1.1.1</a>, <a href="volume2.html#video-gop" class="extRef">5.1.6</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>H.264/AVC 3D video</td><td><a href="volume2.html#video-3d-h264" class="extRef">5.1.7.1</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>H.264/AVC SD video</td><td><a href="volume2.html#video-sd-h264" class="extRef">5.1.2.1</a>, <a href="volume2.html#video-gop" class="extRef">5.1.6</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>H.264/AVC SP video</td><td><a href="volume2.html#video-subpicture-h264" class="extRef">5.1.4.1</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>MPEG-2 HD video</td><td><a href="volume2.html#video-hd-mpeg2" class="extRef">5.1.1.2</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>MPEG-2 SD video</td><td><a href="volume2.html#video-sd-mpeg2" class="extRef">5.1.2.2</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>MPEG-2 SP video</td><td><a href="volume2.html#video-subpicture-mpeg2" class="extRef">5.1.4.2</a></td><td>O</td><td>O</td><td>O</td></tr>
+
+<tr><td><b>Video for communication services</b></td><td><a href="volume2.html#video-telephony" class="extRef">5.1.3</a></td><td></td><td></td><td></td></tr>
+<tr><td>H.264/AVC video</td><td><a href="volume2.html#video-telephony-h264" class="extRef">5.1.3.1</a></td><td>M-C</td><td>M-C</td><td>M-C</td></tr>
+<tr><td>MPEG-4 Part-2 Visual video</td><td><a href="volume2.html#video-telephony-mpeg4" class="extRef">5.1.3.2</a></td><td>O-C</td><td>O-C</td><td>O-C</td></tr>
+<tr><td>H.263 video</td><td><a href="volume2.html#video-telephony-h263" class="extRef">5.1.3.3</a></td><td>O-C</td><td>O-C</td><td>O-C</td></tr>
+<tr><td><b>Subtitles</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>DVB subtitles</td><td><a href="volume2.html#subtitle-formats" class="extRef">6.1</a></td><td>O</td><td>O<sup>(2)</sup></td><td>O<sup>(2)</sup></td></tr>
+<tr><td>CEA-708-C subtitles</td><td><a href="volume2.html#subtitle-formats" class="extRef">6.1</a></td><td>O</td><td>O<sup>(2)</sup></td><td>O<sup>(2)</sup></td></tr>
+<tr><td>EBU teletext</td><td><a href="volume2.html#subtitle-formats" class="extRef">6.1</a></td><td>O</td><td>O<sup>(2)</sup></td><td>O<sup>(2)</sup></td></tr>
+<tr><td><b>Teletext</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>EBU teletext</td><td><a href="volume2.html#teletext-formats" class="extRef">7.1</a></td><td>O</td><td>O</td><td>O</td></tr>
+
+<tr><td><b>Audio for content services</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>HE-AAC audio</td><td><a href="volume2.html#audio-he-aac-and-aac" class="extRef">8.1.1</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>HE-AAC v2 audio</td><td><a href="volume2.html#audio-he-aac-and-aac" class="extRef">8.1.1</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>HE-AAC metadata</td><td><a href="volume2.html#he-aac-metadata" class="extRef">8.1.1.3</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>AC-3 audio</td><td><a href="volume2.html#audio-ac3" class="extRef">8.1.2</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>Enhanced AC-3 audio</td><td><a href="volume2.html#audio-enhanced-ac3" class="extRef">8.1.3</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>MPEG-1 L2 audio</td><td><a href="volume2.html#audio-mpeg1-l2" class="extRef">8.1.4</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>MPEG-1 L3 audio</td><td><a href="volume2.html#audio-mpeg1-l3" class="extRef">8.1.5</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>WAV audio</td><td><a href="volume2.html#audio-wave" class="extRef">8.1.6</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>DTS-HD audio</td><td><a href="volume2.html#audio-dts-hd" class="extRef">8.1.7</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>MPEG Surround with HE-AAC audio</td><td><a href="volume2.html#audio-mpeg-surround" class="extRef">8.1.8</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>MPEG Surround with MPEG-1 L2 audio</td><td><a href="volume2.html#audio-telephony" class="extRef">8.1.9</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>Audio description</td><td><a href="volume2.html#audio-description" class="extRef">8.2.2</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>Clean audio</td><td><a href="volume2.html#audio-clean" class="extRef">8.2.3</a></td><td>O</td><td>O</td><td>O</td></tr>
+
+<tr><td><b>Audio for narrowband communication services</b></td><td><a href="volume2.html#audio-telephony" class="extRef">8.1.9</a></td><td></td><td></td><td></td></tr>
+<tr><td>G.711 audio</td><td><a href="volume2.html#audio-telephony" class="extRef">8.1.9</a></td><td>M-C</td><td>M-C</td><td>M-C</td></tr>
+<tr><td>AMR audio</td><td><a href="volume2.html#audio-telephony" class="extRef">8.1.9</a></td><td>M-C</td><td>M-C</td><td>M-C</td></tr>
+<tr><td>G.729 audio</td><td><a href="volume2.html#audio-telephony" class="extRef">8.1.9</a></td><td>O-C</td><td>O-C</td><td>O-C</td></tr>
+
+<tr><td><b>Audio for wideband communication services</b></td><td><a href="volume2.html#audio-telephony" class="extRef">8.1.9</a></td><td></td><td></td><td></td></tr>
+<tr><td>G722 audio</td><td><a href="volume2.html#audio-telephony" class="extRef">8.1.9</a></td><td>M-C</td><td>M-C</td><td>M-C</td></tr>
+<tr><td>AMR-WB/G.722.2 audio</td><td><a href="volume2.html#audio-telephony" class="extRef">8.1.9</a></td><td>M-C</td><td>M-C</td><td>M-C</td></tr>
+<tr><td>G.729.1 audio</td><td><a href="volume2.html#audio-telephony" class="extRef">8.1.9</a></td><td>O-C</td><td>O-C</td><td>O-C</td></tr>
+
+<tr><td><b>Audio for super-wideband communication services</b></td><td><a href="volume2.html#audio-telephony" class="extRef">8.1.9</a></td><td></td><td></td><td></td></tr>
+<tr><td>MPEG-4 AAC LD</td><td><a href="volume2.html#mpeg-4-aac-ld-and-eld" class="extRef">8.1.9.1</a></td><td>O-C</td><td>O-C</td><td>O-C</td></tr>
+<tr><td>MPEG-4 AAC ELD</td><td><a href="volume2.html#mpeg-4-aac-ld-and-eld" class="extRef">8.1.9.1</a></td><td>O-C</td><td>O-C</td><td>O-C</td></tr>
+<tr><td>G.719</td><td><a href="volume2.html#audio-telephony" class="extRef">8.1.9</a></td><td>O-C</td><td>O-C</td><td>O-C</td></tr>
+
+<tr><td><b>Still pictures and graphics</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>JPEG</td><td><a href="volume2.html#image-format-jpeg" class="extRef">9.1.1</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>GIF</td><td><a href="volume2.html#image-format-gif" class="extRef">9.1.2</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>PNG</td><td><a href="volume2.html#image-format-png" class="extRef">9.1.3</a></td><td>M</td><td>M</td><td>M</td></tr>
+</table>
+<p>Notes:</p>
+<table class="note-table">
+<tr><td>1.</td><td>SHALL be supported where DVB-SI is supported.</td></tr>
+<tr><td>2.</td><td>Subtitle formats are region-specific. The BMP-OITF and the EMP-OITF SHALL support at least one of the subtitle formats, possibly also as dictated by applicable regional requirements.</td></tr>
+</table>
+</section>
+<section><h2>HTTP Adaptive Streaming</h2>
+<p>Table <a href="#t4" class="tableRef">4</a> specifies the status of HTTP Adaptive Streaming features for each profile, referring to Volume 2a [[.OIPF_HAS2]].</p>
+<table class="simple compliance" id="t4">
+<caption>Table ####: HTTP adaptive streaming profiling</caption>
+<tr><th>Feature</th><th>Reference in<br />Volume 2a</th><th>Status in OIP</th><th>Status in BMP</th><th>Status in EMP</th></tr>
+<tr><td>MPEG-DASH for MPEG-2 TS</td><td><a href="volume2a.html#mpeg-dash-based-streaming" class="extRef">4</a>, <a href="volume2a.html#dash-usage-ts" class="extRef">4.2</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>MPEG-DASH for MP4</td><td><a href="volume2a.html#mpeg-dash-based-streaming" class="extRef">4</a>, <a href="volume2a.html#dash-usage-mp4" class="extRef">4.3</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>OIPF HAS for MPEG-2 TS</td><td><a href="volume2a.html#http-adaptive-streaming" class="extRef">5</a>, <a href="volume2a.html#has-media-formats-ts" class="extRef">5.6.1</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>OIPF HAS for MP4</td><td><a href="volume2a.html#http-adaptive-streaming" class="extRef">5</a>, <a href="volume2a.html#has-media-formats-mp4" class="extRef">5.6.2</a></td><td>O</td><td>O</td><td>O</td></tr>
+</table>
+</section>
+<section id="features-metadata"><h2>Content Metadata</h2>
+<p>Table <a href="#t5" class="tableRef">5</a> lists the status of Content Metadata features as specified in Volume 3 for each profile, referring to Volume 3 [[.OIPF_META2]].</p>
+<table class="simple compliance" id="t5">
+<caption>Table ####: Content Metadata profiling</caption>
+<tr><th>Feature</th><th>Reference in<br />Volume 3, unless<br />specified otherwise</th><th>Status in OIP</th><th>Status in BMP</th><th>Status in EMP</th></tr>
+<tr><td><b>DVB SD&amp;S</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Service provider discovery</td><td>5.2.13.7 of [[!TS102034]]</td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>Broadcast discovery – TS Optional SI</td><td>5.2.13.2 of [[!TS102034]]</td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>ApplicationDiscovery record</td><td>5.4.5 of [[!TS102809]]</td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>Package discovery</td><td>5.2.13.4 of [[!TS102034]]</td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>BCG discovery</td><td>5.2.13.1 of [[!TS102034]]</td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>Other SD&amp;S types</td><td>[[!TS102034]]</td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td><b>Extension of DVB SD&amp;S</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b>Service Provider Discovery Extensions</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;Emergency Notification Service</td><td><a href="volume3.html#emergency-notification-service" class="extRef">3.2.1.1</a>, <a href="volume3.html#sdns-emergencynotificationservice-schema" class="extRef">B.4</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td><b>Service Discovery Extensions</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;Bandwidth Renegotiation</td><td><a href="volume3.html#bandwidth-renegotiation" class="extRef">3.2.2.1</a>, <a href="volume3.html#sdns-IPServiceType-schema" class="extRef">B.7</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;Purchasing Broadcast Services</td><td><a href="volume3.html#purchasing-broadcast-services" class="extRef">3.2.2.2</a>, <a href="volume3.html#sdns-IPServiceType-schema" class="extRef">B.7</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;Container Format Indication</td><td><a href="volume3.html#container-format-indication" class="extRef">3.2.2.3</a>, <a href="volume3.html#sdns-IPServiceType-schema" class="extRef">B.7</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;FCC/RET Attribute Definition</td><td><a href="volume3.html#fcc-ret-definition" class="extRef">3.2.2.4</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td><b>Application Announcement and Signaling</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;Service provider related application signaling</td><td><a href="volume3.html#service-provider-related-application-signalling" class="extRef">3.2.3.1</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;Broadcast related application signaling</td><td><a href="volume3.html#broadcast-related-application-signalling" class="extRef">3.2.3.2</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;<b>Platform specific Definitions</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Type Element of ApplicationDescriptor</td><td><a href="volume3.html#type-element-of-applicationdescriptor" class="extRef">3.2.3.3.1</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;mhpVersion Element of Application Descriptor</td><td><a href="volume3.html#mhpversion-element-of-applicationdescriptor" class="extRef">3.2.3.3.2</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Specific ApplicationUsage Element of ApplicationUsageDescriptor</td><td><a href="volume3.html#applicationusage-in-applicationusagedescriptor" class="extRef">3.2.3.3.3</a></td><td>O</td><td>M<sup>(1)</sup></td><td>M<sup>(1)</sup></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Graphic format for application icons</td><td><a href="volume3.html#graphic-format-for-application-icons" class="extRef">3.2.3.3.4</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Application extensions</td><td><a href="volume3.html#application-extensions" class="extRef">3.2.3.3.5</a></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ApplicationSpecificDescriptor extensions</td><td><a href="volume3.html#applicationspecificdescriptor-extensions" class="extRef">3.2.3.3.6</a></td><td></td><td></td><td></td></tr>
+<tr><td>DVB BCG and OIPF Extension</td><td><a href="volume3.html#bcg-extensions" class="extRef">3.3</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td><b>Metadata Delivery Mechanism</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;Carriage of SD&amp;S Metadata</td><td><a href="volume3.html#carriage-of-sdns-metadata" class="extRef">4.1.1</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;Carriage of BCG Metadata</td><td><a href="volume3.html#carriage-of-bcg-metadata" class="extRef">4.1.2</a></td><td>O</td><td>O</td><td>M<sup>(2)</sup></td></tr>
+<tr><td>&nbsp;&nbsp;Event Information Table (EIT)</td><td><a href="volume3.html#event-information-tables" class="extRef">4.1.3</a></a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td><b>CRID Location Resolution</b></td><td><a href="volume3.html#crid-location-resolution" class="extRef">4.3</a></a> and [[!TS102539]]</td><td>O</td><td>O</td><td>M</td></tr>
+</table>
+<p>Notes:</p>
+<table class="note-table">
+<tr><td>1.</td><td>Mandatory for service providers who signal applications providing the defined services. Service discovery and non-native HNI-IGI applications SHALL be supported by the OITF; other applications MAY be supported by the OITF.</td></tr>
+<tr><td>2.</td><td>Support for metadata searches via SOAP protocol is OPTIONAL.</td></tr>
+</table>
+</section>
+<section id="features-protocols"><h2>Protocols</h2>
+<p>Table <a href="#t6" class="tableRef">6</a> specifies the status of Protocols features for each profile, referring to Volume 4 [[.OIPF_PROT2]].</p>
+<p>Volume 4a [[.OIPF_PROT_EX2]] is informative, hence the profiles do not make any reference to that volume.</p>
+<table class="simple compliance" id="t6">
+<caption>Table ####: Protocols profiling</caption>
+<tr><th>Feature</th><th>Reference in<br />Volume 4, unless<br />specified otherwise</th><th>Status in OIP</th><th>Status in BMP</th><th>Status in EMP</th></tr>
+<tr><td>Multicast content streaming</td><td><a href="volume4.html#s" class="extRef">8.1.1</a>, <a href="volume4.html#s" class="extRef">9.1.1</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>Multicast content streaming with SIP session management</td><td><a href="volume4.html#s5-3-1" class="extRef">5.3.1</a>, <a href="volume4.html#s6-1-2-1" class="extRef">6.1.2.1</a>, <a href="volume4.html#s8-1-1" class="extRef">8.1.1</a>, <a href="volume4.html#s9-1-1" class="extRef">9.1.1</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>Multicast content streaming with FCC</td><td><a href="volume4.html#s9-5" class="extRef">9.5</a>, <a href="volume4.html#fcc-and-ret" class="extRef">Annex M</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>Unicast content streaming over RTP</td><td><a href="volume4.html#s7-1-1-1" class="extRef">7.1.1.1</a>, <a href="volume4.html#s9-1-2" class="extRef">9.1.2</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>Unicast content streaming over RTP with SIP session management</td><td><a href="volume4.html#s5-3-2-1" class="extRef">5.3.2.1</a>, <a href="volume4.html#s7-1-1-2" class="extRef">7.1.1.2</a>, <a href="volume4.html#s9-1-2" class="extRef">9.1.2</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>Unicast and multicast content streaming with Retransmission (RET)</td><td><a href="volume4.html#s9-4" class="extRef">9.4</a>, <a href="volume4.html#fcc-and-ret" class="extRef">Annex M</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>Unicast content streaming with SIP session management</td><td><a href="volume4.html#s5-3-2" class="extRef">5.3.2</a>, <a href="volume4.html#s6-1-2-2" class="extRef">6.1.2.2</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>HTTP content streaming (CoD progressive)</td><td><a href="volume4.html#s5-3-2-2" class="extRef">5.3.2.2</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Forced Play Out Control with SIP session management</td><td><a href="volume4.html#s5-3-3" class="extRef">5.3.3</a>, <a href="volume4.html#s6-1-2-3" class="extRef">6.1.2.3</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>HTTP content download</td><td><a href="volume4.html#s5-3" class="extRef">5.3</a></td><td>M-D</td><td>M-D</td><td>M-D</td></tr>
+<tr><td>Purchase of Digital Media using SIP</td><td><a href="volume4.html#s5-3-5" class="extRef">5.3.5</a>, <a href="volume4.html#s6-1-2-4" class="extRef">6.1.2.4</a>, <a href="volume4.html#s6-2-2-10" class="extRef">6.2.2.10</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>Pay Per View multicast content service with SIP session management</td><td><a href="volume4.html#s5-3-6" class="extRef">5.3.6</a>, <a href="volume4.html#s6-1-2-5" class="extRef">6.1.2.5</a>, <a href="volume4.html#s6-2-2-3" class="extRef">6.2.2.3</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>Parental Control for content using SIP</td><td><a href="volume4.html#s5-3-7" class="extRef">5.3.7</a>, <a href="volume4.html#s6-1-2-6" class="extRef">6.1.2.6</a>, <a href="volume4.html#s6-2-2-4" class="extRef">6.2.2.4</a></td><td>O<sup>(8)</sup></td><td>O<sup>(8)</sup></td><td>O<sup>(8)</sup></td></tr>
+<tr><td>Network-based user notification services</td><td><a href="volume4.html#s5-3-8" class="extRef">5.3.8</a>, <a href="volume4.html#s6-1-2-7" class="extRef">6.1.2.7</a>, <a href="volume4.html#s6-2-2-5" class="extRef">6.2.2.5</a></td><td>o</td><td>o</td><td>o</td></tr>
+<tr><td>Network-centric Content Bookmarking</td><td><a href="volume4.html#s5-3-9" class="extRef">5.3.9</a>, <a href="volume4.html#s6-1-2-8" class="extRef">6.1.2.8</a>, <a href="volume4.html#s6-2-2-6" class="extRef">6.2.2.6</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>Local PVR using SIP</td><td><a href="volume4.html#s5-3-10" class="extRef">5.3.10</a>, <a href="volume4.html#s6-1-2-9" class="extRef">6.1.2.9</a>, <a href="volume4.html#s6-2-2-7" class="extRef">6.2.2.7</a></td><td>O<sup>(9)</sup></td><td>O<sup>(9)</sup></td><td>O<sup>(9)</sup></td></tr>
+<tr><td>Network PVR using SIP</td><td><a href="volume4.html#s5-3-11" class="extRef">5.3.11</a>, <a href="volume4.html#s6-1-2-10" class="extRef">6.1.2.10</a>, <a href="volume4.html#s6-2-2-8" class="extRef">6.2.2.8</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>Personalised Channel</td><td><a href="volume4.html#s5-3-12" class="extRef">5.3.12</a>, <a href="volume4.html#s6-1-2-11" class="extRef">6.1.2.11</a>, <a href="volume4.html#s6-2-2-11" class="extRef">6.2.2.11</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>Unicast content streaming session transfer with SIP session management</td><td><a href="volume4.html#s5-3-13" class="extRef">5.3.13</a>, <a href="volume4.html#s6-1-2-12" class="extRef">6.1.2.12</a>, <a href="volume4.html#s6-2-2-9" class="extRef">6.2.2.9</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td><b>Service provider discovery</b></td><td><a href="volume4.html#s5-4-1" class="extRef">5.4.1</a></td><td></td><td></td><td></td></tr>
+<tr><td>1) Web Page</td><td></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>2) SD&amp;S records</td><td></td><td>O</td><td>See DVB SD&amp;S section of Table <a href="#t5" class="tableRef">5</a></td><td>See DVB SD&amp;S section of Table <a href="#t5" class="tableRef">5</a></td></tr>
+<tr><td><b>Service discovery</b></td><td><a href="volume4.html#s5-4-2" class="extRef">5.4.2</a></td><td></td><td></td><td></td></tr>
+<tr><td>1) Web Page</td><td></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>2) SD&S records</td><td></td><td>O</td><td>See DVB SD&amp;S section of Table <a href="#t5" class="tableRef">5</a></td><td>See DVB SD&amp;S section of Table <a href="#t5" class="tableRef">5</a></td></tr>
+<tr><td>XCAP Application Usage for IPTV Service (profile)</td><td><a href="volume4.html#s5-4-4-1" class="extRef">5.4.4.1</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>Subscription to notification of changes in the IPTV Service Profile</td><td><a href="volume4.html#s5-4-4-3-1" class="extRef">5.4.4.3.1</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td><b>Remote management of OITF</b></td><td><a href="volume4.html#s5-4-5" class="extRef">5.4.5</a></td><td></td><td></td><td></td></tr>
+<tr><td>1) TR-069</td><td><a href="volume4.html#s5-4-5-1" class="extRef">5.4.5.1</a></td><td>O</td><td>O<sup>(10)</sup></td><td>M</td></tr>
+<tr><td>2) DAE App</td><td><a href="volume4.html#s5-4-5-2" class="extRef">5.4.5.2</a></td><td>M<sup>(7)</sup></td><td>M</td><td>M</td></tr>
+<tr><td>User registration and network authentication</td><td><a href="volume4.html#s5-4-6" class="extRef">5.4.6</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td><b>Protocols for communication functions using SIP</b></td><td><a href="volume4.html#s5-5" class="extRef">5.5</a>, <a href="volume4.html#s6-2-4" class="extRef">6.2.4</a></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;Caller ID</td><td><a href="volume4.html#s5-5-1" class="extRef">5.5.1</a>, <a href="volume4.html#s6-2-4-1" class="extRef">6.2.4.1</a></td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;Instant Messaging</td><td><a href="volume4.html#s5-5-2" class="extRef">5.5.2</a>, <a href="volume4.html#s6-2-4-2" class="extRef">6.2.4.2</a></td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;Chat using MSRP</td><td><a href="volume4.html#s5-5-3" class="extRef">5.5.3</a>, <a href="volume4.html#s6-2-4-4" class="extRef">6.2.4.4</a></td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;Presence</td><td><a href="volume4.html#s5-5-4" class="extRef">5.5.4</a>, <a href="volume4.html#s6-2-4-3" class="extRef">6.2.4.3</a></td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;A/V Telephony</td><td><a href="volume4.html#s6-2-4-6" class="extRef">6.2.4.6</a>, <a href="volume4.html#s9-6" class="extRef">9.6</a></td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td><td>O</td></tr>
+<tr><td>Content Sharing</td><td><a href="volume4.html#s5-5-5" class="extRef">5.5.5</a>, <a href="volume4.html#s6-2-4-5" class="extRef">6.2.4.5</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>HNI-IGI – HTTP option</td><td><a href="volume4.html#s5-6-1" class="extRef">5.6.1</a></td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td><td>M<sup>(1)</sup></td></tr>
+<tr><td>HNI-IGI – SIP option</td><td><a href="volume4.html#s6-2" class="extRef">6.2</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>RTSP profile without SIP session management</td><td><a href="volume4.html#s7-1-1-1" class="extRef">7.1.1.1</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>RTSP profile with SIP session management</td><td><a href="volume4.html#s7-1-1-2" class="extRef">7.1.1.2</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>RTSP/RTCP Monitoring</td><td><a href="volume4.html#s7-1-1-2" class="extRef">7.1.1.2</a>, <a href="volume4.html#s7-2-1" class="extRef">7.2.1</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>IGMPv3</td><td><a href="volume4.html#s8-1-1" class="extRef">8.1.1</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>DVBSTP (UNIS-7, UNIS-15)</td><td><a href="volume4.html#s8-2-1-1" class="extRef">8.2.1.1</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>Interactive application delivery using FLUTE (UNIS-6, UNIS-12)</td><td><a href="volume4.html#s8-3-1-1" class="extRef">8.3.1.1</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>MPEG-2 TS RTP/UDP for multicast content streaming</td><td><a href="volume4.html#s9-1-1" class="extRef">9.1.1</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>MPEG-2 TS RTP/UDP for unicast content streaming</td><td><a href="volume4.html#s9-1-2" class="extRef">9.1.2</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>DVB-IPTV base-layer AL-FEC</td><td><a href="volume4.html#s9-3" class="extRef">9.3</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>UPnP Discovery of the IG</td><td><a href="volume4.html#s10-1-1-1" class="extRef">10.1.1.1</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>UPnP Discovery of the AG</td><td><a href="volume4.html#s10-1-1-2" class="extRef">10.1.1.2</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>UPnP Discovery of the CSPG-DTCP</td><td><a href="volume4.html#s10-1-1-3" class="extRef">10.1.1.3</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>DLNA Function</td><td><a href="volume4.html#dlna" class="extRef">11</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td><b>Network Attachment (DHCP-based)</b></td><td><a href="volume4.html#s12-1-1" class="extRef">12.1.1</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>DHCP options 1, 6, 61</td><td><a href="volume4.html#s12-1-1-1-1" class="extRef">12.1.1.1.1</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>DHCP options 15</td><td><a href="volume4.html#s12-1-1-1-2" class="extRef">12.1.1.1.2</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>DHCP options 43, 60</td><td><a href="volume4.html#s12-1-1-1-1" class="extRef">12.1.1.1.1</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>DHCP option 120</td><td><a href="volume4.html#s12-1-1-1-1" class="extRef">12.1.1.1.1</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>DHCP options 124/125</td><td><a href="volume4.html#s12-1-1-1-3" class="extRef">12.1.1.1.3</a></td><td>M<sup>(6)</sup></td><td>M</td><td>M</td></tr>
+<tr><td><b>Service provider discovery entry points</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>1) Pre-defined by manufacturer</td><td>[[.OIPF_ARCH2]] <a href="architecture.html#s6-2-1-2" class="extRef">6.2.1.2</a></td><td>O<sup>(2)</sup></td><td>O<sup>(2)</sup></td><td>O<sup>(2)</sup></td></tr>
+<tr><td>2) Input from user</td><td>[[.OIPF_ARCH2]] <a href="architecture.html#s6-2-1-2" class="extRef">6.2.1.2</a></td><td>O<sup>(3)</sup></td><td>O<sup>(3)</sup></td><td>O<sup>(3)</sup></td></tr>
+<tr><td>3) DHCP configuration option 124/125</td><td><a href="volume4.html#s12-1-1-1-3" class="extRef">12.1.1.1.3</a></td><td>M<sup>(4)</sup></td><td>M<sup>(4)</sup></td><td>M<sup>(4)</sup></td></tr>
+<tr><td>MPEG-2 TS UDP</td><td><a href="volume4.html#s13-1-1-1" class="extRef">13.1.1.1</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>Diameter</td><td><a href="volume4.html#diameter" class="extRef">15</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>NAT Traversal</td><td><a href="volume4.html#annex-f-6" class="extRef">Annex F.6</a></td><td>O</td><td>M</td><td>M</td></tr>
+</table>
+<p>Notes</p>
+<table class="note-table">
+<tr><td>1.</td><td>The feature is OPTIONAL for communication between the IG and OITF when integrated into a single device. The IG SHALL nevertheless provide HNI-IGI for other OITFs in the residential network.</td></tr>
+<tr><td>2.</td><td>The OITF MAY include pre-configured service provider discovery entry points.</td></tr>
+<tr><td>3.</td><td>The OITF MAY include a facility for the User to acquire service provider discovery entry points via the OITF UI.</td></tr>
+<tr><td>4.</td><td>The OITF SHALL acquire service provider discovery entry points provided via this method and SHALL make these available to the User.</td></tr>
+<tr><td>5.</td><td>Feature is however provided non-natively via DAE APIs.</td></tr>
+<tr><td>6.</td><td>DHCP options 124/125 apply only to web page URLs in the OIP.</td></tr>
+<tr><td>7.</td><td>The getParameter method is OPTIONAL.</td></tr>
+<tr><td>8.</td><td>Regulatory requirements might imply this feature to be mandatory to be implemented.</td></tr>
+<tr><td>9.</td><td>The local PVR, local time-sjift and download CoD services rely on the presence of persistent local storage in the OITF. The OITF MAY support the local PVR and/or Local time-shift and/or download CoD services if persistent local storage is equipped in the OITF.</td></tr>
+<tr><td>10.</td><td>The remote management feature is mandatory, but TR-069-based remote management of the OITF is optional when a functionally equivalent solution is implemented in the OITF, allowing a remote call of the methods and properties as specified in section <a href="volume4.html#s5-4-5-1-2" class="extRef">5.4.5.1.2</a></td></tr>
+</table>
+</section>
+
+<section id="features-dae"><h2>Declarative Application Environment</h2>
+<p>Table <a href="#t7" class="tableRef">7</a> specifies the status of DAE features for each profile, referring to Volume 5 [[.OIPF_DAE2]].<p>
+<table class="simple compliance" id="t7">
+<caption>Table ####: DAE features profiling</caption>
+<tr><th>Feature</th><th>Reference in<br />Volume 5</th><th>Status in OIP</th><th>Status in BMP</th><th>Status in EMP</th></tr>
+<tr><td>Gateway Discovery and Control</td><td><a href="volume5.html#gateway-discovery-and-control" class="extRef">4.2</a></td><td>O</td><td>O</td><td>M<sup>(12)</sup></td></tr>
+<tr><td>Application Definition</td><td><a href="volume5.html#application-definition" class="extRef">4.3</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Widgets</td><td><a href="volume5.html#widgets" class="extRef">4.3.9</a>, <a href="volume5.html#widgets-lifecycle" class="extRef">5.2.8</a>, <a href="volume5.html#application-oipfApplicationManager" class="extRef">7.2.1</a>, <a href="volume5.html#application-class" class="extRef">7.2.2</a>, <a href="volume5.html#widget-apis" class="extRef">7.2.8</a>, <a href="volume5.html#widgets-support" class="extRef">9.3.20</a>, <a href="volume5.html#dae-widgets" class="extRef">11</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>Resource Management</td><td><a href="volume5.html#resource-management" class="extRef">4.4</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Content Download</td><td><a href="volume5.html#content-download" class="extRef">4.6</a></td><td>M-D<sup>(19)</sup></td><td>M-D<sup>(19)</sup></td><td>M-D<sup>(19)</sup></td></tr>
+<tr><td>Streaming CoD</td><td><a href="volume5.html#streaming-cod" class="extRef">4.7</a></td><td>M<sup>(13),(14),(17)</sup></td><td>M<sup>(13),(17)</sup></td><td>M</td></tr>
+<tr><td>Scheduled content</td><td><a href="volume5.html#scheduled-content" class="extRef">4.8</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>Remote control function</td><td><a href="volume5.html#dlna-remote-control-function" class="extRef">4.9</a>, <a href="volume5.html#dlna-rui-remote-control-function-apis" class="extRef">7.17</a>, <a href="volume5.html#dlna-rui-rcf-implementation" class="extRef">8.5</a>, <a href="volume5.html#dlna-rui-rcf-support" class="extRef">9.3.18</a>, <a href="volume5.html#dlna-rui-remote-control" class="extRef">10.3</a>, <a href="volume5.html#dlna-rcf-sequences" class="extRef">Annex J</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>Power management</td><td><a href="volume5.html#power-consumption" class="extRef">4.10</a>, <a href="volume5.html#applicationprivatedata-class" class="extRef">7.2.4</a>, <a href="volume5.html#power-consmption-support" class="extRef">9.3.19</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>Display model</td><td><a href="volume5.html#display-model" class="extRef">4.11</a>, <a href="volume5.html#display-model-annex" class="extRef">Annex H</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Application lifecycle</td><td><a href="volume5.html#application-lifecycle" class="extRef">5.1</a></td><td>M<sup>(20)</sup></td><td>M<sup>(20)</sup></td><td>M<sup>(20)</sup></td></tr>
+<tr><td><b>Application Announcement &amp; Signalling</b></td><td><a href="volume5.html#application-announcement-and-signalling" class="extRef">5.2</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;Basics</td><td><a href="volume5.html#application-announcement-and-signalling-introduction" class="extRef">5.2.1, <a href="volume5.html#application-announcement-and-signalling-general" class="extRef">5.2.2</a>, <a href="volume5.html#broadcast-independant-applications" class="extRef">5.2.5</a>, <a href="volume5.html#switching-between-applications" class="extRef">5.2.6</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;Broadcast related applications</td><td><a href="volume5.html#broadcast-related-applications" class="extRef">5.2.3</a>, <a href="volume5.html#signalling-format" class="extRef">5.2.7</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;Service provider related applications</td><td><a href="volume5.html#service-provider-related-applications" class="extRef">5.2.4</a>, <a href="volume5.html#signalling-format" class="extRef">5.2.7</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;Extended hybrid support</td><td><a href="volume5.html#mpeg-2-encoding" class="extRef">5.2.7.2</a></td><td>M-H<sup>(10)</sup></td><td>M</td><td>M</td></tr>
+<tr><td>Event Notification Framework based on CEA 2014</td><td><a href="volume5.html#CEA2014-notifications" class="extRef">5.3.1</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>Outgoing request messages and in-session incoming request messages</td><td><a href="volume5.html#hni-igi-transactions-for-in-session-out-going-request-messages" class="extRef">5.3.2.1</a>, <a href="volume5.html#in-session-incoming-request-messages" class="extRef">5.3.2.2</a></td><td>O<sup>(15)</sup></td><td>O<sup>(15)</sup></td><td>O<sup>(15)</sup></td></tr>
+<tr><td>Out of session incoming request messages</td><td><a href="volume5.html#hni-igi-transaction-for-out-of-session-incoming-request-messages" class="extRef">5.3.2.3</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>Web standards TV profile</td><td><a href="volume5.html#web-standards-tv-profile" class="extRef">6.1</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Still image formats</td><td><a href="volume5.html#still-image-formats" class="extRef">6.2</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Media formats</td><td><a href="volume5.html#media-formats" class="extRef">6.3</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>SVG</td><td><a href="volume5.html#svg" class="extRef">6.4</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>Object Factory API</td><td><a href="volume5.html#object-factory-api" class="extRef">7.1</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Applications Management APIs</td><td><a href="volume5.html#applications-management-apis" class="extRef">7.2</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>The application/oipfConfiguration embedded object</td><td><a href="volume5.html#application-oipfconfiguration" class="extRef">7.3.1</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td><b>Configuration and Setting APIs</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;The Configuration class</td><td><a href="volume5.html#configuration-class" class="extRef">7.3.2</a></td><td>M<sup>(1)</sup></td><td>M<sup>(1)</sup></td><td>M<sup>(1)</sup></td></tr>
+<tr><td>&nbsp;&nbsp;The LocalSystem class</td><td><a href="volume5.html#localsystem-class" class="extRef">7.3.3</a></td><td>O</td><td>M<sup>(2)</sup></td><td>M<sup>(2)</sup></td></tr>
+<tr><td>&nbsp;&nbsp;The NetworkInterface class, the NetworkInterfaceCollection class</td><td><a href="volume5.html#networkinterface-class" class="extRef">7.3.4</a>, <a href="volume5.html#networkinterfacecollection-class" class="extRef">7.3.6</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>&nbsp;&nbsp;The AVOutput class, the AVOutputCollection class</td><td><a href="volume5.html#avoutput-class" class="extRef">7.3.5</a>, <a href="volume5.html#avoutputcollection-class" class="extRef">7.3.7</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>&nbsp;&nbsp;The TunerCollection class, the Tuner class, the SignalInfo class, the LNBInfo class</td><td><a href="volume5.html#tunercollection-class" class="extRef">7.3.8</a>, <a href="volume5.html#tuner-class" class="extRef">7.3.9</a>, <a href="volume5.html#signalinfo-class" class="extRef">7.3.10</a>, <a href="volume5.html#lnbinfo-class" class="extRef">7.3.11</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>&nbsp;&nbsp;The StartupInformation class</td><td><a href="volume5.html#startupinformation-class" class="extRef">7.3.12</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td><b>Content Download APIs</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Basic content download – the application/oipfDownloadTrigger embedded object</td><td><a href="volume5.html#application-oipfdownloadtrigger" class="extRef">7.4.1</a></td><td>M-D</td><td>M-D</td><td>M-D</td></tr>
+<tr><td>Extensions to application/oipfDownloadTrigger</td><td><a href="volume5.html#extensions-to-application-oipfdownloadtrigger" class="extRef">7.4.2</a></td><td>O-D<sup>(3)</sup></td><td>O-D<sup>(3)</sup></td><td>M-D</td></tr>
+<tr><td>The application/oipfDownloadManager embedded object, The Download class, The DownloadCollection class</td><td><a href="volume5.html#application-oipfdownloadmanager" class="extRef">7.4.3</a>, <a href="volume5.html#download-class" class="extRef">7.4.4</a>, <a href="volume5.html#downloadcollection-class" class="extRef">7.4.5</a></td><td>O-D</td><td>O-D</td><td>O-D</td></tr>
+<tr><td>The DRMControlInformation class, The DRMControlInfoCollection class</td><td><a href="volume5.html#drmcontrolinformation-class" class="extRef">7.4.6, <a href="volume5.html#drmcontrolinfocollection-class" class="extRef">7.4.7</a></td><td>O-D</td><td>O-D</td><td>O-D</td></tr>
+<tr><td>Content On Demand Metadata APIs</td><td><a href="volume5.html#content-on-demand-metadata-apis" class="extRef">7.5</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>Content Service Protection API</td><td><a href="volume5.html#content-service-protection-api" class="extRef">7.6</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Gateway Discovery and Control APIs</td><td><a href="volume5.html#gateway-discovery-and-control-apis" class="extRef">7.7</a></td><td>O<sup>(18)</sup></td><td>M<sup>(4)</sup></td><td>M<sup>(12)</sup></td></tr>
+<tr><td><b>IMS Related APIs</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>application/oipfIMS embedded object</td><td><a href="volume5.html#application-oipfcommunicationservices" class="extRef">7.8.1</a>, <a href="volume5.html#userdata-class" class="extRef">7.8.3</a>, <a href="volume5.html#userdatacollection-class" class="extRef">7.8.4</a>, <a href="volume5.html#featuretag-class" class="extRef">7.8.5</a>, <a href="volume5.html#featuretagcollection-class" class="extRef">7.8.6</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>Extensions to application/oipfIMS for presence and messaging services</td><td><a href="volume5.html#application-oipfcommunicationservices-presence" class="extRef">7.8.2</a>, <a href="volume5.html#contact-class" class="extRef">7.8.7</a>, <a href="volume5.html#contactcollection-class" class="extRef">7.8.8</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>Extensions to application/oipfIMS for voice telephony service</td><td><a href="volume5.html#application-oipfcommunicationservices-voicetel" class="extRef">7.8.9</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>Extensions to application/oipfIMS for video telephony service</td><td><a href="volume5.html#application-oipfcommunicationservices-videotel" class="extRef">7.8.10</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>The DeviceInfo class, the DeviceInfoCollecion class, the CodecInfo class, the CodecInfoCollection class</td><td><a href="volume5.html#deviceinfo-class" class="extRef">7.8.11</a>, <a href="volume5.html#deviceinfocollection-class" class="extRef">7.8.12</a>, <a href="volume5.html#codecinfo-class" class="extRef">7.8.13</a>, <a href="volume5.html#codecinfocollection-class" class="extRef">7.8.14</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td><b>Parental access control APIs</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>application/oipfParentalControlManager embedded object</td><td><a href="volume5.html#application-oipfparentalcontrolmanager" class="extRef">7.9.1</a>, <a href="volume5.html#parentalratingscheme-class" class="extRef">7.9.2</a>, <a href="volume5.html#parentalratingschemecollection-class" class="extRef">7.9.3</a></td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td></tr>
+<tr><td>ParentalRating and ParentalRatingCollection</td><td><a href="volume5.html#parentalrating-class" class="extRef">7.9.4</a>, <a href="volume5.html#parentalratingcollection-class" class="extRef">7.9.5</a></td><td>O-H<sup>(5)</sup></td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td></tr>
+<tr><td><b>Scheduled Recording APIs</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Basic PVR support – the application/oipfRecordingScheduler embedded object</td><td><a href="volume5.html#application-oipfrecordingscheduler" class="extRef">7.10.1</a>, <a href="volume5.html#scheduledrecording-class" class="extRef">7.10.2</a>, <a href="volume5.html#scheduledrecordingcollection-class" class="extRef">7.10.3</a></td><td>O-P</td><td>M-P</td><td>M-P</td></tr>
+<tr><td>Advanced PVR support – Extension to application/oipfRecordingScheduler for control of recordings</td><td><a href="volume5.html#application-oipfrecordingscheduler-control-extension" class="extRef">7.10.4</a>, <a href="volume5.html#recording-class" class="extRef">7.10.5</a>, <a href="volume5.html#recordingcollection-class" class="extRef">7.10.6</a>, <a href="volume5.html#pvrevent-class" class="extRef">7.10.7</a></td><td>O-P<sup>(6)</sup></td><td>M-P<sup>(6)</sup></td><td>M-P<sup>(6)</sup></td></tr>
+<tr><td>OITF-centric Bookmark and BookmarkCollection</td><td><a href="volume5.html#bookmark-class" class="extRef">7.10.8, <a href="volume5.html#bookmarkcollection-class" class="extRef">7.10.9</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td><b>Remote management APIs</b></td><td><a href="volume5.html#remote-management-apis" class="extRef">7.11</a></td><td>M<sup>(16)</sup></td><td>M</td><td>M</td></tr>
+<tr><td><b>Metadata search APIs</b></td><td><a href="volume5.html#metadata-apis" class="extRef">7.12</a></td><td>O</td><td>O</td><td>M<sup>(7),(8)</sup></td></tr>
+<tr><td><b>Synchronisation to video</b></td><td><a href="volume5.html#video-broadcast-extensions-synchronisation" class="extRef">7.13.21</a></td><td>M-H<sup>(10)</sup></td><td>M</td><td>M</td></tr>
+<tr><td><b>Broadcast video</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>video/broadcast embedded object</td><td><a href="volume5.html#video-broadcast" class="extRef">7.13.1</a>, <a href="volume5.html#video-broadcast-extensions-selected-components" class="extRef">7.13.4</a>, <a href="volume5.html#channelconfig-class" class="extRef">7.13.9</a>, <a href="volume5.html#channellist-class" class="extRef">7.13.10</a>, <a href="volume5.html#channel-class" class="extRef">7.13.11</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>Extensions for recording and timeshift</td><td><a href="volume5.html#video-broadcast-extensions-recording-timeshift" class="extRef">7.13.2</a></td><td>O-P</td><td>O-P</td><td>O-P</td></tr>
+<tr><td>Access to DVB-SI EIT p/f</td><td><a href="volume5.html#video-broadcast-extensions-eit-pf" class="extRef">7.13.3</a></td><td>M-H<sup>(10)</sup></td><td>M</td><td>M</td></tr>
+<tr><td>Extensions to video/broadcast for parental ratings errors</td><td><a href="volume5.html#video-broadcast-extensions-parental-ratings" class="extRef">7.13.5</a></td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td><td>M</td></tr>
+<tr><td>Extensions to video/broadcast for DRM rights errors</td><td><a href="volume5.html#video-broadcast-extensions-drm-errors" class="extRef">7.13.6</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>Extensions to video/broadcast for channel scan</td><td><a href="volume5.html#video-broadcast-extensions-current-channel-info" class="extRef">7.13.7</a>, <a href="volume5.html#video-broadcast-extensions-channel-scan" class="extRef">7.13.14</a></td><td>O-H<sup>(9)</sup></td><td>O-H<sup>(9)</sup></td><td>O-H<sup>(9)</sup></td></tr>
+<tr><td>Extensions to video/broadcast for creating Channel lists from SD&amp;S fragments</td><td><a href="volume5.html#video-broadcast-extensions-current-channel-lists" class="extRef">7.13.8</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>Favourite lists</td><td><a href="volume5.html#favouritelistcollection-class" class="extRef">7.13.12</a>, <a href="volume5.html#favouritelist-class" class="extRef">7.13.13</a></td><td>O-H</td><td>O</td><td>O</td></tr>
+<tr><td>Enhanced channel scan</td><td><a href="volume5.html#channelscanevent-class" class="extRef">7.13.15</a> - <a href="volume5.html#dvbcchannelscanparameters-class" class="extRef">7.13.20</a>, <a href="volume5.html#atsctchannelscanparameters-class" class="extRef">7.13.22</a></td><td>O-H</td><td>O-H</td><td>O-H</td></tr>
+<tr><td><b>Media playback APIs</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Basics</td><td><a href="volume5.html#av-control-state-diagram" class="extRef">7.14.1.1</a>, <a href="volume5.html#using-av-control-for-streaming-content" class="extRef">7.14.1.2</a>, <a href="volume5.html#av-control-extensions-for-playback-through-casd" class="extRef">7.14.2</a>, <a href="volume5.html#av-control-extensions-for-trickmodes" class="extRef">7.14.3</a>, <a href="volume5.html#av-control-extensions-for-playback-of-selected-components" class="extRef">7.14.4</a>, <a href="volume5.html#av-control-extensions-for-ui-feedback-of-buffering" class="extRef">7.14.8</a>, <a href="volume5.html#av-control-DOM-events" class="extRef">7.14.9</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Using an A/V control object to play downloaded content</td><td><a href="volume5.html#using-av-control-for-downloaded-content" class="extRef">7.14.1.3</a></td><td>M-D</td><td>M-D</td><td>M-D</td></tr>
+<tr><td>Using an A/V control object to play recorded content</td><td><a href="volume5.html#using-av-control-for-recorded-content" class="extRef">7.14.1.4</a></td><td>M-P</td><td>M-P</td><td>M-P</td></tr>
+<tr><td>Extensions to A/V object for parental rating errors</td><td><a href="volume5.html#av-control-extensions-for-parental-rating-errors" class="extRef">7.14.5</a></td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td><td>M</td></tr>
+<tr><td>Extensions to A/V object for DRM rights errors</td><td><a href="volume5.html#av-control-extensions-for-drm-rights-errors" class="extRef">7.14.6</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Extensions to A/V object for playing media objects (downloaded or recorded content or CoD via BCG)</td><td><a href="volume5.html#av-control-extensions-for-playing-media-objects" class="extRef">7.14.7</a></td><td>M-D, M-P</td><td>M-D, M-P</td><td>M</td></tr>
+<tr><td>Playback of memory audio</td><td><a href="volume5.html#playback-of-memory-audio" class="extRef">7.14.10</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Extensions to A/V Control object for media queuing</td><td><a href="volume5.html#av-control-extensions-for-media-queuing" class="extRef">7.14.11</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Extensions to A/V Control object for volume control</td><td><a href="volume5.html#av-control-extensions-for-volume-control" class="extRef">7.14.12</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Extensions to A/V Control object for resource management</td><td><a href="volume5.html#av-control-extensions-for-resource-management" class="extRef">7.14.13</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>application/oipfMDTF embedded object</td><td><a href="volume5.html#application-oipfmdtf" class="extRef">7.15.1</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>application/oipfStatusView embedded object</td><td><a href="volume5.html#application-oipfstatusview" class="extRef">7.15.2</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>application/oipfCapabilities embedded object</td><td><a href="volume5.html#application-oipfcapabilities" class="extRef">7.15.3</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>The Navigator class</td><td><a href="volume5.html#navigator-class" class="extRef">7.15.4</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Debug Print API</td><td><a href="volume5.html#debug-print-api" class="extRef">7.15.5</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td><b>Shared utility classes and features</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Base collections</td><td><a href="volume5.html#base-collections" class="extRef">7.16.1</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Programme - basics</td><td><a href="volume5.html#programme-constants" class="extRef">7.16.2.1</a>, <a href="volume5.html#programme-properties" class="extRef">7.16.2.2</a>, <a href="volume5.html#programmecollection-class" class="extRef">7.16.3</a></td><td>M-H<sup>(10)</sup>, M-P</td><td>M</td><td>M</td></tr>
+<tr><td>Metadata extensions to Programme</td><td><a href="volume5.html#programme-metadata-extensions" class="extRef">7.16.2.3</a></td><td>O-H</td><td>M</td><td>M</td></tr>
+<tr><td>DVB-SI extensions to Programme</td><td><a href="volume5.html#programme-dvb-si-extensions" class="extRef">7.16.2.4</a></td><td>O-H</td><td>M</td><td>M</td></tr>
+<tr><td>Recording extensions to Programme</td><td><a href="volume5.html#programme-recording-extensions" class="extRef">7.16.2.5</a></td><td>M-P</td><td>M-P</td><td>M-P</td></tr>
+<tr><td>The DiscInfo class</td><td><a href="volume5.html#discinfo-class" class="extRef">7.16.4</a></td><td>M-D, M-P</td><td>M-D, M-P</td><td>M-D, M-P</td></tr>
+<tr><td>Extensions for playback of selected media components</td><td><a href="volume5.html#extensions-for-playback-of-selected-media-components" class="extRef">7.16.5</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Additional support for protected content</td><td><a href="volume5.html#additional-support-for-protected-content" class="extRef">7.16.6</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>HTTP User-Agent header</td><td><a href="volume5.html#http-user-agent-header" class="extRef">8.1.1</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>HTTP X-OITF-RCF-User-Agent header</td><td><a href="volume5.html#http-oitf-rcf-user-agent-header" class="extRef">8.1.2</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td><b>Mapping from APIs to Protocols</p></td><td><a href="volume5.html#mapping-from-apis-to-protocols" class="extRef">8.2</a></td><td></td><td></td><td></td></tr>
+<tr><td>CoD download over HTTP</td><td><a href="volume5.html#content-download-over-http" class="extRef">8.2.1</a></td><td>M-D</td><td>M-D</td><td>M-D</td></tr>
+<tr><td>CoD unicast streaming with SIP session management</td><td><a href="volume5.html#cod-unicast-streaming-with-sip-session-management" class="extRef">8.2.2</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>Scheduled Content multicast streaming with SIP session management</td><td><a href="volume5.html#scheduled-content-multicast-streaming-with-sip-session-management" class="extRef">8.2.3</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>Communication services with SIP session management</td><td><a href="volume5.html#communication-services-with-sip-session-management" class="extRef">8.2.4</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>CoD unicast streaming over RTP and HTTP</td><td><a href="volume5.html#cod-unicast-streaming-over-rtp-and-http" class="extRef">8.2.5</a></td><td>M<sup>(21)</sup></td><td>M</td><td>M</td></tr>
+<tr><td>Scheduled content multicast streaming</td><td><a href="volume5.html#scheduled-content-multicast-streaming" class="extRef">8.2.6</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>URI Schemes and their usage</td><td><a href="volume5.html#uri-schemes" class="extRef">8.3</a></td><td>M<sup>(11),(14)</sup></td><td>M<sup>(11)<sup></td><td>M</td></tr>
+<tr><td>Minimum DAE capability requirements</td><td><a href="volume5.html#minimum-dae-capabilities" class="extRef">9.1</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;Multiple simultaneous applications</td><td><a href="volume5.html#minimum-dae-capabilities" class="extRef">9.1</a></td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>Default UI profiles</td><td><a href="volume5.html#default-ui-profiles" class="extRef">9.2</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Client capability Description</td><td><a href="volume5.html#client-capability-description" class="extRef">9.3</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Security</td><td><a href="volume5.html#dae-security" class="extRef">10</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>HTML 5 &lt;video&gt; tag</td><td><a href="volume5.html#profile-of-html5" class="extRef">Annex I</a>, <a href="volume5.html#html5-video-capability" class="extRef">9.3.17</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td><b>Content Access Descriptor Syntax and Semantics</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Content Access Download Descriptor Format</td><td><a href="volume5.html#content-access-download-descriptor-format" class="extRef">Annex E.1</a></td><td>M-D</td><td>M-D</td><td>M-D</td></tr>
+<tr><td>Basic content access descriptor</td><td><a href="volume5.html#content-access-streaming-descriptor-format" class="extRef">Annex E.2</a>, <a href="volume5.html#abstract-content-access-descriptor-format" class="extRef">Annex E.3</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Capability Extensions Schema</td><td><a href="volume5.html#client-extensions-schema" class="extRef">Annex F</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Client Channel Listing Format</td><td><a href="volume5.html#client-channel-listing-format" class="extRef">Annex G</a></td><td>O</td><td>O</td><td>O</td></tr>
+</table>
+<p>Notes</p>
+<table class="note-table">
+<tr><td>1.</td><td>Read-only access to the following properties SHALL be supported – preferredAudioLanguage, preferredSubtitleLanguage and countryID. Read-write access to these properties, all the other properties and all methods are OPTIONAL.</td></tr>
+<tr><td>2.</td><td>The deviceID property SHALL be supported. Other properties and methods are OPTIONAL.</td></tr>
+<tr><td>3.</td><td>Only applicable where both BCG and download are supported.</td></tr>
+<tr><td>4.</td><td>API mandatory but fails where protocol is not supported by the OIP-OITF or BMP-OITF.</td></tr>
+<tr><td>5.</td><td>Aspects of this may be mandatory depending on applicable regulation.</td></tr>
+<tr><td>6.</td><td>Recordings made by applications from one service provider SHALL NOT be visible to applications from other service providers.</td></tr>
+<tr><td>7.</td><td>Mapping from this API to BCG SHALL be supported. Mapping from this API to DVB-SI MAY be supported in OITFs that support hybrid service.</td></tr>
+<tr><td>8.</td><td>Support for processing searches on a remote server using the SOAP based protocol is optional.</td></tr>
+<tr><td>9.</td><td>SHALL be supported if the OITF does not include a means for the user to initiate this manually, otherwise OPTIONAL.</td></tr>
+<tr><td>10.</td><td>SHALL be supported where DVB-SI is supported.</td></tr>
+<tr><td>11.</td><td>The crid URI scheme is OPTIONAL.</td></tr>
+<tr><td>12.</td><td>The feature is OPTIONAL for communication between the IG and OITF when integrated into a single device. The IG SHALL nevertheless provide HNI-IGI for other OITFs in the residential network.</td></tr>
+<tr><td>13.</td><td>Only unicast mode streaming is REQUIRED to be supported.</td></tr>
+<tr><td>14.</td><td>The support of “rtsp” and "dvb-mcast" URLs is OPTIONAL.</td></tr>
+<tr><td>15.</td><td>Feature applies to DAE applications, rather than to the OITF.</td></tr>
+<tr><td>16.</td><td>The getParameter method is OPTIONAL.</td></tr>
+<tr><td>17.</td><td>Only “http” URLs are REQUIRED to be supported.</td></tr>
+<tr><td>18.</td><td>If CSPG-DTCP or CSPG-CI+ is supported then the CSP Gateway Discovery and URL properties SHALL be supported, however the CSP Gateway URL has no meaning in the case of CSPG-CI+.</td></tr>
+<tr><td>19.</td><td>Excluding requirements to support the application/oipfStatusView object which is optional.</td></tr>
+<tr><td>20.</td><td>Section <a href="volume5.html#applications-provided-by-the-ag" class="extRef">5.1.1.8</a> “Applications provided by the AG through the remote UI" is only required where section <a href="volume5.html#gateway-discovery-and-control" class="extRef">4.2</a> is supported.</td></tr>
+<tr><td>21.</td><td>Only those elements of <a href="volume5.html#s8-2-3-1" class="extRef">8.2.3.1</a> relevant to HTTP are mandatory. Section <a href="volume5.html#s8-2-3-1" class="extRef">8.2.3.2</a> and elements of <a href="volume5.html#s8-2-3-1" class="extRef">8.2.3.1</a> relevant to RTSP are optional in line with the corresponding sections of [[.OIPF_PROT2]].</td></tr>
+</table>
+</section>
+
+<section id="features-pae"><h2>Procedural Application Environment</h2>
+<p>The complete Procedural Application Environment is REQUIRED to be used as the core component of the Application Gateway (AG) functional entity; however the use of the AG is OPTIONAL with all three OITF profiles.</p>
+</section>
+
+<section id="features-csp"><h2>Authentication, Content Protection and Service Protection</h2>
+<p>Table <a href="#t8" class="tableRef">8</a> lists the status of OITF support of features as specified in Volume 7 [[.OIPF_CSP2]] for each profile</p>
+<table class="simple compliance" id="t8">
+<caption>Table ####: Authentication and CSP profiling/caption>
+<tr><th>Feature</th><th>Reference in<br />Volume 7</th><th>Status in OIP</th><th>Status in BMP</th><th>Status in EMP</th></tr>
+<tr><td><b>Terminal Centric Approach (TCA)</b></td><td><a href="volume7.html#tca" class="extRef">4.1</a></td><td>O<sup>(1)</sup></td><td>O<sup>(1)</sup></td><td>O<sup>(1)</sup></td></tr>
+<tr><td>&nbsp;&nbsp;Marlin metering in OITF</td><td><a href="volume7.html#tca" class="extRef">4.1</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>&nbsp;&nbsp;<b>Protected formats</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;OMA P/DCF</td><td><a href="volume7.html#protected-file-formats" class="extRef">4.1.4</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Marlin IPMPx</td><td><a href="volume7.html#protected-file-formats" class="extRef">4.1.4</a></td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Protected MPEG-2 TS</td><td><a href="volume7.html#protected-file-formats" class="extRef">4.1.4</a>, <a href="volume7.html#protection-of-mpeg2-transport-streams" class="extRef">4.1.5</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td><b>Gateway Centric Approach (GCA)</b></td><td><a href="volume7.html#gca" class="extRef">4.2</a></td><td>O<sup>(1),(2)</sup></td><td>O<sup>(1),(2)</sup></td><td>O<sup>(1),(2)</sup></td></tr>
+<tr><td>&nbsp;&nbsp;CSPG-CI+</td><td><a href="volume7.html#ciplus-based-gateway" class="extRef">4.2.3</a></td><td>O<sup>(1)</sup></td><td>O<sup>(1)</sup></td><td>O<sup>(1)</sup></td></tr>
+<tr><td>&nbsp;&nbsp;CSPG-DTCP</td><td><a href="volume7.html#dtcp-ip-based-gateway" class="extRef">4.2.4</a></td><td>O<sup>(1)</sup></td><td>O<sup>(1)</sup></td><td>O<sup>(1)</sup></td></tr>
+<tr><td><b>OITF Authentication</b></td><td><a href="volume7.html#oitf-authentication" class="extRef">5.4</a></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;HTTP basic and digest authentication</td><td><a href="volume7.html#http-basic-and-digest-authentication" class="extRef">5.4.1</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;Web based authentication</td><td><a href="volume7.html#web-based-authentication" class="extRef">5.4.3</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;HTTP Digest Authentication using IMS Gateway</td><td><a href="volume7.html#http-digest-authentication-using-ims-gateway" class="extRef">5.4.4</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;GBA authentication using IMS Gateway</td><td><a href="volume7.html#gba-authentication-using-ims-gateway" class="extRef">5.4.5</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td><b>IMS registration – OITF</b></td><td><a href="volume7.html#ims-registration---oitf" class="extRef">5.5</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td><b>Session management</b></td><td><a href="volume7.html#session-management-and-sso" class="extRef">5.6</a></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;Cookie session</td><td><a href="volume7.html#cookie-session" class="extRef">5.6.1</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;HTTP authentication session</td><td><a href="volume7.html#http-authentication-session-1" class="extRef">5.6.3</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>&nbsp;&nbsp;SAML web-based SSO</td><td><a href="volume7.html#saml-web-based-sso-1" class="extRef">5.6.4</a></td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Forced Play Out Using Media Zones</td><td><a href="volume7.html#forced-playout-using-media-zones" class="extRef">6</a></td><td>O</td><td>O</td><td>O</td></tr>
+</table>
+<p>Notes</p>
+<table class="note-table">
+<tr><td>1.</td><td>At least one of TCA, GCA-CI+ or GCA-DTCP SHALL be supported.</td></tr>
+<tr><td>2.</td><td>Support for Volume 7 [[.OIPF_CSP2]] sections <a href="volume7.html#capabilities" class="extRef">4.2.1</a> and <a href="volume7.html#cspg-dae-interface" class="extRef">4.2.2</a> on DAE and CSPG interfacing are also OPTIONAL in the OITF if the GCA is not supported.</td></tr>
+</table>
+
+</section>
+</section>
+
+
+</body>
+</html>

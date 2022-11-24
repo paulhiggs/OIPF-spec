@@ -1,0 +1,390 @@
+/* stlye sheet for OIPF specification */
+
+html {    font-size: 16px;
+ /*   font-family: "helvetica neue", helvetica, arial, sans-serif; */
+}
+h1, h2, h3, h4, h5, h6 { text-align: left }
+/* background should be transparent, but WebTV has a bug */
+h1, h2, h3 { color: black; background: white }
+h1 { font: 1.7rem sans-serif; color: purple }  /* this is not used in OIPF specs */
+h2 { font: bold 1.8rem sans-serif; margin-top:2rem; margin-bottom:1.5rem }
+h3 { font: bold 1.6rem sans-serif; margin-top:1rem; margin-bottom:1rem }
+h4 { font: bold 1.4rem sans-serif; margin-top:1rem; margin-bottom:1rem }
+h5 { font: bold 1.2rem sans-serif; margin-top:1rem; margin-bottom:1rem }
+h6 { font: bold 1.1rem sans-serif; margin-top:1rem; margin-bottom:1rem }
+
+th, td { /* ns 4 */
+/*  font-family: sans-serif; */
+}
+
+pre { 
+	margin-left: 2em;
+	font-size: 85%;
+	font-family: "Lucida Console";
+	line-height: 120%
+}
+
+figure {
+	text-align: center;
+}
+
+figcaption  { 
+	font-weight: bold;
+	text-align: center; 
+	padding-top: 6px;
+	padding-bottom: 6px 
+}
+
+td ol:first-child{ margin-top: 0em; }
+td ol:last-child{	margin-bottom: 0em; }
+
+
+ol:only-child{ 
+	margin-top: 0em;
+	margin-bottom: 0em;
+	padding-left: 10px;
+}
+
+td.nobreak { white-space:nowrap; }
+
+ol.manual { list-style-type: none;}
+ul.nobullet { list-style-type:none; }
+td ul.nobullet:last-child {margin-bottom: 0em;}
+
+ul.allowed-values-list {
+	list-style-type:none;
+	font-family: "Lucida Console";
+	font-size: inherit;
+	line-height: 120%
+}
+/* 
+ol.colon {
+  list-style-type: none;
+  margin-left: 0;
+}
+ol.colon > li {
+  counter-increment: customlistcounter;
+}
+ol.colon > li:before {
+  content: counter(customlistcounter) ": ";
+  font-weight: bold; 
+  float: left;
+  width: 2em;
+}
+ol.colon:first-child {
+  counter-reset: customlistcounter;
+}
+*/
+
+
+div.caption {
+	font-weight: bold;
+	text-align: center; 
+	padding-top: 6px;
+	padding-bottom: 6px 
+}
+
+div.center {
+	text-align: center; 
+}
+
+div.example {
+	text-align:left;
+}
+
+pre.xml-schema {
+    border:  1px solid black;
+	margin-left: 1em;
+	margin-right: 1em;
+	padding:    5px;
+	white-space: pre;
+	tab-size: 2;
+	-moz-tab-size: 2;
+	-o-tab-size: 2;
+	font-family: monospace;
+	font-size: 90%
+}
+pre.xml-document {
+	margin-left: 1em;
+	margin-right: 1em;
+	padding:    5px;
+	white-space: pre;
+	tab-size: 2;
+	-moz-tab-size: 2;
+	-o-tab-size: 2;
+	font-family: monospace;
+	font-size: 90%
+}
+
+pre.javascript {
+	margin-left: 1em;
+	margin-right: 1em;
+	padding:    5px;
+	white-space: pre;
+	tab-size: 2;
+	-moz-tab-size: 2;
+	-o-tab-size: 2;
+	font-family: "Lucida Console";
+	font-size: 90%
+}
+
+pre.noborder {
+    border:  0px solid white;
+}
+
+table {
+	caption-side: top;
+}	
+table caption {
+	font-weight: bold;
+	padding-top: 6px;
+	padding-bottom: 6px 
+}
+
+table.alignment {
+    border-spacing: 0;
+    border-collapse:  collapse;
+	border: 0px none transparent;
+}
+.alignment td {
+    border-spacing: 0;
+    border-collapse:  collapse;
+	border: 0px none transparent;
+}
+
+table.simple {
+    border-spacing: 0;
+    border-collapse:  collapse;
+    border-bottom:  3px solid #005a9c;
+	border-top:  3px solid #005a9c;
+	border-left:  3px solid #005a9c;
+	border-right:  3px solid #005a9c;
+    margin-left:auto; 
+    margin-right:auto;
+	font-size: 90%;
+	vertical-align: top;
+	margin-bottom: 12pt;
+}
+
+.simple th {
+    background: #E0E0E0;
+    color:  black;
+    padding:    3px 5px;
+/*    text-align: left; */
+	font-family: sans-serif;
+}
+
+.simple th[scope="row"] {
+    background: inherit;
+    color:  inherit;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+.simple td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	vertical-align: top;
+/*	text-align: left; */
+	font-family: sans-serif;
+}
+
+.simple td p:first-child { margin-top: 0em; }
+.simple td p:last-child { margin-bottom: 0em; }
+
+.simple td ol:only-child { padding-left: 10px; margin-top: 0em; margin-bottom: 0em; }
+.simple td ul:only-child { padding-left: 10px; margin-top: 0em; margin-bottom: 0em; }
+
+.simple td ul:last-child { margin-bottom: 0em; }
+
+.simple caption {
+	caption-side: top;
+	font-weight: bold;
+}
+
+.first-nowrap tr td:first-child {
+	white-space:nowrap;	
+}
+
+div.editor-note {
+	background: yellow;
+}
+
+table.reference {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  3px solid #005a9c;
+	border-top:  3px solid #005a9c;
+	border-left:  3px solid #005a9c;
+	border-right:  3px solid #005a9c;
+	width: 100%;
+	vertical-align: top;
+/*	font-size: 90%; */
+	margin-bottom: 12pt;
+}
+
+div.note {
+	background: #E0E0E0;
+}
+
+.reference th {
+    background: #E0E0E0;
+    color:  black;
+    padding:    3px 5px;
+    text-align: left;
+}
+.reference td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+	vertical-align: top;
+	border-left: 1px solid #ddd;
+}
+
+table.definitions {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  3px solid #005a9c;
+	border-top:  3px solid #005a9c;
+	border-left:  3px solid #005a9c;
+	border-right:  3px solid #005a9c;
+	vertical-align: top;
+/*	font-size: 90%; */
+}
+
+.definitions th {
+    background: #E0E0E0;
+    color:  black;
+    padding:    3px 5px;
+    text-align: left;
+}
+.definitions td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+	vertical-align: top;
+	border-left: 1px solid #ddd;
+}
+
+.definitions td:first-child { font-weight:bold; }
+.definitions td p:first-child { margin-top: 0em; }
+.definitions td p:last-child { margin-bottom: 0em; }
+
+
+table.bibliography {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  3px solid #005a9c;
+	border-top:  3px solid #005a9c;
+	border-left:  3px solid #005a9c;
+	border-right:  3px solid #005a9c;
+	vertical-align: top;
+	font-size: 90%;
+}
+
+.bibliography th {
+    background: #E0E0E0;
+    color:  black;
+    padding:    3px 5px;
+    text-align: left;
+}
+.bibliography td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+	vertical-align: top;
+	border-left: 1px solid #ddd;
+}
+
+a.bibref {
+    text-decoration: none;
+	white-space: nowrap;
+}
+
+a.extRef {
+    text-decoration:    none;
+}
+a.extRef:visited, a.extRef:link  {
+   color:    black;
+}
+
+table.bibliography a.reference-link:visited, a.reference-link:link  {
+   color:    blue;
+   font-family: sans-serif;
+   font-size: 90%;
+}
+
+@media screen {  
+	a.extRef:after { content: '\2197'; font-weight: bolder; font-size: 0.8rem; }
+	a[href]:hover { background: #ffa }	
+}
+
+
+/* try to come up with some @media print style for page header and footer */
+@media print {  
+
+}
+
+cite .bibref {
+    font-style: normal;
+}
+
+ul.toc, ol.toc {
+/*  list-style: disc;	*/	/* Mac NS has problem with 'none' */
+/*  list-style: none;   */
+    list-style: none outside none;
+}
+
+.toc a, .tof a {
+    text-decoration:    none;
+}
+
+a .secno, a .figno {
+    color:  #000;
+}
+
+em.rfc2119 { 
+    text-transform:     lowercase;
+    font-variant:       small-caps;
+/*	font-size:			100%; */
+    font-style:         normal;
+    color:              #900;
+}
+
+mark.refError {
+	background-color: lightgreen;
+}
+mark.error {
+	background-color: crimson;
+	color: yellow;
+}
+
+.footnote {
+	background-color: lightyellow;
+	padding:    3px 10px;
+	font-size: 90%;
+}
+
+
+table.sequence {
+	padding-left: 0.6cm; 
+	border: none;
+}
+.sequence tr { 
+	vertical-align: top;
+}
+
+.sequence td:first-child {
+	min-width: 45px;
+}
+
+ol.sequence   li {
+	padding-right:50px;
+}
+
+.sequence td p:first-child {
+	margin-top: 0em;
+}
+.sequence td p:last-child {
+	margin-bottom: 0em;
+}
+
+td.label {font-weight:bold; white-space:nowrap; }

@@ -1,0 +1,28 @@
+.compliance-table-3 td:nth-last-child(3), .compliance-table-3 td:nth-last-child(2), .compliance-table-3 td:last-child  {
+	text-align: center;
+}
+.compliance-table-3 td:first-child  {
+	text-align: left;
+}
+.compliance-table-4 td:nth-last-child(4), .compliance-table-4 td:nth-last-child(3), .compliance-table-4 td:nth-last-child(2), .compliance-table-4 td:last-child  {
+	text-align: center;
+}
+.compliance-table-4 td:first-child  {
+	text-align: left;
+}
+
+
+.key-table th {
+    color:  black;
+    padding:    3px 5px;
+    text-align: center;	
+}
+
+.key-table td:first-child {
+	text-align: center;
+}
+.key-table td:nth-child(2) {
+	text-align: left;
+}
+
+

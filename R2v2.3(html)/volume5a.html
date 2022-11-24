@@ -1,0 +1,2328 @@
+<!DOCTYPE html>	
+<html lang="en" xml:lang="en">
+<head>
+<title>overwritten</title>
+	<script src='js/respec.js' class='remove'></script>
+	<!--	 <script src='http://dev.w3.org/2009/dap/ReSpec.js/js/respec.js' class='remove'></script> -->
+	<script class='remove'>				
+		var respecConfig = {
+					 
+          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+          specStatus:           "OIPF-FINAL",
+		  
+		  OIPFrelease: "2",	
+		  OIPFversion: "2.3",
+		  OIPFvolume: "5a",
+         
+		  OIPFAppendixLabel: "Annex",
+          
+          // the specification's short name, as in http://www.w3.org/TR/short-name/
+          shortName:            "volume5a",
+
+          // if your specification has a subtitle that goes below the main
+          // formal title, define it here
+		  title: "Web Standards TV Profile",
+          subtitle   :  "A profile of HTML5 and other related web technologies for connected TVs",
+
+          // if you wish the publication date to be other than today, set this
+          publishDate:  "2014-01-24",
+
+          // if the specification's copyright date is a range of years, specify
+          // the start date here:
+          //copyrightStart: "2005",
+		
+		  //additionalCopyrightHolders: "",
+		  
+		  overrideCopyright: " ",
+		  
+		  
+          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+          // and its maturity status
+          // previousPublishDate:  "1977-03-15",
+          // previousMaturity:  "WD",
+
+          // if there a publicly available Editor's Draft, this is the link
+          edDraftURI:           "",
+
+          // if this is a LCWD, uncomment and set the end of its review period
+          // lcEnd: "2009-08-05",
+
+
+
+          // editors, add as many as you like
+          // only "name" is required
+          editors:  [
+              { name: "Editor", url: "contact@oipf.tv",
+                company: "Open IPTV Forum", companyURL: "http://www.oipf.tv/" },
+          ],
+		  
+          // authors, add as many as you like. 
+          // This is optional, uncomment if you have authors as well as editors.
+          // only "name" is required. Same format as editors.
+
+          //authors:  [
+          //    { name: "Your Name", url: "http://example.org/",
+          //      company: "Your Company", companyURL: "http://example.com/" },
+          //],
+          
+          // name of the WG
+          wg:           "OIPF Solutions WG",
+          
+          // URI of the public WG page
+          wgURI:        "http://www.oipf.tv",
+          
+          // name (with the @w3c.org) of the public mailing to which comments are due
+          wgPublicList: "contact@oipf.tv",
+          
+          // URI of the patent status for this WG, for Rec-track documents
+          // !!!! IMPORTANT !!!!
+          // This is important for Rec-track documents, do not copy a patent URI from a random
+          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+          // Team Contact.
+          wgPatentURI:  "",
+          		  
+		  maxTocLevel:	4,
+		  
+		//<a href=\"\" class=\"reference-link\">  </a>
+		
+		  localBiblio: {
+	
+			"HTML5-20130806" : "Robin Berjon; Steve Faulkner; Travis Leithead; Erika Doyle Navara; Edward O'Connor; Silvia Pfeiffer. HTML5. 6 August 2013. W3C Candidate Recommendation. URL: <a href=\"http://www.w3.org/TR/2013/CR-html5-20130806/\" class=\"reference-link\">http://www.w3.org/TR/2013/CR-html5-20130806/</a>",
+			
+			"CANVAS-2D-20121217":"Rik Cabanier; Eliot Graff; Jay Munro; Tom Wiltzius; Ian Hickson. HTML Canvas 2D Context. 17 December 2012. W3C Candidate Recommendation. URL: <a href=\"http://www.w3.org/TR/2012/CR-2dcontext-20121217\" class=\"reference-link\">http://www.w3.org/TR/2012/CR-2dcontext-20121217</a>",
+			"COOKIES":"Adam Barth. HTTP State Management Mechanism. April 2011. Internet Proposed Standard RFC 6265. URL: <a href=\"http://www.rfc-editor.org/rfc/rfc6265.txt\" class=\"reference-link\">http://www.rfc-editor.org/rfc/rfc6265.txt</a>",
+			"CSS21-20110607":"Bert Bos et al. Cascading Style Sheets, level 2 (CSS2) Specification. 07 June 2011. W3C Recommendation. URL: <a href=\"http://www.w3.org/TR/2011/REC-CSS2-20110607/\" class=\"reference-link\">http://www.w3.org/TR/2011/REC-CSS2-20110607/</a>",
+			"CSS3-ANIMATIONS-20130219":"Dean Jackson; David Hyatt; Chris Marrin; Sylvain Galineau; L. David Baron. CSS Animations. 19 February 2013. W3C Working Draft. URL: <a href=\"http://www.w3.org/TR/2013/WD-css3-animations-20130219/\" class=\"reference-link\">http://www.w3.org/TR/2013/WD-css3-animations-20130219/</a>",
+			"CSS3-BG-20120724":"Bert Bos; Elika J. Etemad; Brad Kemper. CSS Backgrounds and Borders Module Level 3. 24 July 2012. W3C Candidate Recommendation. URL: <a href=\"http://www.w3.org/TR/2012/CR-css3-background-20120724/\" class=\"reference-link\">http://www.w3.org/TR/2012/CR-css3-background-20120724/</a>",
+			"CSS3-CONDITIONAL-20130404":"David Baron. CSS Conditional Rules Module Level 3. 4 April 2013. W3C Candidate Recommendation. URL: <a href=\"http://www.w3.org/TR/2013/CR-css3-conditional-20130404/\" class=\"reference-link\">http://www.w3.org/TR/2013/CR-css3-conditional-20130404/</a>",
+			"CSS3-FONTS-20130212":"John Daggett. CSS Fonts Module Level 3. 12 February 2013. W3C Working Draft. URL: <a href=\"http://www.w3.org/TR/2013/WD-css3-fonts-20130212/\" class=\"reference-link\">http://www.w3.org/TR/2013/WD-css3-fonts-20130212/</a>",
+			"CSS3-IMAGES-20120417":"Elika J. Etemad; Tab Atkins Jr.. CSS Image Values and Replaced Content. 17 April 2012. W3C Candidate Recommendation. URL: <a href=\"http://www.w3.org/TR/2012/CR-css3-images-20120417\" class=\"reference-link\">http://www.w3.org/TR/2012/CR-css3-images-20120417</a>",
+			"CSS3-MEDIAQUERIES-20120619":"Håkon Wium Lie; Tantek Çelik; Daniel Glazman; Anne van Kesteren. Media Queries. 19 June 2012. W3C Recommendation. URL: <a href=\"http://www.w3.org/TR/2012/REC-css3-mediaqueries-20120619/\" class=\"reference-link\">http://www.w3.org/TR/2012/REC-css3-mediaqueries-20120619/</a>",
+			"CSS3-TRANSFORMS-20120911":"Simon Fraser; Dean Jackson; David Hyatt; Chris Marrin; Edward O'Connor; Dirk Schulze; Aryeh Gregor. CSS Transforms. 11 September 2012. W3C Working Draft. URL: <a href=\"http://www.w3.org/TR/2012/WD-css3-transforms-20120911\" class=\"reference-link\">http://www.w3.org/TR/2012/WD-css3-transforms-20120911</a>",
+			"CSS3-TRANSITIONS-20130212":"Dean Jackson; David Hyatt; Chris Marrin; L. David Baron. CSS Transitions. 12 February 2013. W3C Working Draft. URL: <a href=\"http://www.w3.org/TR/2013/WD-css3-transitions-20130212/\" class=\"reference-link\">http://www.w3.org/TR/2013/WD-css3-transitions-20130212/</a>",
+			"CSS3COL-20110412":"Håkon Wium Lie. CSS3 module: Multi-column layout. 12 April 2011. W3C Candidate Recommendation. URL: <a href=\"http://www.w3.org/TR/2011/CR-css3-multicol-20110412/\" class=\"reference-link\">http://www.w3.org/TR/2011/CR-css3-multicol-20110412/</a>",
+			"CSS3COLOR-20110607":"Tantek Çelik; Chris Lilley; L. David Baron. CSS Color Module Level 3. 07 June 2011. W3C Recommendation. URL: <a href=\"http://www.w3.org/TR/2011/REC-css3-color-20110607/\" class=\"reference-link\">http://www.w3.org/TR/2011/REC-css3-color-20110607/</a>",
+			"CSS3TEXT-20121113":"Elika J. Etemad; Koji Ishii. CSS Text Module Level 3. 13 November 2012. W3C Working Draft. URL: <a href=\"http://www.w3.org/TR/2012/WD-css3-text-20121113/\" class=\"reference-link\">http://www.w3.org/TR/2012/WD-css3-text-20121113/</a>",
+			"CSS3UI-20120117":"Tantek Çelik. CSS3 Basic User Interface Module. 17 January 2012. W3C Working Draft. URL: <a href=\"http://www.w3.org/TR/2012/WD-css3-ui-20120117/\" class=\"reference-link\">http://www.w3.org/TR/2012/WD-css3-ui-20120117/</a>",
+			"CSSOM-VIEW":"Anne van Kesteren. CSSOM View Module. 4 August 2011. W3C Working Draft. URL: <a href=\"http://www.w3.org/TR/2011/WD-cssom-view-20110804\" class=\"reference-link\">http://www.w3.org/TR/2011/WD-cssom-view-20110804</a>",
+			"DOM-LEVEL-3-EVENTS-20120906":"Travis Leithead; Jacob Rossi et al. Document Object Model (DOM) Level 3 Events. 06 September 2012. Working Draft. URL: <a href=\"http://www.w3.org/TR/2012/WD-DOM-Level-3-Events-20120906/\" class=\"reference-link\">http://www.w3.org/TR/2012/WD-DOM-Level-3-Events-20120906/</a>",
+			"ECMA-262-51":"ECMAScript Language Specification, Edition 5.1. June 2011. URL: <a href=\"http://www.ecma-international.org/publications/standards/Ecma-262.htm\" class=\"reference-link\">http://www.ecma-international.org/publications/standards/Ecma-262.htm</a>",
+			"FLEXBOX-20120918":"Tab Atkins Jr; Elika J. Etemad; Alex Mogilevsky. CSS Flexible Box Layout Module. 18 September 2012. W3C Candidate Recommendation. URL: <a href=\"http://www.w3.org/TR/2012/CR-css3-flexbox-20120918/\" class=\"reference-link\">http://www.w3.org/TR/2012/CR-css3-flexbox-20120918/</a>",
+			"MEDIA-FRAGS-20120925":"Raphaël Troncy et al. Media Fragments URI 1.0 (basic). 25 September 2012. W3C Recommendation. URL: <a href=\"http://www.w3.org/TR/2012/REC-media-frags-20120925/\" class=\"reference-link\">http://www.w3.org/TR/2012/REC-media-frags-20120925/</a>",
+			"POSTMSG-20120501":"Ian Hickson. HTML5 Web Messaging. 01 May 2012. W3C Candidate Recommendation. URL: <a href=\"http://www.w3.org/TR/2012/CR-webmessaging-20120501\" class=\"reference-link\">http://www.w3.org/TR/2012/CR-webmessaging-20120501</a>",
+			"SELECTORS-LEVEL-3-20110929":"Daniel Glazman et al. Selectors API Level 3. 29 September 2011. W3C Recommendation. URL: <a href=\"http://www.w3.org/TR/2011/REC-css3-selectors-20110929/\" class=\"reference-link\">http://www.w3.org/TR/2011/REC-css3-selectors-20110929/</a>",
+			"SSE-20121211":"Ian Hickson. Server-Sent Events. 11 December 2012. W3C Candidate Recommendation. URL: <a href=\"http://www.w3.org/TR/2012/CR-eventsource-20121211/\" class=\"reference-link\">http://www.w3.org/TR/2012/CR-eventsource-20121211/</a>",
+			"WEBSOCKETS-API-20120920":"I. Hickson. The WebSocket API. 20 September 2012. W3C Candidate Recommendation. URL: <a href=\"http://www.w3.org/TR/2012/CR-websockets-20120920/\" class=\"reference-link\">http://www.w3.org/TR/2012/CR-websockets-20120920/</a>",
+			"WEBSTORAGE-20130730":"Ian Hickson. Web Storage. 30 July 2013. W3C Recommendation. URL: <a href=\"http://www.w3.org/TR/2013/REC-webstorage-20130730/\" class=\"reference-link\">http://www.w3.org/TR/2013/REC-webstorage-20130730/</a>",
+			"WEBWORKERS-20120501":"Ian Hickson. Web Workers. 01 May 2012. W3C Candidate Recommendation. URL: <a href=\"http://www.w3.org/TR/2012/CR-workers-20120501\" class=\"reference-link\">http://www.w3.org/TR/2012/CR-workers-20120501</a>",
+			"WOFF-20121213":"Jonathan Kew; Tal Leming; Erik van Blokland. WOFF File Format 1.0. 13 December 2012. W3C Recommendation. URL: <a href=\"http://www.w3.org/TR/2012/REC-WOFF-20121213/\" class=\"reference-link\">http://www.w3.org/TR/2012/REC-WOFF-20121213/</a>",
+			"XHR-20121206":"Julian Aubourg et al. XMLHttpRequest. 6 December 2012. W3C Working Draft. URL: <a href=\"http://www.w3.org/TR/2012/WD-XMLHttpRequest-20121206/\" class=\"reference-link\">http://www.w3.org/TR/2012/WD-XMLHttpRequest-20121206/</a>",
+			"RFC6455":"I. Fette; A. Melnikov. The WebSocket Protocol. December 2011 including verified errata. URL: <a href=\"http://tools.ietf.org/html/rfc6455\" class=\"reference-link\">http://tools.ietf.org/html/rfc6455</a>",	
+			"DOM4":"Anne van Kesteren; Aryeh Gregor; Lachlan Hunt; Ms2ger. DOM4. 6 December 2012. W3C Working Draft. URL: <a href=\"http://www.w3.org/TR/dom/\" class=\"reference-link\">http://www.w3.org/TR/dom/</a>",
+			"RFC3986":"T. Berners-Lee; R. Fielding; L. Masinter. Uniform Resource Identifier (URI): Generic Syntax (RFC 3986). January 2005. RFC. URL: <a href=\"http://www.ietf.org/rfc/rfc3986.txt\" class=\"reference-link\">http://www.ietf.org/rfc/rfc3986.txt</a>",
+			
+		  },
+      };
+      
+	</script>
+		
+	<script class="remove">
+		function html5_element(name)
+		{
+			document.write("<code><b><a href=\"http://www.w3.org/TR/html5/sections.html#the-"+name+"-element\" class=\"extRef\">&lt;"+name+"&gt;</a></b></code>")
+		}
+		function html5_attribute(name)
+		{
+			document.write("<code><b><a href=\"http://www.w3.org/TR/html5/editing.html#the-"+name+"-attribute\" class=\"extRef\">"+name+"</a></b></code>")
+		}
+		function html5_mediaevent(name)
+		{
+			document.write("<code><a href=\"http://www.w3.org/TR/html5/embedded-content-0.html#media-event-"+name+"\" class=\"extRef\">"+name+"</a></code>")
+		}
+	</script>
+
+</head>
+<body>
+
+<section id="abstract">
+<p>This specification has been produced by the Open IPTV Forum (OIPF).</p>
+<p>This specification provides multiple options for some features. The Open IPTV Forum Profiles specification complements the Release 2 specifications by defining the Open IPTV Forum implementation and deployment profiles.</p>
+<p>The Open IPTV Forum Release 2 Solution specification consists of ten Volumes: </p>
+<ul>
+<li>Volume 1 – Overview 
+<li>Volume 2 – Media Formats
+<li>Volume 2a – HTTP Adaptive Streaming
+<li>Volume 3 – Content Metadata
+<li>Volume 4 – Protocols
+<li>Volume 4a – Examples of IPTV Protocol Sequences
+<li>Volume 5 – Declarative Application Environment
+<li>Volume 5a – Web Standards TV Profile (the present document)
+<li>Volume 6 – Procedural Application Environment
+<li>Volume 7 – Authentication, Content Protection and Service Protection
+</ul>
+</section>
+
+<section id="scope">
+<h2>Introduction</h2>
+<p>This document is a profile of HTML, CSS and other related web technologies aimed at connected TV services and devices. Its goal is to describe a common profile that can be relied on by content and service providers and implemented by manufacturers. It does <b>not</b> describe extensions or modification to any of the referenced technologies but only tries to define a subset of web standards that are suitable and useful for TV deployments and at the same time stable enough to provide a good degree of confidence that real interoperability can be achieved. It may add clarifications and/or additional constraints where these are needed due to the nature of target deployment environment.</p>
+<p>This document only describes a minimum subset of web technology that a Terminal compliant with this profile is required to support. This does not preclude terminals to support more technologies than the ones described in this profile.</p>
+<p>This document will be updated over time, as maturity of different standards (now works in progress) increase and/or new web standards are defined.</p>
+<p>This specification is aimed at TV terminals that implement a browser based application environment. Applications running in such environment are authored using a set of languages commonly referred to as "web technologies" or "web standards". This document lists the minimum set of languages that shall be supported by a Terminal conforming to this specification. A terminal may support more languages than the ones listed in this document.</p>
+<p>To avoid fragmentation and enhance interoperability with other web technologies-based devices and eco-systems, this specification tries not to diverge from any of the referenced specifications it relies on. In some exceptional cases though, this specification may decide to intentionally diverge from the referenced specifications. Such differences will be <b>explicitly</b> noted throughout the document.</p>
+<p>This document is organized as follows: the main body includes a list of references to specifications that this profile relies on and that are considered necessary to enable an enhanced user experience. Annex <a href="#annex-a" class="sectionRef"></a> contains instead a detailed list of which features for each specification are considered stable enough and therefore can be safely supported by terminals and used by application developers. Such tables will be updated in future revisions of this document as maturity of the various specifications evolve. Support tables are omitted for those specifications that are required to be fully supported.</p>
+</section>
+
+<section id='references'>
+<h2>References</h2>
+</section>
+
+
+<section id="terminology-and-conventions">
+<h2>Terminology and Conventions</h2>
+<section id="conventions">
+<h3>Conventions</h3>
+<p>The key words MUST, MUST NOT, REQUIRED, SHOULD, SHOULD NOT, RECOMMENDED, MAY, and OPTIONAL in this specification are to be interpreted as described in [[RFC2119]].</p>
+<p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p>
+<p>This document references specifications that some times are still works in progress. All features marked as <b>"at risk"</b> in such referenced specification SHALL be considered as OPTIONAL to support unless this profile explicitly mandate support for them.</p>
+</section>
+<section id="definitions">
+<h3>Definitions</h3>
+In addition to the Definitions provided in Volume 1, the following abbreviations are used in this Volume.
+<table class="definitions">
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Terminal</td><td>a device running an interactive user-agent (browser) conformant to this specification. This is equivalent to the the OITF block as defined in [[.OIPF_ARCH2]].</td></tr>
+<tr><td>Application</td><td>an interactive software authored using the set of languages defined by this profile and conformant with this profile.</td></tr>
+<tr><td>Authoring&nbsp;Tool</td><td>a software program used to edit applications.</td></tr>
+<tr><td>MB</td><td>2<sup>20</sup> bytes.</td></tr>
+</table>
+</section>
+
+<section id="abbreviations">
+<h3>Abbreviations</h3>
+In addition to the Abbreviations provided in Volume 1, the following abbreviations are used in this Volume.
+<table class="definitions">
+<tr><th>Abbreviation</th><th>Definition</th></tr>
+<tr><td>API</td><td>Application Programming Interface</td></tr>
+<tr><td>CSS</td><td>Cascading Style Sheets</td></tr>
+<tr><td>DOM</td><td>Document Object Model</td></tr>
+<tr><td>WOFF</td><td>Web Open Font Format</td></tr>
+</table>
+</section>
+</section>
+
+<section id="markup">
+<h2>Markup</h2>
+<p>The HTML5 [[!HTML5-20130806]] specification defines conformance requirements for user-agents and documents. Applications and authoring tools SHALL comply with conformance requirements for documents unless differently specified in annex <a href="#html5-profile" class="sectionRef"></a>. Terminals SHALL comply with conformance requirements for user agents unless differently specified in annex <a href="#html5-profile" class="sectionRef"></a>; in particular a terminal SHALL support the HTML syntax and the XHTML syntax for HTML documents as defined in [[!HTML5-20130806]].</p>
+</section>
+
+<section id="style">
+<h2>Style</h2>
+<p>Support for CSS as a whole is not required by HTML5, even though some features are defined in terms of specific CSS requirements. This section defines requirements for CSS and other style and/or graphic related technologies.</p>
+
+<section id="basic-graphic">
+<h2>Basic Graphic</h2>
+<p>Terminals SHALL support CSS Basic User Interface [[!CSS3UI-20120117]] as profiled in annex <a href="#css-basic-user-interface" class="sectionRef"></a>.</p>
+<p>Terminals SHALL support CSS 2.1 [[!CSS21-20110607]]. Although the CSS 2.1 specification includes a <a href="http://www.w3.org/TR/CSS2/media.html#media-types" class="extRef"><code>"tv"</code></a> media type, this has not been widely used in practice. Terminals MAY ignore the <a href="http://www.w3.org/TR/CSS2/media.html#media-types" class="extRef"><code>"tv"</code></a> media type and just use the <a href="http://www.w3.org/TR/CSS2/media.html#media-types" class="extRef"><code>"screen"</code></a> media type.</p>
+<p>Terminals SHALL support CSS Color Module Level 3 [[!CSS3COLOR-20110607]].</p>
+<p>Terminals SHALL support CSS Image Values and Replaced Content [[!CSS3-IMAGES-20120417]] as profiled in annex <a href="#css-image-values-and-replaced-content" class="sectionRef"></a>.</p>
+<p>Terminals SHALL support CSS Backgrounds and Borders [[!CSS3-BG-20120724]] as profiled in annex <a href="#css-backgrounds-and-borders" class="sectionRef"></a>.</p>
+</section>
+
+<section id="device-adaptation-layout-and-processing">
+<h2>Device Adaptation, Layout and Processing</h2>
+<p>Terminals SHALL support CSS Selectors Level 3 [[!SELECTORS-LEVEL-3-20110929]].</p>
+<p>Terminals SHALL support CSS Media Queries [[!CSS3-MEDIAQUERIES-20120619]].</p>
+<p>Terminals SHALL support CSS Multi-column Layout [[!CSS3COL-20110412]].</p>
+<p>Terminals SHALL support CSS Flexible Box Layout [[!FLEXBOX-20120918]].</p>
+<p>Terminals SHOULD support CSS Conditional Rules Module Level 3 [[!CSS3-CONDITIONAL-20130404]].</p>
+</section>
+
+<section id="text-and-fonts">
+<h2>Text and Fonts</h2>
+<p>Terminals SHALL support the [[!CSS3-FONTS-20130212]] as profiled in annex <a href="#css-fonts-module-level-3" class="sectionRef"></a>.</p>
+<p>Terminals SHALL support the Web Open Font Format (WOFF) [[!WOFF-20121213]]. Applications can link to [[!WOFF-20121213]] fonts via a <code>@font-face</code> rule ([[!CSS3-FONTS-20130212]]).</p>
+<div class="note">NOTE: WOFF packaged fonts may require a significant amount of space. See section <a href="#memory-usage" class="sectionRef"></a> for some recommendations.</div>
+<p>Terminals SHALL support CSS Text [[!CSS3TEXT-20121113]] as profiled in annex <a href="#css-text-level-3" class="sectionRef"></a>.</p>
+</section>
+
+<section id="advanced-graphic">
+<h2>Advanced Graphic</h2>
+<p>Terminals SHALL support the CSS Transforms [[!CSS3-TRANSFORMS-20120911]] as profiled in annex <a href="#css-transforms" class="sectionRef"></a>.</p>
+<p>Terminals SHALL support CSS Transitions [[!CSS3-TRANSITIONS-20130212]] as profiled in annex <a href="#css-transitions" class="sectionRef"></a>.</p>
+<p>Terminals SHALL support CSS Animations [[!CSS3-ANIMATIONS-20130219]].</p>
+<p>Terminals SHALL support Canvas 2D [[!CANVAS-2D-20121217]] as profiled in annex <a href="#canvas-2d" class="sectionRef"></a>.</p>
+</section>
+</section>  <!-- of section 5. Style -->
+
+<section id="scripting">
+<h2>Scripting</h2>
+<p>Scripts are small programs that can be embedded into applications. While defining features that rely on scripting, HTML5 does not mandate support for scripting for all user-agents. Furthermore scripting is defined using a syntax that in most cases is independent from the underlying scripting language. For such reasons, this specification has additional requirements as defined in this section.</p>
+<section id="ecmascript">
+<h2>ECMAScript</h2>
+<ul>
+<li>Terminals SHALL support scripting as defined in [[!HTML5-20130806]].
+<li>Terminals SHALL support [[!ECMA-262-51]] scripting language.
+</ul>
+</section>
+
+<section id="event-model">
+<h2>Event model</h2> 
+<p>In addition to the support for the DOM 3 events specification that is required by HTML5 [[!HTML5-20130806]], terminals SHALL support the focus and keyboard event types defined in section 5.2.2 and 5.2.5 respectively of [[!DOM-LEVEL-3-EVENTS-20120906]].</p>
+<div class="note">NOTE: [[!XHR-20121206]] (referenced by this specification) also requires support for a subset of event related functionality defined in [[DOM4]], such as various exceptions and EventTarget.</div>
+<p>In order to support legacy content, Terminals SHALL support also the legacy attributes <code>keyCode</code> and <code>charCode</code> as defined in Appendix B of [[!DOM-LEVEL-3-EVENTS-20120906]].</p>
+<p>Applications SHALL NOT rely on these attributes and SHALL use the new event model as defined in DOM3 Events. Values used for the <code>keyCode</code> property are implementation specific, but SHALL be exposed to the application through the constants below, defined on the <code>KeyboardEvent</code> interface. For each constant, an equivalent key value is given (as defined for <code>KeyboardEvent.key</code> in DOM3, see section 6.2.7.1 of [[!DOM-LEVEL-3-EVENTS-20120906]]).</p>
+<p>In order to support legacy content, these constants SHALL also be available via a <code>KeyEvent interface</code>. For example VK_OK can be accessed as <code>KeyEvent.VK_OK</code>.</p>
+<div class="note">NOTE: There is no requirement for Terminals to be able to generate all keycodes defined below.</div>
+
+
+<table class="simple">
+<tr>
+<th>Virtual Keycode Constants</th><th>Equivalent key value (in DOM3)</th>
+</tr>
+<tr><td>VK_UNDEFINED </td><td>'Unidentified'</td></tr>
+<tr><td>VK_CANCEL </td><td>'Cancel'</td></tr>
+<tr><td>VK_BACK_SPACE </td><td>'Backspace'</td></tr>
+<tr><td>VK_TAB </td><td>'Tab'</td></tr>
+<tr><td>VK_CLEAR </td><td>'Clear'</td></tr>
+<tr><td>VK_ENTER </td><td>'Enter'</td></tr>
+<tr><td>VK_SHIFT </td><td>'Shift'</td></tr>
+<tr><td>VK_CONTROL </td><td>'Control'</td></tr>
+<tr><td>VK_ALT </td><td>'Alt'</td></tr>
+<tr><td>VK_PAUSE </td><td>'Pause'</td></tr>
+<tr><td>VK_CAPS_LOCK </td><td>'CapsLock'</td></tr>
+<tr><td>VK_KANA </td><td>'KanaMode'</td></tr>
+<tr><td>VK_FINAL </td><td>'FinalMode'</td></tr>
+<tr><td>VK_KANJI </td><td>'KanjiMode'</td></tr>
+<tr><td>VK_ESCAPE </td><td>'Esc'</td></tr>
+<tr><td>VK_CONVERT </td><td>'Convert'</td></tr>
+<tr><td>VK_NONCONVERT </td><td>'Nonconvert'</td></tr>
+<tr><td>VK_ACCEPT</td><td>'Accept'</td></tr>
+<tr><td>VK_MODECHANGE </td><td>'ModeChange'</td></tr>
+<tr><td>VK_SPACE </td><td>space character, fix</td></tr>
+<tr><td>VK_PAGE_UP </td><td>'PageUp'</td></tr>
+<tr><td>VK_PAGE_DOWN </td><td>'PageDown'</td></tr>
+<tr><td>VK_END </td><td>'End'</td></tr>
+<tr><td>VK_HOME </td><td>'Home'</td></tr>
+<tr><td>VK_LEFT </td><td>'Left'</td></tr>
+<tr><td>VK_UP </td><td>'Up'</td></tr>
+<tr><td>VK_RIGHT </td><td>'Right'</td></tr>
+<tr><td>VK_DOWN </td><td>'Down'</td></tr>
+<tr><td>VK_COMMA </td><td>','</td></tr>
+<tr><td>VK_PERIOD </td><td>'.'</td></tr>
+<tr><td>VK_SLASH </td><td>'/'</td></tr>
+<tr><td>VK_0 </td><td>'0'</td></tr>
+<tr><td>VK_1 </td><td>'1'</td></tr>
+<tr><td>VK_2 </td><td>'2'</td></tr>
+<tr><td>VK_3 </td><td>'3'</td></tr>
+<tr><td>VK_4 </td><td>'4'</td></tr>
+<tr><td>VK_5 </td><td>'5'</td></tr>
+<tr><td>VK_6 </td><td>'6'</td></tr>
+<tr><td>VK_7 </td><td>'7'</td></tr>
+<tr><td>VK_8 </td><td>'8'</td></tr>
+<tr><td>VK_9 </td><td>'9'</td></tr>
+<tr><td>VK_SEMICOLON </td><td>';'</td></tr>
+<tr><td>VK_EQUALS </td><td>'Equals'</td></tr>
+<tr><td>VK_A </td><td>'A'</td></tr>
+<tr><td>VK_B </td><td>'B'</td></tr>
+<tr><td>VK_C </td><td>'C'</td></tr>
+<tr><td>VK_D </td><td>'D'</td></tr>
+<tr><td>VK_E </td><td>'E'</td></tr>
+<tr><td>VK_F </td><td>'F'</td></tr>
+<tr><td>VK_G </td><td>'G'</td></tr>
+<tr><td>VK_H </td><td>'H'</td></tr>
+<tr><td>VK_I </td><td>'I'</td></tr>
+<tr><td>VK_J </td><td>'J'</td></tr>
+<tr><td>VK_K </td><td>'K'</td></tr>
+<tr><td>VK_L </td><td>'L'</td></tr>
+<tr><td>VK_M </td><td>'M'</td></tr>
+<tr><td>VK_N </td><td>'N'</td></tr>
+<tr><td>VK_O </td><td>'O'</td></tr>
+<tr><td>VK_P </td><td>'P'</td></tr>
+<tr><td>VK_Q </td><td>'Q'</td></tr>
+<tr><td>VK_R </td><td>'R'</td></tr>
+<tr><td>VK_S </td><td>'S'</td></tr>
+<tr><td>VK_T </td><td>'T'</td></tr>
+<tr><td>VK_U </td><td>'U'</td></tr>
+<tr><td>VK_V </td><td>'V'</td></tr>
+<tr><td>VK_W </td><td>'W'</td></tr>
+<tr><td>VK_X </td><td>'X'</td></tr>
+<tr><td>VK_Y </td><td>'Y'</td></tr>
+<tr><td>VK_Z </td><td>'Z'</td></tr>
+<tr><td>VK_OPEN_BRACKET </td><td>'['</td></tr>
+<tr><td>VK_BACK_SLASH </td><td>'\'</td></tr>
+<tr><td>VK_CLOSE_BRACKET </td><td>']'</td></tr>
+<tr><td>VK_NUMPAD0 </td><td>see NOTE below</td></tr>
+<tr><td>VK_NUMPAD1 </td><td>see NOTE below</td></tr>
+<tr><td>VK_NUMPAD2 </td><td>see NOTE below</td></tr>
+<tr><td>VK_NUMPAD3 </td><td>see NOTE below</td></tr>
+<tr><td>VK_NUMPAD4 </td><td>see NOTE below</td></tr>
+<tr><td>VK_NUMPAD5 </td><td>see NOTE below</td></tr>
+<tr><td>VK_NUMPAD6 </td><td>see NOTE below</td></tr>
+<tr><td>VK_NUMPAD7 </td><td>see NOTE below</td></tr>
+<tr><td>VK_NUMPAD8 </td><td>see NOTE below</td></tr>
+<tr><td>VK_NUMPAD9 </td><td>see NOTE below</td></tr>
+<tr><td>VK_MULTIPLY </td><td>'Multiply'</td></tr>
+<tr><td>VK_ADD </td><td>'Add'</td></tr>
+<tr><td>VK_SEPARATER </td><td>'Separator'</td></tr>
+<tr><td>VK_SUBTRACT </td><td>'Subtract'</td></tr>
+<tr><td>VK_DECIMAL </td><td>'Decimal'</td></tr>
+<tr><td>VK_DIVIDE </td><td>'Divide'</td></tr>
+<tr><td>VK_F1 </td><td>'F1'</td></tr>
+<tr><td>VK_F2 </td><td>'F2'</td></tr>
+<tr><td>VK_F3 </td><td>'F3'</td></tr>
+<tr><td>VK_F4 </td><td>'F4'</td></tr>
+<tr><td>VK_F5 </td><td>'F5'</td></tr>
+<tr><td>VK_F6 </td><td>'F6'</td></tr>
+<tr><td>VK_F7 </td><td>'F7'</td></tr>
+<tr><td>VK_F8 </td><td>'F8'</td></tr>
+<tr><td>VK_F9 </td><td>'F9'</td></tr>
+<tr><td>VK_F10 </td><td>'F10'</td></tr>
+<tr><td>VK_F11 </td><td>'F11'</td></tr>
+<tr><td>VK_F12 </td><td>'F12'</td></tr>
+<tr><td>VK_DELETE </td><td>'Del'</td></tr>
+<tr><td>VK_NUM_LOCK </td><td>'NumLock'</td></tr>
+<tr><td>VK_SCROLL_LOCK </td><td>'Scroll'</td></tr>
+<tr><td>VK_PRINTSCREEN </td><td>'PrintScreen'</td></tr>
+<tr><td>VK_INSERT </td><td>'Insert'</td></tr>
+<tr><td>VK_HELP </td><td>'Help'</td></tr>
+<tr><td>VK_META</td><td>'Meta'</td></tr>
+<tr><td>VK_BACK_QUOTE</td><td>'`'</td></tr>
+<tr><td>VK_QUOTE </td><td>'''</td></tr>
+<tr><td>VK_RED </td><td>'Red'</td></tr>
+<tr><td>VK_GREEN </td><td>'Green'</td></tr>
+<tr><td>VK_YELLOW </td><td>'Yellow'</td></tr>
+<tr><td>VK_BLUE </td><td>'Blue'</td></tr>
+<tr><td>VK_GREY</td><td>'Grey'</td></tr>
+<tr><td>VK_BROWN</td><td>'Brown'</td></tr>
+<tr><td>VK_POWER</td><td>'Power'</td></tr>
+<tr><td>VK_DIMMER </td><td>'Dimmer'</td></tr>
+<tr><td>VK_WINK </td><td>'Wink'</td></tr>
+<tr><td>VK_REWIND </td><td>'MediaRewind'</td></tr>
+<tr><td>VK_STOP </td><td>'MediaStop'</td></tr>
+<tr><td>VK_EJECT_TOGGLE </td><td>'Eject'</td></tr>
+<tr><td>VK_PLAY </td><td>'MediaPlay'</td></tr>
+<tr><td>VK_RECORD </td><td>'MediaRecord'</td></tr>
+<tr><td>VK_FAST_FWD</td><td>'FastFwd'</td></tr>
+<tr><td>VK_PLAY_SPEED_UP</td><td>'PlaySpeedUp'</td></tr>
+<tr><td>VK_PLAY_SPEED_DOWN </td><td>'PlaySpeedDown'</td></tr>
+<tr><td>VK_PLAY_SPEED_RESET</td><td>'PlaySpeedReset'</td></tr>
+<tr><td>VK_RECORD_SPEED_NEXT</td><td>'RecordSpeedNext'</td></tr>
+<tr><td>VK_GO_TO_START</td><td>'MediaTrackStart'</td></tr>
+<tr><td>VK_GO_TO_END</td><td>'MediaTrackEnd'</td></tr>
+<tr><td>VK_TRACK_PREV</td><td>'MediaPreviousTrack'</td></tr>
+<tr><td>VK_TRACK_NEXT</td><td>'MediaNextTrack'</td></tr>
+<tr><td>VK_RANDOM_TOGGLE</td><td>'RandomToggle'</td></tr>
+<tr><td>VK_CHANNEL_UP</td><td>'ChannelUp'</td></tr>
+<tr><td>VK_CHANNEL_DOWN</td><td>'ChannelDown'</td></tr>
+<tr><td>VK_STORE_FAVORITE_0</td><td>'StoreFavorite0'</td></tr>
+<tr><td>VK_STORE_FAVORITE_1</td><td>'StoreFavorite1'</td></tr>
+<tr><td>VK_STORE_FAVORITE_2</td><td>'StoreFavorite2'</td></tr>
+<tr><td>VK_STORE_FAVORITE_3</td><td>'StoreFavorite4'</td></tr>
+<tr><td>VK_RECALL_FAVORITE_0</td><td>'RecallFavorite0'</td></tr>
+<tr><td>VK_RECALL_FAVORITE_1</td><td>'RecallFavorite1'</td></tr>
+<tr><td>VK_RECALL_FAVORITE_2</td><td>'RecallFavorite2'</td></tr>
+<tr><td>VK_RECALL_FAVORITE_3</td><td>'RecallFavorite3'</td></tr>
+<tr><td>VK_CLEAR_FAVORITE_0</td><td>'ClearFavorite0'</td></tr>
+<tr><td>VK_CLEAR_FAVORITE_1</td><td>'ClearFavorite1'</td></tr>
+<tr><td>VK_CLEAR_FAVORITE_2</td><td>'ClearFavorite2'</td></tr>
+<tr><td>VK_CLEAR_FAVORITE_3</td><td>'ClearFavorite3'</td></tr>
+<tr><td>VK_SCAN_CHANNELS_TOGGLE</td><td>'ScanChannelsToggle'</td></tr>
+<tr><td>VK_PINP_TOGGLE</td><td>'PinPToggle'</td></tr>
+<tr><td>VK_SPLIT_SCREEN_TOGGLE</td><td>'SplitScreenToggle'</td></tr>
+<tr><td>VK_DISPLAY_SWAP</td><td>'DisplaySwap'</td></tr>
+<tr><td>VK_SCREEN_MODE_NEXT</td><td>'ScreenModeNext'</td></tr>
+<tr><td>VK_VIDEO_MODE_NEXT</td><td>'VideoModeNext'</td></tr>
+<tr><td>VK_VOLUME_UP</td><td>'VolumeUp'</td></tr>
+<tr><td>VK_VOLUME_DOWN</td><td>'VolumeDown'</td></tr>
+<tr><td>VK_MUTE</td><td>'VolumeMute'</td></tr>
+<tr><td>VK_SURROUND_MODE_NEXT</td><td>'AudioSurroundModeNext'</td></tr>
+<tr><td>VK_BALANCE_RIGHT</td><td>'AudioBalanceRight'</td></tr>
+<tr><td>VK_BALANCE_LEFT</td><td>'AudioBalanceLeft'</td></tr>
+<tr><td>VK_FADER_FRONT</td><td>'AudioFaderFront'</td></tr>
+<tr><td>VK_FADER_REAR</td><td>'AudioFaderRear'</td></tr>
+<tr><td>VK_BASS_BOOST_UP</td><td>'AudioBassBoostUp'</td></tr>
+<tr><td>VK_BASS_BOOST_DOWN</td><td>'AudioBassBoostDown'</td></tr>
+<tr><td>VK_INFO</td><td>'Info'</td></tr>
+<tr><td>VK_GUIDE</td><td>'Guide'</td></tr>
+<tr><td>VK_TELETEXT</td><td>'Teletext'</td></tr>
+<tr><td>VK_SUBTITLE</td><td>'Subtitle'</td></tr>
+<tr><td>VK_BACK</td><td>'BrowserBack'</td></tr>
+<tr><td>VK_MENU</td><td>'Menu'</td></tr>
+<tr><td>VK_PLAY_PAUSE</td><td>'MediaPlayPause'</td></tr>
+</table>
+<div class="note">NOTE: Numpad values are not distinguished from other numerical key values in this set; a content author could use the KeyboardEvent.location attribute to discover if a key originated from the numeric keypad.</div>
+</section>
+<section id="cssom-view">
+<h2>CSSOM View</h2>
+<p>Terminals SHALL support <code>innerWidth</code> and <code>innerHeight</code> properties of the <code>Window</code> interface as defined in [[!CSSOM-VIEW]]. Terminals SHOULD support other features defined in [[!CSSOM-VIEW]].</p>
+<div class="note">NOTE: Many of the features included in CSSOM-VIEW have been supported in browsers for a long time. For example, the Screen interface or extensions to the Window interface to obtain the width of the viewport through script. Future versions of this profile may mandate support for this specification, once it reaches a higher level of maturity.</div>
+</section>
+</section>
+
+<section id="application-apis">
+<h2>Application APIs</h2>
+<p>A number of specifications from W3C or other organizations define APIs that provide additional functionalities to applications. This section lists which specifications SHALL be supported by a terminal. Note that the APIs defined as part of the HTML5 specification are not included in this section but can be found in annex <a href="#web-applications-apis" class="sectionRef"></a>.</p>
+<p>Terminals SHALL support the XMLHttpRequest API [[!XHR-20121206]] as profiled in annex <a href="#xmlhttprequest" class="sectionRef"></a>.</p>
+<p>Terminals SHALL support the Web Messaging API [[!POSTMSG-20120501]].</p>
+<p>Terminals SHALL support the Web Socket API [[!WEBSOCKETS-API-20120920]] with the protocol defined in [[!RFC6455]].</p>
+<p>Terminals SHALL support the Web Workers API [[!WEBWORKERS-20120501]] as profiled in annex <a href="#web-workers" class="sectionRef"></a>.</p>
+<p>Terminals SHALL support the Server-Sent Events API [[!SSE-20121211]].</p>
+<p>Terminals SHALL support the Web Storage API [[!WEBSTORAGE-20130730]].</p>
+</section>
+
+<section id="media-formats-and-protocols">
+<h2>Media Formats and Protocols</h2>
+<p>Whenever an aApplication points to a media resource through a URI (e.g. via the <code>src</code> attribute of the <code>&lt;video&gt;</code> element), it MAY include a Fragment Identifier [[!RFC3986]]. The semantics of such fragments for resources of type audio/*, image/* and video/* are defined in [[!MEDIA-FRAGS-20120925]].</p>
+<p>Terminals SHALL support temporal clipping based on Normal Play Time as defined in section 4.2.1 of the Media Fragments URI specification [[!MEDIA-FRAGS-20120925]].</p>
+<div class="note">NOTE: There is no requirement to support other means of specifying temporal clipping mentioned</div>
+</section>
+
+<section id="memory-usage">
+<h2>Memory Usage (Informative)</h2>
+<p>This section provides some guidelines about the recommended minimum memory requirements of some of the specifications referenced by this document.</p>
+<table class="simple">
+<tr>
+<th>Feature</th><th>Memory Requirement</th><th>Comment</th>
+</tr>
+<tr>
+	<td>Downloadable fonts [[!WOFF-20121213]]</td>
+	<td><ul><li>1 MB for Western Fonts.<li>10 MB for Asian fonts.</ul></td>
+	<td>It is recommended to cache WOFF packages for for a better user experience.</td>
+</tr>
+<tr>
+	<td>Web Storage [[!WEBSTORAGE-20130730]]</td>
+	<td><ul><li>1 MB per origin.<li>10 MB global.</ul></td>
+	<td>
+		<ol>
+		<li>Terminals may provide methods to free-up memory as described in [[!WEBSTORAGE-20130730]].
+		<li>If the global limit is exceeded, a Terminal may not be able to guarantee the per-origin storage limit.
+		</ol>
+	</td>
+</tr>
+<tr>
+	<td>Cookies [[!COOKIES]]</td>
+	<td>
+		<ul>
+		<li>At least 4 096 bytes per cookie (as measured by the sum of the length of the cookie's name, value, and attributes).
+		<li>At least 20 cookies per domain.
+		<li>At least 100 cookies total.
+		<li>At least 5 120 bytes for the "Set-Cookie" header.
+		</ul>
+	</td>
+	<td></td>
+</tr>
+
+</table>
+</section>
+
+<section class="appendix" id="annex-a">
+<h2>Support Tables</h2>
+<p>This section includes support tables for various specifications referenced by this profile. Each feature is given a short description and hyperlinked to its place within the related specification.</p>
+<p>Terminals SHALL support all features marked as "Yes" in the "Mandatory" column; if restrictions apply, the feature support is indicated as "Partial" and the "Comment" column provides a description of the normative requirements. Support for all features marked as "No" is OPTIONAL.</p>
+<p>Note that specifications that are required to be fully supported don't have a related support table in this section.</p>
+<section id="html5-profile">
+<h2>HTML5 Profile</h2>
+<section id="elements">
+<h2>Elements</h2>
+<p>This section lists HTML elements that are either new HTML5 elements or elements already defined in HTML4 and now re-defined in HTML5. Some of the HTML4 elements have slightly modified meanings in HTML5 to better reflect how they are used on the Web or to make them more useful.</p>
+<table class="simple">
+<tr>
+<th>Element Name</th><th>Description</th><th>Mandatory</th><th>Comment</th>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("body");</script></td>
+	<td>The <code>body</code> element of a document is the first child of the <code>html</code> element that is either a <code>body</code> element or a <code>frameset</code> element. If there is no such element, it is null.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("base");</script></td>
+	<td>The <code>base</code> element allows authors to specify the document base URL for the purposes of resolving relative URLs, and the name of the default browsing context for the purposes of following hyperlinks. The element does not represent any content beyond this information.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("meta");</script></td>
+	<td>The <code>meta</code> element represents various kinds of metadata that cannot be expressed using the <code>title</code>, <code>base</code>, <code>link</code>, <code>style</code>, and <code>script</code> elements.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("style");</script></td>
+	<td>The <code>style</code> element allows authors to embed style information in their documents.</td>
+	<td>Partial</td>
+	<td>Support for the <code>scoped</code> attribute is OPTIONAL.</td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("br");</script></td>
+	<td>The <code>br</code> element represents a line break.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("div");</script></td>
+	<td>The <code>div</code> element has no special meaning at all. It represents its children. It can be used with the <code>class</code>, <code>lang</code>, and <code>title</code> attributes to mark up semantics common to a group of consecutive elements.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("h1");</script> <script class="remove">html5_element("h2");</script> <script class="remove">html5_element("h3");</script> <script class="remove">html5_element("h4");</script> <script class="remove">html5_element("h5");</script> <script class="remove">html5_element("h6");</script></td>
+	<td></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("html");</script></td>
+	<td>The <code>html</code> element represents the root of an HTML document.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("iframe");</script></td>
+	<td>The <code>iframe</code> element represents a nested browsing context.</td>
+	<td>Yes</td>
+	<td>Support for the <code>sandbox</code>, <code>srcdoc</code> and <code>seamless</code> attributes is OPTIONAL.</td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("img");</script></td>
+	<td>An <code>img</code> element represents an image.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("li");</script></td>
+	<td>The <code>li</code> element represents a list item.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("link");</script></td>
+	<td>The <code>link</code> element allows authors to link their document to other resources.</td>
+	<td>Partial</td>
+	<td><ol><li>Support for the <code>sizes</code> attribute is OPTIONAL.<li>Support for the IDL attribute <code>relList</code> is OPTIONAL</ol></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("ol");</script></td>
+	<td>The <code>ol</code> element represents a list of items, where the items have been intentionally ordered, such that changing the order would change the meaning of the document.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("option");</script></td>
+	<td>The <code>option</code> element represents an option in a select element or as part of a list of suggestions in a datalist element.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("p");</script></td>
+	<td>The <code>p</code> element represents a paragraph.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("pre");</script></td>
+	<td>The <code>pre</code> element represents a block of preformatted text, in which structure is represented by typographic conventions rather than by elements.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("dl");</script></td>
+	<td>The <code>dl</code> element represents an association list consisting of zero or more name-value groups (a description list).</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("dd");</script></td>
+	<td>The <code>dt</code> element represents the term, or name, part of a term-description group in a description list (<code>dl</code> element).</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("dt");</script></td>
+	<td>The <code>dd</code> element represents the description, definition, or value, part of a term-description group in a description list (<code>dl</code> element).</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("em");</script></td>
+	<td>The <code>em</code> element represents stress emphasis of its contents.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("s");</script></td>
+	<td>The <code>s</code> element represents contents that are no longer accurate or no longer relevant.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("q");</script></td>
+	<td>The <code>q</code> element represents some phrasing content quoted from another source.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("defn");</script></td>
+	<td>The <code>dfn</code> element represents the defining instance of a term.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("abbr");</script></td>
+	<td>The <code>abbr</code> element represents an abbreviation or acronym, optionally with its expansion.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("code");</script></td>
+	<td>The <code>code</code> element represents a fragment of computer code.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("samp");</script></td>
+	<td>The <code>samp</code> element represents (sample) output from a program or computing system.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("var");</script></td>
+	<td>The <code>var</code> element represents a variable</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("kbd");</script></td>
+	<td>The <code>kbd</code> element represents user input (typically keyboard input, although it may also be used to represent other input, such as voice commands).</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("sup");</script> <script class="remove">html5_element("sub");</script></td>
+	<td>The <code>sup</code> element represents a superscript and the <code>sub</code> element represents a subscript.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("u");</script></td>
+	<td>The <code>u</code> element represents a span of text with an unarticulated, though explicitly rendered, non-textual annotation, such as labeling the text as being a proper name in Chinese text (a Chinese proper name mark), or labeling the text as being misspelt.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("bdi");</script></td>
+	<td>The <code>bdi</code> element represents a span of text that is to be isolated from its surroundings for the purposes of bidirectional text formatting.</td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("bdo");</script></td>
+	<td>The <code>bdo</code> element represents explicit text directionality formatting control for its children. It allows authors to override the Unicode bidirectional algorithm by explicitly specifying a direction override.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("ins");</script></td>
+	<td>The <code>ins</code> element represents an addition to the document.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("del");</script></td>
+	<td>The <code>del</code> element represents a removal from the document.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("object");</script></td>
+	<td>The <code>object</code> element can represent an external resource, which, depending on the type of the resource, will either be treated as an image, as a nested browsing context, or as an external resource to be processed by a plugin.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("param");</script></td>
+	<td>The <code>param</code> element defines parameters for plugins invoked by object elements. It does not represent anything on its own.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("map");</script></td>
+	<td>The <code>map</code> element, in conjunction with any area element descendants, defines an image map. The element represents its children.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("area");</script></td>
+	<td>The <code>area</code> element represents either a hyperlink with some text and a corresponding area on an image map, or a dead area on an image map.</td>
+	<td>Partial</td>
+	<td>Support for the IDL attribute <code>relList</code> is OPTIONAL.</td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("caption");</script></td>
+	<td>The <code>caption</code> element represents the title of the table that is its parent, if it has a parent and that is a table element.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("table");</script></td>
+	<td>The <code>table</code> element represents data with more than one dimension, in the form of a table.</td>
+	<td>Partial</td>
+	<td>Support for the <code>summary</code> attribute is OPTIONAL</td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("colgroup");</script></td>
+	<td>The <code>colgroup</code> element represents a group of one or more columns in the table that is its parent, if it has a parent and that is a table element.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("col");</script></td>
+	<td>If a <code>col</code> element has a parent and that is a <code>colgroup</code> element that itself has a parent that is a table element, then the <code>col</code> element represents one or more columns in the column group represented by that <code>colgroup</code>.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("tbody");</script></td>
+	<td>The <code>tbody</code> element represents a block of rows that consist of a body of data for the parent <code>table</code> element, if the <code>tbody</code> element has a parent and it is a <code>table</code>.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("thead");</script></td>
+	<td>The <code>thead</code> element represents the block of rows that consist of the column labels (headers) for the parent <code>table</code> element, if the <code>thead</code> element has a parent and it is a <code>table</code>.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("tfoot");</script></td>
+	<td>The <code>tfoot</code> element represents the block of rows that consist of the column summaries (footers) for the parent <code>table</code> element, if the <code>tfoot</code> element has a parent and it is a <code>table</code>.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("tr");</script></td>
+	<td>The <code>tr</code> element represents a row of cells in a <code>table</code>.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("td");</script></td>
+	<td>The <code>td</code> element represents a cell in a <code>table</code>.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("th");</script></td>
+	<td>The <code>th</code> element represents a header cell in a <code>table</code>.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("form");</script></td>
+	<td>The <code>form</code> element represents a collection of form-associated elements, some of which can represent editable values that can be submitted to a server for processing.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("fieldset");</script></td>
+	<td>The <code>fieldset</code> element represents a set of form controls optionally grouped under a common name.</td>
+	<td>Partial</td>
+	<td>Support for the <code>name</code> and <code>type</code> attributes is OPTIONAL.</td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("legend");</script></td>
+	<td>The <code>legend</code> element represents a caption for the rest of the contents of the legend element's parent <code>fieldset</code> element, if any.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("button");</script></td>
+	<td>The <code>button</code> element represents a button.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("optgroup");</script></td>
+	<td>The <code>optgroup</code> element represents a group of option elements with a common label.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("script");</script></td>
+	<td>The <code>script</code> element allows authors to include dynamic script and data blocks in their documents. The element does not represent content for the user.</td>
+	<td>Partial</td>
+	<td>Support for the <code>async</code> attribute is OPTIONAL.</td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("noscript");</script></td>
+	<td>The <code>noscript</code> element represents nothing if scripting is enabled, and represents its children if scripting is disabled. It is used to present different markup to user agents that support scripting and those that don't support scripting, by affecting how the document is parsed.</td>
+	<td>No</td>
+	<td>Since support for scripting is mandated by this profile, support for this element is not needed.</td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("span");</script></td>
+	<td>The <code>span</code> element doesn't mean anything on its own, but can be useful when used together with the global attributes, e.g. <code>class</code>, <code>lang</code>, or <code>dir</code>. It represents its children.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("title");</script></td>
+	<td>The <code>title</code> element represents the document's title or name.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("ul");</script></td>
+	<td>The <code>ul</code> element represents a list of items, where the order of the items is not important — that is, where changing the order would not materially change the meaning of the document.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("section");</script></td>
+	<td>Represents a generic document or application section. It can be used together with the <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code>, and <code>h6</code> elements to indicate the document structure.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("article");</script></td>
+	<td>Represents an independent piece of content of a document, such as a blog entry or newspaper article.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("aside");</script></td>
+	<td>Represents a piece of content that is only slightly related to the rest of the page.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("hgroup");</script></td>
+	<td>Represents the header of a section.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("header");</script></td>
+	<td>Represents a group of introductory or navigational aids.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("footer");</script></td>
+	<td>Represents a footer for a section and can contain information about the author, copyright information, etc.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("nav");</script></td>
+	<td>Represents a section of the document intended for navigation.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("figure");</script></td>
+	<td>Can be used to associate a caption together with some embedded content, such as a graphic or video.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("figcaption");</script></td>
+	<td>Provides the caption for the <code>figure</code> element's contents.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("video");</script></td>
+	<td>Represents a video or movie. It is a media element whose media data is ostensibly video data, possibly with associated audio data.</td>
+	<td>Partial</td>
+	<td>Support for <code>crossorigin</code>, <code>mediagroup</code>, and <code>controls</code> content attributes is OPTIONAL.</td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("audio");</script></td>
+	<td>Represents a sound or audio stream. It is a media element whose media data is ostensibly audio data.</td>
+	<td>Partial</td>
+	<td>Support for <code>crossorigin</code>, <code>mediagroup</code>, and <code>controls</code> content attributes is OPTIONAL.</td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("track");</script></td>
+	<td>The <code>track</code> element allows authors to specify explicit external timed text tracks for media elements. It does not represent anything on its own.</td>
+	<td>No</td>
+	<td>Not required as only support for in-band tracks is required.</td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("source");</script></td>
+	<td>Allows authors to specify multiple media resources for media elements. It does not represent anything on its own.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("embed");</script></td>
+	<td>It is is used for plug-in content. It represents an integration point for an external (typically non-HTML) applications or interactive content.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("mark");</script></td>
+	<td>Represents a run of text in one document marked or highlighted for reference purposes, due to its relevance in another context.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("progress");</script></td>
+	<td>Represents a completion of a task such as downloading, or when performing a series of expensive operations.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("meter");</script></td>
+	<td><p>Represents a scalar measurement within a known range, or a fractional value; for example:</p><ul>
+<li>disk usage
+<li>the relevance of a query result
+<li>the fraction of a voting population to have selected a particular candidate
+	</ul></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("time");</script></td>
+	<td>Represents either a time on a 24 hour clock, or a precise date in the proleptic Gregorian calendar, optionally with a time and a time zone. It provides an API for accessing the date/time as a Date object.</td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("ruby");</script></td>
+	<td>Allows one or more spans of phrasing content to be marked with ruby annotations. Ruby annotations are short runs of text presented alongside base text, primarily used in East Asian typography as a guide for pronunciation or to include other annotations. In Japanese, this form of typography is also known as furigana.</td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("rt");</script></td>
+	<td>Marks the ruby text component of a ruby annotation.</td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("rp");</script></td>
+	<td>Can be used to provide parentheses around a ruby text component of a ruby annotation, to be shown by user agents that do not support ruby annotations.</td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("wbr");</script></td>
+	<td>Represents a line-break opportunity where phrasing content is expected. For example, someone is quoted as saying something which, for effect, is written as one long word. However, to ensure that the text can be wrapped in a readable fashion, the individual words in the quote are separated using a <code>wbr</code> element.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("canvas");</script></td>
+	<td>Represents a resolution-dependent bitmap canvas, which can be used for rendering graphs, game graphics, or other visual images on the fly.</td>
+	<td>Partial</td>
+	<td>For details on support of Canvas APIs, see annex <a href="#canvas-2d" class="sectionRef"></a>.</td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("command");</script></td>
+	<td>Represents a command that the user can invoke.</td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("details");</script></td>
+	<td>Represents additional information or controls which the user can obtain on demand.</td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("summary");</script></td>
+	<td>Represents a summary, caption, or legend for the rest of the contents of the summary element's parent details element, if any.</td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("datalist");</script></td>
+	<td>Represents a set of <code>option</code> elements that represent predefined options for other controls. The contents of the element represents fallback content for legacy user agents, intermixed with <code>option</code> elements that represent the predefined options. In the rendering, the <code>datalist</code> element represents nothing and it, along with its children, should be hidden. The <code>datalist</code> element together with the new <code>list</code> attribute for input can be used to make comboboxes.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("keygen");</script></td>
+	<td>Represents a key pair generator control. When the control's form is submitted, the private key is stored in the local keystore, and the public key is packaged and sent to the server.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("output");</script></td>
+	<td>Represents some type of output, as from a calculation done through scripting.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("textarea");</script></td>
+	<td>Represents a multiline plain text edit control for the element's raw value.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("select");</script></td>
+	<td>Represents a control for selecting amongst a set of options.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("input");</script></td>
+	<td>The <code>input</code> element represents a typed data field, usually with a form control to allow the user to edit the data. The <code>input</code> element <code>type</code> attribute has the following values.<ul>
+<li>"text"
+<li>"url"
+<li>"email"
+<li>"datetime"
+<li>"date"
+<li>"month"
+<li>"week"
+<li>"time"
+<li>"datetime-local"
+<li>"number"
+<li>"range"
+<li>"tel"
+<li>"search"
+<li>"color"
+<li>"checkbox"
+<li>"image"
+<li>"file"
+	</ul></td>
+	<td>Partial</td>
+	<td><ol>
+	<li>The following values for the type attribute SHALL be supported: "<code>text</code>", "<code>url</code>", "<code>email</code>", "<code>number</code>", "<code>range</code>", "<code>tel</code>", "<code>search</code>", "<code>checkbox</code>", "<code>date</code>"; all other values are OPTIONAL to support (note that some are marked as feature at risk in [[!HTML5-20130806]]).
+	<li>Support for the <code>autocomplete</code> attribute is OPTIONAL.</ol></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("a");</script></td>
+	<td>The <code>a</code> element <i>without</i> an <code>href</code> attribute now represents a "<b>placeholder link</b>". It can also contain flow content rather than being restricted to phrase content.</td>
+	<td>Partial</td>
+	<td>Support for the IDL attribute <code>relList</code> is OPTIONAL.</td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("address");</script></td>
+	<td>The <code>address</code> element is now scoped by the new concept of sectioning. It represents the contact information for its nearest article or body element ancestor. If that is the body element, then the contact information applies to the document as a whole.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("b");</script></td>
+	<td>The <code>b</code> element represents a span of text to be stylistically offset from the normal prose without conveying any extra importance, such as key words in a document abstract, product names in a review, or other spans of text whose typical typographic presentation is boldened.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("cite");</script></td>
+	<td>The <code>cite</code> element now solely represents the title of a work (e.g. a book, a paper, an essay, a poem, a score, a song, a script, a film, a TV show, a game, a sculpture, a painting, a theatre production, a play, an opera, a musical, an exhibition, a legal case report, etc). Specifically the example in HTML4 where it is used to mark up the name of a person is no longer considered conforming.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("hr");</script></td>
+	<td>The <code>hr</code> element represents a paragraph-level thematic break, e.g. a scene change in a story, or a transition to another topic within a section of a reference book.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("i");</script></td>
+	<td>The <code>i</code> element represents a span of text in an alternate voice or mood, or otherwise offset from the normal prose, such as a taxonomic designation, a technical term, an idiomatic phrase from another language, a thought, a ship name, or some other prose whose typical typographic presentation is italicized.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("label");</script></td>
+	<td>For the <code>label</code> element the browser should no longer move focus from the label to the control unless such behavior is standard for the underlying platform user interface.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("menu");</script></td>
+	<td>The <code>menu</code> element represents a list of commands and is redefined to be useful for toolbars and context menus.</td>
+	<td>Partial</td>
+	<td><ol>
+<li><code>menu</code> element of <code>type</code> <i>list</i> SHALL be supported. Support for other types is OPTIONAL.
+<li>Support for the <code>label</code> attribute is OPTIONAL.
+	</ol></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("small");</script></td>
+	<td>The <code>small</code> element now represents small print (for side comments and legal print).</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("strong");</script></td>
+	<td>The <code>strong</code> element now represents importance rather than strong emphasis.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><script class="remove">html5_element("head");</script></td>
+	<td>The <code>head</code> element no longer allows the object element as child.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+</table>
+</section>
+
+<section id="global-attributes">
+<h2>Global Attributes</h2>
+<table class="simple">
+<tr>
+<th>Attribute Name</th><th>Description</th><th>Mandatory</th><th>Comment</th>
+</tr>
+<tr>
+	<td><code><b>accesskey</b></code></td>
+	<td>The accesskey attribute's value is used by the user agent as a guide for creating a keyboard shortcut that activates or focuses the element.</td>
+	<td>No</td>
+	<td></td>
+</tr>	
+<tr>
+	<td><code><b>class</b></code></td>
+	<td>Every HTML element may have a class attribute specified. The attribute, if specified, must have a value that is an unordered set of unique space-separated tokens representing the various classes that the element belongs to. The classes that an HTML element has assigned to it consist of all the classes returned when the value of the class attribute is split on spaces.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code><b>dir</b></code></td>
+	<td>The <code>dir</code> attribute specifies the element's text directionality (left-to-right, or right-to-left). The attribute is an enumerated attribute with the keyword <code>ltr</code> (left-to-right) mapping to the state <code>ltr</code>, and the keyword <code>rtl</code> (right-to-left) mapping to the state <code>rtl</code>. The attribute has no default.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code><b>id</b></code></td>
+	<td>The <code>id</code> attribute represents its element's unique identifier. The value must be unique in the element's home subtree and must contain at least one character. The value must not contain any space characters.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code><b>lang</b></code></td>
+	<td>The <code>lang</code> attribute (in no namespace) specifies the primary language for the element's contents and for any of the element's attributes that contain text. Its value must be a valid BCP 47 language code, or the empty string.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code><b>style</b></code></td>
+	<td>All HTML elements may have the <code>style</code> content attribute set. If specified, the attribute must contain only a list of zero or more semicolon-separated (;) CSS declarations. In user agents that support CSS, the attribute's value must be parsed when the attribute is added or has its value changed, with its value treated as the body (the part inside the curly brackets) of a declaration block in a rule whose selector matches just the element on which the attribute is set. All URLs in the value must be resolved relative to the element when the attribute is parsed. For the purposes of the CSS cascade, the attribute must be considered to be a <code>style</code> attribute at the author level. Documents that use <code>style</code> attributes on any of their elements <i>must still be comprehensible and usable if those attributes were removed.</i></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code><b>tabindex</b></code></td>
+	<td>The <code>tabindex</code> content attribute specifies:<ul>
+<li>If the element is focusable
+<li>If it can be reached using sequential focus navigation
+<li>The relative order of the element for the purposes of sequential focus navigation
+</ul>
+The name "<i>tab index</i>" comes from the common use of the <code>tab</code> key to navigate through the focusable elements. The term "tabbing" refers to moving forward through the focusable elements that can be reached using sequential focus navigation. If it is specified, it must have a value that is a valid integer.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code><b>title</b></code></td>
+	<td><p>The <code>title</code> attribute represents advisory information:</p><ol>
+<li>For an element, such as would be appropriate for a tooltip
+<li>On a link, this could be the title or a description of the target resource
+<li>On an image, it could be the image credit or a description of the image
+<li>On a paragraph, it could be a footnote or commentary on the text
+<li>On a citation, it could be further information about the source
+<li>etc.
+</ol>
+<p>The value is text.</p></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code><b>contenteditable / isContentEditable</b></code></td>
+	<td>The <code>contenteditable</code> attribute is an enumerated attribute whose keywords are the <code>empty string</code>, <code>true</code>, and <code>false</code>. The empty string and the true keyword map to the true state. The false keyword maps to the false state. In addition, there is a third state, the <code>inherit</code> state, which is the missing value default (and the invalid value default).<ul>
+<li>The <code>true</code> state indicates that the element is editable.
+<li>The <code>inherit</code> state indicates that the element is editable if its parent is.
+<li>The <code>false</code> state indicates that the element is not editable.</ul></td>
+	<td>No</td>
+	<td></td>
+</tr><tr>
+	<td><code><b>designMode</b></code></td>
+	<td>Documents have a designMode, which can be either enabled or disabled. When enabled, the document is editable.</td>
+	<td>No</td>
+	<td></td>
+</tr><tr>
+	<td><code><b>contextmenu</b></code></td>
+	<td>The <code>contextmenu</code> attribute gives the element's context menu. The value must be the ID of a menu element in the DOM. If the node that would be obtained by the invoking the <code>getElementById()</code> method using the attribute's value as the only argument is <code>null</code> or not a menu element, then the element has no assigned context menu. Otherwise, the element's assigned context menu is the element so identified.</td>
+	<td>No</td>
+	<td></td>
+</tr><tr>
+	<td><code><b>data-*</b></code></td>
+	<td>A custom <code>data</code> attribute is an attribute in no namespace whose name starts with the string "<code>data-</code>", has at least one character after the hyphen, is XML-compatible, and contains no characters in the range U+0041 .. U+005A (LATIN CAPITAL LETTER A .. LATIN CAPITAL LETTER Z). Custom data attributes are intended to store custom data private to the page or application, for which there are no more appropriate attributes or elements. These attributes are not intended for use by software that is independent of the site that uses the attributes. Every HTML element may have any number of custom data attributes specified, with any value. They refer to the DOM Dataset API.</td>
+	<td>Yes</td>
+	<td></td>
+</tr><tr>
+	<td><code><b>draggable</b></code></td>
+	<td>All HTML elements may have the <code>draggable</code> content attribute set. It is an enumerated attribute, and has three states:<ul>
+<li>The first state is true and it has the keyword <code>true</code>. The true state means the element is draggable.
+<li>The second state is false and it has the keyword <code>false</code>. The false state means that it is not draggable.
+<li>The third state is <code>auto</code>; it has no keywords but it is the missing value default. The auto state uses the default behavior of the user agent.</ul></td>
+	<td>No</td>
+	<td></td>
+</tr><tr>
+	<td><code><b>dropzone</b></code></td>
+	<td>All HTML elements may have the dropzone content attribute set.</td>
+	<td>No</td>
+	<td></td>
+</tr><tr>
+	<td><code><b>hidden</b></code></td>
+	<td>All HTML elements may have the <code>hidden</code> content attribute set. The hidden attribute is a <i>boolean</i> attribute. When specified on an element, it indicates that the element is not yet, or is no longer, relevant. User agents should not render elements that have the hidden attribute specified.</td>
+	<td>Yes</td>
+	<td></td>
+</tr><tr>
+	<td><code><b>spellcheck</b></code></td>
+	<td><p>The spellcheck attribute is an enumerated attribute whose keywords are the empty string, true and false. The empty string and the true keyword map to the true state. The false keyword maps to the false state. Please note that the "default" state has been removed.</p>
+	<ul>
+		<li>The true state indicates that the element is to have its spelling and grammar checked.
+		<li>The false state indicates that the element is not to be checked.
+	</ul></td>
+	<td>No</td>
+	<td></td>
+</tr>
+
+
+</table>
+</section>
+<section id="web-applications-apis">
+<h2>Web Applications APIs</h2>
+HTML5 introduces a number of APIs that help creating applications.
+<table class="simple">
+<tr>
+<th>API Name</th><th>Description</th><th>Mandatory</th><th>Comment</th>
+</tr>
+<tr>
+	<td>Media Elements</td>
+	<td>An API for playing of video and audio which can be used with the new <code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code> elements.</td>
+	<td>Partial</td>
+	<td>See profile in annex <a href="#media-APIs" class="sectionRef"></a></td>
+</tr><tr>
+	<td>Application cache</td>
+	<td>An API that enables offline Web applications.</td>
+	<td>No</td>
+	<td>This feature is potentially useful but marked as feature at risk in [[!HTML5-20130806]] and likely to change in the near future.</td>
+</tr><tr>
+	<td>Custom scheme and content handlers</td>
+	<td>An API that allows a Web application to register itself for certain protocols or media types.</td>
+	<td>No</td>
+	<td>Not relevant for this profile. Also, marked as feature at risk in [[!HTML5-20130806]]</td>
+</tr><tr>
+	<td>Custom search provider</td>
+	<td>An API that allows a Web application to register itself for certain search provider.</td>
+	<td>No</td>
+	<td>Not relevant for this profile. Also, marked as feature at risk in [[!HTML5-20130806]]</td>
+</tr><tr>
+	<td>Drag and drop</td>
+	<td>This API works in combination with a <code>draggable</code> attribute.</td>
+	<td>No</td>
+	<td></td>
+</tr><tr>
+	<td>History</td>
+	<td>An API that exposes the history and allows pages to add to it to prevent breaking the back button.</td>
+	<td>Yes</td>
+	<td></td>
+</tr><tr>
+	<td>Base64 utility methods</td>
+	<td>An API that allow authors to transform content to and from the base64 encoding.</td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+	
+</table>
+
+<section id="media-APIs">
+<h4>Media APIs</h4>
+HTML Media APIs SHALL be supported as profiled below
+<table class="simple">
+<tr>
+<th>Interface</th><th>Attribute Name</th><th>Mandatory</th><th>Comment</th>
+</tr>
+<tr>
+	<td rowspan="5"><code><a href="http://www.w3.org/TR/html5/embedded-content-0.html#htmlvideoelement" class="extRef">HTMLVideoElement</a></code></td>
+	<td><code>width</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>height</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>videoWidth</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>videoHeight</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>poster</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code><a href="http://www.w3.org/TR/html5/embedded-content-0.html#htmlaudioelement" class="extRef">HTMLAudioElement</a></code></td>
+	<td></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td rowspan="3"><code><a href="http://www.w3.org/TR/html5/embedded-content-0.html#htmlsourceelement" class="extRef">HTMLSourceElement</a></code></td>
+	<td><code>src</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>type</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>media</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code><a href="http://www.w3.org/TR/html5/embedded-content-0.html#htmltrackelement" class="extRef">HTMLTrackElement</a></code></td>
+	<td></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td rowspan="34"><code><a href="http://www.w3.org/TR/html5/embedded-content-0.html#htmlmediaelement" class="extRef">HTMLMediaElement</a></code></td>
+	<td><code>error</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>src</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>currentSrc</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>crossOrigin</code></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>networkState</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>preload</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>buffered</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>load()</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>canPlayType()</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>readyState</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>seeking</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>currentTime</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>duration</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>startDate</code></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>paused</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>defaultPlaybackRate</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>playbackRate</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>played</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>seekable</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>ended</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>autoplay</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>loop</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>play()</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>pause()</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>mediaGroup</code></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>controller</code></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>controls</code></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>volume</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>muted</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>defaultMuted</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>videoTracks</code></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>audioTracks</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>textTracks</code></td>
+	<td>Yes</td>
+	<td>Only support for in-band tracks is required</td>
+</tr>
+<tr>
+	<td><code>addTextTrack</code></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code><a href="http://www.w3.org/TR/html5/embedded-content-0.html#mediaerror" class="extRef">MediaError</a></code></td>
+	<td><code>code</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td rowspan="6"><code><a href="http://www.w3.org/TR/html5/embedded-content-0.html#audiotracklist" class="extRef">AudioTrackList</a></code></td>
+	<td><code>length</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>getter(index)</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>getTrackById()</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>onchange</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>onaddtrack</code></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>onremovetrack</code></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td rowspan="5"><code><a href="http://www.w3.org/TR/html5/embedded-content-0.html#audiotrack" class="extRef">AudioTrack</a></code></td>
+	<td><code>id</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>kind</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>label</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>language</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>enabled</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code><a href="http://www.w3.org/TR/html5/embedded-content-0.html#videotracklist" class="extRef">VideoTrackList</a></code></td>
+	<td></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code><a href="http://www.w3.org/TR/html5/embedded-content-0.html#videotrack" class="extRef">VideoTrack</a></code></td>
+	<td></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code><a href="http://www.w3.org/TR/html5/embedded-content-0.html#texttracklist" class="extRef">TextTrackList</a></code></td>
+	<td></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td rowspan="10"><code><a href="http://www.w3.org/TR/html5/embedded-content-0.html#texttrack" class="extRef">TextTrack</a></code></td>
+	<td><code>kind</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>label</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>language</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>onMetadataTrackDispatchType</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>mode</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>cues</code></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>activeCues</code></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>addCue</code></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>removeCue</code></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>oncuechange</code></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code><a href="http://www.w3.org/TR/html5/embedded-content-0.html#texttrackcuelist" class="extRef">TextTrackCueList</a></code></td>
+	<td></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code><a href="http://www.w3.org/TR/html5/embedded-content-0.html#texttrackcue" class="extRef">TextTrackCue</a></code></td>
+	<td></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code><a href="http://www.w3.org/TR/html5/embedded-content-0.html#mediacontroller" class="extRef">MediaController</a></code></td>
+	<td></td>
+	<td>No</td>
+	<td></td>
+</tr>
+<tr>
+	<td rowspan="3"><code><a href="http://www.w3.org/TR/html5/embedded-content-0.html#timerange" class="extRef">TimeRange</a></code></td>
+	<td><code>length</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>start</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>end</code></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code><a href="http://www.w3.org/TR/html5/embedded-content-0.html#trackevent" class="extRef">TrackEvent</a></code></td>
+	<td></td>
+	<td>Yes</td>
+	<td></td>
+</tr>
+</table>
+</section>
+<section id="media-element-events-support">
+<h4>Media Element Events Support</h4>
+<table class="simple">
+<tr><th>Events</th><th>Mandatory</th></tr>
+<tr><td><script class="remove">html5_mediaevent("loadstart")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("progress")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("suspend")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("abort")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("error")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("emptied")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("stalled")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("loadedmetadata")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("loadeddata")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("canplay")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("canplaythrough")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("playing")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("waiting")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("seeking")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("seeked")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("ended")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("durationchange")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("timeupdate")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("play")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("pause")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("ratechange")</script></td><td>Yes</td></tr>
+<tr><td><script class="remove">html5_mediaevent("resize")</script></td><td>HbbTV says "Yes"</td></tr>
+<tr><td><script class="remove">html5_mediaevent("volumechange")</script></td><td>Yes</td></tr>
+</table>
+</section>
+</section>
+</section>
+
+<section id="css3-profile">
+<h2>CSS3 Profile</h2>
+<p>This section contains support tables for various CSS specifications.</p>
+<section id="css-basic-user-interface">
+<h3>CSS Basic User Interface</h3>
+<section id="properties-and-values">
+<h4>Properties and Values</h4>
+<table class="simple">
+<tr><th>Property</th><th>Values</th><th>Description</th><th>Mandatory</th><th>Comment</th></tr>
+<tr>
+	<td><code><b>appearance</b></code></td>
+	<td>normal | &lt;appearance&gt; | inherit</td>
+	<td>This property can be used to make an element look like a standard user interface element on the platform. It is a shorthand for "appearance", "color", "font", and "cursor".</td>
+	<td>No</td>
+	<td></td>	
+</tr>
+<tr>
+	<td><code><b>box-sizing</b></code></td>
+	<td>padding-box | content-box | border-box | inherit</td>
+	<td>This property specifies a border/padding value in relation to a fluid length element.</td>
+	<td>Partial</td>
+	<td>Support for property value <code>padding-box</code> is OPTIONAL (marked as feature at risk in [[!HTML5-20130806]])</td>	
+</tr>
+<tr>
+	<td><code><b>content</b></code></td>
+	<td>icon</td>
+	<td>This property is used with the :before and :after pseudo-elements to generate content in a document.</td>
+	<td>No</td>
+	<td>Marked as feature at risk in [[!HTML5-20130806]]</td>	
+</tr>
+<tr>
+	<td><code><b>cursor</b></code></td>
+	<td>[ [&lt;uri&gt; [&lt;x&gt; &lt;y&gt;]?,]* [ auto | default | none | context-menu | help | pointer | progress | wait | cell | crosshair | text | vertical-text | alias | copy | move | no-drop | not-allowed | e-resize | n-resize | ne-resize | nw-resize | s-resize | se-resize | sw-resize | w-resize | ew-resize | ns-resize | nesw-resize | nwse-resize | col-resize | row-resize | all-scroll | zoom-in | zoom-out ] ] | inherit</td>
+	<td>This property specifies the type of cursor to be displayed for the pointing device.</td>
+	<td>Yes</td>
+	<td></td>	
+</tr>
+<tr>
+	<td><code><b>font</b></code></td>
+	<td>&lt;appearance&gt; | status-bar | message-box | caption | small-caption | inherit</td>
+	<td>The shorthand "font" property has the effect of setting all of the elemental "font-*" properties.</td>
+	<td>Yes</td>
+	<td></td>	
+</tr>
+<tr>
+	<td><code><b>icon</b></code></td>
+	<td>auto | &lt;uri&gt; [, &lt;uri&gt;]* | inherit</td>
+	<td>The "icon" property give the author the ability to style any arbitrary element with an iconic equivalent.</td>
+	<td>No</td>
+	<td>Feature at risk in [[!HTML5-20130806]]</td>	
+</tr>
+<tr>
+	<td><code><b>nav-index</b></code></td>
+	<td>auto | &lt;number&gt; | inherit</td>
+	<td>This property is an input-method-neutral way of specifying the sequential navigation order, also known as "tabbing order".</td>
+	<td>Yes</td>
+	<td></td>	
+</tr>
+<tr>
+	<td><code><b>nav-up</b></code></td>
+	<td>auto | &lt;id&gt; [ current | root | &lt;target-name&gt; ]? | inherit</td>
+	<td>This property allows User agents for devices with directional navigation keys to respond by navigating the nav-up focus.</td>
+	<td>Yes</td>
+	<td></td>	
+</tr>
+<tr>
+	<td><code><b>nav-right</b></code></td>
+	<td>auto | &lt;id&gt; [ current | root | &lt;target-name&gt; ]? | inherit</td>
+	<td>This property allows User agents for devices with directional navigation keys to respond by navigating the nav-right focus.</td>
+	<td>yes</td>
+	<td></td>	
+</tr>
+<tr>
+	<td><code><b>nav-down</b></code></td>
+	<td>auto | &lt;id&gt; [ current | root | &lt;target-name&gt; ]? | inherit</td>
+	<td>This property allows User agents for devices with directional navigation keys to respond by navigating the nav-down focus.</td>
+	<td>Yes</td>
+	<td></td>	
+</tr>
+<tr>
+	<td><code><b>nav-left</b></code></td>
+	<td>auto | &lt;id&gt; [ current | root | &lt;target-name&gt; ]? | inherit</td>
+	<td>This property allows User agents for devices with directional navigation keys to respond by navigating the nav-left focus.</td>
+	<td>Yes</td>
+	<td></td>	
+</tr>
+<tr>
+	<td><code><b>outline</b></code></td>
+	<td>[ &lt;"outline-color"&gt; || &lt;"outline-style"&gt; || &lt;"outline-width"&gt; ] | inherit</td>
+	<td>This property allows authors who want to create outlines around visual objects such as buttons, active form fields, image maps, etc., to make them stand out.</td>
+	<td>Yes</td>
+	<td></td>	
+</tr>
+<tr>
+	<td><code><b>outline-color</b></code></td>
+	<td>&lt;color&gt; | invert | inherit</td>
+	<td>This property controls the border color of a dynamic outline.</td>
+	<td>Yes</td>
+	<td></td>	
+</tr>
+<tr>
+	<td><code><b>outline-offset</b></code></td>
+	<td>&lt;length&gt; | inherit</td>
+	<td>This property controls the border offset of a v</td>
+	<td>Yes</td>
+	<td></td>	
+</tr>
+<tr>
+	<td><code><b>outline-style</b></code></td>
+	<td>auto | &lt;border-style&gt; | inherit</td>
+	<td>This property controls the border style of a dynamic outline.</td>
+	<td>Partial</td>
+	<td>At this time <code>outline-style</code> SHALL be supported as defined by CSS2.1 specification, so support for value <code>auto</code> is not required.</td>	
+</tr>
+<tr>
+	<td><code><b>outline-width</b></code></td>
+	<td>&lt;border-width&gt; | inherit</td>
+	<td>This property controls the border width of a dynamic outline.</td>
+	<td>Yes</td>
+	<td></td>	
+</tr>
+<tr>
+	<td><code><b>resize</b></code></td>
+	<td>none | both | horizontal | vertical | inherit</td>
+	<td>This property allows an author to specify whether or not an element is resizable by the user, and if so, along which axis/axes.</td>
+	<td>No</td>
+	<td></td>	
+</tr>
+<tr>
+	<td><code><b>ime-mode</b></code></td>
+	<td>auto | normal | active | inactive | disabled | inherit</td>
+	<td>The 'ime-mode' CSS property controls the state of the input method editor for text fields.</td>
+	<td>No</td>
+	<td>Feature at risk in [[!HTML5-20130806]]</td>	
+</tr>
+<tr>
+	<td><code><b>text-overflow</b></code></td>
+	<td>( clip | ellipsis | ){1,2} | inherit</td>
+	<td>This property specifies rendering when inline content overflows its block container element ("the block") in its inline progression direction that has 'overflow' other than 'visible'</td>
+	<td>Partial</td>
+	<td>Support for the <code>text-overflow</code> property value &lt;string&gt; and the <code>text-overflow</code> property 2-value syntax and definition is OPTIONAL (marked as feature at risk in [[!CSS3UI-20120117]]).</td>	
+</tr>
+</table>
+</section>
+<section id="user-interface-pseudo-classes">
+<h4>User interface pseudo classes</h4>
+<table class="simple">
+<tr>
+<th>Pseuso class</th><th>Mandatory</th><th>Comment</th>
+</tr>
+<tr><td><code><b>:active</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>:checked</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>:default</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>:disabled</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>:endabled</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>:focus</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>:hover</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>:in-range</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>:indeterminate</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>:invalid</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>:optional</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>:out-of-range</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>:read-only</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>:read-write</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>:required</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>:valid</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>:visited</b></code></td><td>Yes</td><td></td></tr>
+</table>
+</section>
+</section>
+<section id="css-image-values-and-replaced-content">
+<h3>CSS Image Values and Replaced Content</h3>
+<p>Terminals SHALL support Gradients as defined in CSS Image Values and Replaced Content [[!CSS3-IMAGES-20120417]]. Support for other features is OPTIONAL.</p>
+</section>
+<section id="css-backgrounds-and-borders">
+<h3>CSS Backgrounds and Borders</h3>
+<p>Terminals SHALL support all features in CSS Backgrounds and Borders [[!CSS3-BG-20120724]] with the exception of the <code>border-image</code> set of properties.</p>
+</section>
+<section id="css-fonts-module-level-3">
+<h3>CSS Fonts Module Level 3</h3>
+Terminals SHALL support the [[!CSS3-FONTS-20130212]] specification as profiled below:<ol>
+<li>The <code>font-family</code>, <code>font-weight</code>, <code>font-style</code>, <code>font-size</code> and <code>font</code> properties SHALL be supported. Support for other properties is OPTIONAL.
+<li>Support for the values <b>caption</b>, <b>icon</b>, <b>menu</b>, <b>message-box</b>, <b>small-caption</b>, <b>status-bar</b> of the <code>font</code> property is OPTIONAL.
+<li>The <code>@font-face</code> rule SHALL be supported. Support for other rules is OPTIONAL.
+<li><b>src</b>, <b>font-family</b>, <b>font-size</b> and <b>font-weight</b> descriptors for the <code>@font-face</code> rule SHALL be supported. Support for other descriptors is OPTIONAL.
+</ol>
+</section>
+<section id="css-text-level-3">
+<h3>CSS Text Level 3</h3>
+Terminals SHALL support <code>text-shadow</code>.
+</section>
+<section id="css-transforms">
+<h3>CSS Transforms</h3>
+<ol>
+<li>Only support for the two-dimensional subset of the specification is required. See section "Two Dimensional Subset" of [[!CSS3-TRANSFORMS-20120911]]
+<div class="note">NOTE: This implies that<ul>
+<li>only support for <code>transform</code> and <code>transform-origin</code> properties is required
+<li>only support for <code>matrix()</code>, <code>translate()</code>, <code>translateX()</code>, <code>translateY()</code>, <code>scale()</code>, <code>scaleX()</code>, <code>scaleY()</code>, <code>rotate()</code>, <code>skewX()</code>, <code>skewY()</code> transform functions is required.
+</ul></div>
+<li>Transform function lists SHALL be supported
+<li>Support for the SVG extensions is not required
+</ol>
+</section>
+<section id="css-transitions">
+<h3>CSS Transitions</h3>
+<p>Support for the <code>pseudoElement</code> field on the <code>TransitionEvent</code> interface is OPTIONAL.</p>
+<p>Support for the <code>pseudoElementArg</code> argument for the <code>initTransitionEvent</code> method is OPTIONAL</p>
+<p>The list of “animatable” properties in [[!CSS3-TRANSITIONS-20130212]] SHALL be profiled as indicated in the table below. For any other property not listed below, the following holds: if a property is supported by this profile and is defined to be "animatable" by the related CSS spec, than it SHALL be animatable, unless explicitly excluded by this specification.</p>
+<table class="simple">
+<tr>
+<th>Property Name</th><th>Type</th><th>Mandatory</th>
+</tr>
+<tr>
+	<td><code><b>background-color</b></code></td>
+	<td>color</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>background-image</b></code></td>
+	<td>only gradients</td>
+	<td>No</td>
+</tr><tr>
+	<td><code><b>background-position</b></code></td>
+	<td>percentage, length</td>
+	<td>No</td>
+</tr><tr>
+	<td><code><b>border-bottom-color</b></code></td>
+	<td>color</td>
+	<td>No</td>
+</tr><tr>
+	<td><code><b>border-bottom-width</b></code></td>
+	<td>length</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>border-color</b></code></td>
+	<td>color</td>
+	<td>No</td>
+</tr><tr>
+	<td><code><b>border-left-color</b></code></td>
+	<td>color</td>
+	<td>No</td>
+</tr><tr>
+	<td><code><b>border-left-width</b></code></td>
+	<td>length</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>border-right-color</b></code></td>
+	<td>color</td>
+	<td>No</td>
+</tr><tr>
+	<td><code><b>border-right-width</b></code></td>
+	<td>length</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>border-spacing</b></code></td>
+	<td>length</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>border-top-color</b></code></td>
+	<td>color</td>
+	<td>No</td>
+</tr><tr>
+	<td><code><b>border-top-width</b></code></td>
+	<td>length</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>border-width</b></code></td>
+	<td>length</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>bottom</b></code></td>
+	<td>length, percentage</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>color</b></code></td>
+	<td>color</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>crop</b></code></td>
+	<td>rectangle</td>
+	<td>No</td>
+</tr><tr>
+	<td><code><b>font-size</b></code></td>
+	<td>length, percentage</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>font-weight</b></code></td>
+	<td>number</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>grid-*</b></code></td>
+	<td>various</td>
+	<td>No</td>
+</tr><tr>
+	<td><code><b>height</b></code></td>
+	<td>length, percentage</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>left</b></code></td>
+	<td>length, percentage</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>letter-spacing</b></code></td>
+	<td>length</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>line-height</b></code></td>
+	<td>number, length, percentage</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>margin-bottom</b></code></td>
+	<td>length</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>margin-left</b></code></td>
+	<td>length</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>margin-right</b></code></td>
+	<td>length</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>margin-top</b></code></td>
+	<td>length</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>max-height</b></code></td>
+	<td>length, percentage</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>nax-width</b></code></td>
+	<td>length, percentage</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>min-height</b></code></td>
+	<td>length, percentage</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>min-width</b></code></td>
+	<td>length, percentage</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>opacity</b></code></td>
+	<td>number</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>outline-color</b></code></td>
+	<td>color</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>outline-offset</b></code></td>
+	<td>integer</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>outline-width</b></code></td>
+	<td>length</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>padding-bottom</b></code></td>
+	<td>length</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>padding-left</b></code></td>
+	<td>length</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>padding-right</b></code></td>
+	<td>length</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>padding-top</b></code></td>
+	<td>length</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>right</b></code></td>
+	<td>length, percentage</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>text-indent</b></code></td>
+	<td>length, percentage</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>text-shadow</b></code></td>
+	<td>shadow</td>
+	<td>No</td>
+</tr><tr>
+	<td><code><b>top</b></code></td>
+	<td>length, percentage</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>vertical-align</b></code></td>
+	<td>keywords, length, percentage</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>visibility</b></code></td>
+	<td>visibility</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>width</b></code></td>
+	<td>length, percentage</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>word-spacing</b></code></td>
+	<td>length, percentage</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>z-index</b></code></td>
+	<td>integer</td>
+	<td>Yes</td>
+</tr><tr>
+	<td><code><b>zoom</b></code></td>
+	<td>number</td>
+	<td>No</td>
+</tr>
+</table>
+
+</section>
+</section>
+<section id="web-apis-profile">
+<h2>Web APIs Profile</h2>
+<section id="xmlhttprequest">
+<h3>XMLHttpRequest</h3>
+<p>Support for <code>Document</code> response type is OPTIONAL. All other features SHALL be supported.</p>
+</section>
+<section id="web-workers">
+<h3>Web Workers</h3>
+<p>Support for Shared Workers is OPTIONAL.</p>
+</section>
+<section id="canvas-2d">
+<h3>Canvas 2D</h3>
+Support for the following interfaces is not required by this profile<ul>
+<li><code>Path</code>
+<li><code>DrawingStyle</code>
+<li><code>HitRegionOptions</code>
+</ul>
+<p>All the others SHALL be supported as profiled below</p>
+<section id="htmlcanvaselement">
+<h4>HTMLCanvasElement</h4>
+<table class="simple">
+<tr><th>Member</th><th>Mandatory</th><th>Comment</th></tr>
+<tr><td><code><b>width</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>height</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>toDataURL()</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>getContext(context)</b></code></td><td>Yes</td><td></td></tr>
+</table>
+</section>
+<section id="textmetrics">
+<h4>TextMetrics</h4>
+<table class="simple">
+<tr><th>Member</th><th>Mandatory</th><th>Comment</th></tr>
+<tr><td><code><b>width</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>actualBoundingBoxLeft</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>actualBoundingBoxRight</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>fontBoundingBoxAscent</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>fontBoundingBoxDescent</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>actualBoundingBoxAscent</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>actualBoundingBoxDescent</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>emHeightAscent</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>emHeightDescent</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>hangingBaseline</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>alphabeticBaseline</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>ideographicBaseline</b></code></td><td>No</td><td></td></tr>
+</table>
+</section>
+<section id="canvasgradient">
+<h4>CanvasGradient</h4>
+<table class="simple">
+<tr><th>Member</th><th>Mandatory</th><th>Comment</th></tr>
+<tr><td><code><b>addColorStop(offset, color)</b></code></td><td>Yes</td><td></td></tr>
+</table>
+</section>
+<section id="canvasrenderingcontext2d">
+<h4>CanvasRenderingContext2D</h4>
+<table class="simple">
+<tr><th>Member</th><th>Mandatory</th><th>Comment</th></tr>
+<tr><td><code><b>canvas</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>save()</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>restore()</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>scale(x, y)</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>rotate(angle)</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>translate(x, y)</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>transform(m11, m12, m21, m22, dx, dy)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>setTransform(m11, m12, m21, m22, dx, dy)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>globalAlpha</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>globalCompositeOperation</b></code></td><td>Yes</td><td>The value <code>source-over</code> for this property SHALL be supported. Support for other values is OPTIONAL.</td></tr>
+<tr><td><code><b>strokeStyle</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>fillStyle</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>createImageData(sw, sh)</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>createImageData(imagedata)</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>createLinearGradient(x0, y0, x1, y1)</b></code></td><td>Yes</td><td>If this feature is not hardware accelerated, performance will be limited</td></tr>
+<tr><td><code><b>createRadialGradient(x0, y0, r0, x1, y1, r1)</b></code></td><td>Yes</td><td>If this feature is not hardware accelerated, performance will be limited</td></tr>
+<tr><td><code><b>createPattern(image, repetition)</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>lineWidth</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>lineCap</b></code></td><td>Yes</td><td>If this feature is not hardware accelerated, performance will be limited</td></tr>
+<tr><td><code><b>lineJoin</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>miterLimit</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>shadowOffsetX</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>shadowOffsetY</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>shadowBlur</b></code></td><td>Yes</td><td>If this feature is not hardware accelerated, performance will be limited</td></tr>
+<tr><td><code><b>shadowColor</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>clearRect(x, y, w, h)</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>fillRect(x, y, w, h)</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>strokeRect(x, y, w, h)</b></code></td><td>Yes</td><td>If this feature is not hardware accelerated, performance will be limited</td></tr>
+<tr><td><code><b>beginPath()</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>closePath()</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>moveTo(x, y)</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>lineTo(x, y)</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>quadraticCurveTo(cpx, cpy, x, y)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>arcTo(x1, y1, x2, y2, radius)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>rect(x, y, w, h)</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>arc(x, y, radius, startAngle, endAngle, anticlockwise)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle, anticlockwise)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>fill()</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>fill(path)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>stroke()</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>stroke(path)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>clip()</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>clip(path)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>isPointInPath(x, y)</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>isPointInPath(path, x, y)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>drawImage(image, dx, dy)</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>drawImage(image, dx, dy, dw, dh)</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh)</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>getImageData(sx, sy, sw, sh)</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>putImageData(image, dx, dy)</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>putImageData(image, dx, dy, dirtyX, dirtyY, dirtyWidth, dirtyHeight)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>font</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>textAlign</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>textBaseline</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>fillText</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>strokeText</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>measureText</b></code></td><td>Yes</td><td></td></tr>
+<tr><td><code><b>setLineDash(segments)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>getLineDash()</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>lineDashOffset</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>drawSystemFocusRing(element)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>drawSystemFocusRing(path, element)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>drawCustomFocusRing(element)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>drawCustomFocusRing(path, element)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>scrollPathIntoView</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>scrollPathIntoView(path)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>addHitRegion(options)</b></code></td><td>No</td><td></td></tr>
+<tr><td><code><b>removeHitRegion(options)</b></code></td><td>No</td><td></td></tr>
+</table>
+</section>
+
+</section>
+
+</section>
+</section>
+
+</body>
+</html>
+
+

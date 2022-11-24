@@ -1,0 +1,55 @@
+/* stlye sheet additions for OIPF final specifications */
+
+body {
+  padding: 2em 1em 2em 70px;
+  margin: 0;
+  font-family: serif;
+  color: black;
+  background: white;
+  background-position: top left;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+a.apiRef {
+	color: black;
+	text-decoration: none;
+	font-family: "Lucida Console";
+	font-size: 95%;
+}
+code a.apiRef {
+	color: black;
+	text-decoration: none;
+	font-family: "Lucida Console";
+	font-size: 100%;
+}
+
+a.sectionRef {
+	 text-decoration:none;
+	 white-space: nowrap;
+}
+a.sectionTitleRef {
+	 text-decoration:none;
+}
+a.figureRef  {
+	 text-decoration:none;
+}
+a.tableRef, a.tableTitleRef {
+	 text-decoration:none;
+}
+a.sectionRef:link a.sectionRef:visited a.sectionTitleRef:link a.sectionTitleRef:visited {
+	 text-decoration:none;
+}
+a.figureRef:link a.figureRef:visited  {
+	 text-decoration:none;
+}
+a.tableRef:link a.tableRef:visited {
+	 text-decoration:none;
+}
+
+code { 
+	font-family: "Lucida Console";
+	white-space:nowrap; 
+	font-size: 95%;
+}
+code.wrap { white-space: initial; } 
