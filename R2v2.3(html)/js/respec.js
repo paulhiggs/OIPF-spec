@@ -1072,7 +1072,7 @@ berjon.respec.prototype = {
     makeOIPFHeaders:    function () {
 		var copyrightYears = "";
 		var header = "<div class='head'>" +
-		 "<img width=260 height=104 src='http://www.oipf.tv/images/logos/oipf-hd.png' alt='oipf logo'>" +
+		 "<img width=260 height=104 src='https://paulhiggs.github.io/OIPF-spec/logo/oipf-hd.png' alt='oipf logo'>" +
 		 "<p align=right style='font-size:18.0pt;font-family:\"Arial\"'>Open IPTV Forum<br>Release " +
 		 this.OIPFrelease + " Specification<br><br></p>";
 		 
