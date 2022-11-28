@@ -912,7 +912,7 @@ Note that if the OITF is using a DAE application to talk to the IPTV Application
 For the scheduling of network recordings, the same steps 1 through 9 for order capture as defined in section <a href="#s4-1-12-1" class="sectionRef">4.1.12.1</a>, &ldquo;<a href="#s4-1-12-1" class="sectionTitleRef"></a>&rdquo; applies. Recording Control by the IPTV Control will follow steps 7 through 21 as described in section <a href="#s4-1-12-2" class="sectionRef">4.1.12.2</a>, &ldquo;<a href="#s4-1-12-2" class="sectionTitleRef"></a>&rdquo;.</section>
 </section>
 <section id="s4-1-14"><h3>Personalised Channel</h3>
-<section id="s4-1-14-1"><h4>4OITF-Centric Personalised Channel</h4>
+<section id="s4-1-14-1"><h4>OITF-Centric Personalised Channel</h4>
 <figure id="f30">
 <figcaption>Figure ####: OITF-Centric Personalised Channel</figcaption>
 <img src="images/protex-figure30.png" style="width:90%"/>
@@ -1406,7 +1406,7 @@ Figure <a href="#f46" class="figureRef">46</a> shows a call flow for an incoming
 <tr><td class="label">Step 1:</td><td>The incoming voice session is forwarded to the end-user's IMS provider.</td></tr>
 <tr><td class="label">Step 2:</td><td>Based on the initial filter criteria evaluation, the request is routed to the P2P communication enabler (Telephony service) in order to inform the P2P communication enabler of the incoming call.</td></tr>
 <tr><td class="label">Step 3:</td><td>The request is routed back to the IMS network.</td></tr>
-<tr><td class="label">Step 4:</td><td>Based on the user's terminal(s)´ registration information, configuration and terminal(s) capabilities, the session is routed to one or more user end devices. In this example, the end user has a voice capable SIP/IMS UE and the IMS Gateway registered with the same public user identity. A parallel forking is used and the INVITE is routed to both:<br />
+<tr><td class="label">Step 4:</td><td>Based on the user's terminal(s) registration information, configuration and terminal(s) capabilities, the session is routed to one or more user end devices. In this example, the end user has a voice capable SIP/IMS UE and the IMS Gateway registered with the same public user identity. A parallel forking is used and the INVITE is routed to both:<br />
 4a. the IMS gateway<br />
 4b. the voice capable SIP UE
 </td></tr>
