@@ -105,16 +105,16 @@
 <p>This Technical Specification (TS) has been produced by the Open IPTV Forum.</p>
 <p>This specification provides multiple options for some features. The Open IPTV Forum Profiles specification complements the Release 2 specifications by defining the Open IPTV Forum implementation and deployment profiles. This document is Volume 3 in the 10 Volume set of specifications that define the Open IPTV Forum Release 2 Solution.</p>
 <p>The other Volumes in the set are: </p><ul>
-<li>Volume 1 – Overview [[.OIPF_OVIEW2]],
-<li>Volume 2 – Media Formats [[.OIPF_MEDIA2]],
-<li>Volume 2a – HTTP Adaptive Streaming [[.OIPF_HAS2]],
-<li>Volume 3 – Content Metadata (the present volume),
-<li>Volume 4 – Protocols [[.OIPF_PROT2]],
-<li>Volume 4a – Examples of Protocol Sequences [[.OIPF_PROT_EX2]],
-<li>Volume 5 – Declarative Application Environment [[.OIPF_DAE2]],
-<li>Volume 5a – Web Standards TV Profile [[.OIPF_WSTVP2]], 
-<li>Volume 6 – Procedural Application Environment [[.OIPF_PAE2]], and
-<li>Volume 7 – Authentication, Content Protection and Service Protection [[.OIPF_CSP2]].
+<li>Volume 1 &mdash; Overview [[.OIPF_OVIEW2]],
+<li>Volume 2 &mdash; Media Formats [[.OIPF_MEDIA2]],
+<li>Volume 2a &mdash; HTTP Adaptive Streaming [[.OIPF_HAS2]],
+<li>Volume 3 &mdash; Content Metadata (the present volume),
+<li>Volume 4 &mdash; Protocols [[.OIPF_PROT2]],
+<li>Volume 4a &mdash; Examples of Protocol Sequences [[.OIPF_PROT_EX2]],
+<li>Volume 5 &mdash; Declarative Application Environment [[.OIPF_DAE2]],
+<li>Volume 5a &mdash; Web Standards TV Profile [[.OIPF_WSTVP2]], 
+<li>Volume 6 &mdash; Procedural Application Environment [[.OIPF_PAE2]], and
+<li>Volume 7 &mdash; Authentication, Content Protection and Service Protection [[.OIPF_CSP2]].
 </ul>
 
 </section>
@@ -343,11 +343,11 @@ The schema for the extension is provided in Annex <a href="#sdns-emergencynotifi
 <p>On the other hand, the Service Provider Discovery Record SHALL embed application reference id values in the ApplicationList element defined in [[!TS102809]] for signalling the broadcast independent applications with the Application Discovery Record. The actual information of applications SHALL be described in the Application Discovery Record. When OITF receives the Service Provider Discovery Record and the Application Discovery Record, OITF SHALL link the application reference id values in the Service Provider Discovery Record to the application identifier values in the Application Discovery Record.</p>
 <p>If a service provider wants to signal the below applications with these two approaches, the ApplicationUsage value defined in section <a href="#applicationusage-in-applicationusagedescriptor" class="sectionRef"></a> SHALL be used with the application location value defined in section <a href="#applicationspecificdescriptor-extensions" class="sectionRef"></a>.</p>
 <ul>
-<li>ServiceDiscovery Application – Application containing IPTV service discovery information like a service provider's web portal page. In case of DAE application, this application can contain other service applications such as communication application or content guide application.
-<li>Communication Application – Application for communication service. In case of DAE application, this application enables communication service
-<li>EPG Application – Application for EPG service. In case of DAE application, this application can be either a grid-type epg application or a mosaic epg application.
-<li>VoD Application – Application for VoD service. VoD application can also include content information for downloadable contents.
-<li>Non-native HNI-IGI Application – Application that implements the HNI-IGI interface functionality via a DAE application.
+<li>ServiceDiscovery Application &mdash; Application containing IPTV service discovery information like a service provider's web portal page. In case of DAE application, this application can contain other service applications such as communication application or content guide application.
+<li>Communication Application &mdash; Application for communication service. In case of DAE application, this application enables communication service
+<li>EPG Application &mdash; Application for EPG service. In case of DAE application, this application can be either a grid-type epg application or a mosaic epg application.
+<li>VoD Application &mdash; Application for VoD service. VoD application can also include content information for downloadable contents.
+<li>Non-native HNI-IGI Application &mdash; Application that implements the HNI-IGI interface functionality via a DAE application.
 </ul>
 </section>
 
@@ -357,10 +357,10 @@ The schema for the extension is provided in Annex <a href="#sdns-emergencynotifi
 <p>For signalling broadcast related applications with the extended IPService and Package elements, the Broadcast Discovery Record and the Package Discovery Record SHALL embed applications information in the ApplicationList element defined in [[!TS102809]] where they are referred to as &ldquo;Service bound application.&rdquo; The extended IPService and Package element are defined in [[!TS102809]].</p>
 <p>When broadcast related applications are signalled with the Application Discovery Record, the extended IPService element in the Broadcast Discovery Record and the extended Package element in the Package Discovery Record SHALL embed application reference id values in the ApplicationList element defined in [[!TS102809]]. The actual information about applications SHALL be contained in the Application Discovery Record. When OITF receives the application reference id values in the extended IPService or Package element, the OITF SHALL link the application reference id values in the extended IPService and Package elements to the application identifier values in the Application Discovery Record.</p>
 <p>If a service provider wants to signal the below broadcast related applications with these two approaches, the ApplicationUsage value defined in section <a href="#applicationusage-in-applicationusagedescriptor" class="sectionRef"></a> SHALL be used with the application location value defined in section <a href="#applicationspecificdescriptor-extensions" class="sectionRef"></a>.</p><ul>
-<li>Communication Application – Application for communication service. In case of DAE application, this application enables communication service
-<li>EPG Application – Application for EPG service. In case of DAE application, this application can be either a grid-type epg application or a mosaic epg application.
-<li>VoD Application – Application for VoD service. VoD application can also include content information for downloadable contents.
-<li>NG Notification – Application for NG notification service.
+<li>Communication Application &mdash; Application for communication service. In case of DAE application, this application enables communication service
+<li>EPG Application &mdash; Application for EPG service. In case of DAE application, this application can be either a grid-type epg application or a mosaic epg application.
+<li>VoD Application &mdash; Application for VoD service. VoD application can also include content information for downloadable contents.
+<li>NG Notification &mdash; Application for NG notification service.
 </ul>
 </section>
 

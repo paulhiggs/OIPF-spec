@@ -87,7 +87,7 @@
 			"DASH":"ISO/IEC 23009-1, Information technology - Dynamic adaptive streaming over HTTP (DASH) - Part 1: Media presentation description and segment formats",
 			"MAS":"Marlin Developer Community, \"Marlin Adaptive Streaming Specification - Simple Profile\", Version 1.0, July 2011",
 			"MAF":"Marlin Developer Community, \"Marlin Adaptive Streaming Specification - Full Profile\", Version 1.0, August 2011",
-			"CENC":"ISO/IEC 23001-7:2011 – Information technology – MPEG systems technologies – Part 7: Common encryption in ISO base media file format files",
+			"CENC":"ISO/IEC 23001-7:2011 &mdash; Information technology &mdash; MPEG systems technologies &mdash; Part 7: Common encryption in ISO base media file format files",
 		  },
 		
 		};
@@ -418,7 +418,7 @@
 </ul>
 <p>Terminals are RECOMMENDED to select Representations with a &lt;TrickMode&gt; element in case of trickplay and to select Representations without a &lt;TrickMode&gt; element for play at normal speed. Terminals MAY select any Representation for both trickplay and normal play, regardless of the presence of the &lt;TrickPlay&gt; element and differences in duration of the Segments in a group.</p>
 <p>This will enable larger Segments for dedicated trick Representations which MAY be composed of intra-frames only with a fixed interval and therefore avoid that the number of Segment downloads per second is excessive during trick modes. NOTE: A non-time-aligned trick play Representation makes switching between it and the media Representation more difficult to achieve seamlessly, or less accurate for an OITF that does not perform extra seek processing.</p></ul>
-<li>If two &lt;InitialisationSegmentURL&gt;–elements have the same value in the sourceURL attribute, then the referenced init-data SHALL be the same. Consequently the terminal does not need to download the init-data twice.
+<li>If two &lt;InitialisationSegmentURL&gt;&mdash;elements have the same value in the sourceURL attribute, then the referenced init-data SHALL be the same. Consequently the terminal does not need to download the init-data twice.
 <li>All Representations assigned to a non-zero group SHALL carry an &lt;InitialisationSegmentURL&gt; element with the same value of the @sourceURL attribute. The referenced Initialization Segment SHALL carry the metadata that describes the samples for all Representations assigned to a non-zero group. A client only needs to acquire this overall Initialization Segment once.
 </ul>
 <p>Note that if a service chooses to Segment a Content Resource in a way that does not meet these constraints, then the Content Resource might not be supported on all receivers.</p>

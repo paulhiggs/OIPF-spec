@@ -113,7 +113,7 @@
       
       "TVA-MD":"ETSI, TS 102 822-3-1, \"Broadcast and On-line Services: Search, select, and rightful use of content on personal storage systems (\"TV-Anytime Phase 1\"); Part 3: Metadata; Sub-part 1: Metadata schemas\"",
       
-      "DLNA":"DLNA, IEC, 62481-2, Digital living network alliance (DLNA) home networked device interoperability guidelines – Part 2: Media Formats, ed1.0 (2007-08).",
+      "DLNA":"DLNA, IEC, 62481-2, Digital living network alliance (DLNA) home networked device interoperability guidelines &mdash; Part 2: Media Formats, ed1.0 (2007-08).",
             
       "UPNP-MR":"UPnP Forum, \"MediaRenderer:1 Device Template Version 1.01\"",
       "UPNP-MS":"UPnP Forum, \"MediaServer:1 Device Template Version 1.01\"",
@@ -124,7 +124,7 @@
       "FCC":"DVB BlueBook A152 (08/10), \"Server-Based Fast Channel Change in DVB-IPTV Systems\"",
       "3G-SEC":"3GPP, TS 33.203, \"3G security; Access security for IP-based services\"",
       
-      "PSS":"3GPP, TS 26.234v750, \"Transparent end to end packet switched streaming service (PSS) – Protocols and Codecs\"",
+      "PSS":"3GPP, TS 26.234v750, \"Transparent end to end packet switched streaming service (PSS) &mdash; Protocols and Codecs\"",
       "PSS-MBMS":"3GPP, TS 26.237, \"IP Multimedia Subsystem (IMS) based Packet Switch Streaming (PSS) and Multimedia Broadcast/Multicast Service (MBMS) User Service; Protocols (Release 8)\"",
       
       "DVB-SC":"ETSI, TS 103 197 V1.5.1, \"Digital Video Broadcasting (DVB); Head-end implementation of DVB SimulCrypt\", March 2007.",
@@ -147,16 +147,16 @@
 <p>This Technical Specification (TS) has been produced by the Open IPTV Forum.</p>
 <p>This specification provides multiple options for some features. The Open IPTV Forum Profiles specification complements the Release 2 specifications by defining the Open IPTV Forum implementation and deployment profiles. This document is Volume 4 in the 10 Volume set of specifications that define the Open IPTV Forum Release 2 Solution.</p>
 <p>The other Volumes in the set are: </p><ul>
-<li>Volume 1 – Overview [[.OIPF_OVIEW2]],
-<li>Volume 2 – Media Formats [[.OIPF_MEDIA2]],
-<li>Volume 2a – HTTP Adaptive Streaming [[.OIPF_HAS2]],
-<li>Volume 3 – Content Metadata [[.OIPF_META2]],
-<li>Volume 4 – Protocols (the present volume),
-<li>Volume 4a – Examples of Protocol Sequences [[.OIPF_PROT_EX2]],
-<li>Volume 5 – Declarative Application Environment [[.OIPF_DAE2]],
-<li>Volume 5a – Web Standards TV Profile [[.OIPF_WSTVP2]], 
-<li>Volume 6 – Procedural Application Environment [[.OIPF_PAE2]], and
-<li>Volume 7 – Authentication, Content Protection and Service Protection [[.OIPF_CSP2]].
+<li>Volume 1 &mdash; Overview [[.OIPF_OVIEW2]],
+<li>Volume 2 &mdash; Media Formats [[.OIPF_MEDIA2]],
+<li>Volume 2a &mdash; HTTP Adaptive Streaming [[.OIPF_HAS2]],
+<li>Volume 3 &mdash; Content Metadata [[.OIPF_META2]],
+<li>Volume 4 &mdash; Protocols (the present volume),
+<li>Volume 4a &mdash; Examples of Protocol Sequences [[.OIPF_PROT_EX2]],
+<li>Volume 5 &mdash; Declarative Application Environment [[.OIPF_DAE2]],
+<li>Volume 5a &mdash; Web Standards TV Profile [[.OIPF_WSTVP2]], 
+<li>Volume 6 &mdash; Procedural Application Environment [[.OIPF_PAE2]], and
+<li>Volume 7 &mdash; Authentication, Content Protection and Service Protection [[.OIPF_CSP2]].
 </ul>
 
 <p>This document specifies the protocols over the following reference point interfaces defined in the Open IPTV Forum Release 2 Architecture specification [[.OIPF_ARCH2]].</p><ul>
@@ -237,7 +237,7 @@
 <tr><td>UNIT-19</td><td>Multicast Data Channel, used to deliver data of different kinds to the OITF by means of multicast. This reference point can carry discrete data that is carried over unicast through e.g., the interfaces UNIS-6 and UNIS-7.  Other uses such as UNI-RMS are not excluded.</td><td>FLUTE</td></tr>
 <tr><td>UNIS-19</td><td>Reference point to the IPTV Service Provider Discovery functional entity to obtain the list of Service Providers, and related information.</td><td>HTTP</td></tr>
 <tr><td>UNI-RMS</td><td>Remote Management using Broadband Forum TR-069 framework [[!TR069]] and related extensions based on the DVB-IP-RMS specification.</td><td>HTTP/TR-069</td></tr>
-<tr><td>UNIS-CSP-T</td><td>Rights management for protected content – including key management and rights expression. See [[.OIPF_CSP2]]</td><td>HTTP/MARLIN</td></tr>
+<tr><td>UNIS-CSP-T</td><td>Rights management for protected content &mdash; including key management and rights expression. See [[.OIPF_CSP2]]</td><td>HTTP/MARLIN</td></tr>
 <tr><td>UNIS-CSP-G</td><td>Reference point to support a service and content protection solution specific to the IPTV Service Provider.  This interface MAY be used to obtain licenses for purchases/subscribed content, control content and the service protection system and MAY also be used to deliver content.</td><td></td></tr>
 </table>
 
@@ -371,7 +371,7 @@ Parlay X</td></tr>
 <section id="http"><h1>HTTP</h1>
 <section><h2>HTTP Reference points</h2>
 <p>This section defines the protocol for the use of HTTP over the following reference points:</p><ul>
-<li>HNI-IGI – HTTP Option
+<li>HNI-IGI &mdash; HTTP Option
 <br />Certain interactions on the HNI-IGI interface can only be implemented natively, while the rest can be implemented either in native code or in a DAE application.  In the following sections, if no qualification is provided it must be understood that the function can be performed natively or as a DAE application.
 <li>UNIP-1
 <li>UNIS-6
@@ -382,7 +382,7 @@ Parlay X</td></tr>
 <li>UNIS-19
 </ul>
 </section>
-<section><h2>IG as a protocol converter supporting the HNI-IGI interface – HTTP Option</h2>
+<section><h2>IG as a protocol converter supporting the HNI-IGI interface &mdash; HTTP Option</h2>
 <p>In support of the HNI-IGI HTTP option the IG SHALL act a protocol converter between HTTP and SIP.  In that respect, the IG acts as an HTTP server towards the OITF, and as a SIP User Agent (UA) towards the IMS network. The following lists the behaviour of the IG as a SIP UA towards the IMS network:</p><ul>
 <li>The IG SHALL handle all SIP headers that are mandatory by [[!SIP]]; creating and storing them where applicable when initiating requests from the OITF towards the network or when receiving incoming requests from the IMS network targeted for an OITF. The same applies to SIP responses. The different services specify what needs to be stripped before a request/response is sent to the OITF. 
 <li>The IG SHALL handle all IMS specific SIP headers; storing what is received from the network for re-insertion during outgoing requests (e.g. P-Preferred-Identity) according to [[!TS124503]], and stripping those headers before a request/response is sent to the OITF.
@@ -397,7 +397,7 @@ Parlay X</td></tr>
 
 <section><h2>Protocols for IPTV Service Functions</h2>
 <section><h3>Multicast content streaming with SIP session management</h3>
-<section><h4>Protocol over HNI-IGI – HTTP Option</h4>
+<section><h4>Protocol over HNI-IGI &mdash; HTTP Option</h4>
 <p>When the OITF initiates, modifies or terminates a multcast content service, the OITF sends HNI-IGI messages containing the appropriate method, mapped to HNI-IGI as described in section <a href="#s5-6-1" class="sectionRef">5.6.1</a>, &ldquo;<a href="#s5-6-1" class="sectionTitleRef"></a>&rdquo;.</p>
 <p>The SIP-specific information in the related messages is described in section <a href="#s6-1-2-1" class="sectionRef">6.1.2.1</a>, &ldquo;<a href="#s6-1-2-1" class="sectionTitleRef"></a>.&rdquo; The SIP-specific information is mapped to the HNI-IGI protocol, as described in section <a href="#s5-6-1" class="sectionRef">5.6.1</a>, &ldquo;<a href="#s5-6-1" class="sectionTitleRef"></a>&rdquo;. In particular, the OITF creates HTTP headers for an HNI-IGI message by adding &ldquo;X-OITF-&rdquo; in front of the necessary SIP header names. In addition, OPTIONAL parameters MAY be included as defined in [[!TS124503]].</p>
 <p>Certain interactions on the HNI-IGI interface SHALL be implemented natively, while the remaining applicable interactions MAY be implemented either natively or as a DAE application. In the following sections, if no qualification is provided, it MUST be understood that the interaction can be performed natively or as a DAE application.</p>
@@ -591,12 +591,12 @@ To report the scheduled content being watched after the IPTV end user stopped za
 <p>The XML document SHALL include either one element of a PSS content switch data or one element of MBMS content switch data. The selection of PSS content switch data or MBMS content switch data is determined according to the content delivery mechanism. Scheduled Content delivered to the OITF through a multicast mechanism SHALL use the MBMS content switch choice. Scheduled Content delivered by unicast streaming mechanism SHALL use the PSS content switch choice. For either of those elements there SHALL be at least one defined sequence included.</p>
 <p>The elements in the XML document SHALL be populated as follows:</p><ul>
 <li>For PssSwitchData<ul>
-<li>ContentID – RTSP URI of the content
-<li>DateTime – MAY be used</ul>
+<li>ContentID &mdash; RTSP URI of the content
+<li>DateTime &mdash; MAY be used</ul>
 <li>For MbmsSwitchData<ul>
-<li>ServiceId – The BCServiceId of the channel
-<li>ProgrammeId – SHALL NOT be used 
-<li>DateTime – MAY be used 
+<li>ServiceId &mdash; The BCServiceId of the channel
+<li>ProgrammeId &mdash; SHALL NOT be used 
+<li>DateTime &mdash; MAY be used 
 </ul></ul>
 <p>Also note that the SIP INFO including the info-event Watched Content is sent only within the context of a scheduled content session.</p>
 </td></tr>
@@ -826,7 +826,7 @@ Once the OITF accepts the incoming SIP UPDATE, it SHALL send to the IG an HTTP H
 </section>
 </section>
 <section id="s5-3-2"><h3>Unicast content streaming with SIP session management</h3>
-<section id="s5-3-2-1"><h4>Protocol for SIP session management over HNI-IGI – HTTP Option</h4>
+<section id="s5-3-2-1"><h4>Protocol for SIP session management over HNI-IGI &mdash; HTTP Option</h4>
 <section id="s5-3-2-1-1"><h5>Retrieval of Session Parameters</h5>
 <p>If the OITF does not have all the necessary parameters to form the SDP offer the HNI-IGI function in the OITF SHALL retrieve missing SDP parameters using the following procedure:</p>
 <table class="sequence">
@@ -1108,7 +1108,7 @@ Given that Forced Play Out is completely supported in the network with no OITF i
 <img alt="FIGURE 3" src="images/OverlayingRelatedMaterial.png" />
 </figure>
 </section>
-<section id="s5-3-5-3"><h4>Protocol over HNI-IGI – HTTP Option</h4>
+<section id="s5-3-5-3"><h4>Protocol over HNI-IGI &mdash; HTTP Option</h4>
 <section id="s5-3-5-3-1"><h5>Purchase Procedure for Selected Digital Media Related to the Content</h5>
 <p>It is assumed that the OITF has an established session and has retrieved the necessary information to perform the purchase procedures as depicted in the steps below. It is also assumed that the network indicated its willingness to receive the Digital-Media-Purchase Info Package.</p>
 <table class="sequence">
@@ -1300,7 +1300,7 @@ To indicate unwillingness, it SHALL be empty or remove &ldquo;Digital-Media Purc
 
 </section>
 <section id="s5-3-6"><h3>Pay Per View multicast content service with SIP session management</h3>
-<section id="s5-3-6-1"><h4>Protocol over HNI-IGI – HTTP Option</h4>
+<section id="s5-3-6-1"><h4>Protocol over HNI-IGI &mdash; HTTP Option</h4>
 <p>When the OITF initiates, modifies or terminates a Pay-Per-View multicast content service, the OITF SHALL send HNI-IGI messages containing the appropriate method, mapped to HNI-IGI as described in section <a href="#s5-6-1" class="sectionRef">5.6.1</a>, &ldquo;<a href="#s5-6-1" class="sectionTitleRef"></a>.&rdquo;</p>
 <p>The SIP-specific information in the related messages is described in section <a href="#s6-1-2-5" class="sectionRef">6.1.2.5</a>, &ldquo;<a href="#s6-1-2-5" class="sectionTitleRef"></a>.&rdquo; The SIP-specific information is mapped to the HNI-IGI protocol, as described in section <a href="#s5-6-1" class="sectionRef">5.6.1</a>, &ldquo;<a href="#s5-6-1" class="sectionTitleRef"></a>.&rdquo; In particular, the OITF creates HTTP headers for an HNI-IGI message by adding &ldquo;X-OITF-&rdquo; in front of the necessary SIP header names. In addition, OPTIONAL parameters MAY be included as defined in [[!TS124503]].</p>
 <section id="s5-3-6-1-1"><h5>PPV Service initiation without existing multicast content streaming session</h5>
@@ -1328,7 +1328,7 @@ To indicate unwillingness, it SHALL be empty or remove &ldquo;Digital-Media Purc
 </section>
 <section id="s5-3-7"><h3>Parental Control for Content using SIP</h3>
 <p>Note: Parental control relationship establishment, modification or deletion is out of scope of this specification.</p>
-<section id="s5-3-7-1"><h4>Protocol for What is on TV – OITF initiated – HTTP Option</h4>
+<section id="s5-3-7-1"><h4>Protocol for What is on TV &mdash; OITF initiated &mdash; HTTP Option</h4>
 <section id="s5-3-7-1-1"><h5>User Initiated Subscription to Acquire Information Related to Watched Content by another User</h5>
 <p>An IPTV end user having the parental control authority over another user can initiate subscription to acquire information related to the watched content by the user under his parental control. To initiate the request to receive the information, the OITF SHALL follow the following procedure:</p>
 <table class="sequence">
@@ -1495,7 +1495,7 @@ To indicate unwillingness, it SHALL be empty or remove &ldquo;Digital-Media Purc
 </pre>
 </section>
 </section>
-<section id="s5-3-7-2"><h4>Protocol for Parental Control over HNI-IGI – HTTP Option</h4>
+<section id="s5-3-7-2"><h4>Protocol for Parental Control over HNI-IGI &mdash; HTTP Option</h4>
 <section id="s5-3-7-2-1"><h5>Protocol for OITF Originating a Request for Parental Control</h5>
 <p>The user to be controlled is watching content and the controller finds out the information related to the watched content (SC Service ID or content ID, ratings etc.) as described in section <a href="#s5-3-7-1" class="sectionRef">5.3.7.1</a>, &ldquo;<a href="#s5-3-7-1" class="sectionTitleRef"></a>.&rdquo; When the controller wants to block the content program, the OITF of the controller SHALL originate a request for Parental Control. The SIP-specific information in the related messages is described in section <a href="#s6-1-2-6" class="sectionRef">6.1.2.6</a>, &ldquo;<a href="#s6-1-2-6" class="sectionTitleRef"></a>.&rdquo; The SIP-specific information is mapped to the HNI-IGI protocol, as described in section <a href="#s5-6-1" class="sectionRef">5.6.1</a>, &ldquo;<a href="#s5-6-1" class="sectionTitleRef"></a>.&rdquo;</p>
 
@@ -1633,7 +1633,7 @@ The OITF SHALL send an HTTP POST request to the IG using the HNI-IGI functionali
 </section>
 <section id="s5-3-8"><h3>Network-Based User Notification Services</h3>
 <p>User notification service refers to the family of services that includes a notification being sent to an IPTV end user. The notification can be sent either to an OITF or to a cellular device depending on user preference. There are several types of notification services. This section deals with notification services related to broadcast reminders where the user can subscribe to be reminded, through a notification, before a specific broadcast starts. The actual notification can be sent anytime before the program starts at the IPTV SP discretion. Notification services related to broadcast reminders involve interaction with the EPG for setting up a notification request. The Notification Services AS is an MMS Parlay-X web services AS.</p>
-<section id="s5-3-8-1"><h4>Protocol over HNI-IGI – HTTP Option</h4>
+<section id="s5-3-8-1"><h4>Protocol over HNI-IGI &mdash; HTTP Option</h4>
 <section id="s5-3-8-1-1"><h5>Native HNI-IGI (IMS-based) Notification Request Setup Procedure</h5>
 <p>To initiate a request to setup a notification service, the OITF SHALL follow the following procedure:</p>
 <table class="sequence">
@@ -1746,7 +1746,7 @@ The OITF SHALL send an HTTP POST request to the IG using the HNI-IGI functionali
 <section id="s5-3-9"><h3>Content Bookmarking</h3>
 <p>Content bookmarking is a feature that allows a user to store in the network a point in time for a scheduled content or content on demand session where later it can be retrieved and where viewing can resume from that point on.</p>
 <p>For a scheduled content session, bookmarking essentially represents a mark in a file stored in the network for the scheduled content. As such, it is a pre-requisite that the scheduled content be stored in the network for any bookmarking to be available for a scheduled content session. The stored bookmarking hence will be a pointer in a file storing the scheduled content.</p>
-<section id="s5-3-9-1"><h4>Protocol over HNI-IGI – HTTP Option</h4>
+<section id="s5-3-9-1"><h4>Protocol over HNI-IGI &mdash; HTTP Option</h4>
 <section id="s5-3-9-1-1"><h5>IMS-based Content Bookmark Creation Request</h5>
 <p>The OITF SHALL follow the following procedure for a content bookmark creation request:</p>
 <table class="sequence">
@@ -2146,7 +2146,7 @@ The network SHALL verify provisioned information in case of scheduled content an
 </section>
 </section>
 <section id="s5-3-11"><h3>Network PVR (nPVR) using SIP</h3>
-<section id="s5-3-11-1"><h4>Protocol over HNI-IGI – HTTP Option</h4>
+<section id="s5-3-11-1"><h4>Protocol over HNI-IGI &mdash; HTTP Option</h4>
 <p>When the OITF initiates the request for network PVR Service Request, the procedure defined in section <a href="#s5-3-10" class="sectionRef">5.3.10</a>, &ldquo;<a href="#s5-3-10" class="sectionTitleRef"></a>&rdquo; SHALL apply, with following additional constraints:</p><ul>
 <li>In step 1, the HTTP Request Body SHALL be set so that in the PVR request message ctNPVRRecordRequest SHALL be the selected choice and SHALL be set as follows:<ul>
 <li>RequestType: indicates type of service request
@@ -2262,7 +2262,7 @@ The OITF SHALL send the request for a Personalised Channel session termination u
 </section>
 </section>
 <section id="s5-3-13"><h3>Session Transfer with SIP session management</h3>
-<section id="s5-3-13-1"><h4>Protocol over HNI-IGI – HTTP Option</h4>
+<section id="s5-3-13-1"><h4>Protocol over HNI-IGI &mdash; HTTP Option</h4>
 <section id="s5-3-13-1-1"><h5>Generic Session Transfer Procedures</h5>
 <p>The procedures in this section are generic in nature and apply equally to the various modes of session transfer.</p>
 <section id="s5-3-13-1-1-1"><h6>Transferee unicast session streaming Session Initiation associated with a session Transfer</h6>
@@ -2372,7 +2372,7 @@ Refer-To: <br /> &lt;sip:remoteuser@home2.net;gr=urn:uuid:f81d4fae-7dec-11d0-a76
 <tr><td>X-OITF-Contact</td><td>RFC 3261 [[!SIP]]</td></tr>
 </table>
 </section>
-<section id="s5-3-13-1-2-3"><h6>Transferee OITF Receiving an Incoming Session Transfer Request – Push Mode</h6></section>
+<section id="s5-3-13-1-2-3"><h6>Transferee OITF Receiving an Incoming Session Transfer Request &mdash; Push Mode</h6></section>
 <p>The procedure at an OITF selected to be the target device (transferee OITF) in a push mode is as follows</p>
 <table class="sequence">
 <tr><td class="label">Step 1:</td><td>It is assumed that the OITF has an HTTP PENDING_IG request. At some point in time, when a REFER request targeted for the transferee OITF is received by the IG, the IG SHALL return a HTTP 200 OK response to the OITF. The response SHALL include the list of SIP headers as per Table <a href="#t46" class="tableRef">46</a>, in addition to the normal HTTP headers as per RFC 2616 [[!HTTP]]. The body of the HTTP response SHALL include the XML structure as per section <a href="#s5-3-13-2" class="sectionRef">5.3.13.2</a>, &ldquo;<a href="#s5-3-13-2" class="sectionTitleRef"></a>&rdquo;.</td></tr>
@@ -2472,7 +2472,7 @@ Once the session setup is successfully completed, the OITF SHALL send an HTTP PO
 
 <section id="s5-4"><h2>Protocol for Service Access and Control Functions</h2>
 <section id="s5-4-1"><h3>Service Provider Discovery</h3>
-<section id="s5-4-1-1"><h4>Protocol over HNI-IGI – HTTP Option</h4>
+<section id="s5-4-1-1"><h4>Protocol over HNI-IGI &mdash; HTTP Option</h4>
 <section id="s5-4-1-1-1"><h5>Retrieval of Service Provider Discovery Information</h5>
 <p>The procedures in this section SHALL only be performed in the context of the default user. When the OITF supports native HNI-IGI, it SHALL follow the following procedure to retrieve Service Provider Discovery Information:</p>
 <table class="sequence">
@@ -2531,7 +2531,7 @@ The IPTV Service Provider Discovery Information delivered via this protocol SHAL
 <tr><td>X-OITF-Request-Line<p>Note: The request URI SHALL be set to the well known PSI. The PSI SHALL be composed of the domain name extracted from the public user identity with a user part set to &ldquo;OIPF_IPTV_SPD&rdquo;. (e.g., OIPF_IPTV_SPD@&lt;domain_name&gt;)</p></td><td>RFC 3261 [[!SIP]]<p>SUBSCRIBE &lt;Request URI&gt; SIP/2.0</p></td></tr>
 <tr><td>X-OITF-From<p>Note: The From user MUST be set to the IMPU of the default user.</p></td><td>RFC 3261 [[!SIP]]</td></tr>
 <tr><td>X-OITF-To<p>The URI part of X-OITF-To SHALL be set to the value of the Request URI in the &ldquo;X-OITF-Request-Line&rdquo;</p></td><td>RFC 3261 [[!SIP]]</td></tr>
-<tr><td>X-OITF-Event<p>Extend the existing &ldquo;ua–profile&rdquo; event package for SIP SUBSCRIBE request</p>
+<tr><td>X-OITF-Event<p>Extend the existing &ldquo;ua&mdash;profile&rdquo; event package for SIP SUBSCRIBE request</p>
 <p>The Event header SHALL be set to the &ldquo;ua-profile&rdquo; event package.</p>
 <p>The Event parameters SHALL be set as follows:</p><ul>
 <li>The &ldquo;profile-type&rdquo; parameter SHALL be set to &ldquo;application&rdquo;.
@@ -2656,7 +2656,7 @@ The proposed AUID to be allocated to the Open IPTV Forum IPTV services applicati
 <section id="s5-4-4-2"><h4>Protocols over UNIS-6 for DAE-based Profile Management</h4>
 <p>UNIS-6 MAY be used for the unicast transport of HTML ECMAScript documents between the OITF DAE function and the IPTV Application FE for DAE-based subscription profile management. In this case, the IPTV Application FE acts as a front-end to the IPTV Service Profile FE. When the HTTP request for profile management is received from OITF, the IPTV Application FE manipulates the IPTV Service Profile FE.</p>
 </section>
-<section id="s5-4-4-3"><h4>Protocols over HNI-IGI – HTTP Option</h4>
+<section id="s5-4-4-3"><h4>Protocols over HNI-IGI &mdash; HTTP Option</h4>
 <section id="s5-4-4-3-1"><h5>Subscription to notification of changes in the IPTV Service Profile</h5>
 <p>The procedure for subscription to notification of changes in the IPTV service profile SHALL be invoked from either a DAE application or an embedded application in the OITF. The procedures SHALL be as follows:</p>
 <table class="sequence">
@@ -2752,9 +2752,9 @@ The PSI SHALL be &ldquo;OIPF_IPTV_ServiceProfile@&lt;domainname&gt;&rdquo; where
 <p>The remote management functions REQUIRED for managed devices are specified in the general framework document TR069 [[!TR069]] by the Broadband Forum. The framework document is associated with a number of Technical Reports that define the CWMP data models that are specific for each device function.</p>
 <section id="s5-4-5-1-1"><h5>UNI-RMS for IG, AG and WAN Gateway</h5>
 <p>In addition to TR-069, the following specifications SHALL apply:</p><ul>
-<li>TR-098 [[!TR098]] that defines the data model for the &ldquo;internet gateway device&rdquo; SHALL apply to the WAN Gateway FE (see RMS3 functional block of the &ldquo;Open IPTV Forum – Functional Architecture&rdquo; document [[.OIPF_ARCH2]])
+<li>TR-098 [[!TR098]] that defines the data model for the &ldquo;internet gateway device&rdquo; SHALL apply to the WAN Gateway FE (see RMS3 functional block of the &ldquo;Open IPTV Forum &mdash; Functional Architecture&rdquo; document [[.OIPF_ARCH2]])
 <li>TR-106 [[!TR106]] that defines the data model for the generic CWMP-managed device SHALL apply to the IG, AG and WAN-Gateway FEs.
-<li>TR-104 [[!TR104]] that defines the data model for the &ldquo;SIP end-point&rdquo; SHALL apply to the IG (see RMS2 functional block of the &ldquo;Open IPTV Forum – Functional Architecture&rdquo; document [[.OIPF_ARCH2]]).</ul>
+<li>TR-104 [[!TR104]] that defines the data model for the &ldquo;SIP end-point&rdquo; SHALL apply to the IG (see RMS2 functional block of the &ldquo;Open IPTV Forum &mdash; Functional Architecture&rdquo; document [[.OIPF_ARCH2]]).</ul>
 </section>
 <section id="s5-4-5-1-2"><h5>UNI-RMS for OITF</h5>
 <p>Although the remote management functions are specified in the general framework document TR-069 [[!TR069]] by the Broadband Forum, the protocol to remotely manage OITF retail devices is intended to support limited functions mainly for Performance Monitoring and Diagnostics. Consequently, an OITF device doesn't fulfil all the requirements that are requested in TR-069 [[!TR069]]. The limitations outlined in the following sections SHALL apply.</p>
@@ -2810,13 +2810,13 @@ The PSI SHALL be &ldquo;OIPF_IPTV_ServiceProfile@&lt;domainname&gt;&rdquo; where
 <tr><td class="label">Step 5:</td><td>The IG sends an HTTP POST request with no HTTP entity body to the remote server.</td></tr>
 <tr><td class="label">Step 6:</td><td>The server returns an HTTP response that includes a Download request in the HTTP entity body. The arguments are set as follows:
 <table class="alignment">
-<tr><td style="border:0px none transparent;">CommandKey:</td><td style="border:0px none transparent;">Mandatory – set by remote server</td></tr>
-<tr><td style="border:0px none transparent;">FileType:</td><td style="border:0px none transparent;">Mandatory – set to 3: Vendor Configuration File. The vendor in this case is Open IPTV Forum</td></tr>
-<tr><td style="border:0px none transparent;">URI:</td><td style="border:0px none transparent;">Mandatory – set by remote server</td></tr>
-<tr><td style="border:0px none transparent;">Username:</td><td style="border:0px none transparent;">OPTIONAL – If used, MUST be configured in the IG and remote server</td></tr>
-<tr><td style="border:0px none transparent;">Password:</td><td style="border:0px none transparent;">OPTIONAL – If used, MUST be configured in the IG and remote server</td></tr>
-<tr><td style="border:0px none transparent;">TargetFileName:</td><td style="border:0px none transparent;">Mandatory – IPTV-ConfigurationParameters</td></tr>
-<tr><td style="border:0px none transparent;">DelaySeconds:</td><td style="border:0px none transparent;">Mandatory – set to no delay</td></tr>
+<tr><td style="border:0px none transparent;">CommandKey:</td><td style="border:0px none transparent;">Mandatory &mdash; set by remote server</td></tr>
+<tr><td style="border:0px none transparent;">FileType:</td><td style="border:0px none transparent;">Mandatory &mdash; set to 3: Vendor Configuration File. The vendor in this case is Open IPTV Forum</td></tr>
+<tr><td style="border:0px none transparent;">URI:</td><td style="border:0px none transparent;">Mandatory &mdash; set by remote server</td></tr>
+<tr><td style="border:0px none transparent;">Username:</td><td style="border:0px none transparent;">OPTIONAL &mdash; If used, MUST be configured in the IG and remote server</td></tr>
+<tr><td style="border:0px none transparent;">Password:</td><td style="border:0px none transparent;">OPTIONAL &mdash; If used, MUST be configured in the IG and remote server</td></tr>
+<tr><td style="border:0px none transparent;">TargetFileName:</td><td style="border:0px none transparent;">Mandatory &mdash; IPTV-ConfigurationParameters</td></tr>
+<tr><td style="border:0px none transparent;">DelaySeconds:</td><td style="border:0px none transparent;">Mandatory &mdash; set to no delay</td></tr>
 <tr><td style="border:0px none transparent;">Successful URI:</td><td style="border:0px none transparent;">Not provided</td></tr>
 <tr><td style="border:0px none transparent;">Failure URI:</td><td style="border:0px none transparent;">Not provided</td></tr>
 </table>
@@ -2824,10 +2824,10 @@ The PSI SHALL be &ldquo;OIPF_IPTV_ServiceProfile@&lt;domainname&gt;&rdquo; where
 <tr><td class="label">Step 7:</td><td>Following that, the IG proceeds to download the configuration file.</td></tr>
 <tr><td class="label">Steps 8-9:</td><td>Once the download is complete, the IG sends a TransferComplete request to the remote server. The arguments in the request are set as follows:
 <table class="alignment">
-<tr><td style="border:0px none transparent;">CommandKey:</td><td style="border:0px none transparent;">Mandatory – Set to the value received in the Download request</td></tr>
+<tr><td style="border:0px none transparent;">CommandKey:</td><td style="border:0px none transparent;">Mandatory &mdash; Set to the value received in the Download request</td></tr>
 <tr><td style="border:0px none transparent;">FaultStruct:</td><td style="border:0px none transparent;">Mandatory in case of failure according to TR-069</td></tr>
-<tr><td style="border:0px none transparent;">StartTime:</td><td style="border:0px none transparent;">Mandatory – Set according to TR-069</td></tr>
-<tr><td style="border:0px none transparent;">FinishTime:</td><td style="border:0px none transparent;">Mandatory – Set according to TR-069</td></tr>
+<tr><td style="border:0px none transparent;">StartTime:</td><td style="border:0px none transparent;">Mandatory &mdash; Set according to TR-069</td></tr>
+<tr><td style="border:0px none transparent;">FinishTime:</td><td style="border:0px none transparent;">Mandatory &mdash; Set according to TR-069</td></tr>
 </table>
 </td></tr>
 </table>
@@ -2939,7 +2939,7 @@ The PSI SHALL be &ldquo;OIPF_IPTV_ServiceProfile@&lt;domainname&gt;&rdquo; where
 </section>
 
 <section id="s5-4-6"><h3>User Registration and Network Authentication</h3>
-<section id="s5-4-6-1"><h4>Procedure for User Registration and Authentication in network relying on IMS on the HNI-IGI Interface – HTTP Option</h4>
+<section id="s5-4-6-1"><h4>Procedure for User Registration and Authentication in network relying on IMS on the HNI-IGI Interface &mdash; HTTP Option</h4>
 <section id="s5-4-6-1-1"><h5>User Registration</h5>
 <p>This procedure SHALL be invoked in following cases:</p><ul>
 <li>When the OITF is turned on or restarted if the OITF supports the native HNI-IGI function.
@@ -3273,7 +3273,7 @@ The OITF SHALL retrieve a list of user IDs (IMPU and Alias) from the IG for serv
 
 <section id="s5-5"><h2>Protocols for Communications Functions using SIP</h2>
 <section id="s5-5-1"><h3>CallerID</h3>
-<section id="s5-5-1-1"><h4>Procedure for Instant Message Based Caller ID – HTTP Option</h4>
+<section id="s5-5-1-1"><h4>Procedure for Instant Message Based Caller ID &mdash; HTTP Option</h4>
 <section id="s5-5-1-1-1"><h5>Procedure on HNI-IGI</h5>
 <p>The OITF supports the following procedure for Caller ID. The incoming message carrying a Caller ID can either be handled by a native application in the OITF, or in a DAE application. The same HNI-IGI message format is used in either case.</p>
 <table class="sequence">
@@ -3314,7 +3314,7 @@ Note: For handling of new incoming SIP MESSAGE, refer to  <a href="volume5.html#
 </section>
 </section>
 <section id="s5-5-1-2"><h4>Procedure for IMS Telephony Based Caller ID (optional)</h4>
-<section id="s5-5-1-2-1"><h5>Procedure for HNI-IGI – HTTP Option</h5>
+<section id="s5-5-1-2-1"><h5>Procedure for HNI-IGI &mdash; HTTP Option</h5>
 <p>The following procedure MAY be supported in the OITF for Caller ID presentation to the OITF user as a result for an incoming IMS voice call to the IG.</p>
 <p>The incoming message, carrying information on the IMS voice call, can either be handled by a native application in the OITF, or by a DAE application. The same HNI-IGI message format is used in either case.</p>
 <table class="sequence">
@@ -3370,7 +3370,7 @@ Note: For handling of new incoming INVITE messages for new dialogs, refer to <a 
 </section>
 </section>
 <section id="s5-5-2"><h3>Instant Messaging</h3>
-<section id="s5-5-2-1"><h4>Procedure for Instant Messaging on HGI-INI – HTTP Option</h4>
+<section id="s5-5-2-1"><h4>Procedure for Instant Messaging on HGI-INI &mdash; HTTP Option</h4>
 <p>Instant Messaging on the OITF uses the HNI-IGI functionality, as described in section <a href="#s5-6-1" class="sectionRef">5.6.1</a>, &ldquo;<a href="#s5-6-1" class="sectionTitleRef"></a>.&rdquo;</p>
 <p>There are two cases, messages originating from the OITF, and messages terminating in the OITF.</p>
 <section id="s5-5-2-1-1"><h5>Procedure for OITF Originating an Instant Messaging</h5>
@@ -3442,7 +3442,7 @@ Note: For handling of new incoming INVITE messages for new dialogs, refer to <a 
 </section>
 </section>
 <section id="s5-5-3"><h3>IM Session (Chat using MSRP)</h3>
-<section id="s5-5-3-1"><h4>Procedure for Instant Messaging on HGI-INI – HTTP Option</h4>
+<section id="s5-5-3-1"><h4>Procedure for Instant Messaging on HGI-INI &mdash; HTTP Option</h4>
 To initiate a chatting session using MSRP, the OITF SHALL use the following procedure:
 <table class="sequence">
 <tr><td class="label">Step 1:</td><td>The OITF SHALL send an HTTP POST request to the IG over the HNI-IGI interface, as described in section <a href="#s5-6-1" class="sectionRef">5.6.1</a>, &ldquo;<a href="#s5-6-1" class="sectionTitleRef"></a>.&rdquo; The content of the HTTP Request SHALL be as follows:
@@ -3516,7 +3516,7 @@ To initiate a chatting session using MSRP, the OITF SHALL use the following proc
 <tr><td>X-OITF-Contact<p>The URI parameter MUST be included, and MUST match what has been inserted in the INVITE message.</p><p>IG includes all other mandatory parameters that are absent.</p></td><td>RFC 3261 [[!SIP]]</td></tr>
 </table>
 </section>
-<section id="s5-5-3-2"><h4>MSRP Invocation – HTTP Option</h4>
+<section id="s5-5-3-2"><h4>MSRP Invocation &mdash; HTTP Option</h4>
 <p>The OITF SHALL access MSRP capabilities in the IG using the X-HNI-IGI headers.</p>
 <section id="s5-5-3-2-1"><h5>Outgoing MSRP Chat Messages</h5>
 The OITF SHALL send an outgoing MSRP chat message using the following procedure:
@@ -3633,7 +3633,7 @@ The IG SHALL use the following procedure when receiving an incoming MSRP Chat St
 </table>
 </section>
 </section>
-<section id="s5-5-3-3"><h4>Terminating an IM Session (MSRP Chat) – HTTP Option</h4>
+<section id="s5-5-3-3"><h4>Terminating an IM Session (MSRP Chat) &mdash; HTTP Option</h4>
 In order to terminate an MSRP session, the OITF SHALL use the following procedure:
 <table class="sequence">
 <tr><td class="label">Step 1:</td><td>The OITF SHALL send an HTTP POST request to the IG over the HNI-IGI interface, as described in section <a href="#s5-6-1" class="sectionRef">5.6.1</a>, &ldquo;<a href="#s5-6-1" class="sectionTitleRef"></a>.&rdquo; The content of the HTTP Request SHALL be as follows:
@@ -3671,7 +3671,7 @@ In order to terminate an MSRP session, the OITF SHALL use the following procedur
 <tr><td>X-OITF-Content-Length<p>Set to 0</p></td><td>RFC 3261 [[!SIP]]</td></tr>
 </table>
 </section>
-<section id="s5-5-3-4"><h4>Remote Termination of an IM Session (MSRP Chat) – HTTP Option</h4>
+<section id="s5-5-3-4"><h4>Remote Termination of an IM Session (MSRP Chat) &mdash; HTTP Option</h4>
 The IG SHALL use the following procedure when receiving an incoming SIP BYE message for an ongoing IM session (MSRP Chat):
 <table class="sequence">
 <tr><td class="label">Step 1:</td><td>The IG receives a SIP BYE message from the network.</td></tr>
@@ -3708,7 +3708,7 @@ The IG SHALL use the following procedure when receiving an incoming SIP BYE mess
 <tr><td>X-OITF-CSeq</td><td>RFC 3261 [[!SIP]]</td></tr>
 </table>
 </section>
-<section id="s5-5-3-5"><h4>Procedure for Reception of a remotely initiated Instant Messaging Session (MSRP Chat) – HTTP Option</h4>
+<section id="s5-5-3-5"><h4>Procedure for Reception of a remotely initiated Instant Messaging Session (MSRP Chat) &mdash; HTTP Option</h4>
 The IG SHALL use the following procedure when receiving an incoming SIP INVITE message for a new IM session (MSRP Chat):
 <table class="sequence">
 <tr><td class="label">Step 1:</td><td>The IG receives a SIP INVITE message from the network.</td></tr>
@@ -3786,7 +3786,7 @@ The IG SHALL use the following procedure when receiving an incoming SIP INVITE m
 </section>
 </section>
 <section id="s5-5-4"><h3>Presence</h3>
-<section id="s5-5-4-1"><h4>Procedures for Subscription to Presence on the HNI-IGI interface – HTTP Option</h4>
+<section id="s5-5-4-1"><h4>Procedures for Subscription to Presence on the HNI-IGI interface &mdash; HTTP Option</h4>
 The procedure for subscription to the Presence event SHALL be invoked from either a DAE application or an embedded application in the OITF. The procedure is as follows:
 <table class="sequence">
 <tr><td class="label">Step 1:</td><td>The OITF SHALL send an HTTP POST request to the IG over the HNI-IGI interface, as described in section <a href="#s5-6-1" class="sectionRef">5.6.1</a>, &ldquo;<a href="#s5-6-1" class="sectionTitleRef"></a>.&rdquo; The content of the HTTP Request SHALL be as follows:
@@ -3815,7 +3815,7 @@ The procedure for subscription to the Presence event SHALL be invoked from eithe
 </table>
 The OITF SHALL ensure that the presence related data conforms to the appropriate XML schemas.
 </section>
-<section id="s5-5-4-2"><h4>Procedure for Cancellation of a Subscription to Presence on the HNI-IGI interface – HTTP Option</h4>
+<section id="s5-5-4-2"><h4>Procedure for Cancellation of a Subscription to Presence on the HNI-IGI interface &mdash; HTTP Option</h4>
 <p>This procedure MAY be invoked at any time.</p>
 <p>The OITF SHALL de-register the IPTV end user before invoking this procedure.</p>
 <p>The procedure is essentially the same as the procedure for initiating a subscription to the Presence event, except that the X-OITF-Expires header in Table 88 SHALL be set to 0.</p>
@@ -3878,11 +3878,11 @@ The OITF SHALL ensure that the presence related data conforms to the appropriate
 </table>
 NOTE: Cancellation of subscription is not REQUIRED if the X-OITF-Expires header was set to 0 in the initial SUBSCRIBE request
 </section>
-<section id="s5-5-4-3"><h4>Refreshing the Subscription to the Presence Event – HTTP Option</h4>
+<section id="s5-5-4-3"><h4>Refreshing the Subscription to the Presence Event &mdash; HTTP Option</h4>
 <p>It is the responsibility of the application (in the OITF) initiating the subscription procedure to refresh the subscription according to the refresh subscription timer received in the response during the subscription process. Refreshing SHOULD be performed before the expiry of the refresh timer. A subscription that is not refreshed before the expiration of the refresh subscription timer SHALL be terminated by the network.</p>
 <p>]The procedure for refreshing the subscription to the Presence event is the same as the procedure for subscribing to Presence.</p>
 </section>
-<section id="s5-5-4-4"><h4>Procedure for Publishing Presence information – HTTP Option</h4>
+<section id="s5-5-4-4"><h4>Procedure for Publishing Presence information &mdash; HTTP Option</h4>
 This procedure for publishing an event MAY be invoked from either a DAE application or an embedded application in the OITF. The procedure is as follows:
 <table class="sequence">
 <tr><td class="label">Step 1:</td><td>The OITF SHALL send an HTTP POST request to the IG over the HNI-IGI interface, as described in section <a href="#s5-6-1" class="sectionRef">5.6.1</a>, &ldquo;<a href="#s5-6-1" class="sectionTitleRef"></a>.&rdquo; The content of the HTTP Request SHALL be as follows:
@@ -3923,7 +3923,7 @@ This procedure for publishing an event MAY be invoked from either a DAE applicat
 <tr><td>X-OITF-Expires</td><td>RFC 3261 [[!SIP]]</td></tr>
 </table>
 </section>
-<section id="s5-5-4-5"><h4>Procedure for Refreshing Published Presence information – HTTP Option</h4>
+<section id="s5-5-4-5"><h4>Procedure for Refreshing Published Presence information &mdash; HTTP Option</h4>
 It is the responsibility of the OITF to refresh the published presence information before the refresh timer expires. A published event that is not refreshed SHALL be deleted in accordance with RFC 3903 [[!RFC3903]].
 </section>
 <section id="s5-5-4-6"><h4>Presence Notification and Publish Schema</h4>
@@ -4120,7 +4120,7 @@ To initiate a Content Sharing session to another OITF, the OITF SHALL use the fo
 <tr><td>X-OITF-Length</td><td>RFC 3261 [[!SIP]]</td></tr>
 </table>
 </section>
-<section id="s5-5-5-5-3"><h5>Remote OITF Receiving an Incoming Session Transfer Request – Push Mode</h5>
+<section id="s5-5-5-5-3"><h5>Remote OITF Receiving an Incoming Session Transfer Request &mdash; Push Mode</h5>
 The remote OITF is having a content sharing session with transferor OITF. The procedure for remote OITF in a push mode is as follows:
 <table class="sequence">
 <tr><td class="label">Step 1:</td><td>It is assumed that the remote OITF has an HTTP PENDING_IG request. At some point in time, when a REFER request targeted for the transferee OITF is received by the IG, the IG SHALL return a HTTP 200 OK response to the OITF. The response SHALL include the list of SIP headers as per Table <a href="#t98" class="tableRef">98</a>, in addition to the normal HTTP headers as per RFC 2616 [[!HTTP]]. The body of the HTTP response SHALL include the XML structure as per section <a href="#s5-3-13-2" class="sectionRef">5.3.13.2</a>, &ldquo;<a href="#s5-3-13-2" class="sectionTitleRef"></a>&rdquo;.</td></tr>
@@ -4163,7 +4163,7 @@ The remote OITF is having a content sharing session with transferor OITF. The pr
 </td></tr>
 </table>
 </section>
-<section id="s5-5-5-5-4"><h5>Transferee OITF Receiving an Incoming Session Transfer Request – Push Mode</h5>
+<section id="s5-5-5-5-4"><h5>Transferee OITF Receiving an Incoming Session Transfer Request &mdash; Push Mode</h5>
 The remote OITF is having a content sharing session with transferor OITF. The procedure at the transferee OITF receiving an incoming session transfer request in a push mode is as follows:
 <table class="sequence">
 <tr><td class="label">Step 1:</td><td>It is assumed that the transferee OITF has an HTTP PENDING_IG request. At some point in time, when a INVITE request targeted for the transferee OITF is received by the IG, the IG SHALL return a HTTP 200 OK response to the transferee OITF. The response SHALL include the list of SIP headers as per Table <a href="#t95" class="tableRef">95</a> in addition to the normal HTTP headers as per RFC 2616 [[!HTTP]].</td></tr>
@@ -4261,7 +4261,7 @@ In order to terminate a content sharing session, the OITF SHALL use the followin
 <p>An example of SIP header that is mapped to an HTTP extension header is: &ldquo;From: david@oiptv.org&rdquo; that becomes &ldquo;X-OITF-From:david@oiptv.org&rdquo;</p>
 <p>Note that only AUX HNI-IGI message types are used by the HNI-IGI SIP option (see section <a href="#s5-6-1-6" class="sectionRef">5.6.1.6</a>, &ldquo;<a href="#s5-6-1-6" class="sectionTitleRef"></a>&rdquo;.)</p>
 </section>
-<section id="s5-6-1-2"><h4>HNI-IGI messages in the OITF to IG direction – HTTP Option</h4>
+<section id="s5-6-1-2"><h4>HNI-IGI messages in the OITF to IG direction &mdash; HTTP Option</h4>
 <p>When the IG receives an HNI-IGI message, it SHALL add or change all SIP headers that are not specific to the application (Tags, Call ID, via, request URI etc.) while translating from HTTP to SIP.</p>
 <p>The following table lists header values for the HNI-IGI protocol that the IG and OITF SHALL support and lists the IG action on those headers.</p>
 <table class="simple first-nowrap" id="t103">
@@ -4284,7 +4284,7 @@ In order to terminate a content sharing session, the OITF SHALL use the followin
 <p>The OITF SHALL use an IMPU in X-OITF headers where an IMPU is REQUIRED in the SIP header.</p>
 <p>The OITF MAY include other headers that are application specific (e.g. X-OITF-Accept-Contact) in which case the IG SHALL include them transparently in the SIP method as long as they comply with the appropriate syntax for the header. Reference SHOULD be made to the various services using the HNI-IGI interface for a list of the headers that MUST be present.</p>
 </section>
-<section id="s5-6-1-3"><h4>HNI-IGI messages in the IG to OITF direction – HTTP Option</h4>
+<section id="s5-6-1-3"><h4>HNI-IGI messages in the IG to OITF direction &mdash; HTTP Option</h4>
 <p>When the IG translates a SIP message to an HNI-IGI HTTP message, it SHALL remove SIP Headers that SHOULD NOT be transmitted on the HNI-IGI interface, while translating from SIP to HTTP.</p>
 <p>The following table lists header values in the SIP protocol that the IG and OITF SHALL support and the action the IG undertakes when mapping to the HNI-IGI protocol.</p>
 <table class="simple" id="t104">
@@ -4306,7 +4306,7 @@ In order to terminate a content sharing session, the OITF SHALL use the followin
 <p>The IG SHALL map any other received SIP headers by adding X-OITF- to the specific SIP header. Reference SHOULD be made to the various services using the HNI-IGI interface for a list of the headers that MUST be present.</p>
 <p>The IG handles the SIP state machines.</p>
 </section>
-<section id="s5-6-1-4"><h4>HNI-IGI PENDING_IG Message – HTTP Option</h4>
+<section id="s5-6-1-4"><h4>HNI-IGI PENDING_IG Message &mdash; HTTP Option</h4>
 <p>HNI-IGI PENDING_IG messages are sent by DAE and embedded applications in the OITF whenever these applications are ready to receive any incoming message from the network.</p>
 <p>PENDING_IG messages MAY include a SIP Request or a SIP response. In this case, there is typically an ongoing SIP dialog between the OITF application and a peer SIP end-point in the IMS network.</p>
 <p>HTTP headers included in a PENDING_IG message that includes a SIP request or a SIP response are the &lt;X-OITF extension headers&gt; that are pertinent to the application. The content of such a message SHALL be as follows:</p>
@@ -4349,7 +4349,7 @@ In order to terminate a content sharing session, the OITF SHALL use the followin
 <p>For the last 2 cases, the IG SHALL send an HTTP 200 OK response that does not include any X-OITF-&lt;Extension-headers&gt; as a response to the PENDING-IG request. OPTIONALly, the IG MAY empty its internal buffers that MAY include in-transit messages destined for the applications.</p>
 </section>
 </section>
-<section id="s5-6-1-5"><h4>HNI-IGI SIP Message – HTTP Option</h4>
+<section id="s5-6-1-5"><h4>HNI-IGI SIP Message &mdash; HTTP Option</h4>
 <p>HNI-IGI SIP messages are sent by DAE and embedded applications in the OITF whenever these applications are ready to send a SIP Request or a SIP response. The content of such a message SHALL be as follows:</p>
 <table class="http-element">
 <tr><td>HTTP Request Header: In includes the following:<ul>
@@ -4388,8 +4388,8 @@ In order to terminate a content sharing session, the OITF SHALL use the followin
 </table>
 <p>Note that only one auxiliary message, GBA-Registration, applies to both the HTTP and SIP options. All other auxiliary messages apply only to HTTP option.</p>
 </section>
-<section id="s5-6-1-7"><h4>HNI-IGI Message Body – HTTP Option</h4>The HNI-IGI messages in either direction SHALL include transparently the appropriate SIP body for the different SIP methods in the HTTP message body.</section>
-<section id="s5-6-1-8"><h4>Guidelines for Applications using the HNI-IGI interface – HTTP Option</h4>
+<section id="s5-6-1-7"><h4>HNI-IGI Message Body &mdash; HTTP Option</h4>The HNI-IGI messages in either direction SHALL include transparently the appropriate SIP body for the different SIP methods in the HTTP message body.</section>
+<section id="s5-6-1-8"><h4>Guidelines for Applications using the HNI-IGI interface &mdash; HTTP Option</h4>
 <p>This section lists some guidelines that apply to DAE application and OITF applications that use the HNI-IGI interface. Both types of application are referred to as Application here:</p><ul>
 <li>It is the responsibility of the Application to ensure that it provides all the SIP headers that are REQUIRED for the correct operation of the application.
 <li>The IG SHALL absorb &ldquo;100 Trying&rdquo; responses received from the network and not return them to the OITF.
@@ -4403,7 +4403,7 @@ In order to terminate a content sharing session, the OITF SHALL use the followin
 <li>The only identified case where a PENDING-IG request SHALL include a SIP request is the case where the OITF application sends an ACK.
 </ul>
 </section>
-<section id="s5-6-1-9"><h4>Error Recovery in the IG – HTTP Option</h4>
+<section id="s5-6-1-9"><h4>Error Recovery in the IG &mdash; HTTP Option</h4>
 <p>This section covers the handling in the IG for encountered error-cases:<ol>
 <li>If the IG detects a timeout, or an explicit disconnection on all TCP links between an OITF application and the IG, the IG SHALL consider the application inactive. The application MAY become active again by re-establishing the TCP link with the IG. Any incoming SIP Messages destined for an application that is inactive SHALL result in an error message 487 Request Terminated (481 Call Leg/Transaction Does Not Exist is also an acceptable response if the IG concludes that the application is permanently inactive) being returned to the network as a response. For an inactive application, the SIP dialog in the IG SHALL eventually time-out and clear all resources in the IG and the network.
 <p>In order to cater to the scenario of transient TCP link disconnects, and to allow incoming messages that are received by the IG during the time it takes the OITF to re-establish a TCP link following a disconnection, it is RECOMMENDED that the IG waits no more than 1 second before it responds to the network with a 487 or a 481 error message.</p>
@@ -5348,7 +5348,7 @@ Switching from a PPV service to a multicast content service over NPI-4 SHALL be 
 </section>
 </section>
 <section id="s6-1-2-6"><h4>Parental Control for Content using SIP</h4>
-<section id="s6-1-2-6-1"><h5>What is on TV – OITF initiated</h5>
+<section id="s6-1-2-6-1"><h5>What is on TV &mdash; OITF initiated</h5>
 <section id="s6-1-2-6-1-1"><h6>Protocol over UNIS-8</h6>
 <p>The following SHALL be supported by the IG for subscription to acquire information related to content streamed at an OITF:</p><ul>
 <li>An outgoing SUBSCRIBE message for subscription to the Parental Control Watched Content event. Note that the IPTV Control FE SHALL reject a SUBSCRIBE message from a non-authorized user.
@@ -5773,18 +5773,18 @@ Switching from a PPV service to a multicast content service over NPI-4 SHALL be 
 </section>
 </section>
 <section id="s6-1-4-4"><h4>Chatting</h4>
-<section id="s6-1-4-4-1"><h5>IM Session using MSRP over UNIS–8</h5>
+<section id="s6-1-4-4-1"><h5>IM Session using MSRP over UNIS&mdash;8</h5>
 <p>The IG SHALL conform to the Client Procedure as described in OMA-TS-SIMPLE_IM-V1_0-20080820-D [[!SMPL-IM]].</p>
 <p>The IG SHALL perform path mapping between Chatting peers as indicated in section <a href="#s5-5-3" class="sectionRef">5.5.3</a>, &ldquo;<a href="#s5-5-3" class="sectionTitleRef"></a>.&rdquo;</p>
 <p>The IG SHALL handle translation of Chat session initiation and teardown procedures when requested by the OITF as per section <a href="#s5-4-5" class="sectionRef">5.4.5</a>, &ldquo;<a href="#s5-4-5" class="sectionTitleRef"></a>.&rdquo;</p>
 <p>The IG SHALL handle translation of outgoing and incoming MSRP chat message as per section <a href="#s5-5-3" class="sectionRef">5.5.3</a>, &ldquo;<a href="#s5-5-3" class="sectionTitleRef"></a>.&rdquo;</p>
 </section>
-<section id="s6-1-4-4-2"><h5>IM Session using MSRP over NPI–3</h5>
+<section id="s6-1-4-4-2"><h5>IM Session using MSRP over NPI&mdash;3</h5>
 <p>The P2P Chatting communication enablers FE SHALL confirm to the IM Server procedures described in OMA TS SIMPLE_IM-V1_0-20080820-D [[!SMPL-IM]].</p>
 </section>
 </section>
 <section id="s6-1-4-5"><h4>Content Sharing</h4>
-<section id="s6-1-4-5-1"><h5>Procedures for Content Sharing on UNIS–8</h5>
+<section id="s6-1-4-5-1"><h5>Procedures for Content Sharing on UNIS&mdash;8</h5>
 <p>Incoming SIP OPTIONS be acceptable for processing by the IG. Non-conformant SIP OPTIONS SHALL be rejected in with the appropriate response code.</p>
 <p>When requested by the OITF, the IG SHALL support the SIP OPTIONS request and response in accordance with [[!SIP]] for Capability querying.</p>
 <p>Incoming SIP INVITE be acceptable for processing by the IG. Non-conformant SIP INVITE SHALL be rejected in with the appropriate response code.</p>
@@ -5911,7 +5911,7 @@ Session termination is identical to session termination of a multicast content s
 </section>
 </section>
 <section id="s6-2-2-4"><h4>Parental Control for Scheduled Content using SIP</h4>
-<section id="s6-2-2-4-1"><h5>What is on TV – OITF initiated</h5>
+<section id="s6-2-2-4-1"><h5>What is on TV &mdash; OITF initiated</h5>
 <section id="s6-2-2-4-1-1"><h6>Procedure for Subscription to Parental Control Watched Content Event Package (OITF Initiated)</h6>
 <p>To subscribe to the event package related to parental control watched content for a registered IMPU, the OITF with the appropriate parental control authority over the user SHALL issue a SIP SUBSCRIBE request to the IG that includes the SIP headers as per Table <a href="#t27" class="tableRef">27</a>. In addition, the OITF SHALL include all mandatory SIP headers as per [[!SIP]] and that are missing from the table (e.g. Via, Max-Forwards).</p>
 <p>The IG acting as a B2BUA in accordance with section <a href="#s6-2-1" class="sectionRef">6.2.1</a> SHALL validate that the SIP SUBSCRIBE request includes all mandatory SIP headers as per [[!SIP]] and the headers listed in Table <a href="#t27" class="tableRef">27</a>. Following successful validation, the IG SHALL support the 3GPP IMS subscription to the event package as per [[!TS124503]]. This includes inserting any additional mandatory SIP headers as REQUIRED by [[!TS124503]].</p>
@@ -5927,7 +5927,7 @@ The procedure for refreshing a subscription is the same as the procedure for ini
 </section>
 </section>
 <section id="s6-2-2-4-2"><h5>Parental Control</h5>
-<section id="s6-2-2-4-2-1"><h6>Parental Control Blocking Request – OITF Initiated</h6>
+<section id="s6-2-2-4-2-1"><h6>Parental Control Blocking Request &mdash; OITF Initiated</h6>
 <p>An OITF with proper parental control authority that desires to block a watched content for an IPTV end user under its authority SHALL initiate an instant message for that purpose by sending to the IG a SIP MESSAGE that includes all the SIP headers in Table <a href="#t31" class="tableRef">31</a> and any other mandatory SIP headers as per [[!SIP]]. The content of the SIP MESSAGE SHALL include the body associated with &ldquo;urn:oipf:application:iptv-parental-control&rdquo;.</p>
 <p>The IG acting as a B2BUA in accordance with section <a href="#s6-2-1" class="sectionRef">6.2.1</a> SHALL validate that the SIP MESSAGE includes all the mandatory headers as per [[!SIP]] and the headers listed in Table <a href="#t31" class="tableRef">31</a>. Following a successful validation, the IG SHALL generate a SIP MESSAGE request to the network conformant to [[!SIP-IM]] and [[!TS124503]].</p>
 <p>The IG acting as a B2BUA in accordance with section <a href="#s6-2-1" class="sectionRef">6.2.1</a> SHALL forward any received SIP response to the OITF. A SIP 200 OK response SHALL include the SIP headers defined in Table <a href="#t32" class="tableRef">32</a> and any other mandatory SIP headers as per [[!SIP]].</p>
@@ -7166,7 +7166,7 @@ rtcp-xr-attrib = &ldquo;a=&rdquo; &ldquo;rtcp-xr&rdquo; &ldquo;:&rdquo; [xr-form
 <li>Option 1: Subnet Mask
 <li>Option 6: DNS
 <li>Option 61: Client identifier. In this specification, the DHCP Client Identifier used in OITF devices is the deviceID, defined as follows:<ul>
-<li>deviceID – Identifies the device. It SHALL be unique within the home network and SHALL NOT change between restarts. The deviceID SHALL be the SHA-1 hash of the MAC address of the interface used to connect to the IPTV service as bytes concatenated with the domain name received via DHCP option 15 in ASCII characters:<ul>
+<li>deviceID &mdash; Identifies the device. It SHALL be unique within the home network and SHALL NOT change between restarts. The deviceID SHALL be the SHA-1 hash of the MAC address of the interface used to connect to the IPTV service as bytes concatenated with the domain name received via DHCP option 15 in ASCII characters:<ul>
 <li>deviceID = SHA-1(X)<br />
 where: X = (MAC address as bytes) + (domain name in ASCII characters) and the ‘+' denotes the concatenation operation.  SHA-1 SHALL be used as specified in [[!SHA-1]]. The domain name SHALL be set to the domain name received via DHCP option 15 (see section <a href="#s12-1-1-1-2" class="sectionRef">12.1.1.1.2</a>, &ldquo;<a href="#s12-1-1-1-2" class="sectionTitleRef"></a>.&rdquo;)
 </ul></ul></ul>
@@ -7186,7 +7186,7 @@ where: X = (MAC address as bytes) + (domain name in ASCII characters) and the ‘+
 Option 15 SHALL be used by the OITF to request the domain name used to generate the device identity (deviceID) as per section <a href="#s6-1-3-2-1" class="sectionRef">6.1.3.2.1</a>, &ldquo;<a href="#s6-1-3-2-1" class="sectionTitleRef"></a>&rdquo;.
 </section>
 <section id="s12-1-1-1-3"><h5>Option 124/125</h5>
-<p>The OITF SHALL send a Vendor–Identifying Vendor Class option 124 as specified in RFC 3925 [[!DHCP-VND]] when it requests a DHCP lease from the WAN Gateway. The option is specified with an enterprise number of 37339 and the vendor class data identifier as &ldquo;OITF_IPTV&rdquo;.</p>
+<p>The OITF SHALL send a Vendor&mdash;Identifying Vendor Class option 124 as specified in RFC 3925 [[!DHCP-VND]] when it requests a DHCP lease from the WAN Gateway. The option is specified with an enterprise number of 37339 and the vendor class data identifier as &ldquo;OITF_IPTV&rdquo;.</p>
 <p>The DHCP server delivers the Service Provider Discovery entry point via Vendor-Identifying Vendor-Specific Information DHCP option 125 as defined in RFC 3925 [[!DHCP-VND]], with the enterprise number and vendor class data identified from option 124.</p>
 <p>In this specification, the Service Provider Discovery entry points used are either:</p><ul>
 <li>The FQDN/IP address of the IG, as per Annex F.1, &ldquo;OITF Start up High-Level Procedure&rdquo;, or
@@ -9129,7 +9129,7 @@ where
 <p>The OITF issues the RTCP port mapping message on Port P1 and are destined to port P2 of the retransmission server (RS) entity of the FCC/RET server.  The NAPT will map the port P1 to Port P1 prime. The RS entity responds with a port mapping response message including the cookie using the same ports. </p>
 <p>The RTCP messages sent by the OITF to the feedback target (FT) entity of the FCC/RET server (RAMS-R, NACK, RR, Bye combined with the Session Description Protocol Security Descriptions for Media Streams (SDES)) are sourced on port P3 and destined to port P4 (when passing the NAPT, the port P3 is mapped to a port P3 prime). NACKs or RAMS-R MUST be accompanied with the cookie. The cookie indicates to the FCC/RET server that the response to the NACK or RAMS-R MUST be sent to destination port P1 prime. </p>
 <p>The RTP packets and associated RTCP packets (SR and RAMS-I combined with SDES) transmitted by the RS entity of the FCC/RET server to the OITF are sourced on port P2 and destined to port P1 prime. The NAPT will map this to the port P1 when forwarding the packet to the OITF.</p>
-<p>In the case of RET services, the OITF sends a RTP keep-alive on source port P1 and destination port P2 to assure the NAT traversal of the RET packet(s). These RTP keep–alive messages can be ignored by the RET server.</p>
+<p>In the case of RET services, the OITF sends a RTP keep-alive on source port P1 and destination port P2 to assure the NAT traversal of the RET packet(s). These RTP keep&mdash;alive messages can be ignored by the RET server.</p>
 <p>The OITF sends RTCP packets (RR, RAMS-T, Bye combined with SDES) to the RS entity of the FCC/RET server with destination port P2 and with P1 as source port.</p>
 <p>P4 and P2 are determined by SD&amp;S, whereas the OITF determines the port P3 and P1.</p>
 </section>
@@ -9213,7 +9213,7 @@ where
 <section class="appendix" id="specific-tr-135-and-106-objects"><!--annex J --><h1>OITF-specific TR-135 and TR-106 Remote Management Objects</h1>
 <p>A specific data model for the Remote Management of a retail OITF device has been defined. The data model has been obtained from TR-135 and TR-106 with a selection of a reduced set of parameters with the same semantics (with a few exceptions) and the same types.</p>
 <section id="annex-j-1"><h2>OITF-specific TR-135 Remote Management Object</h2>
-The following table, obtained from "Table 1/TR-135 – Parameter list for an STB CPE device" in TR-135 [[!TR135]], is the specific data model to manage an OITF.
+The following table, obtained from "Table 1/TR-135 &mdash; Parameter list for an STB CPE device" in TR-135 [[!TR135]], is the specific data model to manage an OITF.
 <table id="t143" class="simple">
 <caption>Table ####: Parameter list for an OITF using TR-135</caption>
 <tr><th>Parameter</th><th>R/W</th><th>Description</th></tr>
@@ -9402,7 +9402,7 @@ The &ldquo;Error&rdquo; value MAY be used by the CPE to indicate a locally defin
 </section>
 
 <section id="annex-j-2"><h2>OITF-specific TR-106 Remote Management Object</h2>
-<p>The following table, obtained from &ldquo;Table 3 – Common Object definitions for Device:1&rdquo; in TR-106 Amendment 1, &ldquo;Data Model Template for TR-069-Enabled Devices&rdquo; [[!TR106]], is the specific data model to manage an OITF.</p>
+<p>The following table, obtained from &ldquo;Table 3 &mdash; Common Object definitions for Device:1&rdquo; in TR-106 Amendment 1, &ldquo;Data Model Template for TR-069-Enabled Devices&rdquo; [[!TR106]], is the specific data model to manage an OITF.</p>
 <p>Note that:</p><ul>
 <li>For Device.DeviceInfo, the 3 parameters ManufacturerOUI, ProductClass and Serial Number have slightly different semantic meanings in the context of OIPF and are obtained from the deviceID identifier (refer to section <a href="#s6-1-3-2-1" class="sectionRef">6.1.3.2.1</a>, &ldquo;<a href="#s6-1-3-2-1" class="sectionTitleRef"></a>&rdquo;):<ol class="manual">
 <li>ManufacturerOUI = HEX(first 3 bytes of SHA-1(X))
@@ -9497,7 +9497,7 @@ The &ldquo;Error&rdquo; value MAY be used by the CPE to indicate a locally defin
 <p>RET MAY be applied to both multicact and unicast content services carried over RTP.</p>
 <section id="annex-m-1-1"><h3>Unicast RET for multicast content service</h3>
 <p>The OITF interacts with a RET server to make use of the unicast RET service for multicast content service. This RET server  receives and caches the IP multicast streams transporting the content services for a limited time, and  acts simultaneously as </p><ul>
-<li>the unicast  feedback target (FT) entity for the RTP IP unicast session transporting the content service, where the OITF sends its RTCP messages  -including the Retransmission requests – in unicast to this FT. 
+<li>the unicast  feedback target (FT) entity for the RTP IP unicast session transporting the content service, where the OITF sends its RTCP messages  -including the Retransmission requests &mdash; in unicast to this FT. 
 <li>retransmission source (RS) transmitting RET packets from its cache in a dedicated unicast RTP session. 
 </ul>
 <p>It MUST be noted that when a multicast content service is both RET-enabled and FCC-enabled, the RET server and FCC server SHALL be one and the same.</p>
@@ -9535,7 +9535,7 @@ The &ldquo;Error&rdquo; value MAY be used by the CPE to indicate a locally defin
 </section>
 <section id="annex-m-1-3"><h3>Multicast RET for multicast content service</h3>
 <p>Multicast RET for multicast content service enables scalable packet loss recovery for packet loss events in the multicast stream taking place deep in the network. Multicast RET service SHALL be supported by the OITF when the OITF supports Unicast RET service for multicact content service. </p>
-<p>Similar to unicast RET, the IPTV service provider needs to assure there is extra bandwidth available –as compared to a multicact content service without RET- for this RET service. The extra bandwidth budget can be shared among unicast and multicast RET for multicact content service.</p>
+<p>Similar to unicast RET, the IPTV service provider needs to assure there is extra bandwidth available &mdash;as compared to a multicact content service without RET- for this RET service. The extra bandwidth budget can be shared among unicast and multicast RET for multicact content service.</p>
 <p>When multicact RET service is offered, along with the joining the IP Multicast on which the content service is transported, an OITF supporting RET SHALL also join the IP multicact RET sourced by the RET server, on which the OITF MAY receive RTCP FB NACKs and RET packets, triggered by packet loss events deep in the network.</p>
 <p>A distinction can be made whether the packet loss event takes place upstream of the RET server or downstream of the RET server. Figure <a href="#packet-loss-location-relative-to-ret-server" class="figureRef">23</a> shows a topology example illustrating where packet losses in the IP multicact content service tree MAY occur relative to the RET server and to the OITFs serviced by this RET server.</p>
 <figure id="packet-loss-location-relative-to-ret-server">
@@ -9575,7 +9575,7 @@ The &ldquo;Error&rdquo; value MAY be used by the CPE to indicate a locally defin
 <li>a burst source transmitting the FCC packets from its cache in a dedicated unicast RTP session. 
 </ul>
 <p>When a multicast content service is both RET and FCC-enabled, the RET server and FCC server SHALL be one and the same.</p>
-<p>When an end-user zaps to a channel that is FCC–enabled, and the OITF supports FCC, the following steps take place: </p>
+<p>When an end-user zaps to a channel that is FCC&mdash;enabled, and the OITF supports FCC, the following steps take place: </p>
 <table class="sequence">
 <tr><td class="label">Step 0:</td><td>The OITF leaves the &ldquo;previous&rdquo; IP multicast stream of the content service that MAY still be received when an end-user zaps (away) to the new FCC-enabled multicast content service.</td></tr>
 <tr><td class="label">Step 1:</td><td>The FCC client of the OITF requests a fast channel change by sending a RTCP RAMS-R Feedback (FB) message to the FT entity of the FCC server.  When the OITF performed the port mapping message exchange process, it also transmits the previously assigned cookie.</td></tr>

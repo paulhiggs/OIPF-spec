@@ -103,16 +103,16 @@
 <h2>Introduction</h2>
 This specification provides informative examples of features defined in Volume 4. As such, this is not a stand-alone document and must be read in conjunction with Volume 4.
 <p>This document is Volume 4a in the 10 Volume set of specifications that define the Open IPTV Forum Release 2 Solution. Other Volumes in the set are:</p><ul>
-<li>Volume 1 – Overview [[.OIPF_OVIEW2]],
-<li>Volume 2 – Media Formats [[.OIPF_MEDIA2]],
-<li>Volume 2a – HTTP Adaptive Streaming [[.OIPF_HAS2]],
-<li>Volume 3 – Content Metadata [[.OIPF_META2]],
-<li>Volume 4 – Protocols [[.OIPF_PROT2]],
+<li>Volume 1 &mdash; Overview [[.OIPF_OVIEW2]],
+<li>Volume 2 &mdash; Media Formats [[.OIPF_MEDIA2]],
+<li>Volume 2a &mdash; HTTP Adaptive Streaming [[.OIPF_HAS2]],
+<li>Volume 3 &mdash; Content Metadata [[.OIPF_META2]],
+<li>Volume 4 &mdash; Protocols [[.OIPF_PROT2]],
 <li>Volume 4a - Examples of IPTV Protocol Sequences (the present volume),
-<li>Volume 5 – Declarative Application Environment [[.OIPF_DAE2]],
-<li>Volume 5a – Web Standards TV Profile [[.OIPF_WSTVP2]], 
-<li>Volume 6 – Procedural Application Environment [[.OIPF_PAE2]], and
-<li>Volume 7 – Authentication, Content Protection and Service Protection [[.OIPF_CSP2]].
+<li>Volume 5 &mdash; Declarative Application Environment [[.OIPF_DAE2]],
+<li>Volume 5a &mdash; Web Standards TV Profile [[.OIPF_WSTVP2]], 
+<li>Volume 6 &mdash; Procedural Application Environment [[.OIPF_PAE2]], and
+<li>Volume 7 &mdash; Authentication, Content Protection and Service Protection [[.OIPF_CSP2]].
 </ul>
 <p>This document provides non-normative examples of call flows that realize the functionality defined in Volume 4 [[.OIPF_PROT2]]. As such, this document cannot be taken in a stand-alone manner, but rather must be read alongside Volume 4 in order to gain an understanding of the mechanisms behind the call flows. The interfaces demonstrated in this document include:</p><ul>
 <li>The UNI interfaces, between the network or service provider domains and the consumer domain
@@ -449,7 +449,7 @@ Figure <a href="#f10" class="figureRef">10</a> shows a call flow for a user, wit
 <img src="images/protex-figure10.png" style="width:90%"/>
 </figure>
 </section>
-<section id="s4-1-7"><h3>What is on TV Service – SMS Initiated</h3>
+<section id="s4-1-7"><h3>What is on TV Service &mdash; SMS Initiated</h3>
 Figure <a href="#f11" class="figureRef">11</a> shows a call flow for a user, with parental control authority, acquiring information related to the content being streamed on an OITF, watched by another user under the parental supervision of the request originator. Below is a brief description of the call flow:
 <table class="sequence">
 <tr><td class="label">Step 1:</td><td>The end user through his cellular device issues a text message to the MSISDN (or short code) associated with IPTV Application AS supporting the parental control feature to query what content is being watched by another user. The MSISDN (or short code) for this service is allocated by the SP and is given to subscribers who subscribe to this service. The content of the text message is implementation specific.</td></tr>
@@ -822,7 +822,7 @@ Note that if the OITF is using a DAE application to talk to the IPTV Application
 </section>
 </section>
 <section id="s4-1-13"><h3>Network PVR (nPVR) (managed model)</h3>
-<section id="s4-1-13-1"><h4>OITF-initiated nPVR Recording – Synchronous Method</h4>
+<section id="s4-1-13-1"><h4>OITF-initiated nPVR Recording &mdash; Synchronous Method</h4>
 <p>Based on the EPG, the user decides to set-up the recording of a program (immediate or scheduled). The recording is performed on Network Storage, under the control of the IPTV Service Provider.</p>
 <p>Figure <a href="#f28" class="figureRef">28</a> shows a call flow for the synchronous method of setting up a nPVR recording session.</p>
 <p>The following is a brief description of the steps in the flow:</p>
@@ -876,7 +876,7 @@ Note that if the OITF is using a DAE application to talk to the IPTV Application
 <img src="images/protex-figure28.png" style="width:90%"/>
 </figure>
 </section>
-<section id="s4-1-13-2"><h4>OITF-initiated nPVR Recording – Asynchronous Method</h4>
+<section id="s4-1-13-2"><h4>OITF-initiated nPVR Recording &mdash; Asynchronous Method</h4>
 <p>Based on the EPG, the user decides to set-up the recording of a program (immediate or scheduled). The recording is performed in the CDN, under the control of the IPTV Service Provider.</p>
 <p>Figure <a href="#f29" class="figureRef">29</a> shows a call flow for the asynchronous method of setting up a nPVR recording session.</p>
 <p>The following is a brief description of the steps in the flow:</p>
@@ -904,7 +904,7 @@ Note that if the OITF is using a DAE application to talk to the IPTV Application
 <tr><td class="label">Step 26:</td><td>When the user profile is updated, a notification is sent to the OITF.</td></tr>
 </table>
 <figure id="f29">
-<figcaption>Figure ####: Call flow for Network PVR recording – Asynchronous</figcaption>
+<figcaption>Figure ####: Call flow for Network PVR recording &mdash; Asynchronous</figcaption>
 <img src="images/protex-figure29.png" style="width:90%"/>
 </figure>
 </section>
@@ -926,7 +926,7 @@ The following is a brief description of the steps:
 <tr><td class="label">Step 4:</td><td>The IPTV Application response to OITF with user's IPTV service profile. </td></tr>
 <tr><td class="label">Step 5:</td><td>The OITF generates the content guide for a Personalised Channel based on the user's preferences or viewing habits which is stored inside of the OITF or was delivered from Service Provider at step 4. </td></tr>
 <tr><td class="label">Step 6:</td><td>The OITF detects overlapping content items and decides on the location (LPVR or nPVR) for recording the overlapped contents based on the status of storage or network bandwidth for transferring overlapped content items at the same time. </td></tr>
-<tr><td class="label">Step 7:</td><td>If the OITF decides at Step 6 to record using an LPVR, then Steps 7.1.1 – 7.1.8 will be performed. If the OITF decides at Step 6 to record at an nPVR, then Steps 7.2.1 – 7.2.5 will be followed.
+<tr><td class="label">Step 7:</td><td>If the OITF decides at Step 6 to record using an LPVR, then Steps 7.1.1 &mdash; 7.1.8 will be performed. If the OITF decides at Step 6 to record at an nPVR, then Steps 7.2.1 &mdash; 7.2.5 will be followed.
 <table class="sequence">
 <tr><td class="label">Step 7.1:</td><td>
 <table class="sequence">
@@ -1009,7 +1009,7 @@ Note that steps 6-9 can be occur whenever a new overlap or a new time gap among 
 <img src="images/protex-figure32.png" style="width:90%"/>
 </figure>
 </section>
-<section id="s4-1-15-3"><h4>Example – Push Mode</h4>
+<section id="s4-1-15-3"><h4>Example &mdash; Push Mode</h4>
 Figure <a href="#f33" class="figureRef">33</a> shows the overall high-level call flow for a session transfer in push mode. Below is high level description for the main steps in the call flow:
 <table class="sequence">
 <tr><td class="label">Step 1:</td><td>The transferor OITF1 is watching a CoD session, OITF1 wants to transfer the session to another device that belongs to the same subscription. OITF1 performs a UE discovery to obtain a list of all potential devices.</td></tr>
@@ -1061,7 +1061,7 @@ The procedure is completed with the reception of the SIP response to the SIP UPD
 </figure>
 </section>
 </section>
-<section id="s4-1-15-5"><h4>Session Transfer – Push Mode</h4>
+<section id="s4-1-15-5"><h4>Session Transfer &mdash; Push Mode</h4>
 <section id="s4-1-15-5-1"><h5>Transferor initiating a transfer Request to a Transferee (Target Device)</h5>
 Figure <a href="#f36" class="figureRef">36</a> shows a typical call flow for a transferor OITF initiating a transfer request to a transferee. Below is a brief description of the call flow:
 <table class="sequence">
@@ -1397,7 +1397,7 @@ Figure <a href="#f46" class="figureRef">46</a> shows a call flow for an incoming
 <img src="images/protex-figure47.png" style="width:90%"/>
 </figure>
 </section>
-<section id="s4-3-2-2"><h4>Communication Services – Telephony service (Caller identification) for an incoming IMS voice call</h4>
+<section id="s4-3-2-2"><h4>Communication Services &mdash; Telephony service (Caller identification) for an incoming IMS voice call</h4>
 <p>The IPTV solution provides a mechanism to enable the presentation of information on incoming IMS voice calls.</p>
 <p>The managed networks, such as IMS, provide capability to connect multiple end-user terminals to communication services such as telephony service. The IMS Gateway, while registered to the IMS network, may also receive incoming SIP voice sessions and indicate the related information to the end-user.</p>
 <p>The following figure shows a call flow with a caller identification based on the regular SIP INVITE request that is forwarded in parallel to the IMS Gateway and to a voice capable SIP/IMS UE. The IG gateway forwards the request towards the OITF, and also responds to the request with proper SIP response messages. The OITF gives a suitable indication to the end-user and the end-user can answer the incoming voice session using any of their voice capable clients connected to the IMS network.</p>

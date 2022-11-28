@@ -556,7 +556,7 @@ Table <a href="#t1" class="tableRef">1</a> provides an informative mapping betwe
 <tr><td>UNIT-19</td><td>Multicast Data Channel. Used to deliver data of different kinds to the OITF by means of multicast. This reference point can carry discrete data that is carried over unicast through e.g. the interfaces UNIS-6, and UNIS-7. Other uses e.g. UNI-RMS are not excluded.</td></tr>
 <tr><td>UNIS-19</td><td>Reference point to the IPTV Service Provider Discovery functional entity to obtain the list of Service Providers, and related information.</td></tr>
 <tr><td>UNI-RMS</td><td>Remote Management of end user devices (based on the DSL Forum TR-069 [[!Ref-1]] framework and related extensions based on DVB-IP-RMS specification)</td></tr>
-<tr><td>UNIS-CSP-T</td><td>Rights management for protected content – including key management and rights expression.</td></tr>
+<tr><td>UNIS-CSP-T</td><td>Rights management for protected content &mdash; including key management and rights expression.</td></tr>
 <tr><td>UNIS-CSP-G</td><td>Reference point to support a service and content protection solution which is specific to IPTV Service Provider. This interface may be used to obtain licenses for purchased/subscribed content, control content and service protection system and also deliver content.</td></tr>
 </table>
 
@@ -701,7 +701,7 @@ Reference points for collecting the information intercepted by the Transport Pro
 <p><b>Integral Storage System:</b>  Storage for content download and PVR based functions. This function is optional but will be required if Content Download is supported.</p>
 <p><b>DLNA Functions:</b> Implements DLNA DMS [[!Ref-2]] functions to expose and distribute content in a DLNA compliant manner through the residential network. The DLNA Functions function may also offer a DLNA DMP [[!Ref-3]] function to locate and select content available from other DMS in the residential network. The selected content can be streamed across the residential network and rendered by the OITF. The DLNA Functions may also support the DLNA RUI Source capability (+RUISRC+) to provide remote UI content to the DLNA RUI Pull controller capability (+RUIPL+), which can be used to support an ITF Remote Control Function (IRCF). This function is optional.</p> 
 <p><b>OITF embedded application:</b> This optional function provides embedded applications for IPTV services, e.g. local PVR, using the standardized interfaces which are defined as UNI and HNI-IGI. The user interaction with this function is OITF vendor specific</p>
-<p><b>Performance Monitor Client:</b> Client for providing feedback on service quality – for example, pixilation, frame loss, packet loss and delay (the exact information to be provided is to be specified other specifications). It applies to both the managed and the unmanaged models. </p>
+<p><b>Performance Monitor Client:</b> Client for providing feedback on service quality &mdash; for example, pixilation, frame loss, packet loss and delay (the exact information to be provided is to be specified other specifications). It applies to both the managed and the unmanaged models. </p>
 <p><b>Device Management:</b> This function acts as a UPnP Device Management Client [[!Ref-42]] for  remote management operations such as configuration management (including triggering of a software upgrade) and fault management (including troubleshooting and diagnostics). </p>
 
 <p><br/>The WAN Gateway functional entity shown in Figure <a href="#oitf-functions" class="figureRef">5-5</a> contains the following functions:</p>
@@ -815,14 +815,14 @@ Note that the CSP Gateway functional entity is not shown in this table. Details 
 <li>OITF TV: A television including an OITF.</ul>
 <p>Optionally, the OITF TV may act as a DLNA DMS to make OIPF-defined services available to DLNA devices. It may also act as a DLNA DMP to access content from other DLNA devices on the home network.</p>
 </section>
-<section><h5>Combined IG–WAN Gateway with OITF TV</h5>
+<section><h5>Combined IG&mdash;WAN Gateway with OITF TV</h5>
 <figure><img src="images/arch-example-deployment-03.png" alt="arch-example-deployment-03.png" style="width:90%"/></figure>
 <p>This deployment supports both managed and unmanaged services, with DAE applications. The following devices are deployed:</p><ul>
 <li>Combined IG and WAN Gateway: A single physical device including an IG and modem/router functionality.
 <li>OITF TV: This is an OITF TV, as described in this document.</ul>
 <p>Optionally, the OITF TV may act as a DLNA DMS to make OIPF-defined services available to DLNA devices. It may also act as a DLNA DMP to access content from other DLNA devices on the home network.</p>
 </section>
-<section><h5>Combined IG–WAN Gateway with multiple OITF TVs</h5><figure><img src="images/arch-example-deployment-04.png" alt="arch-example-deployment-04.png" style="width:90%"/></figure>
+<section><h5>Combined IG&mdash;WAN Gateway with multiple OITF TVs</h5><figure><img src="images/arch-example-deployment-04.png" alt="arch-example-deployment-04.png" style="width:90%"/></figure>
 <p>This deployment supports both managed and unmanaged services, with DAE applications. The following devices are deployed:</p><ul>
 <li>Combined IG and WAN Gateway: A single physical device including an IG and modem/router functionality.
 <li>OITF TVs: These are OITF TVs, as described in this document.</ul>
@@ -830,35 +830,35 @@ Note that the CSP Gateway functional entity is not shown in this table. Details 
 <p>Note that one or both OITFs may be deployed in an STB connected to a legacy TV, as shown below, instead of being embedded in a TV. </p>
 <figure><img src="images/arch-example-deployment-04b.png" alt="arch-example-deployment-04b.png" style="width:90%"/></figure>
 </section>
-<section><h5>Combined IG–OITF STB and Multiple OITFs</h5><figure><img src="images/arch-example-deployment-05.png" alt="arch-example-deployment-05.png" style="width:90%"/></figure>
+<section><h5>Combined IG&mdash;OITF STB and Multiple OITFs</h5><figure><img src="images/arch-example-deployment-05.png" alt="arch-example-deployment-05.png" style="width:90%"/></figure>
 <p>This deployment supports both managed and unmanaged services, with DAE applications, presented on an OITF TV and a legacy TV. The following devices are deployed:</p><ul>
 <li>A WAN Gateway.
 <li>Combined IG and OITF STB: A set top box including IG and OITF functionality that exposes HNI-IGI to other OITFs in the residential network. It connects to the legacy TV using some non-OIPF specified mechanism, such as HDMI or SCART.
 <li>OITF TV: This is a TV containing an OITF.</ul>
 <p>Optionally, the OITF TV and IG-OITF STB may act as a DLNA DMS to make OIPF-defined services available to DLNA devices. It may also act as a DLNA DMP to access content from other DLNA devices on the home network.</p>
 </section>
-<section><h5>Combined IG–OITF TV</h5><figure><img src="images/arch-example-deployment-06.png" alt="arch-example-deployment-06.png" style="width:90%"/></figure>
+<section><h5>Combined IG&mdash;OITF TV</h5><figure><img src="images/arch-example-deployment-06.png" alt="arch-example-deployment-06.png" style="width:90%"/></figure>
 <p>This deployment supports both managed and unmanaged services, with DAE applications, presented on an OITF TV. The following devices are deployed:</p><ul>
 <li>A WAN Gateway.
 <li>Combined IG and OITF TV: A TV including both IG and OITF functionality.</ul>
 <p>Optionally, the IG-OITF TV may act as a DLNA DMS to make OIPF-defined services available to DLNA devices. It may also act as a DLNA DMP to access content from other DLNA devices on the home network.</p>
 <p>Note that the IG inside the TV may be used by external OITFs to access managed services.</p>
 </section>
-<section><h5>Multiple IG–OITF STBs</h5><figure><img src="images/arch-example-deployment-07.png" alt="arch-example-deployment-07.png" style="width:90%"/></figure>
+<section><h5>Multiple IG&mdash;OITF STBs</h5><figure><img src="images/arch-example-deployment-07.png" alt="arch-example-deployment-07.png" style="width:90%"/></figure>
 <p>This deployment supports both managed and unmanaged services, with DAE applications, presented on multiple legacy TVs. The following devices are deployed:</p><ul>
 <li>A WAN Gateway.
 <li>Two combined IG-OITF STBs: STBs including both IG and OITF functionality.</ul>
 <p>Only one IG can be active in the residential network at any one time. This limitation may be relaxed in a future specification.</p>
 <p>Optionally, each IG-OITF TV may act as a DMS to make OIPF-defined services available to DLNA devices. They may also act as a DMP to access content from other DLNA devices on the home network.</p>
 </section>
-<section><h5>Combined IG–AG–OITF STB and OITF TV</h5><figure><img src="images/arch-example-deployment-08.png" alt="arch-example-deployment-08.png" style="width:90%"/></figure>
+<section><h5>Combined IG&mdash;AG&mdash;OITF STB and OITF TV</h5><figure><img src="images/arch-example-deployment-08.png" alt="arch-example-deployment-08.png" style="width:90%"/></figure>
 <p>This deployment supports both managed and unmanaged services, with DAE and PAE applications, presented on an OITF TV and a legacy TV. The following devices are deployed:</p><ul>
 <li>A WAN Gateway.
 <li>Combined IG, AG and OITF STB: A set top box including IG, AG and OITF functionality, that exposes the HNI-INI-AG interface to other OITFs in the residential network. It connects to the legacy TV using some non-OIPF specified mechanism, such as HDMI or SCART.
 <li>OITF TV: This is a TV containing an OITF.</ul>
 <p>Optionally, the combined IG-AG-OITF STB or the OITF TV may act as a DLNA DMS to make OIPF-defined services available to DLNA devices. They may also act as a DLNA DMP to access content from other DLNA devices on the home network.</p>
 </section>
-<section><h5>Combined AG–IG with multiple OITFs</h5><figure><img src="images/arch-example-deployment-09.png" alt="arch-example-deployment-09.png" style="width:90%"/></figure>
+<section><h5>Combined AG&mdash;IG with multiple OITFs</h5><figure><img src="images/arch-example-deployment-09.png" alt="arch-example-deployment-09.png" style="width:90%"/></figure>
 <p>This deployment supports both managed and unmanaged services, with DAE and PAE applications, presented on an OITF TV and a legacy TV. The following devices are deployed:</p><ul>
 <li>A WAN Gateway.
 <li>Combined AG-IG device: A device including both IG and AG functionality, that exposes the HNI-INI-AG interface to OITFs in the residential network. 
@@ -866,7 +866,7 @@ Note that the CSP Gateway functional entity is not shown in this table. Details 
 <li>OITF TV: A TV containing an OITF.</ul>
 <p>Optionally, the OITF STB or the OITF TV may act as a DLNA DMS to make OIPF-defined services available to DLNA devices. They may also act as a DLNA DMP to access content from other DLNA devices on the home network.</p>
 </section>
-<section><h5>AG–IG, OITF–IG, Multiple OITFs</h5><figure><img src="images/arch-example-deployment-10.png" alt="arch-example-deployment-10.png" style="width:90%"/></figure>
+<section><h5>AG&mdash;IG, OITF&mdash;IG, Multiple OITFs</h5><figure><img src="images/arch-example-deployment-10.png" alt="arch-example-deployment-10.png" style="width:90%"/></figure>
 <p>This deployment supports managed and unmanaged services, and DAE and PAE applications. The following devices are deployed:</p><ul>
 <li>A WAN Gateway.
 <li>Combined AG-IG device: A device including both IG and AG functionality, that exposes the HNI-INI-AG interface to OITFs in the residential network. 
@@ -876,7 +876,7 @@ Note that the CSP Gateway functional entity is not shown in this table. Details 
 <p>In this deployment, there are multiple IGs. Only one IG can be active in the residential network at any point in time. The ISIM application must always be in the AG-IG in this case.</p>
 <p>Note: The applicability of Remote Access to this deployment has not been studied.</p>
 </section>
-<section><h5>Combined OITF–AG TV and IG–WAN Gateway</h5><figure><img src="images/arch-example-deployment-11.png" alt="arch-example-deployment-11.png" style="width:90%"/></figure>
+<section><h5>Combined OITF&mdash;AG TV and IG&mdash;WAN Gateway</h5><figure><img src="images/arch-example-deployment-11.png" alt="arch-example-deployment-11.png" style="width:90%"/></figure>
 <p>This deployment supports managed and unmanaged services, and DAE and PAE applications. The following devices are deployed:</p><ul>
 <li>Combined IG-WAN Gateway: A single physical device including an IG and WAN Gateway functionality.
 <li>Combined AG-OITF TV: A TV including both an OITF and an AG.</ul>
@@ -947,8 +947,8 @@ Note that the CSP Gateway functional entity is not shown in this table. Details 
 <li>BTF + RCEF; in this case a centralized resource and admission control approach is used;
 <li>BTF + RCEF + A-RACF; in this case a distributed resource and admission control approach is used;</ul>
 <p>The interfaces between the functional entities are:</p><ul>
-<li>RCEF – A-RACF:  based on the same protocol as used between the Authentication and Session Management and the Resource and Admission Control Function, i.e. Diameter [[!Ref-27]]. The RCEF - BTF interface can be considered an internal Transport Processing Functions interface.
-<li>A-RACF – A-RACF: Inter A-RACF interface when multiple A-RACFs are present. One A-RACF could delegate the control of a resource to another A-RACF through this interface. </ul>
+<li>RCEF &mdash; A-RACF:  based on the same protocol as used between the Authentication and Session Management and the Resource and Admission Control Function, i.e. Diameter [[!Ref-27]]. The RCEF - BTF interface can be considered an internal Transport Processing Functions interface.
+<li>A-RACF &mdash; A-RACF: Inter A-RACF interface when multiple A-RACFs are present. One A-RACF could delegate the control of a resource to another A-RACF through this interface. </ul>
 <p>A more detailed description of the RAC behaviour, with examples of specific deployment scenarios, is provided in Appendix <a href="#RAC-for-multicast" class="sectionRef">E</a>.</p>
 </section>
 </section>
@@ -999,7 +999,7 @@ After selecting one IPTV Service Provider from the list obtained in step 2, this
 <tr><td>1.</td><td>Determination of the IPTV Service Provider Discovery entry point</td></tr>
 <tr><td>2.</td><td>IPTV Service Provider Discovery </td></tr>
 <tr><td>3.</td><td>IPTV Service Discovery </td></tr>
-<tr><td>4.</td><td>IPTV Service Access (e.g. Access to the Content Guide – via metadata or web page)</td></tr>
+<tr><td>4.</td><td>IPTV Service Access (e.g. Access to the Content Guide &mdash; via metadata or web page)</td></tr>
 </table>
 <p>These steps are described in detail below.</p>
 <table class="sequence">
@@ -1064,7 +1064,7 @@ Optionally, the OITF retrieves provider discovery entry points via DHCP configur
 <p>In the case where there is a 1-to-1 relationship between the Service Platform Provider and the IPTV Service Provider, the Service Provider Discovery phase will return a single record; therefore, in such a deployment, the subscriber would not select the service provider and the initial response to Service Provider discovery could return the address of the Service Discovery functional entity.</p>
 </section>
 <section id="s6-2-2-2"><h4>IPTV Service Discovery and Service Access for Residential networks with an IG</h4>
-<section><h5>High Level Step 4a – IPTV Service Provider Discovery</h5>
+<section><h5>High Level Step 4a &mdash; IPTV Service Provider Discovery</h5>
 <figure id="highlevel-spd-managed">
 <figcaption>Figure #-####: IPTV Service Provider Discovery for a managed network</figcaption>
 <img src="images/managed-spd-highlevel.png" alt="figure 6-7" style="width:90%"/>
@@ -1079,9 +1079,9 @@ Optionally, the OITF retrieves provider discovery entry points via DHCP configur
 <p>The User Database is configured with the originating filter criteria necessary to route the SIP SUBSCRIBE messages from authorized users to the correct FE.  In order to ensure that unauthorized users do not get access to the Service Provider Discovery FE, the PSI should not be configured in the DNS of the Service Platform Provider. </p>
 <p>HTTP can optionally be used in this signal flow.</p>
 </section>
-<section id="s6-2-2-2-2"><h5>High Level Step 4b – IPTV Service Discovery </h5>
+<section id="s6-2-2-2-2"><h5>High Level Step 4b &mdash; IPTV Service Discovery </h5>
 <p>This procedure can be performed via the use of HTTP (case 1), or IGMP/multicast (case 2), depending on the &ldquo;protocol to be used for Service Discovery&rdquo; info obtained in High Level step 4a (see Figure <a href="#highlevel-spd-managed" class="figureRef">6-7</a>). </p>
-<p class="inline-header">IPTV Service Discovery – Case 1 – Using HTTP</p>
+<p class="inline-header">IPTV Service Discovery &mdash; Case 1 &mdash; Using HTTP</p>
 <figure id="highlevel-sd-case1-managed">
 <figcaption>Figure #-####: HTTP-based IPTV Service Discovery</figcaption>
 <img src="images/managed-sd-case1-highlevel.png" alt="figure 6-8" style="width:90%"/>
@@ -1089,7 +1089,7 @@ Optionally, the OITF retrieves provider discovery entry points via DHCP configur
 <p>The IPTV Service Discovery address is obtained in the high level step 4a shown in Figure <a href="#highlevel-sdns-managed" class="figureRef">6-6</a>.</p>
 <p>In the flow shown in Figure <a href="#highlevel-sd-case1-managed" class="figureRef">6-8</a>, the OITF receives the address from where it can obtain the Content Guide as well the protocol to be used (via multicast or unicast).</p>
 <p>The Service Discovery Record can be delivered to the OITF as XML data (for the metadata client) or a Web Page (for the DAE).</p>
-<p class="inline-header">IPTV Service Discovery – Case 2 – Using IGMP multicast</p>
+<p class="inline-header">IPTV Service Discovery &mdash; Case 2 &mdash; Using IGMP multicast</p>
 <figure id="highlevel-sd-case2-managed">
 <figcaption>Figure #-####: Multicast-based IPTV Service Discovery</figcaption>
 <img src="images/managed-sd-case2-highlevel.png" alt="figure 6-9" style="width:90%"/>
@@ -1097,7 +1097,7 @@ Optionally, the OITF retrieves provider discovery entry points via DHCP configur
 <p>The IPTV Service Discovery multicast address is obtained in the high level step 4a shown in Figure <a href="#highlevel-sdns-managed" class="figureRef">6-6</a>.</p>
 <p>In the flow shown in Figure <a href="#highlevel-sd-case2-managed" class="figureRef">6-9</a>, the OITF joins the appropriate address using IGMP to obtain the IPTV service discovery information as XML data (for the metadata client).</p>
 </section>
-<section><h5>High Level Step 5 – IPTV Service Access - Obtaining the Content Guide</h5>
+<section><h5>High Level Step 5 &mdash; IPTV Service Access - Obtaining the Content Guide</h5>
 <figure id="highlevel-sa-managed">
 <figcaption>Figure #-####: Access to Content Guide</figcaption>
 <img src="images/managed-sa-highlevel.png" alt="figure 6-10" style="width:90%"/>
@@ -1109,7 +1109,7 @@ Optionally, the OITF retrieves provider discovery entry points via DHCP configur
 </section>
 </section>
 <section id="s6-2-2-3"><h4>IPTV Service Discovery and Service Access for Residential Networks with an IG and an AG</h4>
-<section><h5>High Level Step 4a – IPTV Service Provider Discovery</h5>
+<section><h5>High Level Step 4a &mdash; IPTV Service Provider Discovery</h5>
 <figure id="highlevel-spd-residential">
 <figcaption>Figure #-####: Steps in Service Provider Discovery for a residential network with an AG and an IG</figcaption>
 <img src="images/residential-spd-highlevel.png" alt="figure 6-11" style="width:90%"/>
@@ -1126,10 +1126,10 @@ Optionally, the OITF retrieves provider discovery entry points via DHCP configur
 <p>The User Database is configured with the originating filter criteria necessary to route the SIP SUBSCRIBE messages from authorized users to the correct FE.  In order to ensure that unauthorized users do not get access to the Service Provider Discovery FE, the PSI is should not be configured in the DNS of the Service Platform Provider.</p>
 <p>HTTP can be optionally be used in this signal flow.</p>
 </section>
-<section><h5>High Level Step 4b – IPTV Service Discovery </h5>
+<section><h5>High Level Step 4b &mdash; IPTV Service Discovery </h5>
 <p>This procedure can be performed via the use of the IMS either HTTP, or IGMP/multicast, depending on the &ldquo;protocol to be used for Service Discovery&rdquo; information obtained in step 4a of the high level procedures (see Figure <a href="#highlevel-spd-managed" class="figureRef">6-7</a>). For the sake of simplicity, no call flows are shown here as the other cases are very similar to those described in section <a href="#s6-2-2-2-2" class="sectionRef">6.2.2.2.2</a>.</p>
 </section>
-<section><h5>High Level Step 5 – IPTV Service Access</h5>
+<section><h5>High Level Step 5 &mdash; IPTV Service Access</h5>
 <figure id="highlevel-sa-residential">
 <figcaption>Figure #-####: Steps for Service Access in a residential network with an AG and an IG</figcaption>
 <img src="images/residential-sa-highlevel.png" alt="figure 6-12" style="width:90%"/>
@@ -1143,7 +1143,7 @@ Optionally, the OITF retrieves provider discovery entry points via DHCP configur
 </section>
 </section>
 <section><h2>User Identification and Authentication</h2>
-<p>For IPTV services that require service access authorization, the user is identified and authenticated by means of some pre established credentials (such as user name and password, or IMS Private Identity [[!Ref-15]] and corresponding long-term secret key). This section provides high-level message flows for user identification and authentication – for the case of unmanaged as well as managed networks.</p>
+<p>For IPTV services that require service access authorization, the user is identified and authenticated by means of some pre established credentials (such as user name and password, or IMS Private Identity [[!Ref-15]] and corresponding long-term secret key). This section provides high-level message flows for user identification and authentication &mdash; for the case of unmanaged as well as managed networks.</p>
 <p>For managed networks, the following user authentication methods shall be supported: IMS AKA and SIP Digest [[!Ref-18]]. HTTP Digest (RFC 2617) [[!Ref-16]] and SSL/TLS [[!Ref-35]] shall be supported for the case of the unmanaged network model. </p>
 <p>For Single Sign-on, 3GPP's Generic Bootstrapping Architecture (GBA) (3GPP TS 33.220) [[!Ref-25]] shall be supported for managed networks, and SAML web browser-based SSO authentication [[!Ref-50]] shall be supported for unmanaged networks. The Single Sign-on mechanisms provided by the Generic Bootstrapping Architecture may also be applicable for the unmanaged network model when UICC-based IMS authentication capability is available in the home.</p>
 
@@ -1193,7 +1193,7 @@ ISIM computes the value RES on input of its version of the secret key K stored o
 If RES = XRES (successful case), ASM considers the IG as authenticated, and binds &lt;IMPU&gt; to the IP address &lt;IP address&gt;.</td></tr>
 <tr><td>8.</td><td>IG to OITF: Registration Response<br />
 The IG informs the OITF about the result of the registration procedure. (when step 1 is needed) 
-In case of success, the ISIM of the IG is able, based on its knowledge of the secret key K and the authentication token AUTN, to calculate the same values of the integrity key IK and the ciphering key CK as those that the ASM received in step 4 from the User Database. The IG and the ASM use IK and CK to establish IPSec Security Associations for protecting SIP signalling messages over the IG – ASM reference point.</td></tr>
+In case of success, the ISIM of the IG is able, based on its knowledge of the secret key K and the authentication token AUTN, to calculate the same values of the integrity key IK and the ciphering key CK as those that the ASM received in step 4 from the User Database. The IG and the ASM use IK and CK to establish IPSec Security Associations for protecting SIP signalling messages over the IG &mdash; ASM reference point.</td></tr>
 </table>
 </section>
 <section id="s6-3-2-2"><h4>SIP Digest</h4>
@@ -1355,7 +1355,7 @@ In case of success, the ISIM of the IG is able, based on its knowledge of the se
 </table>
 </section>
 <section><h3>Unicast Session Management (unmanaged model)</h3>
-<p>Unicast session management for media streaming in an unmanaged network model differs from the managed network in that no resource management is performed in the network. This means there is no interactive management of the session – a new content delivery session is created for each unicast stream. This requires setup at the ITF and the content delivery function, but not in the network itself.</p>
+<p>Unicast session management for media streaming in an unmanaged network model differs from the managed network in that no resource management is performed in the network. This means there is no interactive management of the session &mdash; a new content delivery session is created for each unicast stream. This requires setup at the ITF and the content delivery function, but not in the network itself.</p>
 <section><h4>Access to Service Providers over unmanaged networks</h4>
 <p>This call flow is equivalent to the content guide retrieval described in section <a href="#s6-2-1-5" class="sectionRef">6.2.1.5</a>.</p>
 </section>
@@ -1543,7 +1543,7 @@ In case of success, the ISIM of the IG is able, based on its knowledge of the se
 <section><h3>Scheduled Content Time Shift</h3>
 <p>The call flows below in Figure <a href="#scheduled-content-timeshift-part-1" class="figureRef">6-30</a> and Figure <a href="#scheduled-content-timeshift-part-2" class="figureRef">6-31</a> depict the sequence of messages that are exchanged when an end-user, watching a scheduled content item, for which time shift is available, uses trick play modes, which causes a switch to the unicast mode associated with the time-shifted content. </p>
 <figure id="scheduled-content-timeshift-part-1">
-<figcaption>Figure #-####: Scheduled Content Time Shift – Part 1</figcaption>
+<figcaption>Figure #-####: Scheduled Content Time Shift &mdash; Part 1</figcaption>
 <img src="images/scheduled-content-timeshift-part-1.png" alt="figure 6-30" style="width:90%"/>
 </figure>
 <p>The following is a brief description of the steps in Figure <a href="#scheduled-content-timeshift-part-1" class="figureRef">6-30</a>:</p>
@@ -1569,7 +1569,7 @@ In case of success, the ISIM of the IG is able, based on its knowledge of the se
 </table>
 <p>The remaining steps are shown in Figure <a href="#scheduled-content-timeshift-part-2" class="figureRef">6-31</a>.</p>
 <figure id="scheduled-content-timeshift-part-2">
-<figcaption>Figure #-####: Scheduled Content Time Shift – Part 2</figcaption>
+<figcaption>Figure #-####: Scheduled Content Time Shift &mdash; Part 2</figcaption>
 <img src="images/scheduled-content-timeshift-part-2.png" alt="figure 6-31" style="width:90%"/>
 </figure>
 <table class="schedule">
@@ -1581,7 +1581,7 @@ In case of success, the ISIM of the IG is able, based on its knowledge of the se
 <section id="s6-8-2"><h3>User-initiated switch from time-shifted to regular Scheduled Content</h3>
 <p>The call flows in Figure <a href="#scheduled-content-timeshift-return-part-1" class="figureRef">6-32</a> and Figure <a href="#scheduled-content-timeshift-return-part-2" class="figureRef">6-33</a> depict the sequence that occurs when an end-user watching a time shifted scheduled content item reverts back to the regular (i.e., not time-shifted) scheduled content. </p>
 <figure id="scheduled-content-timeshift-return-part-1">
-<figcaption>Figure #-####: Switching from time-shifted to regular Scheduled Content – Part 1</figcaption>
+<figcaption>Figure #-####: Switching from time-shifted to regular Scheduled Content &mdash; Part 1</figcaption>
 <img src="images/scheduled-content-timeshift-return-part-1.png" alt="figure 6-32" style="width:90%"/>
 </figure>
 <p>The following is a brief description of the steps:</p>
@@ -1607,7 +1607,7 @@ In case of success, the ISIM of the IG is able, based on its knowledge of the se
 <tr><td>19.</td><td>The IG returns an HTTP 200 OK to the OITF. </td></tr>
 </table>
 <figure id="scheduled-content-timeshift-return-part-2">
-<figcaption>Figure #-####: Switching from time-shifted to regular Scheduled Content – Part 2</figcaption>
+<figcaption>Figure #-####: Switching from time-shifted to regular Scheduled Content &mdash; Part 2</figcaption>
 <img src="images/scheduled-content-timeshift-return-part-2.png" alt="figure 6-32" style="width:90%"/>
 </figure>
 <table class="sequence">
@@ -1619,7 +1619,7 @@ In case of success, the ISIM of the IG is able, based on its knowledge of the se
 <p>The call flows shown in Figure <a href="#scheduled-content-timeshift-eos-part-1" class="figureRef">6-34</a> and Figure <a href="#scheduled-content-timeshift-eos-part-2" class="figureRef">6-35</a> depict the sequence that occurs when an end-user watching a time shifted scheduled content reaches the end of the stream. In this case, the OITF automatically reverts to the regular schedule content service without user intervention.  </p>
 <p>There are two options for detecting the end of the stream. A CDF may support sending an RTSP ANNOUNCE message reflecting the end of the stream. Optionally, an OITF detecting the starvation of the content buffer over a minimum time of 2 to 3 seconds may treat such an event as the end of the stream. The following is a brief description of the steps:</p>
 <figure id="scheduled-content-timeshift-eos-part-1">
-<figcaption>Figure #-####: Reaching end of stream in Scheduled Content – Part 1</figcaption>
+<figcaption>Figure #-####: Reaching end of stream in Scheduled Content &mdash; Part 1</figcaption>
 <img src="images/scheduled-content-timeshift-eos-part-1.png" alt="figure 6-34" style="width:90%"/>
 </figure>
 <p>It is assumed that the user is watching a time shifted scheduled content item.</p>
@@ -1632,7 +1632,7 @@ In case of success, the ISIM of the IG is able, based on its knowledge of the se
 <p>If the CDF does not support the sending of the RTSP ANNOUNCE message, the OITF can interpret the content buffer starvation as an implicit indication for the end of the stream.</p>
 <p>The remaining steps in Figure <a href="#scheduled-content-timeshift-eos-part-2" class="figureRef">6-35</a> showing the actual switch from time-shifted scheduled content to regular scheduled content are identical to the steps shown in section <a href="#s6-8-2" class="sectionRef">6.8.2</a> and will not be repeated.</p>
 <figure id="scheduled-content-timeshift-eos-part-2">
-<figcaption>Figure #-####: Reaching end of stream in Scheduled Content – Part 2</figcaption>
+<figcaption>Figure #-####: Reaching end of stream in Scheduled Content &mdash; Part 2</figcaption>
 <img src="images/scheduled-content-timeshift-eos-part-2.png" alt="figure 6-35" style="width:90%"/>
 </figure>
 </section>
@@ -1798,7 +1798,7 @@ Figure <a href="#local-pvr-timer" class="figureRef">6-40</a> shows the simple ca
 <figcaption>Figure #-####: Call flow for local PVR function with accurate recording based on in band signalling</figcaption>
 <img src="images/local-pvr-accurate.png" alt="figure 6-41" style="width:90%"/>
 </figure>
-<p>First, the user sets up a scheduled content recording. This is done as in the basic case shown in section <a href="#s6-10-2-1" class="sectionRef">6.10.2.1</a>, except that in addition to setting up the timer, the OITF also stores an identifier for the content. In the case of the EIT-based scheme shown here, the identifier is a combination of the &ldquo;DVB triplet&rdquo; of &lt;original network ID, transport stream ID, service ID&gt;, and the event ID – together these form a unique identifier for the programme. </p>
+<p>First, the user sets up a scheduled content recording. This is done as in the basic case shown in section <a href="#s6-10-2-1" class="sectionRef">6.10.2.1</a>, except that in addition to setting up the timer, the OITF also stores an identifier for the content. In the case of the EIT-based scheme shown here, the identifier is a combination of the &ldquo;DVB triplet&rdquo; of &lt;original network ID, transport stream ID, service ID&gt;, and the event ID &mdash; together these form a unique identifier for the programme. </p>
 <p>At a later time, the OITF performs the recording.</p>
 <table class="sequence">
 <tr><td colspan="2"><p class="indent">The OITF's internal timer triggers at the appropriate time. This should be some time in advance of the expected start time of the programme, in case the programme runs early, or the OITF's internal clock is not accurate.</p></td></tr>
@@ -1934,7 +1934,7 @@ Figure <a href="#local-pvr-timer" class="figureRef">6-40</a> shows the simple ca
 <p>The asynchronous recording order method is applicable in the following case:</p><ul>
 <li><b>Minimal feedback of the recording process is required.</b> The IPTV Control only maintains the required state information of the recording process (e.g. recording order placed, recording started, recording done). This approach is appropriate in case the CDN is not owned by the IPTV Service Provider but owned by a third party.</ul>
 </section>
-<section id="s6-10-3-3"><h4>OITF-initiated nPVR Recording – Synchronous Method</h4>
+<section id="s6-10-3-3"><h4>OITF-initiated nPVR Recording &mdash; Synchronous Method</h4>
 <p>Based on the EPG, the user decides to set-up the recording of a program (immediate or scheduled). The recording is performed on Network Storage, under the control of the IPTV Service Provider.</p>
 <p>Figure <a href="#network-pvr-synchronous" class="figureRef">6-45</a> shows a call flow for the synchronous method of setting up an nPVR recording session.</p>
 <figure id="network-pvr-synchronous">
@@ -1990,7 +1990,7 @@ Figure <a href="#local-pvr-timer" class="figureRef">6-40</a> shows the simple ca
 <tr><td colspan="2"><p class="indent">At this point, in order to play the recorded content, a Content-on-Demand session set-up needs to be initiated by the OITF.</p></td></tr>
 </table>
 </section>
-<section><h4>OITF-initiated nPVR Recording – Asynchronous method</h4>
+<section><h4>OITF-initiated nPVR Recording &mdash; Asynchronous method</h4>
 <p>Based on the EPG, the user decides to set-up the recording of a program (immediate or scheduled). The recording is performed in the CDN, under the control of the IPTV Service Provider.</p>
 <p>Figure <a href="#network-pvr-asynchronous" class="figureRef">6-46</a> shows a call flow for the asynchronous method of setting up a local nPVR recording session.</p>
 <figure id="network-pvr-asynchronous">
@@ -2751,13 +2751,13 @@ Figure <a href="#session-xfer-repl-high-level" class="figureRef">6-78</a> shows 
 <section><h4>Push Procedure for Session Transfer and Session Replication</h4>
 <p>The call flows in Figure <a href="#session-xfer-repl-push-part1" class="figureRef">6-79</a> and Figure <a href="#session-xfer-repl-push-part2" class="figureRef">6-80</a> depict a more detailed procedure for session transfer/replication. </p>
 <figure id="session-xfer-repl-push-part1">
-<figcaption>Figure #-####: Detailed Push procedure for session transfer/replication – Part 1</figcaption>
+<figcaption>Figure #-####: Detailed Push procedure for session transfer/replication &mdash; Part 1</figcaption>
 <img src="images/session-xfer-repl-push-part1.png" alt="figure 6-79" style="width:90%"/>
 </figure>
 <p>The following is a brief description of the steps in the call flow: </p>
 <table class="sequence">
 <tr><td>1.</td><td>The user has established a CoD session on OITF1, and decides to transfer or replicate the session to another device. The user selects the push option on OITF1. In order to select a target device, the 3GPP procedure for dynamic discovery of devices is performed to allow the user to discover all devices registered to all users that are under the same subscription.</td></tr>
-<tr><td>2.</td><td>Once a device is selected by the end user, OITF1 issues an HTTP POST to the IG for a session transfer or replication. The request includes the identity of the session to be transferred (Session Transfer Identifier – STI), the identity of the target device the session is transferred to, and an indicator to show if session transfer or replication is requested. OITF1 may include the offset as well in the request. Additional pertinent parameters are also included in the request. </td></tr>
+<tr><td>2.</td><td>Once a device is selected by the end user, OITF1 issues an HTTP POST to the IG for a session transfer or replication. The request includes the identity of the session to be transferred (Session Transfer Identifier &mdash; STI), the identity of the target device the session is transferred to, and an indicator to show if session transfer or replication is requested. OITF1 may include the offset as well in the request. Additional pertinent parameters are also included in the request. </td></tr>
 <tr><td>3.</td><td>The IG then issues a SIP REFER request to the target device via the ASM and the IPTV Control FE. The REFER request includes the STI, the content identifier, the target device identity and other pertinent parameters. The position being viewed on the device may be included in the body of the SIP REFER.</td></tr>
 <tr><td>4.</td><td>OITF1 issues an HTTP POST pending request in anticipation of the response.</td></tr>
 <tr><td>5.</td><td>The IPTV Control FE proxies the SIP REFER back to the IG associated with the target device.</td></tr>
@@ -2781,7 +2781,7 @@ Figure <a href="#session-xfer-repl-high-level" class="figureRef">6-78</a> shows 
 <tr><td>20.</td><td>The CC returns a 200 OK to OITF1.</td></tr>
 </table>
 <figure id="session-xfer-repl-push-part2">
-<figcaption>Figure #-####: Detailed Push procedure for session transfer/replication – Part 2</figcaption>
+<figcaption>Figure #-####: Detailed Push procedure for session transfer/replication &mdash; Part 2</figcaption>
 <img src="images/session-xfer-repl-push-part2.png" alt="figure 6-80" style="width:90%"/>
 </figure>
 <table class="sequence">
@@ -2851,14 +2851,14 @@ Figure <a href="#session-xfer-repl-high-level" class="figureRef">6-78</a> shows 
 <section><h4>Pull Procedure for Session Transfer and Session Replication</h4>
 <p>The call flows in Figure <a href="#session-xfer-repl-pull-part1" class="figureRef">6-83</a> and Figure <a href="#session-xfer-repl-pull-part2" class="figureRef">6-84</a> depict a more detailed procedure for session transfer/replication for the pull method.</p> 
 <figure id="session-xfer-repl-pull-part1">
-<figcaption>Figure #-####: Detailed Pull procedure for session transfer/replication – Part 1</figcaption>
+<figcaption>Figure #-####: Detailed Pull procedure for session transfer/replication &mdash; Part 1</figcaption>
 <img src="images/session-xfer-repl-pull-part1.png" alt="figure 6-83" style="width:90%"/>
 </figure>
 <p>The following is a brief description of the steps in the call flow:</p>
 <table class="sequence">
 <tr><td>1.</td><td>The user has established a CoD session on OITF1, and decides to transfer or replicate the session to another device, OITF2. The user selects the pull option. </td></tr>
 <tr><td>2.</td><td>The user registers on OITF2, and then starts the pull procedure. Subsequently, the 3GPP procedure for dynamic discovery of active sessions on other devices where the user, or other users under the same IPTV subscription, are registered and active in a session, is performed to allow the user to select a session.</td></tr>
-<tr><td>3.</td><td>Once a session is selected by the user, OITF2 issues an HTTP POST to the IG for a session transfer or replication. The request includes the identity of the session to be transferred (Session Transfer Identifier – STI) and an indicator to show if session transfer or replication is requested. Additional pertinent parameters are also included in the request. </td></tr>
+<tr><td>3.</td><td>Once a session is selected by the user, OITF2 issues an HTTP POST to the IG for a session transfer or replication. The request includes the identity of the session to be transferred (Session Transfer Identifier &mdash; STI) and an indicator to show if session transfer or replication is requested. Additional pertinent parameters are also included in the request. </td></tr>
 <tr><td colspan="2"><p class="indent">If the request is for a session transfer, the IG verifies if the original and the target OITF belong to the same household and are behind the same IG. If that is the case, then the IG executes the procedure defined in section <a href="#s6-17-3-1" class="sectionRef">6.17.3.1</a> prior to executing the next step in this procedure. If the request is for session replication, the IG does not perform any procedure, and moves to the next step in this procedure.</p></td></tr>
 <tr><td colspan="2"><p class="indent">In the call flow in Figure <a href="#session-xfer-repl-pull-part1" class="figureRef">6-83</a>, it is assumed that the two OITFs do not belong to the same household, even though only one IG is only shown in the figure for simplicity.</p></td></tr>
 <tr><td>4.</td><td>OITF1 issues an HTTP pending request</td></tr>
@@ -2884,7 +2884,7 @@ Figure <a href="#session-xfer-repl-high-level" class="figureRef">6-78</a> shows 
 </table>
 <p>Following that, OITF2 receives the same content as that received on OITF1.</p>
 <figure id="session-xfer-repl-pull-part2">
-<figcaption>Figure #-####: Detailed Pull procedure for session transfer/replication – Part 2</figcaption>
+<figcaption>Figure #-####: Detailed Pull procedure for session transfer/replication &mdash; Part 2</figcaption>
 <img src="images/session-xfer-repl-pull-part2.png" alt="figure 6-84" style="width:90%"/>
 </figure>
 </section>
@@ -3198,7 +3198,7 @@ The following diagram shows Start-ver and Catch-up specific flows over the refer
 <li>the end user (e.g. status of the end user);
 <li>the IPTV service activated (e.g. Scheduled Content, CoD, PVR);
 <li>the IPTV program watched (e.g. channel currently accessed, program currently watched, content currently accessed);
-<li>other information the ITF can manage (e.g. in case of a hybrid ITF  - IPTV and DTT capable - channel/program accessed/watched on DTT; in case of a combined deployment – unmanaged and managed models are both enabled – channel/program accessed via an unmanaged network).</ul>
+<li>other information the ITF can manage (e.g. in case of a hybrid ITF  - IPTV and DTT capable - channel/program accessed/watched on DTT; in case of a combined deployment &mdash; unmanaged and managed models are both enabled &mdash; channel/program accessed via an unmanaged network).</ul>
 <p>It is the user's decision (through the use of privacy preferences) as to which specific IPTV attributes to include in the Presence information that is made available to other users. </p>
 <p>Figure <a href="#sending-presence-to-iptv-control" class="figureRef">7-7</a> and Figure <a href="#sending-presence-to-presence-enabler" class="figureRef">7-8</a> show two examples of the use of the Presence service with IPTV.</p>
 <p>Figure <a href="#sending-presence-to-iptv-control" class="figureRef">7-7</a> shows the mechanism proposed in order to allow an ITF to communicate Presence information. </p>
@@ -3217,7 +3217,7 @@ The following diagram shows Start-ver and Catch-up specific flows over the refer
 <p>The Communication Service Presence allows multiple users of an ITF to communicate their presence information inside an IPTV Service network. A user (A) can subscribe to the presence information of other users (B,C ...) so that  when one of these users changes his Presence status  user (A) will receive a notification of this change.</p>
 <p>The OMA (Open Mobile Alliance) has specified an enabler for Presence allowing the management of the collection and the controlled dissemination of presence information over a SIP/IP network. The enabler is based on the IETF SIP protocol (RFC 3261) [[!Ref-21]] with SIMPLE and 3GPP extensions. The procedure described in this section is aligned with the procedures specified in OMA &ldquo;Presence SIMPLE Specification&rdquo; (OMA-ERP-Presence_SIMPLE-V1_0_1-20061128-A) [[!Ref-24]]</p>
 
-<section id="s7-4-2-1"><h4>Presence session set-up – Presence template produced by the IG</h4>
+<section id="s7-4-2-1"><h4>Presence session set-up &mdash; Presence template produced by the IG</h4>
 <figure id="presence-session-setup">
 <figcaption>Figure #-####: Call flow for Presence session setup</figcaption>
 <img src="images/presence-session-setup.png" alt="figure 7-9" style="width:90%"/>
@@ -3278,8 +3278,8 @@ The following diagram shows Start-ver and Catch-up specific flows over the refer
 </section>
 <section><h3>Scheduled Content and fast update rate events case</h3>
 <p>When channel switching during a Scheduled Content service, users will likely be able to zap between a set of channels within the same &ldquo;bouquet&rdquo; (e.g. channel with the same bandwidth requirements) without further signalling related to the Service Setup Session (from ITF to IPTV Control). In this case, sending presence information each time the user changes channel may lead to a heavy load on the network (e.g. in case of zapping). In order to reduce and control possible overload caused by frequent channel hopping, it shall be possible to define some mechanisms that is able to limit the number of publications of channel change. In particular, two instances of mechanisms can be foreseen:</p><ul>
-<li>Client side – configurable delay: the ITF client should not inform the IPTV Control about several consecutive channel changes within the delay period. When the user stops zapping, information about the watched channel should be sent to the IPTV Solution. The delay time that is used may be configurable.
-<li>Server side – rate control: The IPTV Solution should control the rate of information sent by ITF client so it can decrease the frequency of publication of change channel.
+<li>Client side &mdash; configurable delay: the ITF client should not inform the IPTV Control about several consecutive channel changes within the delay period. When the user stops zapping, information about the watched channel should be sent to the IPTV Solution. The delay time that is used may be configurable.
+<li>Server side &mdash; rate control: The IPTV Solution should control the rate of information sent by ITF client so it can decrease the frequency of publication of change channel.
 </ul>
 <p>Figure <a href="#sc-channel-switch-client-control" class="figureRef">7-11</a> and Figure <a href="#sc-channel-switch-server-control" class="figureRef">7-12</a> provide examples of a signalling flow for channel switching, for the case of Client side and Server side load control, respectively. </p>
 
@@ -3639,7 +3639,7 @@ This section is vacant. An informative description of the remote access feature 
 <li>CDNC's organisation (Figure <a href="#CDN-organization-examples" class="figureRef">C-2</a> shows a few examples of such an organization)
 <li>Search and discovery algorithms (e.g., peer-to-peer algorithms, theme based, length based, etc.)
 </ul></ul>
-<p class="notebox"><b>NOTE</b> – it is required to have a mechanism to avoid a loop between CDNC, in order to implement this option</p>
+<p class="notebox"><b>NOTE</b> &mdash; it is required to have a mechanism to avoid a loop between CDNC, in order to implement this option</p>
 <p>In both cases the choice of the target CDNC depends on a set of parameters generated by the IPTV controller such as:</p><ul>
 <li>Applicable video files 
 <li>Access Network information
@@ -3808,7 +3808,7 @@ In particular at least 4 cases can be considered: </p><ol>
 <img src="images/distribution-of-rac-functions.png" alt="figure E-2" style="width:90%"/>
 </figure>
 </section>
-<section><h2>ITF – Transport and Multicast Delivery call flow</h2>
+<section><h2>ITF &mdash; Transport and Multicast Delivery call flow</h2>
 <p>In this section, a detailed information flow is presented, showing the interaction between ITF, Transport and Multicast Delivery and Admission Control functional entities.</p>
 <p>The assumptions behind these scenarios are:</p><ul>
 <li>The content to be accessed is not present in the Transport Access Node, but only in the Transport Remote Node, and the authorized bandwidth in the last mile will be exceeded by the addition of the channel to be viewed  (case 4 considered in the previous section);

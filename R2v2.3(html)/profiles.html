@@ -273,7 +273,7 @@
 <p>An OITF that is compliant with the OIP is referred to as an OIP-OITF.</p>
 <p>In the Release 2 IPTV Solution specification, the terms &ldquo;Unmanaged Network&rdquo; and &ldquo;Open Internet&rdquo; are used interchangeably, to refer to the ability to access any Service Provider using any Access Network Provider without any quality of service guarantees.</p>
 <p>Open Internet IPTV Services are accessed via the Internet, without QoS guarantees. They may be accessed via a service platform (e.g., a portal).</p>
-<p>The OIP-OITF enables access to compliant services that do not provide QoS guarantees over at least one network segment between the IPTV Service Provider and the OITF, independently from their ISP – i.e. &ldquo;over the top&rdquo; (OTT) mode.</p>
+<p>The OIP-OITF enables access to compliant services that do not provide QoS guarantees over at least one network segment between the IPTV Service Provider and the OITF, independently from their ISP &mdash; i.e. &ldquo;over the top&rdquo; (OTT) mode.</p>
 <p>The OIP is a sub-set of the BMP and of the EMP in terms of the features included.</p>
 <p>The following sub-sections summarise the features of the OIP.</p>
 <section id="oip-iptv-services"><h2>IPTV Services</h2>
@@ -335,7 +335,7 @@
 <p>The BMP is a super-set of the OIP, and a sub-set of the EMP in terms of the features included. All features that are MANDATORY in the OIP are also MANDATORY in the BMP.</p>
 <p>The BMP-OITF extends the functions needed to provide the pure &ldquo;Over-The-Top&rdquo; (OTT) service support of the OIP with functions that make it able to access content delivery services with full QoS provision in a managed network environment. These functions are chosen in order to allow a BMP-OITF to be able to access the full range of IPTV content services, and act as a near-term intermediate step towards the full range of capabilities offered by the Enhanced Managed Profile (EMP), described in section <a href="#emp" class="sectionRef">7</a>.</p>
 <p>Thus, the BMP-OITF enables access to several kinds of IPTV Service:</p><ul>
-<li>Compliant services that do not provide QoS guarantees over at least one network segment between the IPTV Service Provider and the OITF, independently from their ISP – i.e. &ldquo;over the top&rdquo; (OTT) mode;
+<li>Compliant services that do not provide QoS guarantees over at least one network segment between the IPTV Service Provider and the OITF, independently from their ISP &mdash; i.e. &ldquo;over the top&rdquo; (OTT) mode;
 <li>Services where the ISP is also an IPTV Service Provider that offers compliant services making use of network-side enhancements, including multicast and unicast content streaming with full QoS provision.</ul>
 <p>The following sub-sections summarise the features of the BMP.</p>
 <section id="bmp-iptv-services"><h2>IPTV Services</h2>
@@ -585,7 +585,7 @@ Table <a href="#t2" class="tableRef">2</a> lists the status of each Release 2 IP
 <tr><th>Feature</th><th>Reference in<br />Volume 3, unless<br />specified otherwise</th><th>Status in OIP</th><th>Status in BMP</th><th>Status in EMP</th></tr>
 <tr><td><b>DVB SD&amp;S</b></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Service provider discovery</td><td>5.2.13.7 of [[!TS102034]]</td><td>O</td><td>M</td><td>M</td></tr>
-<tr><td>Broadcast discovery – TS Optional SI</td><td>5.2.13.2 of [[!TS102034]]</td><td>O</td><td>M</td><td>M</td></tr>
+<tr><td>Broadcast discovery &mdash; TS Optional SI</td><td>5.2.13.2 of [[!TS102034]]</td><td>O</td><td>M</td><td>M</td></tr>
 <tr><td>ApplicationDiscovery record</td><td>5.4.5 of [[!TS102809]]</td><td>O</td><td>M</td><td>M</td></tr>
 <tr><td>Package discovery</td><td>5.2.13.4 of [[!TS102034]]</td><td>O</td><td>M</td><td>M</td></tr>
 <tr><td>BCG discovery</td><td>5.2.13.1 of [[!TS102034]]</td><td>O</td><td>O</td><td>M</td></tr>
@@ -665,8 +665,8 @@ Table <a href="#t2" class="tableRef">2</a> lists the status of each Release 2 IP
 <tr><td>&nbsp;&nbsp;Presence</td><td><a href="volume4.html#s5-5-4" class="extRef">5.5.4</a>, <a href="volume4.html#s6-2-4-3" class="extRef">6.2.4.3</a></td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td><td>M</td></tr>
 <tr><td>&nbsp;&nbsp;A/V Telephony</td><td><a href="volume4.html#s6-2-4-6" class="extRef">6.2.4.6</a>, <a href="volume4.html#s9-6" class="extRef">9.6</a></td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td><td>O</td></tr>
 <tr><td>Content Sharing</td><td><a href="volume4.html#s5-5-5" class="extRef">5.5.5</a>, <a href="volume4.html#s6-2-4-5" class="extRef">6.2.4.5</a></td><td>O</td><td>O</td><td>O</td></tr>
-<tr><td>HNI-IGI – HTTP option</td><td><a href="volume4.html#s5-6-1" class="extRef">5.6.1</a></td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td><td>M<sup>(1)</sup></td></tr>
-<tr><td>HNI-IGI – SIP option</td><td><a href="volume4.html#s6-2" class="extRef">6.2</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td>HNI-IGI &mdash; HTTP option</td><td><a href="volume4.html#s5-6-1" class="extRef">5.6.1</a></td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td><td>M<sup>(1)</sup></td></tr>
+<tr><td>HNI-IGI &mdash; SIP option</td><td><a href="volume4.html#s6-2" class="extRef">6.2</a></td><td>O</td><td>O</td><td>M</td></tr>
 <tr><td>RTSP profile without SIP session management</td><td><a href="volume4.html#s7-1-1-1" class="extRef">7.1.1.1</a></td><td>O</td><td>M</td><td>M</td></tr>
 <tr><td>RTSP profile with SIP session management</td><td><a href="volume4.html#s7-1-1-2" class="extRef">7.1.1.2</a></td><td>O</td><td>O</td><td>M</td></tr>
 <tr><td>RTSP/RTCP Monitoring</td><td><a href="volume4.html#s7-1-1-2" class="extRef">7.1.1.2</a>, <a href="volume4.html#s7-2-1" class="extRef">7.2.1</a></td><td>O</td><td>O</td><td>O</td></tr>
@@ -748,7 +748,7 @@ Table <a href="#t2" class="tableRef">2</a> lists the status of each Release 2 IP
 <tr><td>&nbsp;&nbsp;The TunerCollection class, the Tuner class, the SignalInfo class, the LNBInfo class</td><td><a href="volume5.html#tunercollection-class" class="extRef">7.3.8</a>, <a href="volume5.html#tuner-class" class="extRef">7.3.9</a>, <a href="volume5.html#signalinfo-class" class="extRef">7.3.10</a>, <a href="volume5.html#lnbinfo-class" class="extRef">7.3.11</a></td><td>O</td><td>O</td><td>O</td></tr>
 <tr><td>&nbsp;&nbsp;The StartupInformation class</td><td><a href="volume5.html#startupinformation-class" class="extRef">7.3.12</a></td><td>O</td><td>O</td><td>O</td></tr>
 <tr><td><b>Content Download APIs</b></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Basic content download – the application/oipfDownloadTrigger embedded object</td><td><a href="volume5.html#application-oipfdownloadtrigger" class="extRef">7.4.1</a></td><td>M-D</td><td>M-D</td><td>M-D</td></tr>
+<tr><td>Basic content download &mdash; the application/oipfDownloadTrigger embedded object</td><td><a href="volume5.html#application-oipfdownloadtrigger" class="extRef">7.4.1</a></td><td>M-D</td><td>M-D</td><td>M-D</td></tr>
 <tr><td>Extensions to application/oipfDownloadTrigger</td><td><a href="volume5.html#extensions-to-application-oipfdownloadtrigger" class="extRef">7.4.2</a></td><td>O-D<sup>(3)</sup></td><td>O-D<sup>(3)</sup></td><td>M-D</td></tr>
 <tr><td>The application/oipfDownloadManager embedded object, The Download class, The DownloadCollection class</td><td><a href="volume5.html#application-oipfdownloadmanager" class="extRef">7.4.3</a>, <a href="volume5.html#download-class" class="extRef">7.4.4</a>, <a href="volume5.html#downloadcollection-class" class="extRef">7.4.5</a></td><td>O-D</td><td>O-D</td><td>O-D</td></tr>
 <tr><td>The DRMControlInformation class, The DRMControlInfoCollection class</td><td><a href="volume5.html#drmcontrolinformation-class" class="extRef">7.4.6, <a href="volume5.html#drmcontrolinfocollection-class" class="extRef">7.4.7</a></td><td>O-D</td><td>O-D</td><td>O-D</td></tr>
@@ -765,8 +765,8 @@ Table <a href="#t2" class="tableRef">2</a> lists the status of each Release 2 IP
 <tr><td>application/oipfParentalControlManager embedded object</td><td><a href="volume5.html#application-oipfparentalcontrolmanager" class="extRef">7.9.1</a>, <a href="volume5.html#parentalratingscheme-class" class="extRef">7.9.2</a>, <a href="volume5.html#parentalratingschemecollection-class" class="extRef">7.9.3</a></td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td></tr>
 <tr><td>ParentalRating and ParentalRatingCollection</td><td><a href="volume5.html#parentalrating-class" class="extRef">7.9.4</a>, <a href="volume5.html#parentalratingcollection-class" class="extRef">7.9.5</a></td><td>O-H<sup>(5)</sup></td><td>O<sup>(5)</sup></td><td>O<sup>(5)</sup></td></tr>
 <tr><td><b>Scheduled Recording APIs</b></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Basic PVR support – the application/oipfRecordingScheduler embedded object</td><td><a href="volume5.html#application-oipfrecordingscheduler" class="extRef">7.10.1</a>, <a href="volume5.html#scheduledrecording-class" class="extRef">7.10.2</a>, <a href="volume5.html#scheduledrecordingcollection-class" class="extRef">7.10.3</a></td><td>O-P</td><td>M-P</td><td>M-P</td></tr>
-<tr><td>Advanced PVR support – Extension to application/oipfRecordingScheduler for control of recordings</td><td><a href="volume5.html#application-oipfrecordingscheduler-control-extension" class="extRef">7.10.4</a>, <a href="volume5.html#recording-class" class="extRef">7.10.5</a>, <a href="volume5.html#recordingcollection-class" class="extRef">7.10.6</a>, <a href="volume5.html#pvrevent-class" class="extRef">7.10.7</a></td><td>O-P<sup>(6)</sup></td><td>M-P<sup>(6)</sup></td><td>M-P<sup>(6)</sup></td></tr>
+<tr><td>Basic PVR support &mdash; the application/oipfRecordingScheduler embedded object</td><td><a href="volume5.html#application-oipfrecordingscheduler" class="extRef">7.10.1</a>, <a href="volume5.html#scheduledrecording-class" class="extRef">7.10.2</a>, <a href="volume5.html#scheduledrecordingcollection-class" class="extRef">7.10.3</a></td><td>O-P</td><td>M-P</td><td>M-P</td></tr>
+<tr><td>Advanced PVR support &mdash; Extension to application/oipfRecordingScheduler for control of recordings</td><td><a href="volume5.html#application-oipfrecordingscheduler-control-extension" class="extRef">7.10.4</a>, <a href="volume5.html#recording-class" class="extRef">7.10.5</a>, <a href="volume5.html#recordingcollection-class" class="extRef">7.10.6</a>, <a href="volume5.html#pvrevent-class" class="extRef">7.10.7</a></td><td>O-P<sup>(6)</sup></td><td>M-P<sup>(6)</sup></td><td>M-P<sup>(6)</sup></td></tr>
 <tr><td>OITF-centric Bookmark and BookmarkCollection</td><td><a href="volume5.html#bookmark-class" class="extRef">7.10.8, <a href="volume5.html#bookmarkcollection-class" class="extRef">7.10.9</a></td><td>O</td><td>O</td><td>O</td></tr>
 <tr><td><b>Remote management APIs</b></td><td><a href="volume5.html#remote-management-apis" class="extRef">7.11</a></td><td>M<sup>(16)</sup></td><td>M</td><td>M</td></tr>
 <tr><td><b>Metadata search APIs</b></td><td><a href="volume5.html#metadata-apis" class="extRef">7.12</a></td><td>O</td><td>O</td><td>M<sup>(7),(8)</sup></td></tr>
@@ -830,7 +830,7 @@ Table <a href="#t2" class="tableRef">2</a> lists the status of each Release 2 IP
 </table>
 <p>Notes</p>
 <table class="note-table">
-<tr><td>1.</td><td>Read-only access to the following properties SHALL be supported – preferredAudioLanguage, preferredSubtitleLanguage and countryID. Read-write access to these properties, all the other properties and all methods are OPTIONAL.</td></tr>
+<tr><td>1.</td><td>Read-only access to the following properties SHALL be supported &mdash; preferredAudioLanguage, preferredSubtitleLanguage and countryID. Read-write access to these properties, all the other properties and all methods are OPTIONAL.</td></tr>
 <tr><td>2.</td><td>The deviceID property SHALL be supported. Other properties and methods are OPTIONAL.</td></tr>
 <tr><td>3.</td><td>Only applicable where both BCG and download are supported.</td></tr>
 <tr><td>4.</td><td>API mandatory but fails where protocol is not supported by the OIP-OITF or BMP-OITF.</td></tr>
@@ -877,7 +877,7 @@ Table <a href="#t2" class="tableRef">2</a> lists the status of each Release 2 IP
 <tr><td>&nbsp;&nbsp;Web based authentication</td><td><a href="volume7.html#web-based-authentication" class="extRef">5.4.3</a></td><td>M</td><td>M</td><td>M</td></tr>
 <tr><td>&nbsp;&nbsp;HTTP Digest Authentication using IMS Gateway</td><td><a href="volume7.html#http-digest-authentication-using-ims-gateway" class="extRef">5.4.4</a></td><td>O</td><td>O</td><td>M</td></tr>
 <tr><td>&nbsp;&nbsp;GBA authentication using IMS Gateway</td><td><a href="volume7.html#gba-authentication-using-ims-gateway" class="extRef">5.4.5</a></td><td>O</td><td>O</td><td>M</td></tr>
-<tr><td><b>IMS registration – OITF</b></td><td><a href="volume7.html#ims-registration---oitf" class="extRef">5.5</a></td><td>O</td><td>O</td><td>M</td></tr>
+<tr><td><b>IMS registration &mdash; OITF</b></td><td><a href="volume7.html#ims-registration---oitf" class="extRef">5.5</a></td><td>O</td><td>O</td><td>M</td></tr>
 <tr><td><b>Session management</b></td><td><a href="volume7.html#session-management-and-sso" class="extRef">5.6</a></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;Cookie session</td><td><a href="volume7.html#cookie-session" class="extRef">5.6.1</a></td><td>M</td><td>M</td><td>M</td></tr>
 <tr><td>&nbsp;&nbsp;HTTP authentication session</td><td><a href="volume7.html#http-authentication-session-1" class="extRef">5.6.3</a></td><td>M</td><td>M</td><td>M</td></tr>

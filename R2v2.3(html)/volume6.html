@@ -108,16 +108,16 @@
 <p>This Technical Specification (TS) has been produced by the Open IPTV Forum.</p>
 <p>This specification provides multiple options for some features. The Open IPTV Forum Profiles specification complements the Release 2 specifications by defining the Open IPTV Forum implementation and deployment profiles. This document is Volume 3 in the 10 Volume set of specifications that define the Open IPTV Forum Release 2 Solution.</p>
 <p>The other Volumes in the set are: </p><ul>
-<li>Volume 1 – Overview [[.OIPF_OVIEW2]],
-<li>Volume 2 – Media Formats [[.OIPF_MEDIA2]],
-<li>Volume 2a – HTTP Adaptive Streaming [[.OIPF_HAS2]],
-<li>Volume 3 – Content Metadata [[.OIPF_META2]],
-<li>Volume 4 – Protocols [[.OIPF_PROT2]],
-<li>Volume 4a – Examples of Protocol Sequences [[.OIPF_PROT_EX2]],
-<li>Volume 5 – Declarative Application Environment [[.OIPF_DAE2]],
-<li>Volume 5a – Web Standards TV Profile [[.OIPF_WSTVP2]], 
-<li>Volume 6 – Procedural Application Environment (the present volume), and
-<li>Volume 7 – Authentication, Content Protection and Service Protection [[.OIPF_CSP2]].
+<li>Volume 1 &mdash; Overview [[.OIPF_OVIEW2]],
+<li>Volume 2 &mdash; Media Formats [[.OIPF_MEDIA2]],
+<li>Volume 2a &mdash; HTTP Adaptive Streaming [[.OIPF_HAS2]],
+<li>Volume 3 &mdash; Content Metadata [[.OIPF_META2]],
+<li>Volume 4 &mdash; Protocols [[.OIPF_PROT2]],
+<li>Volume 4a &mdash; Examples of Protocol Sequences [[.OIPF_PROT_EX2]],
+<li>Volume 5 &mdash; Declarative Application Environment [[.OIPF_DAE2]],
+<li>Volume 5a &mdash; Web Standards TV Profile [[.OIPF_WSTVP2]], 
+<li>Volume 6 &mdash; Procedural Application Environment (the present volume), and
+<li>Volume 7 &mdash; Authentication, Content Protection and Service Protection [[.OIPF_CSP2]].
 </ul>
 <p>This volume defines the Procedural Application Environment (PAE) available for Release 2 Open IPTV compliant services and devices. Like other specifications such as OCAP, ACAP and BluRay, which are GEM terminal specifications, this volume follows the structure of the [[!GEM]] specification. </p><ul>
 <li>Chapter <a href="#scope" class="sectionRef"></a> describes the scope of the procedural application environment.
@@ -238,7 +238,7 @@
 <li>App Mgmt APIs: These enable one application to obtain lists of other applications and start or stop other them.
 <li>App. Lifecycle APIs: These are the first APIs to be called by the implementation when starting an application.
 <li>TV specific data access APIs: These provide access to data in ways which are specific to TV environments
-<li>Data access APIs: These provide generic access to data – files, sockets, streams, etc.
+<li>Data access APIs: These provide generic access to data &mdash; files, sockets, streams, etc.
 <li>Metadata format specific APIs: These provide access to the details of metadata in a format dependent way.
 <li>Metadata APIs: These provide access to metadata and are independent of any specific metadata format.
 <li>TV extensions: These provide control over A/V media in ways which are specific to TV environments
@@ -318,7 +318,7 @@
 <p>When the application signalling for an application includes one or more FLUTE transport protocol descriptors, (see clause &ldquo;Extensions to XML AIT&rdquo;), the following SHALL apply;</p><ul>
 <li>The implementation SHALL attempt to connect to each specified FLUTE session or sessions (unless already connected for another application)
 <li>Requests to load files SHALL be checked against the files available through FLUTE before fetching them from a unicast network
-<li>When a FLUTE session is not used by any running applications, the session SHALL be closed. It is implementation dependent whether this happens immediately or at some later time when implementation resources used by the closed session MAY be needed for other purposes. Closed FLUTE sessions MAY be subsequently re-used however the implementation SHALL ensure the contents are current – as if a new session had been created.
+<li>When a FLUTE session is not used by any running applications, the session SHALL be closed. It is implementation dependent whether this happens immediately or at some later time when implementation resources used by the closed session MAY be needed for other purposes. Closed FLUTE sessions MAY be subsequently re-used however the implementation SHALL ensure the contents are current &mdash; as if a new session had been created.
 </ul>
 </section>
 <section id="iptv-protocols"><h2>IPTV Protocols</h2>
@@ -438,7 +438,7 @@ The present document only requires application signalling that is in an XML form
 <tr><td>AR.3.3 ApplicationIdentifier</td><td>2 numbers</td><td>Required</td></tr>
 <tr><td>AR.3.4 ExternalApplicationIdentifier</td><td>Already running applications not signalled in this service</td><td>This SHOULD NOT be used.</td></tr>
 <tr><td>AR.3.5 ApplicationDescriptor</td><td>Numerous application attributes</td><td>Required</td></tr>
-<tr><td>AR.3.6 VisibilityDescriptor</td><td>Attribute – indicate if application can be visible to users and/or other applications</td><td>Required</td></tr>
+<tr><td>AR.3.6 VisibilityDescriptor</td><td>Attribute &mdash; indicate if application can be visible to users and/or other applications</td><td>Required</td></tr>
 <tr><td>AR.3.7 IconDescriptor</td><td>Icon for application</td><td>The filename in the IconDescriptor SHALL either be a relative filename within the jar file carrying the application or SHALL be an HTTP URL.</td></tr>
 <tr><td>AR.3.8 AspectRatio</td><td>Preferred aspect ratio for applications</td><td>Required</td></tr>
 <tr><td>AR.3.9 MhpVersion</td><td>Specification version</td><td>As defined by GEM for the application version fields in clause 10.4.3 &ldquo;Content of the application description&rdquo;</td></tr>
@@ -527,7 +527,7 @@ The present document only requires application signalling that is in an XML form
 </section>
 </section>
 <section><h2>PVR APIs</h2>
-<p>NOTE: The basic APIs for PVR are included as a result of the reference to [[!DVR]] in clause <a href="#pvr" class="sectionRef"></a> – &ldquo;PVR&rdquo;.</p>
+<p>NOTE: The basic APIs for PVR are included as a result of the reference to [[!DVR]] in clause <a href="#pvr" class="sectionRef"></a> &mdash; &ldquo;PVR&rdquo;.</p>
 <p>This is the following packages;</p><ul>
 <li>the org.dvb.tvanytime.pvr package and sub-packages from [[!MHP-PVR]]
 <li>the org.oipf.pvr package defined in Annex <a href="#org.oipf.pvr-package" class="sectionRef"></a>
@@ -654,11 +654,11 @@ The present document only requires application signalling that is in an XML form
 <caption>Table ####: Applicability of GEM Specification Sections</caption>
 <tr><th rowspan=2>Area</th><th rowspan=2>GEM Specification Section</th><th rowspan=2 style="text-align:center;">GEM IPTV Target</th><th rowspan=2 style="text-align:center;">PAE Devices With Display</th><th colspan=2 style="text-align:center;">PAE Devices Without Display</th></tr><tr><th style="text-align:center;">Without Media Handling</th><th style="text-align:center;">With Media Handling</th></tr>
 <tr><td colspan=6>Static Formats</td></tr>
-<tr><td rowspan=6>Bitmap pictures</td><td>7.1.1.3, "PNG" and 15.1, "PNG – restrictions"</td><td>M</td><td>M</td><td>-</td><td>-</td></tr>
+<tr><td rowspan=6>Bitmap pictures</td><td>7.1.1.3, "PNG" and 15.1, "PNG &mdash; restrictions"</td><td>M</td><td>M</td><td>-</td><td>-</td></tr>
 <tr><td>7.1.1.3, "PNG" without restrictions</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>7.1.1.4, "GIF"</td><td>-</td><td>M<br />Required by PBP</td><td>-</td><td>-</td></tr>
 <tr><td>7.1.2, "MPEG-2 I-Frames"</td><td>O</td><td>SN</td><td>-</td><td>-</td></tr>
-<tr><td>7.1.1.2, "JPEG" + 15.3, "JPEG – restrictions"</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7.1.1.2, "JPEG" + 15.3, "JPEG &mdash; restrictions"</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>7.1.1.2, "JPEG" without restrictions</td><td>M</td><td>M</td><td>-</td><td>-</td></tr>
 <tr><td>Audio clips</td><td>7.1.4, "Monomedia format for audio clips"</td><td>M</td><td>M-FE</td><td>-</td><td>O-FE</td></tr>
 <tr><td>Video drips</td><td>7.1.3, "MPEG-2 Video "drips"</td><td>O</td><td>SN</td><td>-</td><td>-</td></tr>
@@ -741,7 +741,7 @@ The present document only requires application signalling that is in an XML form
 <tr><td>O</td><td>Optional feature</td></tr>
 <tr><td>SN</td><td>Feature SHOULD not be supported</td></tr>
 <tr><td>M</td><td>REQUIRED feature in the GEM terminal</td></tr>
-<tr><td>O-FE<br />M-FE</td><td>Mandatory feature – functional equivalent<br />Optional feature – functional equivalent</td></tr>
+<tr><td>O-FE<br />M-FE</td><td>Mandatory feature &mdash; functional equivalent<br />Optional feature &mdash; functional equivalent</td></tr>
 </table>
 
 
@@ -789,7 +789,7 @@ The present document only requires application signalling that is in an XML form
 <tr><td>[4]</td><td>ETSI EN 300 468, &ldquo;Digital Video Broadcasting (DVB); Specification for Service Information (SI) in DVB system&rdquo;</td></tr>
 <tr><td>[11]</td><td>ETSI TS 101 211 v1.9.1, &ldquo;Digital Video Broadcasting (DVB); Guidelines on implementation and usage of Service Information (SI)&rdquo;</td></tr>
 <tr><td>[80]</td><td>Tiresias: "The RNIB/DTG "Tiresias" font version 8.03".</td></tr>
-<tr><td>[115]</td><td>ISO/IEC 14496-18, &ldquo;Information Technology – Coding of audio-visual objects – Part 18: Font compression and streaming&rdquo;</td></tr>
+<tr><td>[115]</td><td>ISO/IEC 14496-18, &ldquo;Information Technology &mdash; Coding of audio-visual objects &mdash; Part 18: Font compression and streaming&rdquo;</td></tr>
 </table>
 </section>
 <section id="pvr">
@@ -845,7 +845,7 @@ The present document does not define mechanisms to associate timeshift buffers w
 </table>
 </section>
 <section id="visibility-of-recording-requests"><h2>Visibility of Recording Requests and Recordings between Applications and Service Providers</h2>
-<p>The [[!DVR]] specification requires users of that specification to define a mechanism to manage visibility of recording requests between applications from different organisations – referred to as &ldquo;RecordingRequest specific security attributes&rdquo;. The mechanism defined in this specification is the following;</p><ul>
+<p>The [[!DVR]] specification requires users of that specification to define a mechanism to manage visibility of recording requests between applications from different organisations &mdash; referred to as &ldquo;RecordingRequest specific security attributes&rdquo;. The mechanism defined in this specification is the following;</p><ul>
 <li>When a recording request is made, the application making the request has to specify which other applications can access that recording request and any resulting recordings as part of the RecordingRequest. Each of these is specified using an instance of the class RecordingAccessPermissions.
 <li>The &ldquo;RecordingRequest specific security attributes&rdquo; controlling visibility of a RecordingRequest instance are defined by the &ldquo;requestedRecording&rdquo; parameter regardless of the state of the recording request.
 <li>The &ldquo;RecordingRequest specific security attributes&rdquo; controlling visibility of a RecordedService are defined by the &ldquo;completedRecording&rdquo; parameter.
