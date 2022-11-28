@@ -180,9 +180,9 @@
 <h1>General considerations and conventions</h1>
 <section>
 <h2>Relation between DVB-GEM and PAE Definitions</h2>
-<p>The GEM/MHP notion of “Broadcast Application” SHOULD be interpreted as meaning applications that are bound to a specific scheduled content service or a content on demand item.</p>
+<p>The GEM/MHP notion of &ldquo;Broadcast Application&rdquo; SHOULD be interpreted as meaning applications that are bound to a specific scheduled content service or a content on demand item.</p>
 <p>Unbound applications are persistent applications that are not tied to any service.</p>
-<p>The GEM term “interaction channel” is the network connection channel of the OIPF architecture [[.OIPF_ARCH2]].</p>
+<p>The GEM term &ldquo;interaction channel&rdquo; is the network connection channel of the OIPF architecture [[.OIPF_ARCH2]].</p>
 <section id="dvb-gem-compliance">
 <h3>DVB-GEM Compliance</h3>
 <p>All mandatory requirements for the GEM IPTV target SHALL be supported by this document. </p>
@@ -218,7 +218,7 @@
 </section>
 <section>
 <h3>Functional Equivalents</h3>
-<p>The functional equivalents to GEM-IPTV are listed in table “Table: Functional equivalents”.</p>
+<p>The functional equivalents to GEM-IPTV are listed in table &ldquo;Table: Functional equivalents&rdquo;.</p>
 <p>The main concepts are as follows;</p><ul>
 <li>DVB Service Discovery and Selection and Broadband Content Guide are used for SI.
 <li>Applications are distributed in JAR files, using HTTP for unicast and FLUTE for multicast.<br />NOTE: FLUTE is conceptually different from DSMCC object carousel and cannot be considered a functional equivalent.
@@ -252,7 +252,7 @@
 </section>
 <section><h2>Deployment Options</h2>
 <p>The following deployment options were taken from <a href="architecture.html#s5-3-4-2" class="extRef">chapters 5.3.4.2</a> of [[.OIPF_ARCH2]] for reference purposes.</p>
-<section><h3>Combined IG-AG-OITF STB and OITF TV (“headed configuration”)</h3>
+<section><h3>Combined IG-AG-OITF STB and OITF TV (&ldquo;headed configuration&rdquo;)</h3>
 <figure><img src="images/PAE-Combined-IG-AG-OITF.png" alt="PAE-Combined-IG-AG-OITF.png"/></figure>
 <p>This deployment supports both managed and unmanaged services, with DAE and PAE applications, presented on an OITF TV and a legacy TV. The following devices are deployed:</p><ul>
 <li>A WAN Gateway.
@@ -261,7 +261,7 @@
 </ul>
 <p>Optionally, the IG-AG-OITF STB or the OITF TV may act as a DLNA DMS to make OIPF services available to DLNA devices. They may also act as a DLNA DMP to access content from other DLNA devices on the home network.</p>
 </section>
-<section><h3>Combined AG-IG with multiple OITFs (“headless configuration”)</h3>
+<section><h3>Combined AG-IG with multiple OITFs (&ldquo;headless configuration&rdquo;)</h3>
 <figure><img src="images/PAE-Combined-AG-IG.png" alt="PAE-Combined-AG-IG.png"/></figure>
 <p>This deployment supports both managed and unmanaged services, with DAE and PAE applications, presented on an OITF TV and a legacy TV. The following devices are deployed:</p><ul>
 <li>A WAN Gateway.
@@ -282,7 +282,7 @@
 </ul>
 <p>In this deployment, there are multiple IGs. Only one IG can be active in the residential network at any point in time. The ISIM application must always be in the AG-IG in this case.</p>
 </section>
-<section><h3>Combined OITF-AG TV and IG-WAN Gateway (“headed configuration”)</h3>
+<section><h3>Combined OITF-AG TV and IG-WAN Gateway (&ldquo;headed configuration&rdquo;)</h3>
 <figure><img src="images/PAE-Combined-AG-TV.png" alt="PAE-Combined-AG-TV.png"/></figure>
 <p>This deployment supports managed and unmanaged services, and DAE and PAE applications. The following devices are deployed:</p><ul>
 <li>Combined IG-WAN Gateway: A single physical device including an IG and WAN Gateway functionality.
@@ -292,7 +292,7 @@
 </section>
 </section>
 <section><h2>Remote UI Server (informative)</h2>
-<p>PAE applications MAY offer a CE-HTML remote UI to other devices. The <a href="#org.oipf.uiserver-package" class="apiRef">org.oipf.uiserver</a> package allows applications to register as providing a remote UI. When an application registers, it provides information about itself in the XML format defined by the [[!CEA-2014-A]] remote UI. The PAE implementation listens for UPnP search requests for the schema “urn:oipf-org:device:ag:1” as defined in [[.OIPF_PROT2]] <a href="volume4.html#s10-1-1-2" class="extRef">section 10.1.1.2</a>. When such a request is received, the implementation combines the remote UI information provided by all currently registered applications and returns it.</p>
+<p>PAE applications MAY offer a CE-HTML remote UI to other devices. The <a href="#org.oipf.uiserver-package" class="apiRef">org.oipf.uiserver</a> package allows applications to register as providing a remote UI. When an application registers, it provides information about itself in the XML format defined by the [[!CEA-2014-A]] remote UI. The PAE implementation listens for UPnP search requests for the schema &ldquo;urn:oipf-org:device:ag:1&rdquo; as defined in [[.OIPF_PROT2]] <a href="volume4.html#s10-1-1-2" class="extRef">section 10.1.1.2</a>. When such a request is received, the implementation combines the remote UI information provided by all currently registered applications and returns it.</p>
 </section>
 </section>
 <section id="protocols">
@@ -312,10 +312,10 @@
 </section>
 <section id="transport-protocols">
 <h2>Transport protocols for application loading over the interaction channel</h2>
-<p>The [[!GEM]] “File system implemented only via the interaction channel” SHOULD NOT be supported.</p>
+<p>The [[!GEM]] &ldquo;File system implemented only via the interaction channel&rdquo; SHOULD NOT be supported.</p>
 <p>Applications loading over the interaction channel SHALL be implemented using signed JAR-files as defined in [[!JAR]].</p>
 <p>The FLUTE protocol SHALL be supported as defined in [[.OIPF_PROT2]].</p>
-<p>When the application signalling for an application includes one or more FLUTE transport protocol descriptors, (see clause “Extensions to XML AIT”), the following SHALL apply;</p><ul>
+<p>When the application signalling for an application includes one or more FLUTE transport protocol descriptors, (see clause &ldquo;Extensions to XML AIT&rdquo;), the following SHALL apply;</p><ul>
 <li>The implementation SHALL attempt to connect to each specified FLUTE session or sessions (unless already connected for another application)
 <li>Requests to load files SHALL be checked against the files available through FLUTE before fetching them from a unicast network
 <li>When a FLUTE session is not used by any running applications, the session SHALL be closed. It is implementation dependent whether this happens immediately or at some later time when implementation resources used by the closed session MAY be needed for other purposes. Closed FLUTE sessions MAY be subsequently re-used however the implementation SHALL ensure the contents are current – as if a new session had been created.
@@ -352,7 +352,7 @@
 <li>JPEG support is required by [[!GEM]] and [[!PBP1.1]] with the precise details defined in [[!GEM]]
 <li>PNG support is required by [[!GEM]] and [[!PBP1.1]] with the precise details defined in [[!GEM]]
 <li>GIF support is required by [[!PBP1.1]]
-The optional MPEG-2 I-frames and video “drips” in [[!GEM]] SHALL NOT be used.
+The optional MPEG-2 I-frames and video &ldquo;drips&rdquo; in [[!GEM]] SHALL NOT be used.
 </ul>
 </section>
 <section><h2>Streaming formats</h2>
@@ -369,7 +369,7 @@ The optional MPEG-2 I-frames and video “drips” in [[!GEM]] SHALL NOT be used.
 </section>
 <section><h2>Fonts</h2>
 <section><h3>Resident Fonts</h3>
-<p>The RNIB/DTG “Tiresias” font or equivalent SHALL be supported with the “Basic Euro Latin” character set defined in [[!MHP]]. </p>
+<p>The RNIB/DTG &ldquo;Tiresias&rdquo; font or equivalent SHALL be supported with the &ldquo;Basic Euro Latin&rdquo; character set defined in [[!MHP]]. </p>
 <p>Other resident fonts MAY be supported as required.</p>
 </section>
 <section><h3>Downloadable Fonts</h3>
@@ -386,15 +386,15 @@ The optional MPEG-2 I-frames and video “drips” in [[!GEM]] SHALL NOT be used.
 <h1>Application Model</h1>
 <section><h2>Introduction (informative)</h2>
 <p>The model for procedural applications is that defined by [[!GEM]]. Individual applications are grouped into services. Services may include streaming video and audio but this is not required. Services which contain only applications are permitted and indeed may be more common in this context. The organisation that packages a set of applications into a service is responsibility for ensuring that those applications behave reasonably when deployed together. Applications within a service carry a control code, one of which is AUTOSTART. Applications with this control code will be started automatically when the service is selected.</p>
-<p>An application gateway becomes aware of services either from the IPTV service discovery process (see [[.OIPF_ARCH2]]) or as a result of an API call made by an application. This signalling supports applications that run all the time (called “unbound applications” in [[!GEM]]), and applications which are bound to a scheduled content service. Practically this signalling does not support applications which are bound to a particular item of content in a scheduled content service. Applications are signalled by information placed in an ApplicationList which may be placed in the following 3 places;</p><ul>
-<li>In the SD&amp;S service provider discovery record for the service provider who owns or subsidises the device including the application gateway (called the “subsidising service provider” in [[!GEM]]). Any such applications, which are signalled as needing to be started automatically, will be started when the SD&amp;S is first processed. Such applications are unbound applications and may run all the time. See also section <a href="volume3.html#service-provider-related-application-signalling" class="extRef">3.2.3.1</a> of [[.OIPF_META2]].
+<p>An application gateway becomes aware of services either from the IPTV service discovery process (see [[.OIPF_ARCH2]]) or as a result of an API call made by an application. This signalling supports applications that run all the time (called &ldquo;unbound applications&rdquo; in [[!GEM]]), and applications which are bound to a scheduled content service. Practically this signalling does not support applications which are bound to a particular item of content in a scheduled content service. Applications are signalled by information placed in an ApplicationList which may be placed in the following 3 places;</p><ul>
+<li>In the SD&amp;S service provider discovery record for the service provider who owns or subsidises the device including the application gateway (called the &ldquo;subsidising service provider&rdquo; in [[!GEM]]). Any such applications, which are signalled as needing to be started automatically, will be started when the SD&amp;S is first processed. Such applications are unbound applications and may run all the time. See also section <a href="volume3.html#service-provider-related-application-signalling" class="extRef">3.2.3.1</a> of [[.OIPF_META2]].
 <li>In a Package entry in SD&amp;S. Such applications are bound to the set of services in the package and run while a service from that package is selected. 
 <li>In an IPService entry in SD&amp;S. Such applications are bound to the service (or services) where they are included and only run while a service is selected where those SD&amp;S entry includes them. 
 </ul>
 <p>Additionally an application offering a user interface to on-demand content may associate one or more applications with individual items of content using an API which associates the application signalling information with the locator for the on-demand content.</p>
 <p>There are a number of different API calls which an application can use to add or update the services known to an application gateway.</p><ul> 
-<li>An application may install a service (and the applications it contains) in persistent memory in the application gateway (known as “stored services” in [[!GEM]]). 
-<li>An application may select a service by specifying the location of a file containing the signalling information for that service, (e.g. using an HTTP URL pointing to a file on a server). Such a service will just run without being installed in persistent memory. (These are known as “Applications loaded from the interaction channel” in [[!MHP]].)
+<li>An application may install a service (and the applications it contains) in persistent memory in the application gateway (known as &ldquo;stored services&rdquo; in [[!GEM]]). 
+<li>An application may select a service by specifying the location of a file containing the signalling information for that service, (e.g. using an HTTP URL pointing to a file on a server). Such a service will just run without being installed in persistent memory. (These are known as &ldquo;Applications loaded from the interaction channel&rdquo; in [[!MHP]].)
 <li>An application may install services containing unbound applications by passing in the same information as would be acquired from SD&amp;S.
 The present document only requires application signalling that is in an XML format, either distributed as part of SD&amp;S or distributed as a stand-alone file. Practically this signalling is not suitable for dynamic uses such as applications which are related to a particular content item in a scheduled content service. In the present document, the in-band MPEG-2 table based signalling from MHP could be used for this purpose however it is optional for both networks and application gateways.
 </ul>
@@ -407,7 +407,7 @@ The present document only requires application signalling that is in an XML form
 </ul>
 </section>
 <section><h2>Broadcast Applications</h2>
-<p>In the present document, what [[!GEM]] calls “broadcast applications” are applications which are associated with one or more scheduled content services. These SHALL be supported using the “XML Encoding for AIT” found in Annex AR of [[!MHP]] as follows;</p><ul>
+<p>In the present document, what [[!GEM]] calls &ldquo;broadcast applications&rdquo; are applications which are associated with one or more scheduled content services. These SHALL be supported using the &ldquo;XML Encoding for AIT&rdquo; found in Annex AR of [[!MHP]] as follows;</p><ul>
 <li>Signalling them in a Package entry in SD&amp;S. Such applications are bound to the set of services in the package and are permitted to run while any service from that package is selected.
 <li>Signalling them in an IPService entry in SD&amp;S. Such applications are bound to the service (or services) where they are included and only run while any service is selected where those SD&amp;S entry includes them.
 </ul>
@@ -429,7 +429,7 @@ The present document only requires application signalling that is in an XML form
 <section id="application-signalling-and-metadata">
 <h1>Application Signalling / Metadata</h1>
 <section id="xml-ait"><h2>XML AIT</h2>
-<p>The application description SHALL be the XML encoding of the AIT as defined in [[!MHP]] annex AR “XML encoding for AIT” and modified by [[.OIPF_META2]] with the following modifications;</p>
+<p>The application description SHALL be the XML encoding of the AIT as defined in [[!MHP]] annex AR &ldquo;XML encoding for AIT&rdquo; and modified by [[.OIPF_META2]] with the following modifications;</p>
 <table class="simple" id="xml-ait-descriptors-and-elements">
 <caption>Table ####: Status of XML AIT Descriptors and Elements</caption>
 <tr><th>Descriptor or Element in MHP</th><th>Summary</th><th>Status or comments in present document</th></tr>
@@ -441,10 +441,10 @@ The present document only requires application signalling that is in an XML form
 <tr><td>AR.3.6 VisibilityDescriptor</td><td>Attribute – indicate if application can be visible to users and/or other applications</td><td>Required</td></tr>
 <tr><td>AR.3.7 IconDescriptor</td><td>Icon for application</td><td>The filename in the IconDescriptor SHALL either be a relative filename within the jar file carrying the application or SHALL be an HTTP URL.</td></tr>
 <tr><td>AR.3.8 AspectRatio</td><td>Preferred aspect ratio for applications</td><td>Required</td></tr>
-<tr><td>AR.3.9 MhpVersion</td><td>Specification version</td><td>As defined by GEM for the application version fields in clause 10.4.3 “Content of the application description”</td></tr>
+<tr><td>AR.3.9 MhpVersion</td><td>Specification version</td><td>As defined by GEM for the application version fields in clause 10.4.3 &ldquo;Content of the application description&rdquo;</td></tr>
 <tr><td>AR.3.10 StorageCapabilities</td><td>Can the application be stored or cached</td><td>Support for stored applications required.</td></tr>
 <tr><td>AR.3.11 StorageType</td><td>Enumeration used in AR.3.10</td><td>As AR.3.10</td></tr>
-<tr><td>AR.3.12 ApplicationType</td><td>Application type</td><td>The “DVB-J” application type SHALL be used for GEM-IPTV applications. The “OIPTV-headless” type SHALL be used for headless applications.</td></tr>
+<tr><td>AR.3.12 ApplicationType</td><td>Application type</td><td>The &ldquo;DVB-J&rdquo; application type SHALL be used for GEM-IPTV applications. The &ldquo;OIPTV-headless&rdquo; type SHALL be used for headless applications.</td></tr>
 <tr><td>AR.3.13 DvbApplicationType</td><td>Enumeration for AR.3.12</td><td>Application type DVB-J SHALL be used for GEM-IPTV applications.</td></tr>
 <tr><td>AR.3.14 ApplicationControlCode</td><td>Enumeration for AR.3.5</td><td>Required except for REMOTE (see external application identifier)</td></tr>
 <tr><td>AR.3.15 ApplicationSpecificDescriptor</td><td>Container</td><td>Required</td></tr>
@@ -464,27 +464,27 @@ The present document only requires application signalling that is in an XML form
 <section><h2>Fundamentals</h2>
 <p>The PAE Java Platform is based on the IPTV target of the DVB-GEM specification [[!GEM]] which is based on the Personal Basis Profile 1.1 [[!PBP1.1]] and Java TV 1.1 [[!JAVATV]] as described below.</p>
 <p>In the case of a conflict, the following precedence rules apply:</p><ol>
-<li>The normative guarantees of “Personal Basis Profile 1.1” SHALL always take precedence.
-<li>The normative guarantees of “Java TV 1.1.” SHALL always take precedence, except when in conflict with rule 1.
+<li>The normative guarantees of &ldquo;Personal Basis Profile 1.1&rdquo; SHALL always take precedence.
+<li>The normative guarantees of &ldquo;Java TV 1.1.&rdquo; SHALL always take precedence, except when in conflict with rule 1.
 <li>The normative guarantees of GEM-IPTV take precedence except when in conflict with rules 1 and 2 above.
 </ol>
-<p>The PAE Java Platform is based on the “Personal Basis Profile 1.1”. PAE implementations SHALL fully comply with the “Personal Basis Profile 1.1”. </p>
+<p>The PAE Java Platform is based on the &ldquo;Personal Basis Profile 1.1&rdquo;. PAE implementations SHALL fully comply with the &ldquo;Personal Basis Profile 1.1&rdquo;. </p>
 <p>All PAE Implementations SHALL be fully compliant with:</p><ul>
-<li>[[!PBP1.1]]  “Personal Basis Profile 1.1”
-<li>[[!CDC1.1]]  “Connected Device Configuration 1.1” 
-<li>[[!FP1.1]]  “Foundation Profile 1.1”
+<li>[[!PBP1.1]]  &ldquo;Personal Basis Profile 1.1&rdquo;
+<li>[[!CDC1.1]]  &ldquo;Connected Device Configuration 1.1&rdquo; 
+<li>[[!FP1.1]]  &ldquo;Foundation Profile 1.1&rdquo;
 </ul>
-<p>The PAE Java Platform is based on “Java TV 1.1”. PAE implementations SHALL fully comply with “Java TV 1.1”.</p><ul>
-<li>[[!JAVATV]] “Java TV 1.1.1” 
+<p>The PAE Java Platform is based on &ldquo;Java TV 1.1&rdquo;. PAE implementations SHALL fully comply with &ldquo;Java TV 1.1&rdquo;.</p><ul>
+<li>[[!JAVATV]] &ldquo;Java TV 1.1.1&rdquo; 
 <p>NOTE: Failure modes of JavaTV in devices without a display are summarized in Headless behaviour of UI-related APIs (informative).</p>
 </ul>
 <p>The namespaces of the specifications above SHALL be protected, it is NOT permitted to implement any additional method, which is not defined in these specifications. Subsetting of any class or package is also NOT permitted.</p>
 <p><b>GEM 1.3</b></p>
-<p>The PAE Java Platform is based on IPTV target of the DVB-GEM 1.3 specification [[!GEM]] and the “Application Gateway and Media Server Fragment” specification [[!HEADLESS]].</p>
+<p>The PAE Java Platform is based on IPTV target of the DVB-GEM 1.3 specification [[!GEM]] and the &ldquo;Application Gateway and Media Server Fragment&rdquo; specification [[!HEADLESS]].</p>
 <p>PAE implementations in devices with a display SHALL be fully compliant with the mandatory requirements of the IPTV target of the DVB-GEM 1.3 specification with the clarifications, definitions and extensions contained in this document.</p>
 <p>When 3D is supported, PAE implementationsin devices with a display SHALL also be fully compliant with the mandatory requirements of the Plano-stereoscopic 3DTV GEM Profile [[!GEMS3D]]</p>
-<p>PAE implementations in devices without a display SHALL be fully compliant with the requirements of the “Application Gateway and Media Server Fragment” specification.</p>
-<p>PAE applications SHALL NOT define classes in the namespace of any package specified by the PAE specification. The fully qualified class name of any class defined by an application SHALL not start with “<code>java.</code>”, “<code>javax.microedition.</code>”, “<code>javax.crypto.</code>”, “<code>javax.net.</code>”, “<code>javax.security.</code>”, “<code>javax.media.</code>”, “<code>javax.tv.</code>”, “<code>org.davic.</code>”, “<code>org.dvb.</code>”, or “<code>org.havi.</code>” or “<code>org.oipf.</code>”.</p>
+<p>PAE implementations in devices without a display SHALL be fully compliant with the requirements of the &ldquo;Application Gateway and Media Server Fragment&rdquo; specification.</p>
+<p>PAE applications SHALL NOT define classes in the namespace of any package specified by the PAE specification. The fully qualified class name of any class defined by an application SHALL not start with &ldquo;<code>java.</code>&rdquo;, &ldquo;<code>javax.microedition.</code>&rdquo;, &ldquo;<code>javax.crypto.</code>&rdquo;, &ldquo;<code>javax.net.</code>&rdquo;, &ldquo;<code>javax.security.</code>&rdquo;, &ldquo;<code>javax.media.</code>&rdquo;, &ldquo;<code>javax.tv.</code>&rdquo;, &ldquo;<code>org.davic.</code>&rdquo;, &ldquo;<code>org.dvb.</code>&rdquo;, or &ldquo;<code>org.havi.</code>&rdquo; or &ldquo;<code>org.oipf.</code>&rdquo;.</p>
 </section>
 <section><h2>Extensions and mappings to GEM APIs</h2>
 <section><h3>Broadcast Transport Protocol Access API (org.dvb.dsmcc)</h3>
@@ -509,7 +509,7 @@ The present document only requires application signalling that is in an XML form
 <section><h2>APIs defined by this Volume</h2>
 <section><h3>Content and Service Protection API</h3>
 <p>This is the org.oipf.drm package defined in Annex <a href="#org.oipf.drm-package" class="sectionRef"></a>.</p>
-<p>When the permission request file requests the permission to communicate with a CA system for any CA system ID and this is granted, a DRMPermission SHALL be created with name “*”.</p>
+<p>When the permission request file requests the permission to communicate with a CA system for any CA system ID and this is granted, a DRMPermission SHALL be created with name &ldquo;*&rdquo;.</p>
 </section>
 <section><h3>User Authentication API</h3>
 <p>This is the org.oipf.auth package defined in Annex <a href="#org.oipf.auth-package" class="sectionRef"></a>.
@@ -527,14 +527,14 @@ The present document only requires application signalling that is in an XML form
 </section>
 </section>
 <section><h2>PVR APIs</h2>
-<p>NOTE: The basic APIs for PVR are included as a result of the reference to [[!DVR]] in clause <a href="#pvr" class="sectionRef"></a> – “PVR”.</p>
+<p>NOTE: The basic APIs for PVR are included as a result of the reference to [[!DVR]] in clause <a href="#pvr" class="sectionRef"></a> – &ldquo;PVR&rdquo;.</p>
 <p>This is the following packages;</p><ul>
 <li>the org.dvb.tvanytime.pvr package and sub-packages from [[!MHP-PVR]]
 <li>the org.oipf.pvr package defined in Annex <a href="#org.oipf.pvr-package" class="sectionRef"></a>
 </ul>
 </section>
 <section><h2>Content referencing</h2>
-<p>The following table lists the types of locators defined in clause <a href="#system-integration-aspects" class="sectionRef"></a> (“<a href="#system-integration-aspects" class="sectionTitleRef"></a>”) and their mapping to the APIs required by [[!GEM]]. </p>
+<p>The following table lists the types of locators defined in clause <a href="#system-integration-aspects" class="sectionRef"></a> (&ldquo;<a href="#system-integration-aspects" class="sectionTitleRef"></a>&rdquo;) and their mapping to the APIs required by [[!GEM]]. </p>
 <table class="simple" id="mapping-of-gem-clauses-for-content-referencing">
 <caption>Table ####: Mapping of GEM Clauses Relating to Content Referencing</caption>
 <tr><th>GEM clause</th><th>Mapping</th></tr>
@@ -560,7 +560,7 @@ The present document only requires application signalling that is in an XML form
 <p>Application authentication SHALL be done using the signing mechanisms defined for JAR files in [[!JAR]]. The MHP application authentication mechanism SHOULD NOT be supported by the current specification.</p>
 </section>
 <section><h2>Permission request file</h2>
-<p>NOTE: The semantics of the “capermission” element are modified as defined by clause <a href="#service-api" class="sectionRef"></a> “<a href="#service-api" class="sectionTitleRef"></a>”.</p>
+<p>NOTE: The semantics of the &ldquo;capermission&rdquo; element are modified as defined by clause <a href="#service-api" class="sectionRef"></a> &ldquo;<a href="#service-api" class="sectionTitleRef"></a>&rdquo;.</p>
 </section>
 <section><h2>Security Policy for Applications</h2>
 <p>The permission request file defined in [[!GEM]] SHALL be supported except as follows;</p><ul>
@@ -584,14 +584,14 @@ The present document only requires application signalling that is in an XML form
 <table class="simple" id="locators-and-corresponding-text-representations">
 <caption>Table ####: Locators and Corresponding Text Representations</caption>
 <tr><th>Entity</th><th>Text Representation</th><th>Comment</th></tr>
-<tr><td><p>Service</td><td>For services delivered via unicast, "rtsp:" URL defined in [[!BCG]].<p>For services delivered via multicast, “rtp:” and “udp” URLs defined in [[!BCG]].</p></td><td>Relevant for devices with a display and for devices without a display but with media handling capabilities.</td></tr>
-<tr><td>Service Domain</td><td>“http:” or “https:” URL</td><td>Used to reference a JAR file</td></tr>
+<tr><td><p>Service</td><td>For services delivered via unicast, "rtsp:" URL defined in [[!BCG]].<p>For services delivered via multicast, &ldquo;rtp:&rdquo; and &ldquo;udp&rdquo; URLs defined in [[!BCG]].</p></td><td>Relevant for devices with a display and for devices without a display but with media handling capabilities.</td></tr>
+<tr><td>Service Domain</td><td>&ldquo;http:&rdquo; or &ldquo;https:&rdquo; URL</td><td>Used to reference a JAR file</td></tr>
 <tr><td>MPEG elementary stream</td><td>No standardized text representation</td><td>Relevant for devices with a display and for devices without a display but with media handling capabilities.</td></tr>
 <tr><td>File</td><td>"file:", "http:" and "https:" URLs as referred to in [[!GEM]].</td><td></td></tr>
 <tr><td>Directory</td><td>"file:", "http:" and "https:" URLs as referred to in [[!GEM]].</td><td></td></tr>
 </table>
 <p>NOTE: FLUTE carousels do not appear as a file system. Hence they do not have a unique URL.</p>
-<p>NOTE: “rtp:”, “udp:” and “rtsp:” are considered as transport dependent locators. The present document does not define support for transport independent locators.</p>
+<p>NOTE: &ldquo;rtp:&rdquo;, &ldquo;udp:&rdquo; and &ldquo;rtsp:&rdquo; are considered as transport dependent locators. The present document does not define support for transport independent locators.</p>
 </section>
 <section id="detailed-profile-definitions">
 <h1>Detailed Profile Definitions</h1>
@@ -671,69 +671,69 @@ The present document only requires application signalling that is in an XML form
 
 <tr><td colspan=6>Fonts</td></tr>
 <tr><td>Built in</td><td>Character, set see annex E<br />Metrics see annex D<br />Face: UK RNIB "Tiresias"</td><td>O</td><td>M</td><td>-</td><td>-</td></tr>
-<tr><td rowspan=2>Downloadable</td><td>7.4.1, “PFR”</td><td>M</td><td>SN</td><td>-</td><td>-</td></tr>
-<tr><td>7.4.2, “OpenType”</td><td>O</td><td>M</td><td>-</td><td>-</td></tr>
+<tr><td rowspan=2>Downloadable</td><td>7.4.1, &ldquo;PFR&rdquo;</td><td>M</td><td>SN</td><td>-</td><td>-</td></tr>
+<tr><td>7.4.2, &ldquo;OpenType&rdquo;</td><td>O</td><td>M</td><td>-</td><td>-</td></tr>
 
 <tr><td colspan=6>Broadcast channel protocols</td></tr>
 <tr><td rowspan=3></td><td>6.2.2, "MPEG-2 sections"</td><td>O</td><td>Not visible to GEM applications</td><td>-</td><td>Not visible to GEM applications</td></tr>
 <tr><td>6.2.5, "Object carousel"</td><td>O</td><td>M/-<br />Partial functional equivalent</td><td>M/-<br />Partial functional equivalent</td><td>M/-<br />Partial functional equivalent</td></tr>
-<tr><td>IP Multicast stack based on: <br />6.2.6, "Protocol for delivery of IP multicast over the broadcast channel",<br />6.2.7, "Internet Protocol (IP)", <br />6.2.8, "User Datagram Protocol (UDP)",<br />6.2.10, “IP signalling”<br /></td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>IP Multicast stack based on: <br />6.2.6, "Protocol for delivery of IP multicast over the broadcast channel",<br />6.2.7, "Internet Protocol (IP)", <br />6.2.8, "User Datagram Protocol (UDP)",<br />6.2.10, &ldquo;IP signalling&rdquo;<br /></td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr><td colspan=6>Interaction channel protocols</td></tr>
 <tr><td>TCP/IP</td><td>6.3.3, "Transmission Control Protocol", 6.3.2, "Internet Protocol"</td><td>M</td><td>M</td><td>M</td><td>M</td></tr>
 <tr><td>UDP/IP</td><td>6.3.2, "Internet Protocol", 6.3.9, "User Datagram Protocol"</td><td>M</td><td>M</td><td>M</td><td>M</td></tr>
 <tr><td rowspan=2>HTTP</td><td>6.3.7.1, "HTTP 1.1"</td><td>O</td><td>M</td><td>M</td><td>M</td></tr>
-<tr><td>6.3.7.2, “MHP profile of HTTP 1.0”</td><td>M</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6.3.7.2, &ldquo;MHP profile of HTTP 1.0&rdquo;</td><td>M</td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>DSMCC-UU RPC</td><td>6.3.4, "UNO-RPC",<br />6.3.5, "UNO-CDR",<br />6.3.6, "DSM-CC User to User"</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>DNS</td><td>6.3.10, "DNS"</td><td>M</td><td>M</td><td>M</td><td>M</td></tr>
-<tr><td>HTTPS</td><td>6.3.7.3, “HTTPS”</td><td>M</td><td>M</td><td>M</td><td>M</td></tr>
-<tr><td>Interaction Channel File System</td><td>6.4.1, “File system implemented only by the interaction channel”</td><td>O</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>DSMCC / HTTP hybrid</td><td>6.4.2, “Hybrid between broadcast stream and interaction channel”</td><td>O</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>IPTV</td><td>5, “Basic architecture”</td><td>M</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>HTTPS</td><td>6.3.7.3, &ldquo;HTTPS&rdquo;</td><td>M</td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>Interaction Channel File System</td><td>6.4.1, &ldquo;File system implemented only by the interaction channel&rdquo;</td><td>O</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>DSMCC / HTTP hybrid</td><td>6.4.2, &ldquo;Hybrid between broadcast stream and interaction channel&rdquo;</td><td>O</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>IPTV</td><td>5, &ldquo;Basic architecture&rdquo;</td><td>M</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr><td colspan=6>Application Model</td></tr>
-<tr><td rowspan=5>ApplicationModel</td><td>All parts of clause 9, “Application model” except those clauses (and their subclauses) identified below</td><td>M</td><td>M</td><td>M</td><td>M</td></tr>
-<tr><td>9.3 ”DVB-HTML model”</td><td>O</td><td>SN</td><td>SN</td><td>SN</td></tr>
-<tr><td>9.7, “Lifecycle of internet access applications”</td><td>O</td><td>M/O<br />Only web browser support is REQUIRED</td><td>-</td><td>-</td></tr>
-<tr><td>9.9, “Stored and Cached applications”</td><td>O</td><td>M/O<br />Stored application support REQUIRED</td><td>M/O<br />Stored application support REQUIRED</td><td>M/O<br />Stored application support REQUIRED</td></tr>
-<tr><td>9.13, “Unbound Applications”</td><td>-</td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td rowspan=5>ApplicationModel</td><td>All parts of clause 9, &ldquo;Application model&rdquo; except those clauses (and their subclauses) identified below</td><td>M</td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>9.3 &rdquo;DVB-HTML model&rdquo;</td><td>O</td><td>SN</td><td>SN</td><td>SN</td></tr>
+<tr><td>9.7, &ldquo;Lifecycle of internet access applications&rdquo;</td><td>O</td><td>M/O<br />Only web browser support is REQUIRED</td><td>-</td><td>-</td></tr>
+<tr><td>9.9, &ldquo;Stored and Cached applications&rdquo;</td><td>O</td><td>M/O<br />Stored application support REQUIRED</td><td>M/O<br />Stored application support REQUIRED</td><td>M/O<br />Stored application support REQUIRED</td></tr>
+<tr><td>9.13, &ldquo;Unbound Applications&rdquo;</td><td>-</td><td>M</td><td>M</td><td>M</td></tr>
 
 <tr><td colspan=6>Application Signalling</td></tr>
-<tr><td>Application Signalling</td><td>10, “Application signalling”</td><td>M</td><td>M-FE<br />XML encoding of AIT does not support full syntax of binary encoding.</td><td>M-FE<br />XML encoding of AIT does not support full syntax of binary encoding.</td><td>M-FE<br />XML encoding of AIT does not support full syntax of binary encoding.</td></tr>
+<tr><td>Application Signalling</td><td>10, &ldquo;Application signalling&rdquo;</td><td>M</td><td>M-FE<br />XML encoding of AIT does not support full syntax of binary encoding.</td><td>M-FE<br />XML encoding of AIT does not support full syntax of binary encoding.</td><td>M-FE<br />XML encoding of AIT does not support full syntax of binary encoding.</td></tr>
 
 <tr><td colspan=6>DVB-J</td></tr>
-<tr><td rowspan=32></td><td>All parts of clause 11, “DVB-J platform” except those clauses (and their subclauses) identified below</td><td>M</td><td>M</td><td>Subset as defined by [[!HEADLESS]]</td><td>Subset as defined by [[!HEADLESS]]</td></tr>
-<tr><td>11.4.1 “ HAVi UI Widgets”</td><td>O</td><td>O</td><td>-</td><td>-</td></tr>
+<tr><td rowspan=32></td><td>All parts of clause 11, &ldquo;DVB-J platform&rdquo; except those clauses (and their subclauses) identified below</td><td>M</td><td>M</td><td>Subset as defined by [[!HEADLESS]]</td><td>Subset as defined by [[!HEADLESS]]</td></tr>
+<tr><td>11.4.1 &ldquo; HAVi UI Widgets&rdquo;</td><td>O</td><td>O</td><td>-</td><td>-</td></tr>
 <tr><td>11.5.2, "Support for Multicast IP over the Broadcast Channel</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>11.5.3, "Support for IP over the Return Channel"</td><td>M</td><td>M</td><td>M</td><td>M</td></tr>
 <tr><td>11.5.4, "MPEG-2 Section Filter API"</td><td>O</td><td>SN</td><td>SN</td><td>SN</td></tr>
 <tr><td>11.5.5, "Mid-Level Communications API" as modified by 11.5, "Data access APIs"</td><td>M</td><td>M</td><td>M</td><td>M</td></tr>
-<tr><td>11.5.7 “File storage device access”</td><td>O</td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>11.5.7 &ldquo;File storage device access&rdquo;</td><td>O</td><td>O</td><td>O</td><td>O</td></tr>
 <tr><td>11.6.3, "Tuning API"</td><td>O</td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>11.6.4, "Conditional access API"</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>11.6.6, ”Service discovery and selection for IPTV”</td><td>O</td><td>M</td><td>M</td><td>M</td></tr>
-<tr><td>11.6.7, “Integration between protocol independent SI API and TV-Anytime”</td><td>O</td><td>M/-<br />Mandatory if broadband content guide is supported otherwise not applicable</td><td>M/-<br />Mandatory if broadband content guide is supported otherwise not applicable</td><td>M/-<br />Mandatory if broadband content guide is supported otherwise not applicable</td></tr>
+<tr><td>11.6.6, &rdquo;Service discovery and selection for IPTV&rdquo;</td><td>O</td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>11.6.7, &ldquo;Integration between protocol independent SI API and TV-Anytime&rdquo;</td><td>O</td><td>M/-<br />Mandatory if broadband content guide is supported otherwise not applicable</td><td>M/-<br />Mandatory if broadband content guide is supported otherwise not applicable</td><td>M/-<br />Mandatory if broadband content guide is supported otherwise not applicable</td></tr>
 <tr><td>11.7.4, "Basic MPEG concepts"</td><td>O</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>11.7.6 “Content referencing”</td><td>O</td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>11.7.6 &ldquo;Content referencing&rdquo;</td><td>O</td><td>M</td><td>M</td><td>M</td></tr>
 <tr><td>11.7.7, "Common error reporting"</td><td>O</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>11.7.8, “Plug-in APIs”</td><td>O</td><td>O</td><td>O</td><td>O</td></tr>
-<tr><td>11.7.9, “Provider API”</td><td>O</td><td>O</td><td>O</td><td>O</td></tr>
-<tr><td>11.7.10, “Content referencing for IPTV”</td><td>O</td><td>M</td><td>-</td><td>M</td></tr>
-<tr><td>11.7.11, “TV-Anytime content referencing and metadata</td><td>O</td><td>M/-<br />Mandatory if broadband content guide is supported otherwise not applicable</td><td>M/-<br />Mandatory if broadband content guide is supported otherwise not applicable</td><td>M/-<br />Mandatory if broadband content guide is supported otherwise not applicable</td></tr>
+<tr><td>11.7.8, &ldquo;Plug-in APIs&rdquo;</td><td>O</td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>11.7.9, &ldquo;Provider API&rdquo;</td><td>O</td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>11.7.10, &ldquo;Content referencing for IPTV&rdquo;</td><td>O</td><td>M</td><td>-</td><td>M</td></tr>
+<tr><td>11.7.11, &ldquo;TV-Anytime content referencing and metadata</td><td>O</td><td>M/-<br />Mandatory if broadband content guide is supported otherwise not applicable</td><td>M/-<br />Mandatory if broadband content guide is supported otherwise not applicable</td><td>M/-<br />Mandatory if broadband content guide is supported otherwise not applicable</td></tr>
 <tr><td>11.8.2, "APIs for return channel security"</td><td>M</td><td>M</td><td>M</td><td>M</td></tr>
 <tr><td>11.8.3, "Additional permissions classes"</td><td>O</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>11.8.6, “DVB Extensions for Cryptography”</td><td>O</td><td>O</td><td>O</td><td>O</td></tr>
-<tr><td>11.9.5.2, “JDOM”</td><td>O</td><td>M</td><td>M</td><td>M</td></tr>
-<tr><td>11.9.6, “MHP terminal hardware API”</td><td>O</td><td>O</td><td>O</td><td>O</td></tr>
-<tr><td>11.11.1 “Transport stream”</td><td>O</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>11.11.2 “Network”</td><td>O</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>11.11.4.3, “Content referencing for IPTV”</td><td>M</td><td>M</td><td>-</td><td>M</td></tr>
-<tr><td>11.11.5 ”DVB event”</td><td>O</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>11.11.9 “Drip feed decoder”</td><td>O</td><td>SN</td><td>SN</td><td>SN</td></tr>
-<tr><td>11.12.2, “Stored services”</td><td>O</td><td>M</td><td>M</td><td>M</td></tr>
-<tr><td>11.15, “APIs defined in OCAP”</td><td>O</td><td>M/O<br />Only org.ocap.service is REQUIRED</td><td>M/O<br />Only org.ocap.service is REQUIRED</td><td>M/O<br />Only org.ocap.service is REQUIRED</td></tr>
-<tr><td>11.14, “Internet Access”</td><td>O</td><td>M/O<br />Only web browser support is REQUIRED</td><td>-</td><td>-</td></tr>
-<tr><td>17, “Internet access clients”</td><td>O</td><td>M/O<br />Only web browser support is REQUIRED</td><td>-</td><td>-</td></tr>
+<tr><td>11.8.6, &ldquo;DVB Extensions for Cryptography&rdquo;</td><td>O</td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>11.9.5.2, &ldquo;JDOM&rdquo;</td><td>O</td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>11.9.6, &ldquo;MHP terminal hardware API&rdquo;</td><td>O</td><td>O</td><td>O</td><td>O</td></tr>
+<tr><td>11.11.1 &ldquo;Transport stream&rdquo;</td><td>O</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11.11.2 &ldquo;Network&rdquo;</td><td>O</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11.11.4.3, &ldquo;Content referencing for IPTV&rdquo;</td><td>M</td><td>M</td><td>-</td><td>M</td></tr>
+<tr><td>11.11.5 &rdquo;DVB event&rdquo;</td><td>O</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11.11.9 &ldquo;Drip feed decoder&rdquo;</td><td>O</td><td>SN</td><td>SN</td><td>SN</td></tr>
+<tr><td>11.12.2, &ldquo;Stored services&rdquo;</td><td>O</td><td>M</td><td>M</td><td>M</td></tr>
+<tr><td>11.15, &ldquo;APIs defined in OCAP&rdquo;</td><td>O</td><td>M/O<br />Only org.ocap.service is REQUIRED</td><td>M/O<br />Only org.ocap.service is REQUIRED</td><td>M/O<br />Only org.ocap.service is REQUIRED</td></tr>
+<tr><td>11.14, &ldquo;Internet Access&rdquo;</td><td>O</td><td>M/O<br />Only web browser support is REQUIRED</td><td>-</td><td>-</td></tr>
+<tr><td>17, &ldquo;Internet access clients&rdquo;</td><td>O</td><td>M/O<br />Only web browser support is REQUIRED</td><td>-</td><td>-</td></tr>
 </table>
 <table class="simple key-table">
 <tr><td colspan=2><b>Key</b></td></tr>
@@ -756,7 +756,7 @@ The present document only requires application signalling that is in an XML form
 <tr><td>11.6.1, "Signalling-bound service information API"</td><td><p>MHP [1], clause 11.6.1, "DVB Service Information API"</p><p>MHP [1], clause 11.11.3, "Bouquet"</p></td><td>Not defined.</td></tr>
 <tr><td>Annex O, "Integration of the JavaTV SI API"</td><td>MHP [1], annex O, "Integration of the JavaTV SI API"</td><td>MHP Annex AP mapping between JavaTV SI API and SD&amp;S / BCG.</td></tr>
 <tr><td>Broadcast IP signalling</td><td>6.2.10, "IP signalling"</td><td>MHP [1], clause 6.2.10, "IP signalling"</td><td>Not applicable</td></tr>
-<tr><td>IPTV Protocols</td><td>6.5, “IPTV protocols”</td><td>MHP [1], clause 6,5, “IPTV protocols”</td><td>RTP, RTSP, IGMP, DVB-STP as defined in section <a href="#iptv-protocols" class="sectionRef"></a> "<a href="#iptv-protocols" class="sectionTitleRef"></a>".</td></tr>
+<tr><td>IPTV Protocols</td><td>6.5, &ldquo;IPTV protocols&rdquo;</td><td>MHP [1], clause 6,5, &ldquo;IPTV protocols&rdquo;</td><td>RTP, RTSP, IGMP, DVB-STP as defined in section <a href="#iptv-protocols" class="sectionRef"></a> "<a href="#iptv-protocols" class="sectionTitleRef"></a>".</td></tr>
 <tr><td>Audio</td><td><p>7.2.1, "Audio" </p><p>At least 1 audio  format.</p></td><td>MHP [1], clause 7.2.1, "Audio"</td><td>HE-AAC - see section <a href="#streaming-formats" class="sectionRef"></a> "<a href="#streaming-formats" class="sectionTitleRef"></a>"</td></tr>
 <tr><td>Video</td><td><p>7.2.2, "Video" </p><p>At least 1 audio  format.</p></td><td>MHP [1], clause 7.2.2, "Video"</td><td>HE-AAC - see section <a href="#streaming-formats" class="sectionRef"></a> "<a href="#streaming-formats" class="sectionTitleRef"></a>"</td></tr>
 <tr><td rowspan=2>Subtitles</td><td>7.2.3, "Subtitles"</td><td>MHP [1], clause 7.2.3, "Subtitles"</td><td>Optional in the present document</td></tr>
@@ -770,7 +770,7 @@ The present document only requires application signalling that is in an XML form
 <tr><td>12.9.1, "Certificate Revocation Lists"</td><td>MHP [1] clause 12.9.1, "Certificate Revocation Lists"</td><td>Optional in the present document.</td></tr>
 <tr><td rowspan=2>Conditional Access</td><td>11.4, "Presentation APIs," classes related to conditional access</td><td>MHP [1], clause 11.4.2.5.1, classes related to conditional access</td><td>Failure modes due to content protection are included.</td></tr>
 <tr><td>11.6.4, "Conditional access API"</td><td><p>MHP [1], clause 11.6.4, "Conditional Access API"</p><p>MHP [1], clause 14.10, "CA system"</p></td><td>Not included in the present document.</td></tr>
-<tr><td rowspan=4>Content Referencing</td><td>11.7.6, "Content referencing"</td><td><p>MHP [1], clause 11.7.6, "Content Referencing"</p><p>This API is formed of DAVIC 1.4.1p9 [3] Locator, DvbLocator, javax.tv.locator, org.dvb.locator.packages</p></td><td>Supported as defined in GEM. Classes corresponding to “dvb:” URI scheme not included.</td></tr>
+<tr><td rowspan=4>Content Referencing</td><td>11.7.6, "Content referencing"</td><td><p>MHP [1], clause 11.7.6, "Content Referencing"</p><p>This API is formed of DAVIC 1.4.1p9 [3] Locator, DvbLocator, javax.tv.locator, org.dvb.locator.packages</p></td><td>Supported as defined in GEM. Classes corresponding to &ldquo;dvb:&rdquo; URI scheme not included.</td></tr>
 <tr><td>11.11.11, "Methods working on many locator types"</td><td>MHP [1], clause 11.11.11, "Methods working on many Locator types"</td><td>There are no transport independent locators defined in the present document.</td></tr>
 <tr><td>14.1, "Namespace mapping" </td><td>MHP [1], clause 14.1, "Namespace mapping (DVB Locator)"</td><td>See section <a href="#system-integration-aspects" class="sectionRef"></a> "<a href="#system-integration-aspects" class="sectionTitleRef"></a>".</td></tr>
 <tr><td><p>14.9 Content referencing for IPTV</p><p>14.10, "Service identification"</p></td><td>MHP [1], clause 14.9, "Service identification"</td><td>Not applicable.</td></tr>
@@ -784,12 +784,12 @@ The present document only requires application signalling that is in an XML form
 
 <table class="simple key-table">
 <tr><td colspan=2><b>References</b></td></tr>
-<tr><td>[1]</td><td>ETSI TS 102 727 v1.1.1, “Digital Video Broadcasting (DVB); Multimedia Home Platform (MHP) Specification 1.2.2”</td></tr>
-<tr><td>[3]</td><td>DAVIC 1.4.1 Specification part 9, “Information Representation”</td></tr>
-<tr><td>[4]</td><td>ETSI EN 300 468, “Digital Video Broadcasting (DVB); Specification for Service Information (SI) in DVB system”</td></tr>
-<tr><td>[11]</td><td>ETSI TS 101 211 v1.9.1, “Digital Video Broadcasting (DVB); Guidelines on implementation and usage of Service Information (SI)”</td></tr>
+<tr><td>[1]</td><td>ETSI TS 102 727 v1.1.1, &ldquo;Digital Video Broadcasting (DVB); Multimedia Home Platform (MHP) Specification 1.2.2&rdquo;</td></tr>
+<tr><td>[3]</td><td>DAVIC 1.4.1 Specification part 9, &ldquo;Information Representation&rdquo;</td></tr>
+<tr><td>[4]</td><td>ETSI EN 300 468, &ldquo;Digital Video Broadcasting (DVB); Specification for Service Information (SI) in DVB system&rdquo;</td></tr>
+<tr><td>[11]</td><td>ETSI TS 101 211 v1.9.1, &ldquo;Digital Video Broadcasting (DVB); Guidelines on implementation and usage of Service Information (SI)&rdquo;</td></tr>
 <tr><td>[80]</td><td>Tiresias: "The RNIB/DTG "Tiresias" font version 8.03".</td></tr>
-<tr><td>[115]</td><td>ISO/IEC 14496-18, “Information Technology – Coding of audio-visual objects – Part 18: Font compression and streaming”</td></tr>
+<tr><td>[115]</td><td>ISO/IEC 14496-18, &ldquo;Information Technology – Coding of audio-visual objects – Part 18: Font compression and streaming&rdquo;</td></tr>
 </table>
 </section>
 <section id="pvr">
@@ -800,7 +800,7 @@ The present document only requires application signalling that is in an XML form
 <table class="simple" id="responsibilities-of-gem-recording">
 <caption>Table ####: Responsibilities of GEM Recording Specifications</caption>
 <tr><th>Responsibility</th><th>Definition</th></tr>
-<tr><td>Which types of stream are to be considered as “recordable streams”.</td><td>All streams defined by [[.OIPF_MEDIA2]] SHALL be considered recordable. To the extent that the terminal supports subtitles, subtitle streams SHALL be considered recordable.</td></tr>
+<tr><td>Which types of stream are to be considered as &ldquo;recordable streams&rdquo;.</td><td>All streams defined by [[.OIPF_MEDIA2]] SHALL be considered recordable. To the extent that the terminal supports subtitles, subtitle streams SHALL be considered recordable.</td></tr>
 <tr><td>Minimum capabilities for the number of steams (or number of streams of each type) that a GEM recording terminal must be able to record.</td><td>For scheduled recording, the simultaneous recording of at least one video elementary stream, at least two audio elementary streams and at least two subtitle streams to the extent they are supported.</td></tr>
 <tr><td>The definition of which applications are recordable in both scheduled and timeshift recording (which need not be the same).</td><td>Not applicable. The present document does not require support for applications in-band in broadcast services.</td></tr>
 <tr><td>The requirements on a GEM recording terminal to monitor for dynamic data and behaviour of applications during scheduled and timeshift recording (which need not be the same).</td><td>Not applicable. The present document does not require support for data in-band in broadcast services.</td></tr>
@@ -837,7 +837,7 @@ The present document does not define mechanisms to associate timeshift buffers w
 <tr><td>Rules governing which recordings an application can access.</td><td>As defined in clause <a href="#visibility-of-recording-requests" class="sectionRef"></a> "<a href="#visibility-of-recording-requests" class="sectionRef"></a>".</td></tr>
 <tr><td>Additional JMF controls to be supported for RecordedServices or the contents of a timeshift buffer. Different sets of JMF controls may be specified for these two cases.</td><td>None defined in the present document.</td></tr>
 <tr><td>Delays in re-starting applications after the return to normal play if this is believed to improve the end-user experience, for example when repeated cycles of fast-forward / play / fast-forward / play. </td><td>When playback leaves trick-mode and returns to normal, terminals MAY delay re-starting applications for up to one minute. The behaviour for this minute is implementation dependent.</td></tr>
-<tr><td>a mechanism to permit highly trusted applications to obtain instances of RecordingPermission whose action parameter is “*” </td><td>No such mechanism defined in the present document.</td></tr>
+<tr><td>a mechanism to permit highly trusted applications to obtain instances of RecordingPermission whose action parameter is &ldquo;*&rdquo; </td><td>No such mechanism defined in the present document.</td></tr>
 <tr><td>that the optional behaviour defined in the class description of ServiceContextRecordingSpec, where the contents of the time-shift buffer are stored when the startTime parameter is in the past, becomes mandatory in that particular GEM recording specification.</td><td>Not mandatory in the present document</td></tr>
 <tr><td>Mechanisms for automatically removing requests from the list of recordings in a pending state if it appears the recording will never happen.</td><td>Once the validity period of a request has expired, a terminal MAY discard recording requests which are still in a pending state.</td></tr>
 <tr><td>Mechanisms for automatically removing requests from the list of recordings in a failed state based on some criteria they define.</td><td>Once the validity period of a request has expired, a terminal MAY discard failed recording requests.</td></tr>
@@ -845,10 +845,10 @@ The present document does not define mechanisms to associate timeshift buffers w
 </table>
 </section>
 <section id="visibility-of-recording-requests"><h2>Visibility of Recording Requests and Recordings between Applications and Service Providers</h2>
-<p>The [[!DVR]] specification requires users of that specification to define a mechanism to manage visibility of recording requests between applications from different organisations – referred to as “RecordingRequest specific security attributes”. The mechanism defined in this specification is the following;</p><ul>
+<p>The [[!DVR]] specification requires users of that specification to define a mechanism to manage visibility of recording requests between applications from different organisations – referred to as &ldquo;RecordingRequest specific security attributes&rdquo;. The mechanism defined in this specification is the following;</p><ul>
 <li>When a recording request is made, the application making the request has to specify which other applications can access that recording request and any resulting recordings as part of the RecordingRequest. Each of these is specified using an instance of the class RecordingAccessPermissions.
-<li>The “RecordingRequest specific security attributes” controlling visibility of a RecordingRequest instance are defined by the “requestedRecording” parameter regardless of the state of the recording request.
-<li>The “RecordingRequest specific security attributes” controlling visibility of a RecordedService are defined by the “completedRecording” parameter.
+<li>The &ldquo;RecordingRequest specific security attributes&rdquo; controlling visibility of a RecordingRequest instance are defined by the &ldquo;requestedRecording&rdquo; parameter regardless of the state of the recording request.
+<li>The &ldquo;RecordingRequest specific security attributes&rdquo; controlling visibility of a RecordedService are defined by the &ldquo;completedRecording&rdquo; parameter.
 <li>How access to a recording request or recorded service is controlled by an instance of RecordingAccessPermissions is defined in the specification for that class.
 </ul>
 </section>
@@ -859,7 +859,7 @@ The present document does not define mechanisms to associate timeshift buffers w
 </section>
 <section id="http-adaptive-streaming">
 <h1>HTTP Adaptive Streaming</h1>
-<p>When the AG supports HTTP Adaptive Streaming (HAS), the Player object SHALL accept URL, MediaLocator and DataSource objects pointing to a Media Presentation Descriptor (MPD). The MPD SHALL be delivered with the MIME type as specified for the MPD in [[!TS26234]], i.e. “video/vnd.3gpp.mpd” and in the HAS specification [[.OIPF_HAS2]].</p>
+<p>When the AG supports HTTP Adaptive Streaming (HAS), the Player object SHALL accept URL, MediaLocator and DataSource objects pointing to a Media Presentation Descriptor (MPD). The MPD SHALL be delivered with the MIME type as specified for the MPD in [[!TS26234]], i.e. &ldquo;video/vnd.3gpp.mpd&rdquo; and in the HAS specification [[.OIPF_HAS2]].</p>
 <p>The Player, during the Realizing state, SHALL fetch the MPD from the URL, after which the MPD SHALL be interpreted and an initial (set of partial) Representation(s) selected. If all the operations are completed successfully the player moves to the Realized state and then to the Prefetching and  Prefetched state. After this, playback can be started (e.g.: invoking the start() method of the Player). </p>
 <p>If the MPD is not valid according to the XML Schema and semantics as defined in Annex A, the Player object SHALL move to the Unrealized state. In this case a javax.media.ResourceUnavailableEvent will be sent to all subscribed listeners.</p>
 <p>If the MIME type specified for the MPD cannot be handled by the AG (i.e.: the AG does not support HAS), the creation of a Player object with URL, MediaLocator and DataSource objects pointing to a MPD will throw a NoPlayerException exception.</p>

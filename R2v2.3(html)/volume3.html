@@ -86,10 +86,10 @@
 		  localBiblio: {
 			"SDNS":"DVB, BlueBook A86 (future ETSI TS 102 034 V1.5.1), \"Digital Video Broadcasting: Transport of MPEG-2 Based DVB Services over IP Based Networks\"",
 			"FCC":"DVB, Blue book A152 \"Server-based Fast Channel Change\", July 2010",
-			"TVA-UNID":"ETSI, TS 102 822-3-2 V1.6.1 (2012-07), \"Broadcast and On-line Services: Search, select and rightful use of content on personal storage systems (“TV-Anytime”); Part 3: Metadata; Sub-part 2: System aspects in a uni-directional environment\"",
-			"TVA":"ETSI, TS 102 822-3-1 V1.7.1 (2011-11), \"Broadcast and On-line Services: Search, select and rightful use of content on personal storage systems (“TV-Anytime”); Part 3: Metadata; Sub-part 1: Phase 1 - Metadata schemas\"",
+			"TVA-UNID":"ETSI, TS 102 822-3-2 V1.6.1 (2012-07), \"Broadcast and On-line Services: Search, select and rightful use of content on personal storage systems (&ldquo;TV-Anytime&rdquo;); Part 3: Metadata; Sub-part 2: System aspects in a uni-directional environment\"",
+			"TVA":"ETSI, TS 102 822-3-1 V1.7.1 (2011-11), \"Broadcast and On-line Services: Search, select and rightful use of content on personal storage systems (&ldquo;TV-Anytime&rdquo;); Part 3: Metadata; Sub-part 1: Phase 1 - Metadata schemas\"",
 			"MPEG-7":"ISO/IEC 15938-5, \"Multimedia Content Description Interface - Part 5:Multimedia description schemes\", May 2003",
-			"TVA-BID":"ETSI, TS 102 822-6-1 V1.7.1 (2011-11), \"Broadcast and On-line Services: Search, select, and rightful use of content on personal storage systems (“TV-Anytime”); Part 6: Delivery of metadata over a bi-directional network; Sub-part 1: Service and transport\"",
+			"TVA-BID":"ETSI, TS 102 822-6-1 V1.7.1 (2011-11), \"Broadcast and On-line Services: Search, select, and rightful use of content on personal storage systems (&ldquo;TV-Anytime&rdquo;); Part 6: Delivery of metadata over a bi-directional network; Sub-part 1: Service and transport\"",
 			"DVBSI":"ETSI, EN 300 468 V1.13.1 (2012-08), \"Digital Video Broadcasting: Specification for Service Information (SI) in DVB systems\"",
 			"DVBTRANS":"ETSI, TS 102 323 V1.2.1 (2005-11) \"Digital Video Broadcasting (DVB); Carriage and signalling of TV-Anytime information in DVB transport streams\"",
 			"DATACAST":"ETSI, TS 102 472 V1.2.1 (2006-12), \"Digital Video Broadcasting (DVB); IP Datacast over DVB-H: Content Delivery Protocols\"",
@@ -189,7 +189,7 @@
 <p>Open IPTV Forum metadata is in the form of instance document which is validated against a schema defined in this specification. The Open IPTV Forum XML schema is obtained by extending SD&amp;S [[!SDNS]] and BCG [[!BCG]] schemas.</p>
 <section id="metadata-extensibility">
 <h4>Metadata Extensibility</h4>
-<p>This specification provides schema descriptions of those elements and attributes that are extended from original schema defined in [[!SDNS]] for SD&amp;S or [[!BCG]] for BCG. The extension rule adopted in this specification follows the “forward compatibility” constraints specified for extending BCG Schema [[!TVA-UNID]].</p>
+<p>This specification provides schema descriptions of those elements and attributes that are extended from original schema defined in [[!SDNS]] for SD&amp;S or [[!BCG]] for BCG. The extension rule adopted in this specification follows the &ldquo;forward compatibility&rdquo; constraints specified for extending BCG Schema [[!TVA-UNID]].</p>
 </section>
 <section id="metadata-validation">
 <h4>Metadata Validation</h4>
@@ -299,7 +299,7 @@ The schema for the extension is provided in Annex <a href="#sdns-emergencynotifi
 
 <section id="container-format-indication">
 <h5>Container Format Indication</h5>
-<p>The IPService Record of SD&amp;S [[!SDNS]] is extended to include an optional FileFormat element as defined in “AVAttributesType” defined in clause 6.3.5 of TV-Anytime specification [[!TVA]]. This element provides a means to indicate file format.</p>
+<p>The IPService Record of SD&amp;S [[!SDNS]] is extended to include an optional FileFormat element as defined in &ldquo;AVAttributesType&rdquo; defined in clause 6.3.5 of TV-Anytime specification [[!TVA]]. This element provides a means to indicate file format.</p>
 <p>See Annex <a href="#sdns-IPServiceType-schema" class="sectionRef"></a> for the IPServiceType schema extension.</p>
 <table class="simple" id="fileformat-in-bdr">
 <caption>Table ####: Extract of Broadcast Discovery Record Indicating FileFormat Extension</caption>
@@ -323,7 +323,7 @@ The schema for the extension is provided in Annex <a href="#sdns-emergencynotifi
 <tr><td style="padding-left:2cm">Retransmission_session@DestinationPort</td><td>See below Open IPTV extended definition</td><td>O</td></tr>
 </table>
 <p>The Retransmission_session@DestinationPort SD&amp;S attribute defined in [[!FCC]] shall be interpreted by an OITF as</p>
-<p style="text-align: center;">“UDP Destination Port of unicast RTP Retransmission session packets.”</p>
+<p style="text-align: center;">&ldquo;UDP Destination Port of unicast RTP Retransmission session packets.&rdquo;</p>
 <p>If the Retransmission_session@DestinationPort attribute is not present, AND neither is the Retransmission_session@SourcePort attribute, the destination port of unicast RTP Retransmission session packets matches the source port of the RTCP packets issued by the OITF for RTCP reporting in the primary/original multicast session.</p>
 <p>If the Retransmission_session@DestinationPort attribute is not present, but the Retransmission_session@SourcePort attribute is present, the destination port for the FCC/RET packets may be determined by means of an in-band RTCP port mapping request message exchange of the OITF with the FCC/RET server on the port Retransmission_session@SourcePort (using symmetrical RTP, with RTP and RTCP mixed on a single port).</p>
 <p>This means that when the OITF must operate according to the cookie signaling method, the Retransmission_session@DestinationPort attribute SHALL NOT be present, whereas the Retransmission_session@SourcePort attribute SHALL be present, with the latter indicating the destination port on which the OITF must issue its port mapping request message.</p>
@@ -339,11 +339,11 @@ The schema for the extension is provided in Annex <a href="#sdns-emergencynotifi
 <section id="service-provider-related-application-signalling">
 <h5>Service Provider Related Application Signalling</h5>
 <p>There are two approaches to signal service provider related applications. One approach is to use the AbstractService element at the Service Provider Discovery Record level. The other approach is to use the Application Discovery Record at the service discovery level.</p>
-<p>For signalling service provider related applications with the AbstractService element, the Service Provider Discovery Record SHALL embed applications information in the ApplicationList element defined in [[!TS102809]] where they are referred to as “unbound applications.”</p>
+<p>For signalling service provider related applications with the AbstractService element, the Service Provider Discovery Record SHALL embed applications information in the ApplicationList element defined in [[!TS102809]] where they are referred to as &ldquo;unbound applications.&rdquo;</p>
 <p>On the other hand, the Service Provider Discovery Record SHALL embed application reference id values in the ApplicationList element defined in [[!TS102809]] for signalling the broadcast independent applications with the Application Discovery Record. The actual information of applications SHALL be described in the Application Discovery Record. When OITF receives the Service Provider Discovery Record and the Application Discovery Record, OITF SHALL link the application reference id values in the Service Provider Discovery Record to the application identifier values in the Application Discovery Record.</p>
 <p>If a service provider wants to signal the below applications with these two approaches, the ApplicationUsage value defined in section <a href="#applicationusage-in-applicationusagedescriptor" class="sectionRef"></a> SHALL be used with the application location value defined in section <a href="#applicationspecificdescriptor-extensions" class="sectionRef"></a>.</p>
 <ul>
-<li>ServiceDiscovery Application – Application containing IPTV service discovery information like a service provider’s web portal page. In case of DAE application, this application can contain other service applications such as communication application or content guide application.
+<li>ServiceDiscovery Application – Application containing IPTV service discovery information like a service provider's web portal page. In case of DAE application, this application can contain other service applications such as communication application or content guide application.
 <li>Communication Application – Application for communication service. In case of DAE application, this application enables communication service
 <li>EPG Application – Application for EPG service. In case of DAE application, this application can be either a grid-type epg application or a mosaic epg application.
 <li>VoD Application – Application for VoD service. VoD application can also include content information for downloadable contents.
@@ -354,7 +354,7 @@ The schema for the extension is provided in Annex <a href="#sdns-emergencynotifi
 <section id="broadcast-related-application-signalling">
 <h5>Broadcast Related Application Signalling</h5>
 <p>There are two approaches to signal broadcast related applications. One approach is to use either the extended IPService element in the Broadcast Discovery Record or the extended Package element in the Package Discovery Record. The other approach is to use the Application Discovery Record at the service discovery level. Broadcast related applications SHALL NOT be signalled with the Service Provider Discovery Record.</p>
-<p>For signalling broadcast related applications with the extended IPService and Package elements, the Broadcast Discovery Record and the Package Discovery Record SHALL embed applications information in the ApplicationList element defined in [[!TS102809]] where they are referred to as “Service bound application.” The extended IPService and Package element are defined in [[!TS102809]].</p>
+<p>For signalling broadcast related applications with the extended IPService and Package elements, the Broadcast Discovery Record and the Package Discovery Record SHALL embed applications information in the ApplicationList element defined in [[!TS102809]] where they are referred to as &ldquo;Service bound application.&rdquo; The extended IPService and Package element are defined in [[!TS102809]].</p>
 <p>When broadcast related applications are signalled with the Application Discovery Record, the extended IPService element in the Broadcast Discovery Record and the extended Package element in the Package Discovery Record SHALL embed application reference id values in the ApplicationList element defined in [[!TS102809]]. The actual information about applications SHALL be contained in the Application Discovery Record. When OITF receives the application reference id values in the extended IPService or Package element, the OITF SHALL link the application reference id values in the extended IPService and Package elements to the application identifier values in the Application Discovery Record.</p>
 <p>If a service provider wants to signal the below broadcast related applications with these two approaches, the ApplicationUsage value defined in section <a href="#applicationusage-in-applicationusagedescriptor" class="sectionRef"></a> SHALL be used with the application location value defined in section <a href="#applicationspecificdescriptor-extensions" class="sectionRef"></a>.</p><ul>
 <li>Communication Application – Application for communication service. In case of DAE application, this application enables communication service
@@ -449,7 +449,7 @@ The schema for the extension is provided in Annex <a href="#sdns-emergencynotifi
 <section id="extension-for-notification-information-table">
 <h5>Extension for Notification Information Table</h5>
 <p>The Service Information Type from [[!BCG]] is extended by Open IPTV Forum to define the Notification Information Table for use by the Network Generated Notification service and User Notification service.</p>
-<p>The Notification Information Table SHALL be carried in BCG as a new table under “ProgramDescription”, as depicted in Figure <a href="#programdescriptiontype-for-notification" class="figureRef"></a>. Program description and schedule event description for notification service SHALL refer to the notification service fragment by “serviceIDRef”. The schema and semantics for notification program description and notification schedule event description SHALL be the same as those for scheduled content service.</p>
+<p>The Notification Information Table SHALL be carried in BCG as a new table under &ldquo;ProgramDescription&rdquo;, as depicted in Figure <a href="#programdescriptiontype-for-notification" class="figureRef"></a>. Program description and schedule event description for notification service SHALL refer to the notification service fragment by &ldquo;serviceIDRef&rdquo;. The schema and semantics for notification program description and notification schedule event description SHALL be the same as those for scheduled content service.</p>
 <figure id="programdescriptiontype-for-notification">
 <img alt="Figure 4a" src="images/ProgramDescriptionType_notification-part1.png" />
 <img alt="Figure 4b" src="images/ProgramDescriptionType_notification-part2.png" />
@@ -463,7 +463,7 @@ The schema for the extension is provided in Annex <a href="#sdns-emergencynotifi
 <table class="simple" id="use-of-relatedmaterialtype">
 <caption>Table ####: Use of elements from RelatedMaterialType</caption>
 <thead><tr><th>Element</th><th>Semantics</th></tr></thead>
-<tr><td>HowRelated</td><td>Specifies the nature of the relationship between the described fragment and the related media assets. The value of this field can use the terms available in the classification scheme urn:tva:metadata:cs:HowRelatedCS:2007. In particular, term 24 “IsPartOf” SHALL be used to indicate the main service of the described notification service.</td></tr>
+<tr><td>HowRelated</td><td>Specifies the nature of the relationship between the described fragment and the related media assets. The value of this field can use the terms available in the classification scheme urn:tva:metadata:cs:HowRelatedCS:2007. In particular, term 24 &ldquo;IsPartOf&rdquo; SHALL be used to indicate the main service of the described notification service.</td></tr>
 <tr><td>MediaLocator</td><td>Specifies the location of the media asset. Defined as an MPEG-7 datatype, MediaLocatorType (see clause 6.5.2 of ISO/IEC 15938-5 [[!MPEG-7]] for a detailed description).<br />
 When the HowRelated takes the term 24, it specifies the ID of the referred Service or ScheduleEvent of a regular service.</td></tr>
 <tr><td>PromotionalText</td><td>Specifies promotional information about the link, which can be used as an additional attractor (e.g. record "Pride and Prejudice" series).</td></tr>
@@ -484,7 +484,7 @@ When the HowRelated takes the term 24, it specifies the ID of the referred Servi
 <caption>Table ####: DRMControlInformation Type Semantics</caption>
 <thead><tr><th>Element / Attribute Name</th><th>Element / Attribute Description</th></tr></thead>
 <tr><td colspan="2">DRMControlInformation</td></tr>
-<tr><td style="padding-left:1cm">DRMSystemID</td><td>URN with the DVB CA System ID (16 bit number) in there or URN described in <a href="volume7.html#tca-drmsystemid" class="extRef">section 4.1.7.1</a> of [[!OIPF_CSP2]]. Allocations of the DVB CA System ID value of this field are found in [[!DVB-ID]]. DRMSystemID with the DVB CA System ID shall be signalled by prefixing the decimal number format of CA_System_ID with "urn:dvb:casystemid:". For example, hexadecimal 0x4AF4 is assigned as CA_System_ID for “Marlin” by DVB, “Marlin” DRMSystemID is encoded as “urn:dvb:casystemid:19188”. Note that the decimal number format of CA_System_ID SHALL not have leading zeroes.</td></tr>
+<tr><td style="padding-left:1cm">DRMSystemID</td><td>URN with the DVB CA System ID (16 bit number) in there or URN described in <a href="volume7.html#tca-drmsystemid" class="extRef">section 4.1.7.1</a> of [[!OIPF_CSP2]]. Allocations of the DVB CA System ID value of this field are found in [[!DVB-ID]]. DRMSystemID with the DVB CA System ID shall be signalled by prefixing the decimal number format of CA_System_ID with "urn:dvb:casystemid:". For example, hexadecimal 0x4AF4 is assigned as CA_System_ID for &ldquo;Marlin&rdquo; by DVB, &ldquo;Marlin&rdquo; DRMSystemID is encoded as &ldquo;urn:dvb:casystemid:19188&rdquo;. Note that the decimal number format of CA_System_ID SHALL not have leading zeroes.</td></tr>
 <tr><td style="padding-left:1cm">DRMContentID</td><td>DRM Content ID for CoD or scheduled content item, e.g. the Marlin Content ID</td></tr>
 <tr><td style="padding-left:1cm">RightsIssuerURL</td><td>A URL used by OITF to obtain rights for this content item</td></tr>
 <tr><td style="padding-left:1cm">SilentRightsURL</td><td>A URL used by OITF to obtain rights silently, e.g. a Marlin Action Token.</td></tr>
@@ -507,23 +507,23 @@ When the HowRelated takes the term 24, it specifies the ID of the referred Servi
 <p>The following classification schemes wholly replace the BCG equivalent classification schemes.</p>
 <section id="videocodingformat-cs">
 <h5>VideoCodingFormat Classification Scheme</h5>
-<p>The element “coding” in “VideoAttributesType” defined in clause 6.3.5 of TV-Anytime specification [[!TVA]] shall refer to the terms listed in VisualCodingFormatCS (Annex <a href="#visualcodingformatCS" class="sectionRef"></a>) of this specification.</p>
+<p>The element &ldquo;coding&rdquo; in &ldquo;VideoAttributesType&rdquo; defined in clause 6.3.5 of TV-Anytime specification [[!TVA]] shall refer to the terms listed in VisualCodingFormatCS (Annex <a href="#visualcodingformatCS" class="sectionRef"></a>) of this specification.</p>
 </section>
 <section id="audiocodingformat-cs">
 <h5>AudioCodingFormat Classification Scheme</h5>
-<p>The element “coding” in “AudioAttributesType” defined in clause 6.3.5 of TV-Anytime specification [[!TVA]] shall refer to the terms listed in AudioCodingFormatCS (Annex <a href="#avmediaformatCS" class="sectionRef"></a>) of this specification.</p>
+<p>The element &ldquo;coding&rdquo; in &ldquo;AudioAttributesType&rdquo; defined in clause 6.3.5 of TV-Anytime specification [[!TVA]] shall refer to the terms listed in AudioCodingFormatCS (Annex <a href="#avmediaformatCS" class="sectionRef"></a>) of this specification.</p>
 </section>
 <section id="avmediaformat-cs">
 <h5>AVMediaFormat Classification Scheme</h5>
-<p>The element “FileFormat” in “AVAttributesType” defined in clause 6.3.5 of TV-Anytime specification [[!TVA]] shall refer to the terms listed in AVMediaFormatCS (Annex <a href="#avmediaformatCS" class="sectionRef"></a>) of this specification.</p>
+<p>The element &ldquo;FileFormat&rdquo; in &ldquo;AVAttributesType&rdquo; defined in clause 6.3.5 of TV-Anytime specification [[!TVA]] shall refer to the terms listed in AVMediaFormatCS (Annex <a href="#avmediaformatCS" class="sectionRef"></a>) of this specification.</p>
 </section>
 <section id="protocol-cs">
 <h5>Protocol Classification Scheme</h5>
-<p>The element “Protocol” in “OnDemandProgramType” defined in clause <a href="#signalling-and-media-transport-protocol-extension" class="sectionRef"></a> of this specification shall refer to the terms listed in ProtocolCS (Annex <a href="#protocolCS" class="sectionRef"></a>).</p>
+<p>The element &ldquo;Protocol&rdquo; in &ldquo;OnDemandProgramType&rdquo; defined in clause <a href="#signalling-and-media-transport-protocol-extension" class="sectionRef"></a> of this specification shall refer to the terms listed in ProtocolCS (Annex <a href="#protocolCS" class="sectionRef"></a>).</p>
 </section>
 <section id="parentalrating-cs">
 <h5>Reference to Parental Guidance Classification Scheme</h5>
-<p>The element “ParentalGuidance” in “BasicContentDescriptionType” defined in TV-Anytime specification [[!TVA]] clause 6.3.4 shall refer to the terms referred by the description for “ParentalGuidance” and also the terms listed in GermanyFSKCS (Annex <a href="#germanyfskCS" class="sectionRef"></a>).</p>
+<p>The element &ldquo;ParentalGuidance&rdquo; in &ldquo;BasicContentDescriptionType&rdquo; defined in TV-Anytime specification [[!TVA]] clause 6.3.4 shall refer to the terms referred by the description for &ldquo;ParentalGuidance&rdquo; and also the terms listed in GermanyFSKCS (Annex <a href="#germanyfskCS" class="sectionRef"></a>).</p>
 </section>
 </section>
 
@@ -605,7 +605,7 @@ When the HowRelated takes the term 24, it specifies the ID of the referred Servi
 <p>The get_Data method allows a client to query a server in order to retrieve BCG data for a set of programmes or programme groups. The flexibility of the query syntax enables simple or complex queries to best restrict the set and size of the metadata response. For example, a simple query could request program information for a specific content identifier or program title. Alternatively, more powerful queries can be generated by combining these simple queries, for example, to create an EPG a request can be made for all program and schedule information across a range of services between specific dates. Content resolution can also be performed using the same method to retrieve content referencing information for one or more content identifiers.</p>
 <p>Optional parameters are available to limit the number of results (e.g. 10 results) and to sort them (e.g., sort alphabetically by title). Support for these features is optional on the server and indicated to the client in a describe_Get_Data response (see Example 4 in clause <a href="#describe_get_data-example" class="sectionRef"></a>).</p>
 <p>The query mechanism is fully defined in clause 5.1 of TV-Anytime specification [[!TVA-BID]], with many examples of potential requests given in Annex C of TV-Anytime specification [[!TVA-BID]].</p>
-<p>The following is an example client get_Data request for the program information of all programs with a title equal to “News”:</p>
+<p>The following is an example client get_Data request for the program information of all programs with a title equal to &ldquo;News&rdquo;:</p>
 <div class="example">
 <pre>
 &lt;get_Data xmlns="urn:tva:transport:2007" ...&gt;
@@ -619,7 +619,7 @@ When the HowRelated takes the term 24, it specifies the ID of the referred Servi
 </pre>
 <div class="caption">Example 1: Client get_Data request [[!TVA-BID]]</div>
 </div>
-<p>And the Server’s response to this request:</p>
+<p>And the Server's response to this request:</p>
 <div class="example">
 <pre>
 &lt;get_Data_Result serviceVersion="1" xmlns="urn:tva:transport:2007"...&gt;
@@ -652,8 +652,8 @@ When the HowRelated takes the term 24, it specifies the ID of the referred Servi
 </section>
 <section id="describe_get_data-example">
 <h6>describe_Get_Data (informative)</h6>
-<p>The describe_Get_Data method provides a client with information concerning the server’s capabilities in terms of get_Data requests. For example, it will specify the metadata tables available to be queried, possibly also listing the particular fields that can be searched or sorted on.</p>
-<p>The following example is a request for the Server’s get_Data capabilities:</p>
+<p>The describe_Get_Data method provides a client with information concerning the server's capabilities in terms of get_Data requests. For example, it will specify the metadata tables available to be queried, possibly also listing the particular fields that can be searched or sorted on.</p>
+<p>The following example is a request for the Server's get_Data capabilities:</p>
 <div class="example">
 <pre>
 &lt;describe_Get_Data xmlns="urn:tva:transport:2007"/&gt;
@@ -688,12 +688,12 @@ When the HowRelated takes the term 24, it specifies the ID of the referred Servi
   &lt;/AvailableTables&gt;
 &lt;/describe_get_Data_Result&gt;
 </pre>
-<div class="caption">Example 4: Server’s describe_Get_Data Response [[!TVA-BID]]</div>
+<div class="caption">Example 4: Server's describe_Get_Data Response [[!TVA-BID]]</div>
 </div>
 </section>
 <section>
 <h6>SOAP Update mechanism for BCG</h6>
-<p>The overall BCG XML document MAY have a version number associated with it. In addition, the BCG fragments MAY have an ID and version number associated with them, allowing the client to request fragment updates using the SOAP Query mechanism [[!TVA-BID]]. Server support for fragment updates is indicated through the server’s describe_Get_Data capabilities. See clause 5.1.2.4 of TV-Anytime [[!TVA-BID]] for further details.</p>
+<p>The overall BCG XML document MAY have a version number associated with it. In addition, the BCG fragments MAY have an ID and version number associated with them, allowing the client to request fragment updates using the SOAP Query mechanism [[!TVA-BID]]. Server support for fragment updates is indicated through the server's describe_Get_Data capabilities. See clause 5.1.2.4 of TV-Anytime [[!TVA-BID]] for further details.</p>
 </section>
 </section>
 
@@ -741,7 +741,7 @@ When the HowRelated takes the term 24, it specifies the ID of the referred Servi
 <li><i>BroadcastDiscovery/SI/ServiceDescriptionLocation</i> or
 <li><i>BroadcastDiscovery/ServicesDescriptionLocation</i>
 </ul></ul></ul>
-<p>In accordance with clause 5.2.13.2 of SD&amp;S [[!SDNS]], if present, SI/ServiceDescriptionLocation shall take precedence. Furthermore, if more than one BCG Discovery record is specified, a single preferred record may optionally be signalled using the “preferred” attribute.</p><ul>
+<p>In accordance with clause 5.2.13.2 of SD&amp;S [[!SDNS]], if present, SI/ServiceDescriptionLocation shall take precedence. Furthermore, if more than one BCG Discovery record is specified, a single preferred record may optionally be signalled using the &ldquo;preferred&rdquo; attribute.</p><ul>
 <li>BCG Discovery<ul>
 <li>Identifier of BCG Record<ul>
 <li><i>BCGDiscovery/BCG@Id</i>
@@ -750,7 +750,7 @@ When the HowRelated takes the term 24, it specifies the ID of the referred Servi
 <li><i>BCGDiscovery/TransportMode/DVBSTP</i>
 <li><i>BCGDiscovery/TransportMode/HTTP@Location</i> or <i>BCGDiscovery/TransportMode/HTTP@SOAP</i>
 </ul></ul></ul>
-<p>Figure <a href="#link-a-service-in-bcg" class="figureRef"></a> indicates how to receive BCG metadata relating to a single service or a couple of services in Broadcast Discovery information. In order to signal BCG metadata for a single service or services’ list, the value of “ServiceDescriptionLocation” or “ServicesDescriptionLocation” in Broadcast Discovery must be the same. The transport address of BCG metadata is described in the children nodes of “TransportMode” element in the BCG Discovery. With this address, the OITF can receive BCG metadata for a single service or a couple of services (either through push or pull container based mechanism, or through SOAP querying).</p>
+<p>Figure <a href="#link-a-service-in-bcg" class="figureRef"></a> indicates how to receive BCG metadata relating to a single service or a couple of services in Broadcast Discovery information. In order to signal BCG metadata for a single service or services' list, the value of &ldquo;ServiceDescriptionLocation&rdquo; or &ldquo;ServicesDescriptionLocation&rdquo; in Broadcast Discovery must be the same. The transport address of BCG metadata is described in the children nodes of &ldquo;TransportMode&rdquo; element in the BCG Discovery. With this address, the OITF can receive BCG metadata for a single service or a couple of services (either through push or pull container based mechanism, or through SOAP querying).</p>
 <figure id="link-a-service-in-bcg">
 <img alt="Figure 6" src="images/LinkAServiceInBCG.png" style="width:90%" />
 <figcaption>Figure ####: How to link a service in Broadcast Discovery with BCG Discovery</figcaption>
@@ -783,12 +783,12 @@ When the HowRelated takes the term 24, it specifies the ID of the referred Servi
 <li>CRID value of a single program
 <li><i>programId</i> value should be the same with one of CRID values in ProgramLocationTable
 </ul></ul></ul>
-<p>Figure <a href="#description-information-in-bcg" class="figureRef"></a> describes how to find description information in BCG from a single service of Broadcast Discovery. Service information in SD&amp;S and BCG metadata is linked as described in clause 6.4 of BCG [[!BCG]] (BCG ServiceInformation@serviceId = SD&amp;S BroadcastDiscovery ServiceName attribute). Once the serviceId value in ServiceInformationTable is found, a single service’s schedule events can be retrieved from the ProgramLocationTable. Then, Program@CRIDs in ScheduleEvent values can be used to find detailed information of a single content by referencing ProgramInformation@programId.</p>
+<p>Figure <a href="#description-information-in-bcg" class="figureRef"></a> describes how to find description information in BCG from a single service of Broadcast Discovery. Service information in SD&amp;S and BCG metadata is linked as described in clause 6.4 of BCG [[!BCG]] (BCG ServiceInformation@serviceId = SD&amp;S BroadcastDiscovery ServiceName attribute). Once the serviceId value in ServiceInformationTable is found, a single service's schedule events can be retrieved from the ProgramLocationTable. Then, Program@CRIDs in ScheduleEvent values can be used to find detailed information of a single content by referencing ProgramInformation@programId.</p>
 <figure id="description-information-in-bcg">
 <img alt="Figure 7" src="images/DescriptionInformationInBCG.png" style="width:90%" />
 <figcaption>Figure ####: How to Find Description Information in BCG from SD&amp;S Metadata</figcaption>
 </figure>
-<p>In summary, an OITF can receive a single service, for example broadcaster1, from SD&amp;S’s Broadcast Discovery record. With BCG@Id value in BCG Discovery, the OITF can collect BCG metadata which has all EPG information of <b><i>broadcaster1</i></b> service. OITF compares serviceId values in ServiceInformationTable of BCG metadata in order to find a match with the same value of broadcaster1’s ServiceName attribute of Broadcast Discovery record. Once OITF finds the same service from the ServiceInformationTable, OITF can find the ScheduleEvents of <b><i>broadcaster1</i></b>’s service, allowing the OITF to create the EPG’s time table of a single channel. The detailed information of a single event can be described by BasicDescription using ProgramInformation@programId of ProgramInformationTable.</p>
+<p>In summary, an OITF can receive a single service, for example broadcaster1, from SD&amp;S's Broadcast Discovery record. With BCG@Id value in BCG Discovery, the OITF can collect BCG metadata which has all EPG information of <b><i>broadcaster1</i></b> service. OITF compares serviceId values in ServiceInformationTable of BCG metadata in order to find a match with the same value of broadcaster1's ServiceName attribute of Broadcast Discovery record. Once OITF finds the same service from the ServiceInformationTable, OITF can find the ScheduleEvents of <b><i>broadcaster1</i></b>'s service, allowing the OITF to create the EPG's time table of a single channel. The detailed information of a single event can be described by BasicDescription using ProgramInformation@programId of ProgramInformationTable.</p>
 </section>
 </section>
 <section id="crid-location-resolution">
@@ -803,22 +803,22 @@ When the HowRelated takes the term 24, it specifies the ID of the referred Servi
 <section>
 <h4>CoD Service with SIP session management</h4>
 <p>The BCG provides two approaches to identifying each instance of content (e.g. HD and SD versions of <i>InterestingMovie</i>):</p><ol>
-<li>one CRID per instance (e.g. a “HD InterestingMovie CRID” and an “SD InterestingMovie CRID”)
-<li>one CRID for the content (e.g. a “InterestingMovie CRID”) and two IMIs for each instance (e.g. a “HD IMI” and an “SD IMI”); the combination of CRID and IMI identifies the appropriate instance.
+<li>one CRID per instance (e.g. a &ldquo;HD InterestingMovie CRID&rdquo; and an &ldquo;SD InterestingMovie CRID&rdquo;)
+<li>one CRID for the content (e.g. a &ldquo;InterestingMovie CRID&rdquo;) and two IMIs for each instance (e.g. a &ldquo;HD IMI&rdquo; and an &ldquo;SD IMI&rdquo;); the combination of CRID and IMI identifies the appropriate instance.
 </ol>
 <p>It is a service provider decision as to which approach is used.</p>
 <p>To enable either approach to be used for Content on Demand services using SIP session management provided in managed networks relying on IMS, CoD session setup and initiation SHALL use the CRID and an Instance Metadata Identifier (where one exists) in conjunction with the process defined in <a href="volume4.html#s5-3-2" class="extRef">clause 5.3.2</a> of the Protocol specification [[.OIPF_PROT2]].</p>
-<p>This clause defines the format of the wild card portion of the “Request URI”.</p>
-<p>The wild card part (*) of the Request URI SHALL be constructed from the CoD’s CRID and Instance Metadata Identifier (IMI), as signalled in the BCG, in accordance with the following format, as specified in clause 12.1.4 of [[!DVBTRANS]]</p>
+<p>This clause defines the format of the wild card portion of the &ldquo;Request URI&rdquo;.</p>
+<p>The wild card part (*) of the Request URI SHALL be constructed from the CoD's CRID and Instance Metadata Identifier (IMI), as signalled in the BCG, in accordance with the following format, as specified in clause 12.1.4 of [[!DVBTRANS]]</p>
 <p style="text-align: center;"><code>&lt;CRID&gt;[#&lt;IMI&gt;]</code></p>
 <p>As a CRID is composed of an &lt;authority&gt; and &lt;data&gt; section and an IMI is composed of a &lt;name&gt; and &lt;data&gt; section, the above construction can be represented in greater detail as:</p>
 <p style="text-align: center;"><code>&lt;CRID_authority&gt;/&lt;CRID_data&gt;[#[&lt;IMI_name&gt;/]&lt;IMI_data&gt;]</code></p>
-<p>The “CRID://” and “imi:” portions of the respective identifiers SHALL be omitted.</p>
+<p>The &ldquo;CRID://&rdquo; and &ldquo;imi:&rdquo; portions of the respective identifiers SHALL be omitted.</p>
 <p>The IMI portion of the Request URI is optional; however, if an IMI is signalled in the BCG for a CoD instance, it SHALL be included in the Request URI.</p>
 <p>For example:<br />
-In the case where the HD version of InterestingMovie is signalled with a CRID of “CRID://newstudio.com/InterestingMovieHD”, the wild card part of the Request URI would be:</p>
+In the case where the HD version of InterestingMovie is signalled with a CRID of &ldquo;CRID://newstudio.com/InterestingMovieHD&rdquo;, the wild card part of the Request URI would be:</p>
 <p style="text-align: center;"><code>newstudio.com/InterestingMovieHD</code></p>
-<p>If however, InterestingMovie is signalled with a CRID of “CRID://newstudio.com/InterestingMovie”, and has a HD instance with the IMI: “imi:hd”, the wild card part of the Request URI for the HD instance would be:</p>
+<p>If however, InterestingMovie is signalled with a CRID of &ldquo;CRID://newstudio.com/InterestingMovie&rdquo;, and has a HD instance with the IMI: &ldquo;imi:hd&rdquo;, the wild card part of the Request URI for the HD instance would be:</p>
 <p style="text-align: center;"><code>newstudio.com/InterestingMovie#hd</code></p>
 </section>
 </section>
@@ -836,7 +836,7 @@ In the case where the HD version of InterestingMovie is signalled with a CRID of
 <section class="appendix" id="sdns-schema-extension">
 <h2>Schema Extension for SD&amp;S</h2>
 <section id="sdns-namespace-schema"><h3>Namespace</h3>
-<p>The namespace for Open IPTV Forum is “urn:oipf:service:sdns:2010-1”.</p>
+<p>The namespace for Open IPTV Forum is &ldquo;urn:oipf:service:sdns:2010-1&rdquo;.</p>
 <pre class="xml-schema">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;xs:schema targetNamespace="urn:oipf:service:sdns:2010-1"
   xmlns:tns="urn:oipf:service:sdns:2010-1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -902,7 +902,7 @@ In the case where the HD version of InterestingMovie is signalled with a CRID of
 </section>
 <section id="sdns-FLUTESessionDescriptor-schema"><h3>FLUTESessionDescriptor</h3>
 <p>The following extension is defined to the XML AIT to signal the session parameters needed for delivery of applications using FLUTE.</p>
-<p>Parameters SHALL be as defined in section 6.1.13 ‘File delivery session description with SDP’ of [[!DATACAST]].</p>
+<p>Parameters SHALL be as defined in section 6.1.13 ‘File delivery session description with SDP' of [[!DATACAST]].</p>
 <p>This element is optional; if it is not supported, it SHALL be silently ignored without causing an error.</p>
 <pre class="xml-schema">&lt;xs:complexType name="FLUTESessionDescriptor"&gt;
   &lt;xs:sequence&gt;
@@ -936,7 +936,7 @@ In the case where the HD version of InterestingMovie is signalled with a CRID of
 <section class="appendix" id="bcg-schema-extension">
 <h2>Schema Extension for BCG</h2>
 <section id="bcg-namespace-schema"><h3>Namespace</h3>
-<p>The namespace for Open IPTV Forum is “urn:oipf:service:bcg:2010-1”.</p>
+<p>The namespace for Open IPTV Forum is &ldquo;urn:oipf:service:bcg:2010-1&rdquo;.</p>
 <pre class="xml-schema">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;xs:schema targetNamespace="urn:oipf:service:bcg:2010-1"
   xmlns:tns="urn:oipf:service:bcg:2010-1"
@@ -1454,7 +1454,7 @@ HOST: 195.238.226.224</pre>
   &lt;/dvb12:ServiceProviderDiscovery&gt;
 &lt;/dvb12:ServiceDiscovery&gt;
 </pre>
-<p>In this example, a single service provider is indicated by the name “<code>Service Provider</code>” with an offering titled “<code>Service Provider IPTV Offer</code>” and the domain “<code>tv.service.com</code>”. A logo file for the Service Provider’s offering is available at the URL specified by the LogoURI attribute. Information for the OITF to connect to the Emergency Service Notifications from the Service Provider can be retrieved from the URL specified in the <code>EmergencyNotificationService</code> element.</p>
+<p>In this example, a single service provider is indicated by the name &ldquo;<code>Service Provider</code>&rdquo; with an offering titled &ldquo;<code>Service Provider IPTV Offer</code>&rdquo; and the domain &ldquo;<code>tv.service.com</code>&rdquo;. A logo file for the Service Provider's offering is available at the URL specified by the LogoURI attribute. Information for the OITF to connect to the Emergency Service Notifications from the Service Provider can be retrieved from the URL specified in the <code>EmergencyNotificationService</code> element.</p>
 <p>Three service types are available to the terminal</p><ul>
 <li>Broadcast Discovery, designated by <code>Payload Id="02"</code>
 <li>Package Discovery, designated by <code>Payload Id="05"</code>

@@ -130,7 +130,7 @@ This specification provides informative examples of features defined in Volume 4
 <section>
 <h2>Conventions and Terminology</h2>
 <section><h3>Conventions</h3>
-<p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in RFC2119 [[RFC2119]]. All sections and annexes, except “Introduction”, are normative, unless they are explicitly indicated to be informative.</p>
+<p>The key words &ldquo;MUST&rdquo;, &ldquo;MUST NOT&rdquo;, &ldquo;REQUIRED&rdquo;, &ldquo;SHALL&rdquo;, &ldquo;SHALL NOT&rdquo;, &ldquo;SHOULD&rdquo;, &ldquo;SHOULD NOT&rdquo;, &ldquo;RECOMMENDED&rdquo;, &ldquo;MAY&rdquo;, and &ldquo;OPTIONAL&rdquo; in this document are to be interpreted as described in RFC2119 [[RFC2119]]. All sections and annexes, except &ldquo;Introduction&rdquo;, are normative, unless they are explicitly indicated to be informative.</p>
 </section>
 <section><h3>Terminology</h3>
 <section><h4>Definitions</h4>
@@ -285,7 +285,7 @@ Figure <a href="#f4" class="figureRef">4</a> shows a call flow for the managemen
 <tr><td class="label">Step 1:</td><td>The OITF established a scheduled content and performs content reporting as required by the IPTV Control FE.</td></tr>
 <tr><td class="label">Step 2:</td><td>The OITF performs content reporting when user performs zapping then stops for the configured time.</td></tr>
 <tr><td class="label">Step 3:</td><td>The OITF issues an HTTP HNI-IG PENDING_IG request to the IG. This request can be issued at any time after step 1.</td></tr>
-<tr><td class="label">Step 4:</td><td>At some point in time, the IPTV control FE decided that it does not want any more content reporting. The IPTV control FE sends a SIP UPDATE with the Recv-Info header set to ‘nil’ to the ASM to that effect.</td></tr>
+<tr><td class="label">Step 4:</td><td>At some point in time, the IPTV control FE decided that it does not want any more content reporting. The IPTV control FE sends a SIP UPDATE with the Recv-Info header set to ‘nil' to the ASM to that effect.</td></tr>
 <tr><td class="label">Step 5:</td><td>The ASM forwards the SIP UPDATE to the IG.</td></tr>
 <tr><td class="label">Step 6:</td><td>The IG forwards the SIP UPDATE in an HTTP 200 OK response to the OITF</td></tr>
 <tr><td class="label">Steps 7-9:</td><td>The OITF issues an HTTP POST request to the IG that includes the SIP 200 OK response. The SIP 200 OK is forwarded all the way to the IPTV control FE.</td></tr>
@@ -304,10 +304,10 @@ Figure <a href="#f4" class="figureRef">4</a> shows a call flow for the managemen
 <section id="s4-1-3"><h3>Purchase of Digital Media</h3>
 <section id="s4-1-3-1"><h4>Purchase Request procedure of selected Digital Media related to the content</h4>
 <p>Confirmation process: After retrieving and advertising the Digital Media, users can select the Digital Media they want to buy. When a user selects one Digital Media, the OITF pops up a dialog box to let the user confirm the selected Digital Media for purchase purpose.</p>
-<p>Repeat billing check: Before sending the purchase request for Digital Media, the OITF must check the user’s profile first (in order to avoid repeat billing). If the requested Digital Media is already recorded in user’s profile, the OITF pops up a dialog box to let user know the repeat billing, and then stop sending the purchase request.</p>
-<p>If the requested Digital Media is not recorded in user’s profile, the OITF sends the HTTP purchase request to IG, and IG generates a SIP request to IPTV Control FE through ASM FE, and then the IPTV Control FE sends the purchase request (ACR) to Charging FE.</p>
-<p>After receive the purchase response (ACA) from Charging FE, and if the purchase is successful, the IPTV Control FE sends Digital Purchase Request to IPTV Applications FE to update the user’s profile, and then the IPTV Applications FE sends the XCAP PUT to IPTV Service Profile FE to update the purchased digital media record.</p>
-<p>After receive the HTTP response sent from IPTV Service Profile FE, the IPTV Applications FE sends the response to IPTV Control FE. The IPTV Control FE sends the SIP 200 OK response (with no message body) to IG through ASM FE if the purchase request success; otherwise, the IPTV Control FE sends the SIP 403 Forbidden response (the message body is Result-Code that defined in [[!RFC3588]]) to IG through ASM FE. Finally, the IG sends the HTTP 200 OK to OITF with purchase result (it can be either “success” or Result-Code).</p>
+<p>Repeat billing check: Before sending the purchase request for Digital Media, the OITF must check the user's profile first (in order to avoid repeat billing). If the requested Digital Media is already recorded in user's profile, the OITF pops up a dialog box to let user know the repeat billing, and then stop sending the purchase request.</p>
+<p>If the requested Digital Media is not recorded in user's profile, the OITF sends the HTTP purchase request to IG, and IG generates a SIP request to IPTV Control FE through ASM FE, and then the IPTV Control FE sends the purchase request (ACR) to Charging FE.</p>
+<p>After receive the purchase response (ACA) from Charging FE, and if the purchase is successful, the IPTV Control FE sends Digital Purchase Request to IPTV Applications FE to update the user's profile, and then the IPTV Applications FE sends the XCAP PUT to IPTV Service Profile FE to update the purchased digital media record.</p>
+<p>After receive the HTTP response sent from IPTV Service Profile FE, the IPTV Applications FE sends the response to IPTV Control FE. The IPTV Control FE sends the SIP 200 OK response (with no message body) to IG through ASM FE if the purchase request success; otherwise, the IPTV Control FE sends the SIP 403 Forbidden response (the message body is Result-Code that defined in [[!RFC3588]]) to IG through ASM FE. Finally, the IG sends the HTTP 200 OK to OITF with purchase result (it can be either &ldquo;success&rdquo; or Result-Code).</p>
 <p>Figure <a href="#f5" class="figureRef">5</a> shows the purchase request procedure of selected Digital Media related to the content.</p>
 <figure id="f5">
 <figcaption>Figure ####: Purchase Request Procedure of selected Digital Media related to the Content</figcaption>
@@ -315,15 +315,15 @@ Figure <a href="#f4" class="figureRef">4</a> shows a call flow for the managemen
 </figure>
 <p>Because the purchase request happen in the period of pause during a Scheduled content (if supported) or a CoD content, the OITF has already established a session between itself and IPTV Control FE. The SIP INFO will use this established session to transmit information about purchase request.</p>
 <table class="sequence">
-<tr><td class="label">Step 1:</td><td>The OITF sends XCAP GET to IPTV Service Profile FE to get the user’s profile about Digital Media.</td></tr>
-<tr><td class="label">Step 2:</td><td>The IPTV Service Profile FE returns HTTP 200 OK with user’s profile to OITF. If the requested Digital Media is already recorded in user’s profile, the OITF needs to popup a dialog box to let user know the repeat billing, and then stop sending the purchase request.</td></tr>
+<tr><td class="label">Step 1:</td><td>The OITF sends XCAP GET to IPTV Service Profile FE to get the user's profile about Digital Media.</td></tr>
+<tr><td class="label">Step 2:</td><td>The IPTV Service Profile FE returns HTTP 200 OK with user's profile to OITF. If the requested Digital Media is already recorded in user's profile, the OITF needs to popup a dialog box to let user know the repeat billing, and then stop sending the purchase request.</td></tr>
 <tr><td class="label">Step 3:</td><td>The OITF sends an HTTP POST (with SelectedDigitalMediaURI, UserID) to IG for purchasing selected Digital Media.</td></tr>
 <tr><td class="label">Step 4:</td><td>The IG sends a SIP INFO Request (with SelectedDigitalMediaURI, UserID) to ASM FE for authentication.</td></tr>
 <tr><td class="label">Step 5:</td><td>The ASM FE forwards the SIP INFO (with SelectedDigitalMediaURI, UserID) to IPTV Control FE for purchase.</td></tr>
 <tr><td class="label">Step 6:</td><td>The IPTV Control FE sends Accounting-Request (ACR) message (with SelectedDigitalMediaURI, UserID) to Charging FE.</td></tr>
 <tr><td class="label">Step 7:</td><td>The Charging FE returns Accounting-Answer (ACA) message with purchase result (success or fail) to IPTV Control FE.</td></tr>
 <tr><td class="label">Step 8:</td><td>The IPTV Control FE sends the Digital Purchase Request (with SelectedDigitalMediaURI, UserID) to IPTV Applications FE.</td></tr>
-<tr><td class="label">Step 9:</td><td>The IPTV Applications FE issues an XCAP PUT request to IPTV Service Profile FE to update user’s profile (adds a SelectedDigitalMediaURI and/or other information). In order to avoid falsifying the information about Purchase of Digital Media in user’s profile cannot be updated by OITF.</td></tr>
+<tr><td class="label">Step 9:</td><td>The IPTV Applications FE issues an XCAP PUT request to IPTV Service Profile FE to update user's profile (adds a SelectedDigitalMediaURI and/or other information). In order to avoid falsifying the information about Purchase of Digital Media in user's profile cannot be updated by OITF.</td></tr>
 <tr><td class="label">Step 10:</td><td>The IPTV Service Profile FE returns an HTTP 200 OK to IPTV Applications FE.</td></tr>
 <tr><td class="label">Step 11:</td><td>The IPTV Applications FE returns a response to IPTV Control FE.</td></tr>
 <tr><td class="label">Step 12:</td><td>The IPTV Control FE returns SIP 200 OK (if purchase request success) or 403 Forbidden including Result-Code (if purchase request failure) to ASM FE.</td></tr>
@@ -342,7 +342,7 @@ Figure <a href="#f4" class="figureRef">4</a> shows a call flow for the managemen
 </figure>
 <table class="sequence">
 <tr><td class="label">Step 1:</td><td>The OITF sends a HTTP POST to the IG to initiate a PPV session.</td></tr>
-<tr><td class="label">Step 2:</td><td>The IG validates the request and sends an INVITE to the ASM.<p>The ASM uses the services of the “Resource and Admission Control” functional entity to perform resource reservation.</p></td></tr>
+<tr><td class="label">Step 2:</td><td>The IG validates the request and sends an INVITE to the ASM.<p>The ASM uses the services of the &ldquo;Resource and Admission Control&rdquo; functional entity to perform resource reservation.</p></td></tr>
 <tr><td class="label">Step 3:</td><td>The ASM uses the services of the RAC functional entity to perform resource reservation.</td></tr>
 <tr><td class="label">Step 4:</td><td>The ASM forwards the INVITE to the IPTV Control. Using the BC service ID and BC program ID, the IPTV Control verifies that the user has a PPV subscription. The IPTV Control verifies whether the program has started or not. If the program has started and is encrypted, the IPTV Control may interact with CSP functions directly or through the IPTV application to verify the user entitlements, and then performs the following steps. If the program has started and is not encrypted, the IPTV Control performs the following steps. If the program has not started, the IPTV Control refuses the request.</td></tr>
 <tr><td class="label">Step 5:</td><td>The IPTV Control sends a 200 OK response to the ASM with the bandwidth required for the specific scheduled content channels and other parameters.</td></tr>
@@ -470,7 +470,7 @@ Figure <a href="#f11" class="figureRef">11</a> shows a call flow for a user, wit
 Figure <a href="#f12" class="figureRef">12</a> shows a detailed call flow which takes the channel change as an example for the Parental Control command. The following is a brief description of the steps: 
 <table class="sequence">
 <tr><td class="label">Step 1:</td><td>The child is watching a scheduled content program as described in Volume 4 [[.OIPF_PROT2]].</td></tr>
-<tr><td class="label">Step 2:</td><td>The parent retrieves information related to the watched scheduled content as described in <a href="#s4-1-6" class="sectionRef">4.1.6</a>, “<a href="#s4-1-6" class="sectionTitleRef"></a>.”</td></tr>
+<tr><td class="label">Step 2:</td><td>The parent retrieves information related to the watched scheduled content as described in <a href="#s4-1-6" class="sectionRef">4.1.6</a>, &ldquo;<a href="#s4-1-6" class="sectionTitleRef"></a>.&rdquo;</td></tr>
 <tr><td class="label">Step 3:</td><td>The parent decides to block the content being watched by the child. The OITF issues a request to the IG as described in Volume 4 [[.OIPF_PROT2]] and includes the following parameters: <ul>
 <li>PC-Command: the command for parental control, e.g. channel change, session teardown.
 <li>PC-ChannelChangedTo: When the PC-Command is channel change, the PC-ChannelChangedTo may be included. It indicates the new channel to change to. 
@@ -657,12 +657,12 @@ Figure <a href="#f21" class="figureRef">21</a> shows a call flow for a user requ
 <p>Content-related retrieval allows a user to retrieve all the bookmarks previously set against the content item the user had chosen for viewing. For example, the user watches a show, and sets bookmarks on some terrific scenes so that they may be reviewed later. Some time later, when the user wants to review the show, the user requests the content for viewing. At the same time, all the bookmarks for that content item are transferred from the network to the OITF, and the user can watch from any of the bookmarked points.</p>
 <table class="sequence">
 <tr><td class="label">Step 1:</td><td>The OITF sends a HTTP POST to the IG to initiate a COD session with the user ID (impu in the X-OITF-From header), COD content ID and SDP Offer for content delivery channel and content control channel.</td></tr>
-<tr><td class="label">Step 2:</td><td>The IG validates the request and sends an INVITE to the IPTV Control via the ASM to set up a CoD session with the user ID, COD content ID, and SDP Offer. The ASM uses the services of the “Resource and Admission Control” functional entity to perform resource reservation.</td></tr>
-<tr><td class="label">Step 3:</td><td>The IPTV Control sends an XCAP GET to retrieve the user’s service profile and bookmark list with the content ID and user ID retrieved from the INVITE request.</td></tr>
-<tr><td class="label">Step 4:</td><td>The IPTV Service Profile returns 200 OK to the IPTV Control with the user’s service profile and bookmark list related to the content ID for the user, and the IPTV Control FE uses the user’s service profile data to check the service rights for the requested service.</td></tr>
+<tr><td class="label">Step 2:</td><td>The IG validates the request and sends an INVITE to the IPTV Control via the ASM to set up a CoD session with the user ID, COD content ID, and SDP Offer. The ASM uses the services of the &ldquo;Resource and Admission Control&rdquo; functional entity to perform resource reservation.</td></tr>
+<tr><td class="label">Step 3:</td><td>The IPTV Control sends an XCAP GET to retrieve the user's service profile and bookmark list with the content ID and user ID retrieved from the INVITE request.</td></tr>
+<tr><td class="label">Step 4:</td><td>The IPTV Service Profile returns 200 OK to the IPTV Control with the user's service profile and bookmark list related to the content ID for the user, and the IPTV Control FE uses the user's service profile data to check the service rights for the requested service.</td></tr>
 <tr><td class="label">Step 5:</td><td>The IPTV Control validates the request, selects the appropriate CDNC for the requested content, and sends the INVITE to the CDNC via the ASM. The CDNC then selects the CC and sends the INVITE to the CC, which selects the CDF and sends the RTSP SETUP to the CDF.</td></tr>
 <tr><td class="label">Step 6:</td><td>The CDF returns an RTSP 200 OK to CC, which returns a SIP 200 OK to CDNC, which returns the 200 OK to the IPTV Control via the ASM.</td></tr>
-<tr><td class="label">Step 7:</td><td>The IPTV Control returns the SDP Answer in the 200 OK to the IG via the ASM. The ASM instructs the “Resource and Admission Control” FE to commit the reserved resources.</td></tr>
+<tr><td class="label">Step 7:</td><td>The IPTV Control returns the SDP Answer in the 200 OK to the IG via the ASM. The ASM instructs the &ldquo;Resource and Admission Control&rdquo; FE to commit the reserved resources.</td></tr>
 <tr><td class="label">Step 8:</td><td>The IG returns the SDP Answer to the OITF in an HTTP 200 OK response.</td></tr>
 <tr><td class="label">Step 9:</td><td>The IPTV Control sends a SIP INFO to the IG via ASM with the Bookmark list.</td></tr>
 <tr><td class="label">Step 10:</td><td>The IG returns the Bookmark list in an HTTP 200 OK response.</td></tr>
@@ -696,13 +696,13 @@ Figure <a href="#f21" class="figureRef">21</a> shows a call flow for a user requ
 </section>
 <section id="s4-1-11"><h3>Personalised Channel</h3>
 <section id="s4-1-11-1"><h4>PCh Profile Configuration</h4>
-<p>Figure <a href="#f24" class="figureRef">24</a> depicts the call flow for configuration of the Personalised Channel where the IPTV Application generates the personalised content guide at the user’s request based on the user profile and content metadata.</p>
+<p>Figure <a href="#f24" class="figureRef">24</a> depicts the call flow for configuration of the Personalised Channel where the IPTV Application generates the personalised content guide at the user's request based on the user profile and content metadata.</p>
 <p>The user can update the personalised content guide with their own preferences as well.</p>
 <p>The following is a brief description of the steps:</p>
 <table class="sequence">
 <tr><td class="label">Step 1:</td><td>Upon user request for creating a new PCh profile, the OITF sends an HTTP GET carrying the user ID to the IPTV Application to request configuration of the PCh. The request is sent through the UNIS-6 reference point.</td></tr>
-<tr><td class="label">Step 2:</td><td>The IPTV Application sends an XCAP GET via the NPI-17 reference point to the IPTV Service Profile with the user ID. The IPTV Service Profile responds with a 200 OK including the user’s IPTV service profile.</td></tr>
-<tr><td class="label">Step 3:</td><td>The IPTV Application checks the user’s rights for the PCh service and interacts with the IPTV Metadata Control via NPI-33 to generate a personalised content guide based upon user preference, etc., and creates related information, e.g. PCh ID. </td></tr>
+<tr><td class="label">Step 2:</td><td>The IPTV Application sends an XCAP GET via the NPI-17 reference point to the IPTV Service Profile with the user ID. The IPTV Service Profile responds with a 200 OK including the user's IPTV service profile.</td></tr>
+<tr><td class="label">Step 3:</td><td>The IPTV Application checks the user's rights for the PCh service and interacts with the IPTV Metadata Control via NPI-33 to generate a personalised content guide based upon user preference, etc., and creates related information, e.g. PCh ID. </td></tr>
 <tr><td class="label">Step 4:</td><td>The IPTV Application applies local policy or interacts with other entities to generate the personalized content guide conforming to the user profile, e.g. user preference or watching habits.</td></tr>
 <tr><td class="label">Step 5:</td><td>The IPTV Application sends a 200 OK to the OITF with the PCh content guide containing PCh ID, selected content IDs and related time schedule and other related information. </td></tr>
 <tr><td class="label">Step 6:</td><td>Upon user request to update their PCh profile, the DAE in the OITF sends an HTTP PUT to the IPTV Application to update the PCh content guide. The IPTV Application stores the PCh information in the IPTV Service Profile via NPI-17 reference point.</td></tr>
@@ -725,7 +725,7 @@ Figure <a href="#f21" class="figureRef">21</a> shows a call flow for a user requ
 <tr><td class="label">Step 5:</td><td>The IPTV Control retrieves the related PCh information (e.g. list of content to be played with the time schedule of each item) from the IPTV Application.</td></tr>
 <tr><td class="label">Step 6:</td><td>The IPTV Control terminates the incoming SIP INVITE and constructs the corresponding SIP INVITE as a SIP B2BUA. The out-going SIP INVITE contains the content ID (e.g. BC Channel ID or COD content ID) to be played inside the PChId. Finally, the IPTV Control sends it to the CC via the ASM and the CDNC.</td></tr>
 <tr><td class="label">Step 7:</td><td>The CC sends the RTSP SETUP towards the appropriate CDF for the upcoming PCh item.</td></tr>
-<tr><td class="label">Step 8:</td><td>The CDF prepares the delivery of the indicated PCh item. If the requested PCh item is BC Program and the CDF doesn’t cache the content, the CDF may fetch the content, e.g., join the associated multicast group.</td></tr>
+<tr><td class="label">Step 8:</td><td>The CDF prepares the delivery of the indicated PCh item. If the requested PCh item is BC Program and the CDF doesn't cache the content, the CDF may fetch the content, e.g., join the associated multicast group.</td></tr>
 <tr><td class="label">Step 9:</td><td>Following that, the CDF returns an RTSP 200 OK to the CC, carrying the RTSP session ID established between CC and CDF.</td></tr>
 <tr><td class="label">Step 10:</td><td>The SIP 200 OK is sent from the CC to the ITF via the CDNC, IPTV Control and ASM. The response includes the SDP answer for the PCh session initiation. The response also includes the RTSP session ID generated by the CC, for the RTSP session established between the OITF and CC.</td></tr>
 <tr><td class="label">Step 11:</td><td>The IG returns a HTTP 200 OK to the OITF, carrying the unicast SDP answer and RTSP session ID.</td></tr>
@@ -742,7 +742,7 @@ NOTE: No RTSP PAUSE is needed during the period when the PCh content switch is b
 NOTE: Overlap handling is for further study. The method described here is provided as an example of one possible way to perform overlap handling.
 </td></tr>
 <tr><td class="label">Step 20:</td><td>The IPTV Application determines the location of the PVR (Local PVR or nPVR) to be used for recording the overlapped contents.</td></tr>
-<tr><td class="label">Step 21:</td><td>The IPTV Applications triggers the initiation of the procedure to start an nPVR or a Local PVR, based on the user’s choice, or SP policy, or ITF capability.</td></tr>
+<tr><td class="label">Step 21:</td><td>The IPTV Applications triggers the initiation of the procedure to start an nPVR or a Local PVR, based on the user's choice, or SP policy, or ITF capability.</td></tr>
 </table>
 Note that in the case of scheduled content, there is the possibility that an end of program cue signal is embedded in the content. Generally this is use for advertising, however, it can also be used to detect the end of programs that run long or short of their scheduled time (for instance, awards shows or sporting events).
 <figure id="f25">
@@ -760,7 +760,7 @@ Note that in the case of scheduled content, there is the possibility that an end
 <p>The user, based on information provided by the EPG, orders the recording of an available scheduled content item scheduled for future multicast delivery.</p>
 <p><b>Note:</b> Immediate recording is analogous to scheduled recording with the timer set to 0.</p>
 <table class="sequence">
-<tr><td class="label">Step 1:</td><td>The OITF makes a request to the IG to capture the particular Scheduled content item selected by the user. During this step, the OITF gives appropriate parameters to the IG to identify the Request Type as “SetUpRecordingOrder”, the BCServiceId, the ProgramId, and relevant timing information as ProgramStartTime, ProgramDuration, etc. The OITF also indicates the TargetDeviceID. The TargetDeviceID identifies the OITF on behalf of whom the request is made. The request shall include also the storage recording mode (local) and if it is a Scheduled Recording (“SR” as used in this example, and not an immediate recording request, “IR”).</td></tr>
+<tr><td class="label">Step 1:</td><td>The OITF makes a request to the IG to capture the particular Scheduled content item selected by the user. During this step, the OITF gives appropriate parameters to the IG to identify the Request Type as &ldquo;SetUpRecordingOrder&rdquo;, the BCServiceId, the ProgramId, and relevant timing information as ProgramStartTime, ProgramDuration, etc. The OITF also indicates the TargetDeviceID. The TargetDeviceID identifies the OITF on behalf of whom the request is made. The request shall include also the storage recording mode (local) and if it is a Scheduled Recording (&ldquo;SR&rdquo; as used in this example, and not an immediate recording request, &ldquo;IR&rdquo;).</td></tr>
 <tr><td colspan="2"><b>Note:</b> The Request Type can be of several types: set up a recording order, cancel a recording order, delete a recorded content, edit a recording order, and view a recording order.</td></tr>
 <tr><td class="label">Step 2:</td><td>The IG transforms the HTTP POST request from step 1 into a SIP MESSAGE request with appropriate parameters defined by step 1, and sends it to the IPTV Control via the ASM in the IMS core network. The IPTV Control receives the request, acting as a Terminating SIP UA.</td></tr>
 <tr><td class="label">Step 3:</td><td>The IPTV Control queries the IPTV Service Profile FE to retrieve the IPTV Service and User Profiles, to fetch the user related PVR settings.</td></tr>
@@ -771,15 +771,15 @@ Note that in the case of scheduled content, there is the possibility that an end
 <tr><td class="label">Step 8:</td><td>The IPTV Control sends a SIP MESSAGE to the IG via the ASM with BC Service Id, the Program Id, and relevant timing information as ProgramStartTime, ProgramDuration, etc.</td></tr>
 <tr><td class="label">Step 9:</td><td>A HTTP 200 OK in sent to the OITF in response to the HTTP Pending IG Request.</td></tr>
 <tr><td class="label">Step 10:</td><td>A new HTTP Pending IG request is sent by the OITF with a SIP 200 OK response in the HTTP message body. The IG sends the SIP 200 OK, in response to the received SIP MESSAGE, to the IPTV Control via the ASM. </td></tr>
-<tr><td class="label">Step 11:</td><td>Upon reception of the confirmation response, the IPTV Control updates the IPTV User Profile status for PVR to “Order Captured”, meaning that the order is pending execution.</td></tr>
-<tr><td class="label">Step 12:</td><td>The IPTV Service Profile FE updates the PVR Status Flag to “Order_Captured” together with related info: Program and BCServiceId.</td></tr>
+<tr><td class="label">Step 11:</td><td>Upon reception of the confirmation response, the IPTV Control updates the IPTV User Profile status for PVR to &ldquo;Order Captured&rdquo;, meaning that the order is pending execution.</td></tr>
+<tr><td class="label">Step 12:</td><td>The IPTV Service Profile FE updates the PVR Status Flag to &ldquo;Order_Captured&rdquo; together with related info: Program and BCServiceId.</td></tr>
 <tr><td class="label">Step 13:</td><td>The OITF starts a counting down timer up to the expected time the program is scheduled to start. At the start time of the scheduled program, the OITF sets up a scheduled content session.</td></tr>
 <tr><td class="label">Step 14:</td><td>The OITF joins the multicast channel.</td></tr>
 <tr><td class="label">Step 15:</td><td>The OITF starts recording when it receives the IP flow.</td></tr>
 <tr><td class="label">Step 16:</td><td>When the program is over, the OITF stops the recording. </td></tr>
-<tr><td class="label">Step 17:</td><td>When the recording finishes, the OITF leaves the channel and tears down the scheduled content session. Within this tear down process, the OITF reports back to the IPTV Control the result of the recording, together with the “spare_limit_in_volume” and “spare_limit_in_time” values for the specific user (the UserID is also provided).</td></tr>
+<tr><td class="label">Step 17:</td><td>When the recording finishes, the OITF leaves the channel and tears down the scheduled content session. Within this tear down process, the OITF reports back to the IPTV Control the result of the recording, together with the &ldquo;spare_limit_in_volume&rdquo; and &ldquo;spare_limit_in_time&rdquo; values for the specific user (the UserID is also provided).</td></tr>
 <tr><td class="label">Step 18:</td><td>The IPTV Control updates the metadata records specific for PVR.</td></tr>
-<tr><td class="label">Step 19:</td><td>The IPTV Control updates the IPTV User Profile PVR Status Flag to “ProgramRecorded”, together related info: ProgramID and BCId.</td></tr>
+<tr><td class="label">Step 19:</td><td>The IPTV Control updates the IPTV User Profile PVR Status Flag to &ldquo;ProgramRecorded&rdquo;, together related info: ProgramID and BCId.</td></tr>
 </table>
 At this point, since the content is stored in the OITF, no further interaction is necessary between the OITF and other network entities to either access or play the recorded content.
 <figure id="f26">
@@ -793,7 +793,7 @@ At this point, since the content is stored in the OITF, no further interaction i
 <p>The following is a brief description of the steps in the flow:</p>
 <p>The user, based on information provided by the EPG, orders the recording of an available scheduled content program scheduled for future multicast delivery on OITF 2.</p>
 <table class="sequence">
-<tr><td class="label">Step 1:</td><td>The OITF makes a request to the IG to capture the particular scheduled content item selected by the user. During this step, the OITF gives appropriate parameters to the IG to identify the Request Type as “SetUpRecordingOrder”, the BCServiceId, the ProgramId, and relevant timing information such as ProgramStartTime, ProgramDuration, etc. The OITF also indicates the TargetDeviceID. The TargetDeviceID identifies the Local PVR (OITF) on behalf of whom the request is made, in this case OITF2. The request shall include also the storage recording mode (local) and if it is a Scheduled Recording (“SR”, as in this example, and not an immediate recording request, “IR”).</td></tr>
+<tr><td class="label">Step 1:</td><td>The OITF makes a request to the IG to capture the particular scheduled content item selected by the user. During this step, the OITF gives appropriate parameters to the IG to identify the Request Type as &ldquo;SetUpRecordingOrder&rdquo;, the BCServiceId, the ProgramId, and relevant timing information such as ProgramStartTime, ProgramDuration, etc. The OITF also indicates the TargetDeviceID. The TargetDeviceID identifies the Local PVR (OITF) on behalf of whom the request is made, in this case OITF2. The request shall include also the storage recording mode (local) and if it is a Scheduled Recording (&ldquo;SR&rdquo;, as in this example, and not an immediate recording request, &ldquo;IR&rdquo;).</td></tr>
 <tr><td class="label">Step 2:</td><td>The IG transforms the HTTP POST request from step 1 into a SIP MESSAGE with appropriate parameters defined by step 1, and sends it to the IPTV Control via the ASM in the IMS core network. The IPTV Control receives the request, acting as Terminating SIP UA.</td></tr>
 <tr><td class="label">Step 3:</td><td>The IPTV-Control queries the IPTV Service Profile FE to retrieve the IPTV User Profile of User 2, to obtain the user-related PVR settings.</td></tr>
 <tr><td class="label">Step 4:</td><td>The IPTV Service Profile FE returns the IPTV User Profile to the IPTV Control.</td></tr>
@@ -804,15 +804,15 @@ At this point, since the content is stored in the OITF, no further interaction i
 <tr><td class="label">Step 9:</td><td>A HTTP 200 OK in sent in response to the HTTP Pending IG request.</td></tr>
 <tr><td class="label">Step 10:</td><td>A new HTTP Pending IG is sent by OITF 2 with a SIP 200 OK response in the HTTP message body. </td></tr>
 <tr><td class="label">Step 11:</td><td>A new HTTP Pending IG is sent by OITF 2 with a SIP 200 OK response in the HTTP message body. </td></tr>
-<tr><td class="label">Step 12:</td><td>Upon reception of a confirmation response, the IPTV Control updates the IPTV User Profile status of User 2 for PVR to “Order Captured”, meaning that the order is pending execution.</td></tr>
-<tr><td class="label">Step 13:</td><td>The IPTV Service Profile FE updates PVR Status Flag to “Order_Captured” together with related info: Program and BCServiceId.</td></tr>
+<tr><td class="label">Step 12:</td><td>Upon reception of a confirmation response, the IPTV Control updates the IPTV User Profile status of User 2 for PVR to &ldquo;Order Captured&rdquo;, meaning that the order is pending execution.</td></tr>
+<tr><td class="label">Step 13:</td><td>The IPTV Service Profile FE updates PVR Status Flag to &ldquo;Order_Captured&rdquo; together with related info: Program and BCServiceId.</td></tr>
 <tr><td class="label">Step 14:</td><td>OITF 2 starts a counting down timer up to the expected time the program is scheduled to start. At the start of the time of the scheduled program, OITF 2 sets up a scheduled content session. </td></tr>
 <tr><td class="label">Step 15:</td><td>OITF 2 joins the multicast channel.</td></tr>
 <tr><td class="label">Step 16:</td><td>OITF 2 starts recording when it receives the IP flow.</td></tr>
 <tr><td class="label">Step 17:</td><td>When the program is over, OITF 2 stops the recording. </td></tr>
-<tr><td class="label">Step 18:</td><td>When the recording finishes, OITF 2 leaves the channel and tears down the scheduled content session. Within this tear down procedure, OITF 2 reports back to the IPTV Control the result of the recording, together the “spare_limit_in_volume” and “spare_limit_in_time” values for the specific user (the UserID is also provided).</td></tr>
+<tr><td class="label">Step 18:</td><td>When the recording finishes, OITF 2 leaves the channel and tears down the scheduled content session. Within this tear down procedure, OITF 2 reports back to the IPTV Control the result of the recording, together the &ldquo;spare_limit_in_volume&rdquo; and &ldquo;spare_limit_in_time&rdquo; values for the specific user (the UserID is also provided).</td></tr>
 <tr><td class="label">Step 19:</td><td>The IPTV Control updates the metadata records specific for the PVR.</td></tr>
-<tr><td class="label">Step 20:</td><td>The IPTV Service Profile FE updates the PVR Status Flag to “ProgramRecorded”, together with the related info: Program ID and BCId.</td></tr>
+<tr><td class="label">Step 20:</td><td>The IPTV Service Profile FE updates the PVR Status Flag to &ldquo;ProgramRecorded&rdquo;, together with the related info: Program ID and BCId.</td></tr>
 </table>
 Note that if the OITF is using a DAE application to talk to the IPTV Application, then steps 8 through 9 can be replaced by a HTTP 200 OK sent in response to a HTTP Pending IG request from the OITF.
 <figure id="f27">
@@ -828,18 +828,18 @@ Note that if the OITF is using a DAE application to talk to the IPTV Application
 <p>The following is a brief description of the steps in the flow:</p>
 <table class="sequence">
 <tr><td class="label">Step 0:</td><td>The user, based on information provided by the EPG, orders the recording of an available Program scheduled for multicast delivery in the future. Immediate recording is analogous to scheduled recording, with the timer set to 0.</td></tr>
-<tr><td class="label">Step 1:</td><td>The OITF makes a request to the IG to capture the particular Scheduled Content item selected by the user. During this step, the OITF gives appropriate parameters to the IG to identify the Request Type as “SetUpRecordingOrder”, the BCService Id, the ProgramId, and relevant timing information such as ProgramStartTime, ProgramDuration, etc. The request shall include also the storage recording mode (“network”, in this example). The Request Type can be of several types: set up recording order, cancel a recording order, or delete a recorded content.</td></tr>
+<tr><td class="label">Step 1:</td><td>The OITF makes a request to the IG to capture the particular Scheduled Content item selected by the user. During this step, the OITF gives appropriate parameters to the IG to identify the Request Type as &ldquo;SetUpRecordingOrder&rdquo;, the BCService Id, the ProgramId, and relevant timing information such as ProgramStartTime, ProgramDuration, etc. The request shall include also the storage recording mode (&ldquo;network&rdquo;, in this example). The Request Type can be of several types: set up recording order, cancel a recording order, or delete a recorded content.</td></tr>
 <tr><td class="label">Step 2:</td><td>The IG transforms the HTTP POST request from step 1 into a SIP MESSAGE request with appropriate parameters defined by step 1 and sends it to the ASM in the IMS core network.</td></tr>
 <tr><td class="label">Step 3:</td><td>The IPTV Control receives the request, acting as Terminating SIP UA.</td></tr>
 <tr><td class="label">Steps 4-5:</td><td>The IPTV Control queries the IPTV Service Profile FE to retrieve the IPTV User Profile, to obtain the user related PVR settings. </td></tr>
-<tr><td class="label">Step 6:</td><td>The IPTV Control verifies that the user is subscribed to the service. The IPTV Control verifies that there is no active Capture Order for the same Program for this user. The IPTV Control verifies that the new item to be recorded does not exceed the user’s storage quota. The IPTV Control verifies that the signalled Storage mode is according the User settings. Optionally, based on Service Provider determined criteria, the IPTV Control could override the PVR Storage mode signalled by the OITF.</td></tr>
+<tr><td class="label">Step 6:</td><td>The IPTV Control verifies that the user is subscribed to the service. The IPTV Control verifies that there is no active Capture Order for the same Program for this user. The IPTV Control verifies that the new item to be recorded does not exceed the user's storage quota. The IPTV Control verifies that the signalled Storage mode is according the User settings. Optionally, based on Service Provider determined criteria, the IPTV Control could override the PVR Storage mode signalled by the OITF.</td></tr>
 <tr><td class="label">Step 7:</td><td>The IPTV Control confirms the Capture Request to the OITF via the ASM and the IG, and starts timing management procedures, that would include a timer that counts down to the expected time the program is scheduled to start.</td></tr>
 <tr><td class="label">Step 7a:</td><td>The IPTV Control issues a SIP MESSAGE with the response of NPVR request (Order Captured) to the OITF via ASM and IG.</td></tr>
-<tr><td class="label">Step 8:</td><td>The IPTV Control updates the IPTV User Profile status for PVR to “Order Captured”, meaning that a recording order is pending execution.</td></tr>
-<tr><td class="label">Step 9:</td><td>The IPTV Service Profile FE updates PVR Status Flag to “Order_Captured”.</td></tr>
+<tr><td class="label">Step 8:</td><td>The IPTV Control updates the IPTV User Profile status for PVR to &ldquo;Order Captured&rdquo;, meaning that a recording order is pending execution.</td></tr>
+<tr><td class="label">Step 9:</td><td>The IPTV Service Profile FE updates PVR Status Flag to &ldquo;Order_Captured&rdquo;.</td></tr>
 <tr><td class="label">Step 10:</td><td>The IPTV Control answers back to the user with a 200 OK response.</td></tr>
-<tr><td class="label">Step 11:</td><td>At the start of the time of the scheduled program (or when the timer to order the recording of a Program on a channel expires), the IPTV Control issues an Order_Record_Request, of type “Start”, to the selected Content Delivery Network Function. The request includes the appropriate parameters such as BCServiceID, ProgramID, etc.</td></tr>
-<tr><td colspan="2"><p><b>Note:</b> Upon reception of more than one request for the same network PVR recording session (BCSeviceID, Program ID), the IPTV Control, based on local policy, may issue only one Order_Record_Request of type “Start”. In this case, the CRID will be updated for each of the requestor’s service profile and metadata.</p></td></tr>
+<tr><td class="label">Step 11:</td><td>At the start of the time of the scheduled program (or when the timer to order the recording of a Program on a channel expires), the IPTV Control issues an Order_Record_Request, of type &ldquo;Start&rdquo;, to the selected Content Delivery Network Function. The request includes the appropriate parameters such as BCServiceID, ProgramID, etc.</td></tr>
+<tr><td colspan="2"><p><b>Note:</b> Upon reception of more than one request for the same network PVR recording session (BCSeviceID, Program ID), the IPTV Control, based on local policy, may issue only one Order_Record_Request of type &ldquo;Start&rdquo;. In this case, the CRID will be updated for each of the requestor's service profile and metadata.</p></td></tr>
 <tr><td class="label">Step 12:</td><td>The CDNC assigns the CC function that will handle the INVITE for nPVR.</td></tr>
 <tr><td class="label">Step 13:</td><td>The CDN selects a CDF with PVR capabilities.</td></tr>
 <tr><td class="label">Step 14:</td><td>The CC sends an RTSP ANNOUNCE to deliver relevant transport parameters: IP Multicast for the channel.</td></tr>
@@ -854,7 +854,7 @@ Note that if the OITF is using a DAE application to talk to the IPTV Application
 <tr><td class="label">Step 24:</td><td>The IPTV Control updates the metadata records specific for PVR. One parameter is the new Content Reference Identifier assigned to the new content. A CoD session establishment to start streaming the content could optionally be possible at this point.</td></tr>
 <tr><td class="label">Step 25:</td><td>The Metadata Control acknowledges with a 200 OK.</td></tr>
 <tr><td class="label">Step 26:</td><td>The IPTV Control updates the IPTV User Profile in IPTV Service Profile FE.</td></tr>
-<tr><td class="label">Step 27:</td><td>The PVR Status in the IPTV User Profile is set to “Order_Recording”.</td></tr>
+<tr><td class="label">Step 27:</td><td>The PVR Status in the IPTV User Profile is set to &ldquo;Order_Recording&rdquo;.</td></tr>
 <tr><td class="label">Step 28:</td><td>The IPTV Service Profile FE acknowledges with a 200 OK.</td></tr>
 <tr><td class="label">Step 29:</td><td>When the recording finishes, and before the CDF leaves the channel, the CDF reports back to the IPTV Control the result of the recording (it includes some minimum information like CRID and result code,).</td></tr>
 <tr><td class="label">Step 30:</td><td>The RTSP ANNOUNCE is sent to the CC.</td></tr>
@@ -868,8 +868,8 @@ Note that if the OITF is using a DAE application to talk to the IPTV Application
 <tr><td class="label">Step 39:</td><td>In the CC, the RTSP session is torn down.</td></tr>
 <tr><td class="label">Step 40:</td><td>The CDF leaves the channel. </td></tr>
 <tr><td class="label">Step 41:</td><td>The IPTV Control updates the metadata records specific for PVR.</td></tr>
-<tr><td class="label">Step 42:</td><td>The IPTV User Profile FE updates the PVR Status Flag to “ProgramRecorded” together with the related info: ProgramID and BCServiceID.</td></tr>
-<tr><td class="label">Step 43:</td><td>The PVR Status in the IPTV User Profile is set to: “Order_Recorded”. At this point, in order to play the recorded content, a Content-on-Demand session set-up needs to be initiated by the OITF.</td></tr>
+<tr><td class="label">Step 42:</td><td>The IPTV User Profile FE updates the PVR Status Flag to &ldquo;ProgramRecorded&rdquo; together with the related info: ProgramID and BCServiceID.</td></tr>
+<tr><td class="label">Step 43:</td><td>The PVR Status in the IPTV User Profile is set to: &ldquo;Order_Recorded&rdquo;. At this point, in order to play the recorded content, a Content-on-Demand session set-up needs to be initiated by the OITF.</td></tr>
 </table>
 <figure id="f28">
 <figcaption>Figure ####: Call flow for network PVR recording session - Synchronous</figcaption>
@@ -882,25 +882,25 @@ Note that if the OITF is using a DAE application to talk to the IPTV Application
 <p>The following is a brief description of the steps in the flow:</p>
 <table class="sequence">
 <tr><td class="label">Step 0:</td><td>The user, based on information provided by the EPG, orders the recording of an available Program scheduled for future multicast delivery. Immediate recording is analogous to scheduled recording, with the timer set to 0.</td></tr>
-<tr><td class="label">Step 1:</td><td>The OITF makes a request to the IG to capture the particular Scheduled Content item selected by the user. During this step, the OITF provides appropriate parameters to the IG to identify the Request Type as “SetUpRecordingOrder”, the BCService Id, the ProgramId, and relevant timing information such as ProgramStartTime, ProgramEndTime, ProgramDuration, etc. </td></tr>
+<tr><td class="label">Step 1:</td><td>The OITF makes a request to the IG to capture the particular Scheduled Content item selected by the user. During this step, the OITF provides appropriate parameters to the IG to identify the Request Type as &ldquo;SetUpRecordingOrder&rdquo;, the BCService Id, the ProgramId, and relevant timing information such as ProgramStartTime, ProgramEndTime, ProgramDuration, etc. </td></tr>
 <tr><td colspan="2"><p><b>Note:</b> The Request Type can be of several types: set up recording order, cancel a recording order, delete a recorded content.</p></td></tr>
 <tr><td class="label">Step 2:</td><td>The IG transforms the HTTP POST request from step 1 into a SIP MESSAGE with appropriate parameters defined by step 1 and sends it to the ASM in the IMS core network.</td></tr>
 <tr><td class="label">Step 3:</td><td>The IPTV Control receives the request, acting as Terminating SIP UA.</td></tr>
 <tr><td class="label">Steps 4-5:</td><td>The IPTV Control queries the IPTV Service Profile FE to retrieve the IPTV Service and User Profiles, and to obtain the user-related PVR settings.</td></tr>
-<tr><td class="label">Step 6a:</td><td>The IPTV Control verifies that the user is subscribed to the service. The IPTV Control verifies that there is no active Capture Order for the same Program. The IPTV Control verifies that the user is allowed to set up a Scheduled Recording order in the “Network” mode and has enough storage space in the quota allocated to his subscription.</td></tr>
+<tr><td class="label">Step 6a:</td><td>The IPTV Control verifies that the user is subscribed to the service. The IPTV Control verifies that there is no active Capture Order for the same Program. The IPTV Control verifies that the user is allowed to set up a Scheduled Recording order in the &ldquo;Network&rdquo; mode and has enough storage space in the quota allocated to his subscription.</td></tr>
 <tr><td class="label">Step 6b:</td><td>The IPTV Control creates a context for the order and registers relevant information to keep track of the order status.</td></tr>
 <tr><td class="label">Step 7:</td><td>The IPTV Control sends a SIP MESSAGE to the ASM with the BCServiceID, the ProgramID, and relevant timing information such as the ProgramStartTime, ProgramDuration, etc.</td></tr>
 <tr><td class="label">Step 8:</td><td>The SIP MESSAGE is progressed to the CDNC, and then to the appropriate CC.</td></tr>
 <tr><td class="label">Step 9-11a:</td><td>The CC confirms the recording order with a SIP 200 OK. </td></tr>
 <tr><td class="label">Step 11b:</td><td>The IPTV Control updates the context of the order and registers the order status information.</td></tr>
-<tr><td class="label">Step 12:</td><td>Upon reception of confirmation response, the IPTV Control updates the IPTV User Profile status for PVR to “Order Captured”, meaning that the order is pending execution.</td></tr>
-<tr><td class="label">Steps 13-14:</td><td>The IPTV User Profiles updates PVR Status Flag to “Order_Captured” together the related info, ProgramID and BCServiceID, and confirms that update to the IPTV Control.</td></tr>
+<tr><td class="label">Step 12:</td><td>Upon reception of confirmation response, the IPTV Control updates the IPTV User Profile status for PVR to &ldquo;Order Captured&rdquo;, meaning that the order is pending execution.</td></tr>
+<tr><td class="label">Steps 13-14:</td><td>The IPTV User Profiles updates PVR Status Flag to &ldquo;Order_Captured&rdquo; together the related info, ProgramID and BCServiceID, and confirms that update to the IPTV Control.</td></tr>
 <tr><td class="label">Step 15-16:</td><td>The IPTV Control confirms the Capture Request to the OITF via the ASM and the IG.</td></tr>
 <tr><td colspan="2">The Recording Process between the CC and the CDF is the same as in the synchronous method (see steps 14 to 39 regarding RTSP and IGMP in section <a href="#s4-1-13-1" class="sectionRef">4.1.13.1</a>).</td></tr>
 <tr><td class="label">Step 17a-g:</td><td>When the recording starts, the CC informs the IPTV Control of that event using a SIP MESSAGE. The IPTV Control acknowledges the message with a 200 OK.</td></tr>
 <tr><td class="label">Steps 18-23:</td><td>When the recording is completed, the CC sends a SIP MESSAGE to the IPTV Control. The IPTV Control acknowledges with a SIP 200 OK, after updating the context of the order and registering the order status information.</td></tr>
 <tr><td class="label">Step 24:</td><td>The IPTV Control updates the metadata records specific for PVR.</td></tr>
-<tr><td class="label">Step 25:</td><td>The IPTV User Profile FE updates the PVR Status Flag to “ProgramRecorded” together related info: ProgramID and BCServiceID.</td></tr>
+<tr><td class="label">Step 25:</td><td>The IPTV User Profile FE updates the PVR Status Flag to &ldquo;ProgramRecorded&rdquo; together related info: ProgramID and BCServiceID.</td></tr>
 <tr><td class="label">Step 26:</td><td>When the user profile is updated, a notification is sent to the OITF.</td></tr>
 </table>
 <figure id="f29">
@@ -909,7 +909,7 @@ Note that if the OITF is using a DAE application to talk to the IPTV Application
 </figure>
 </section>
 <section id="s4-1-13-3"><h4>Remote request from a non-OITF device for a PVR Recording</h4>
-For the scheduling of network recordings, the same steps 1 through 9 for order capture as defined in section <a href="#s4-1-12-1" class="sectionRef">4.1.12.1</a>, “<a href="#s4-1-12-1" class="sectionTitleRef"></a>” applies. Recording Control by the IPTV Control will follow steps 7 through 21 as described in section <a href="#s4-1-12-2" class="sectionRef">4.1.12.2</a>, “<a href="#s4-1-12-2" class="sectionTitleRef"></a>”.</section>
+For the scheduling of network recordings, the same steps 1 through 9 for order capture as defined in section <a href="#s4-1-12-1" class="sectionRef">4.1.12.1</a>, &ldquo;<a href="#s4-1-12-1" class="sectionTitleRef"></a>&rdquo; applies. Recording Control by the IPTV Control will follow steps 7 through 21 as described in section <a href="#s4-1-12-2" class="sectionRef">4.1.12.2</a>, &ldquo;<a href="#s4-1-12-2" class="sectionTitleRef"></a>&rdquo;.</section>
 </section>
 <section id="s4-1-14"><h3>Personalised Channel</h3>
 <section id="s4-1-14-1"><h4>4OITF-Centric Personalised Channel</h4>
@@ -922,9 +922,9 @@ The following is a brief description of the steps:
 <tr><td class="label">Step 0:</td><td>The OITF obtains the basic Content Guide as described from Service Provider.</td></tr>
 <tr><td class="label">Step 1:</td><td>The OITF sends an HTTP GET carrying the user ID to the IPTV Application to request user preference for configuration of the PCh. The request is sent through the UNIS-6 reference point.</td></tr>
 <tr><td class="label">Step 2:</td><td>The IPTV Application sends an XCAP GET via the NPI-17 reference point to the IPTV Service Profile with the user ID.</td></tr>
-<tr><td class="label">Step 3:</td><td>The IPTV Service Profile responds with a 200 OK including the user’s IPTV service profile.</td></tr>
-<tr><td class="label">Step 4:</td><td>The IPTV Application response to OITF with user’s IPTV service profile. </td></tr>
-<tr><td class="label">Step 5:</td><td>The OITF generates the content guide for a Personalised Channel based on the user’s preferences or viewing habits which is stored inside of the OITF or was delivered from Service Provider at step 4. </td></tr>
+<tr><td class="label">Step 3:</td><td>The IPTV Service Profile responds with a 200 OK including the user's IPTV service profile.</td></tr>
+<tr><td class="label">Step 4:</td><td>The IPTV Application response to OITF with user's IPTV service profile. </td></tr>
+<tr><td class="label">Step 5:</td><td>The OITF generates the content guide for a Personalised Channel based on the user's preferences or viewing habits which is stored inside of the OITF or was delivered from Service Provider at step 4. </td></tr>
 <tr><td class="label">Step 6:</td><td>The OITF detects overlapping content items and decides on the location (LPVR or nPVR) for recording the overlapped contents based on the status of storage or network bandwidth for transferring overlapped content items at the same time. </td></tr>
 <tr><td class="label">Step 7:</td><td>If the OITF decides at Step 6 to record using an LPVR, then Steps 7.1.1 – 7.1.8 will be performed. If the OITF decides at Step 6 to record at an nPVR, then Steps 7.2.1 – 7.2.5 will be followed.
 <table class="sequence">
@@ -959,7 +959,7 @@ The following is a brief description of the steps:
 <li>For broadcast content, a multicast session is set up and torn down.
 <li>For content from an nPVR or a CoD item, a unicast session is setup and torn down.
 <li>The content items from an LPVR is played without network intervention.
-<li>The content items from the OITF’s local storage or from a home network device is played without network intervention.
+<li>The content items from the OITF's local storage or from a home network device is played without network intervention.
 </ol></td></tr>
 </table>
 Note that steps 6-9 can be occur whenever a new overlap or a new time gap among content items is detected. 
@@ -985,7 +985,7 @@ Note that steps 6-9 can be occur whenever a new overlap or a new time gap among 
 </figure>
 </section>
 <section id="s4-1-15-2"><h4>Network Generated Notification Service</h4>
-<p>Network generated notifications can be provided by the network to the user about events related to a scheduled content service, i.e. the notification service should only be consumed together with the related scheduled content service. To allow the independent purchase of such notifications, the notification service is described as a separate service from the related scheduled content. In this case, an extension to the scheduled content service mechanism, through the inclusion of a “Network Generated Notification” indicator, is used to identify such a notification service.</p>
+<p>Network generated notifications can be provided by the network to the user about events related to a scheduled content service, i.e. the notification service should only be consumed together with the related scheduled content service. To allow the independent purchase of such notifications, the notification service is described as a separate service from the related scheduled content. In this case, an extension to the scheduled content service mechanism, through the inclusion of a &ldquo;Network Generated Notification&rdquo; indicator, is used to identify such a notification service.</p>
 <p>A network-generated notification message is a multimedia message consisting of text, picture and/or audio-video clips. Multicast delivery is used for delivering such network-generated notifications to multiple users at the same time. </p>
 <p>To access to the scheduled content as well as the related notification service in one procedure, the scheduled content session initialization procedure is extended, as shown in Figure <a href="#f32" class="figureRef">32</a>.</p>
 <p>The following is a brief description of the steps: </p>
@@ -1194,7 +1194,7 @@ This section shows an example flow for Service Profile Management based on XCAP 
 </figure>
 </section>
 <section id="s4-2-3"><h3>Setup of RTSP/RTCP performance monitoring for CoD Session in Managed Networks over UNIT-18</h3>
-<p>In this example, it is assume that the OITF has retrieved the SDP information via SIP OPTIONS and the RTSP DESCRIBE between CC and CDF as per Volume 4 [[.OIPF_PROT2]]. Specifically, the SDP information consists of two “a=” lines each describing the cumulative and sample reporting metrics the Service Provider wants to receive for the media, and optionally a b=RR: line specifying the receiver’s bandwidth for RTCP reporting. e.g.:</p><pre>
+<p>In this example, it is assume that the OITF has retrieved the SDP information via SIP OPTIONS and the RTSP DESCRIBE between CC and CDF as per Volume 4 [[.OIPF_PROT2]]. Specifically, the SDP information consists of two &ldquo;a=&rdquo; lines each describing the cumulative and sample reporting metrics the Service Provider wants to receive for the media, and optionally a b=RR: line specifying the receiver's bandwidth for RTCP reporting. e.g.:</p><pre>
 a=OIPF-QoS-Metrics:cumul-metrics=OIPF-BasicPerfMonCumulSubset1;rate=2;
 a=rtcp-xr:OIPF-BasicPerfMonSampleSubset1
 b=RR:1000</pre>
@@ -1214,7 +1214,7 @@ b=RR:1000</pre>
 	OIPF-QoS-Metrics: url:"rtsp://example.com/foo/bar/baz.rm";
 		cumul-metrics=OIPF-BasicPerfMonCumulSubset1;rate=2
 </pre>
-<p>After the time in seconds specified by the “rate=2” parameter, the OITF will send its first report using a SET_PARAMATER request with the OIPF-QoS-Feedback Header and the parameters belonging to the metrics set (in this case reduced for clarity).</p>
+<p>After the time in seconds specified by the &ldquo;rate=2&rdquo; parameter, the OITF will send its first report using a SET_PARAMATER request with the OIPF-QoS-Feedback Header and the parameters belonging to the metrics set (in this case reduced for clarity).</p>
 <p>OITF&rarr;CDF:</p>
 <pre class="rtsp-message">SET_PARAMETER rtsp://example.com/foo/bar/baz.rm RTSP/1.0
 	CSeq: 3
@@ -1246,7 +1246,7 @@ b=RR:1000</pre>
 <li>PacketsDiscarded, or late packets
 <li>PacketsOutOfSequence, or reordered packets 
 <li>PacketsReceived and,
-<li>PacketsLost, which is equal to the value of “cumulative number of packets lost” in the RTCP Receiver Report.</ul>
+<li>PacketsLost, which is equal to the value of &ldquo;cumulative number of packets lost&rdquo; in the RTCP Receiver Report.</ul>
 <li>from the .STBService.{i}.ServiceMonitoring.MainStream.{i}.Total.VideoDecoderStats. object:<ul>
 <li>DecodedFrames and,
 <li>LostFrames</ul>
@@ -1304,7 +1304,7 @@ block  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 <li>PacketsDiscarded, or late packets
 <li>PacketsOutOfSequence, or reordered packets 
 <li>PacketsReceived and,
-<li>PacketsLost, which is equal to the value of “cumulative number of packets lost” in the RTCP Receiver Report.</ul>
+<li>PacketsLost, which is equal to the value of &ldquo;cumulative number of packets lost&rdquo; in the RTCP Receiver Report.</ul>
 <li>from the .STBService.{i}.ServiceMonitoring.MainStream.{i}.Sample.VideoDecoderStats object:<ul>
 <li>DecodedFrames and,
 <li>LostFrames</ul>
@@ -1337,7 +1337,7 @@ The length of this report block, including the header, in 32-bit words minus one
 <li>SSRC of the source: <br />
 The SSRC of the RTP data packet source being reported upon by this report block.
 </ul>
-<p>Note: The value of the Block Type (BT) is currently set to undefined, or “x”. This value is to be set according to the value allocated by IANA for each set of metrics specified. </p>
+<p>Note: The value of the Block Type (BT) is currently set to undefined, or &ldquo;x&rdquo;. This value is to be set according to the value allocated by IANA for each set of metrics specified. </p>
 </section>
 <section id="s4-2-5"><h3>Non-native HNI-IGI</h3>
 <p>Figure <a href="#f44" class="figureRef">44</a> illustrates the startup/initialization phase. The steps are outlined in detail below the figure.</p>
@@ -1403,10 +1403,10 @@ Figure <a href="#f46" class="figureRef">46</a> shows a call flow for an incoming
 <p>The following figure shows a call flow with a caller identification based on the regular SIP INVITE request that is forwarded in parallel to the IMS Gateway and to a voice capable SIP/IMS UE. The IG gateway forwards the request towards the OITF, and also responds to the request with proper SIP response messages. The OITF gives a suitable indication to the end-user and the end-user can answer the incoming voice session using any of their voice capable clients connected to the IMS network.</p>
 <p>The following procedure is supported in the OITF for caller identification</p>
 <table class="sequence">
-<tr><td class="label">Step 1:</td><td>The incoming voice session is forwarded to the end-user’s IMS provider.</td></tr>
+<tr><td class="label">Step 1:</td><td>The incoming voice session is forwarded to the end-user's IMS provider.</td></tr>
 <tr><td class="label">Step 2:</td><td>Based on the initial filter criteria evaluation, the request is routed to the P2P communication enabler (Telephony service) in order to inform the P2P communication enabler of the incoming call.</td></tr>
 <tr><td class="label">Step 3:</td><td>The request is routed back to the IMS network.</td></tr>
-<tr><td class="label">Step 4:</td><td>Based on the user’s terminal(s)´ registration information, configuration and terminal(s) capabilities, the session is routed to one or more user end devices. In this example, the end user has a voice capable SIP/IMS UE and the IMS Gateway registered with the same public user identity. A parallel forking is used and the INVITE is routed to both:<br />
+<tr><td class="label">Step 4:</td><td>Based on the user's terminal(s)´ registration information, configuration and terminal(s) capabilities, the session is routed to one or more user end devices. In this example, the end user has a voice capable SIP/IMS UE and the IMS Gateway registered with the same public user identity. A parallel forking is used and the INVITE is routed to both:<br />
 4a. the IMS gateway<br />
 4b. the voice capable SIP UE
 </td></tr>
@@ -1506,7 +1506,7 @@ Figure <a href="#f52" class="figureRef">52</a> shows a call flow for an OITF ini
 <tr><td class="label">Step 6:</td><td>The IG returns an HTTP 200 OK response to the HTTP POST that includes the SIP 200 OK response to the SIP INVITE</td></tr>
 <tr><td class="label">Step 7:</td><td>Upon receipt of a 200 OK response, the OITF SHALL send an HTTP PENDING_IG to acknowledge the final response. </td></tr>
 <tr><td class="label">Step 8:</td><td>Upon successful session setup, the RTP media starts. </td></tr>
-<tr><td class="label">Step 9:</td><td>During the content sharing, the recipient can modify the content sharing session by sending a SIP Re-INVITE to the network.  In the Re-INVITE request, SDP will indicate “sendonly” or “inactive” etc depending on the reason for the session modification. Examples of events that can lead to session modification include bandwidth changes, putting the ongoing session on hold, sharing of a new content by any peer, etc.</td></tr>
+<tr><td class="label">Step 9:</td><td>During the content sharing, the recipient can modify the content sharing session by sending a SIP Re-INVITE to the network.  In the Re-INVITE request, SDP will indicate &ldquo;sendonly&rdquo; or &ldquo;inactive&rdquo; etc depending on the reason for the session modification. Examples of events that can lead to session modification include bandwidth changes, putting the ongoing session on hold, sharing of a new content by any peer, etc.</td></tr>
 <tr><td colspan="2">Note that the ongoing session should be put on hold prior to performing session modification</td></tr>
 <tr><td class="label">Step 10:</td><td>IG issues a HTTP 200 OK response to the HTTP POST that includes the SIP Re-INVITE.</td></tr>
 <tr><td class="label">Step 11:</td><td>The OITF returns HTTP POST request to the IG including the SIP 200 OK to report the response to the SIP Re-INVITE.</td></tr>

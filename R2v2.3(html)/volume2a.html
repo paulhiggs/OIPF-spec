@@ -103,7 +103,7 @@
 <section id="Introduction" class="introductory">
 <h2>Introduction</h2>
 <p>The present specification provides the definition of media formats within the OIPF Release 2 IPTV Solution to enable adaptive unicast content provision tailored for use with HTTP.</p>
-<p>Earlier versions (i.e. versions 2.0 and 2.1) of the present specification contained the definition of the OIPF "HTTP Adaptive Streaming" (HAS) format, building upon 3GPP’s Release 9 Adaptive HTTP Streaming (AHS) format, i.e. profiling it, and extending it to add the features of media Components and support for MPEG-2 Transport Stream content segment format. This work was done in OIPF due to acute industry demand for such a specification, in parallel to encouraging the appropriate industry bodies to provide a more universally applicable specification for such a format.</p>
+<p>Earlier versions (i.e. versions 2.0 and 2.1) of the present specification contained the definition of the OIPF "HTTP Adaptive Streaming" (HAS) format, building upon 3GPP's Release 9 Adaptive HTTP Streaming (AHS) format, i.e. profiling it, and extending it to add the features of media Components and support for MPEG-2 Transport Stream content segment format. This work was done in OIPF due to acute industry demand for such a specification, in parallel to encouraging the appropriate industry bodies to provide a more universally applicable specification for such a format.</p>
 <p>Version 2.2 of the specification adds the adaptive streaming format based on MPEG DASH, which was developed in the meantime, and which also builds upon the earlier work of 3GPP, and which was prompted at least in part by the aforementioned request from the OIPF to MPEG. The OIPF HAS format is retained due to usage in some applications, while it has, however, been revised to align it with the latest versions of the 3GPP Release 9 specifications.</p>
 </section>
 
@@ -247,7 +247,7 @@
 <p>For the TCA, content items provided in the protected MP4 file format SHALL include both the DASH ContentProtection element in the MPD, and the MP4 extensions as specified in section 2 of [[!MAS]] or [[!MAF]], whereby the <code>ContentProtection</code> element contains mandatory Marlin related information (i.e. the <code>@schemeIdUri</code> attribute with specified URI signalling that the Segments are protected by Marlin). Note that [[!MAS]] and [[!MAF]] both in turn refer to MPEG Common Encryption [[!CENC]].</p>
 <p>For content items provided in the MP4 common encryption format ([[!MAS]], section 2.3), if a segment is protected, the following restrictions shall apply:</p>
 <ul>
-<li>When a Protection System Specific Header (‘pssh’) box for Marlin is delivered in content, the box SHALL be delivered as part of the Initialization Segment and located in the Movie (‘moov’) box.
+<li>When a Protection System Specific Header (‘pssh') box for Marlin is delivered in content, the box SHALL be delivered as part of the Initialization Segment and located in the Movie (‘moov') box.
 </ul>
 </section>
 </section>
@@ -335,12 +335,12 @@
 
 <tr><td>Component</td><td>This element contains a description of a Component.</td><td></td></tr>
 <tr><td>@id</td><td>Specifies the system-layer specific identifier of the elementary stream of this Component. The value SHALL be equal to the PID of the TS packets that carry the Component Stream of the Component, in case the system layer is MPEG-2 TS. The value SHALL be equal to the track ID of the track that carries the Component Stream of the Component, in case the system layer is MP4.</td><td>O</td></tr>
-<tr><td>@type</td><td>Specifies the Component type. Valid values include “Video”, “Audio” and “Subtitle” to specify the corresponding Component types defined in [[.OIPF_DAE2]], <a href="volume5.html#avcomponent-class" class="extRef">section 7.16.5.2</a>.</td><td>M</td></tr>
+<tr><td>@type</td><td>Specifies the Component type. Valid values include &ldquo;Video&rdquo;, &ldquo;Audio&rdquo; and &ldquo;Subtitle&rdquo; to specify the corresponding Component types defined in [[.OIPF_DAE2]], <a href="volume5.html#avcomponent-class" class="extRef">section 7.16.5.2</a>.</td><td>M</td></tr>
 <tr><td>@lang</td><td>Specifies an ISO 639 language code for audio and subtitles stream (see [[.OIPF_DAE2]], section <a href="volume5.html#avaudiocomponent-class" class="extRef">section 7.16.5.4</a>). Note that this attribute indicates the language of a specific Component, hence only a single language code is needed. This is different to the usage of the @lang attribute of the &lt;Representation&gt; element in the MPD, which may be used to indicate the list of languages used in the Representation.</td><td>O</td></tr>
 <tr><td>@description</td><td>The value of this attribute SHALL be a user readable description of the Component. This description may be used by the terminal in its user interface to allow a user to select the desired Components, e.g. select from different camera views in case of a video stream.</td><td>O</td></tr>
 <tr><td>@audioChannels</td><td>Specifies the audio channels for an audio stream. (e.g. 2 for stereo, 5 for 5.1, 7 for 7.1 - see [[.OIPF_DAE2]], <a href="volume5.html#avaudiocomponent-class" class="extRef">section 7.16.5.4</a>). This attribute SHALL only be present when the value of the @type attribute is "Audio".</td><td>O</td></tr>
-<tr><td>@impaired</td><td>When set to “true”, specify that the stream in this Component is an audio description for visually impaired or subtitles for hearing impaired. This attribute SHALL only be present when the value of the @type attribute is "Audio" or "Subtitle".</td><td>O</td></tr>
-<tr><td>@adMix</td><td>When set to “true”, specifies that the Audio stream in this Component must be mixed with (one of the) the main audio stream(s), for which this attribute is absent or set to “false”. This attribute SHALL only be present when the value of the @type attribute is "Audio".</td><td>O</td></tr>
+<tr><td>@impaired</td><td>When set to &ldquo;true&rdquo;, specify that the stream in this Component is an audio description for visually impaired or subtitles for hearing impaired. This attribute SHALL only be present when the value of the @type attribute is "Audio" or "Subtitle".</td><td>O</td></tr>
+<tr><td>@adMix</td><td>When set to &ldquo;true&rdquo;, specifies that the Audio stream in this Component must be mixed with (one of the) the main audio stream(s), for which this attribute is absent or set to &ldquo;false&rdquo;. This attribute SHALL only be present when the value of the @type attribute is "Audio".</td><td>O</td></tr>
 </table>
 <figure id="has-mpd-example">
 <pre style="text-align:left;margin:0;">
@@ -407,11 +407,11 @@
 </section>
 <section id="has-segmentation-constraints"><h3>Segmentation Constraints</h3>
 <p>The OITF SHALL support Segments as specified in [[!TS26234]] with the following constraints:</p><ul>
-<li>Each Segment SHALL start with a random access point (RAP) and the @startWithRAP attribute SHALL be present and set to ‘true’ in all &lt;Representation&gt; elements in the MPD.
+<li>Each Segment SHALL start with a random access point (RAP) and the @startWithRAP attribute SHALL be present and set to ‘true' in all &lt;Representation&gt; elements in the MPD.
 <li>Byte Ranges SHALL NOT be used as a mechanism for identifying Segments. As a consequence the elements &lt;InitialisationSegmentURL&gt; and &lt;Url&gt; SHALL NOT include the optional attribute @range. Note that this does not preclude the use of HTTP requests with byte ranges to retrieve parts of a Segment.
 <li>To enable seamless switching:<ul>
 <li>Different Component Streams of the same Component SHALL be encoded in the same media format but MAY be different in the profile of that format. Section <a href="#has-adaptive-media-formats" class="sectionRef"></a> in this document references [[.OIPF_MEDIA2]] for the media formats, which specifies (profiles of) media formats for various media types. So if for example a Representation contains a Component Stream of a certain video Component that is encoded using H.264/AVC using the HD profile, then all Representations that have a Component Stream of that Component must use H.264/AVC but may use different configurations of H.264/AVC within the HD profile or SD Profile.
-<li>Segments of Representations with the same value for the @group attribute SHALL be time aligned. The attributes ‘segmentAlignmentFlag’ and ‘bitstreamSwitchingFlag’ SHALL be present and set to ‘true’ in all ‘Period’ elements in the MPD.
+<li>Segments of Representations with the same value for the @group attribute SHALL be time aligned. The attributes ‘segmentAlignmentFlag' and ‘bitstreamSwitchingFlag' SHALL be present and set to ‘true' in all ‘Period' elements in the MPD.
 <p>For the set of Representations that have the same value for the @group attribute, the signaled Segment durations SHALL:</p><ul>
 <li>either be equal for all Representations in the set,
 <li>or equal for all Representations in the set without a &lt;TrickMode&gt; element and a multiple of this value for the Representations in the set with a &lt;TrickMode&gt; element. In this case there SHALL be at least one Representation in the set for which the &lt;TrickMode&gt; element is absent.
@@ -469,7 +469,7 @@ If Segments are protected, then the corresponding &lt;Representation&gt;-element
 <li>A media Segment SHALL contain the concatenation of one or several contiguous PES packets which are split and encapsulated into TS packets. Media Segments SHALL contain only complete PES packets.
 <li>When packetizing video elementary streams, up to one frame SHALL be included into one PES packet. Larger frames may be fragmented into multiples PES packets. The PES packet where a frame starts SHALL always contain a PTS/DTS header fields in the PES header.
 <li>PTS and DTS values SHALL be time aligned across different Representations.
-<li>There may be a discontinuity of the “continuity counter” in TS packets when changing from one Representation to another. The OITF SHALL expect that there might be a discontinuity on the “continuity counter” when changing from one Representation to another.
+<li>There may be a discontinuity of the &ldquo;continuity counter&rdquo; in TS packets when changing from one Representation to another. The OITF SHALL expect that there might be a discontinuity on the &ldquo;continuity counter&rdquo; when changing from one Representation to another.
 </ul>
 </section>
 <section id="has-media-formats-ts-content-protection"><h5>Content Protection</h5>
@@ -477,23 +477,23 @@ If Segments are protected, then the corresponding &lt;Representation&gt;-element
 <p>The following requirements apply if Segments are protected:</p><ul>
 <li>Initialisation Segment and the Media Segments SHALL be formatted such that a file that consists of the Initialisation Segment and an arbitrary selection of Media Segments of the (set of partial) Representation(s), stored in order of their index in the MPD, is an BBTS compliant file or a PF compliant file or both. This MAY be achieved by using the same Crypto-period boundaries and Control Words across different Representations.
 <li>The DRM related metadata (i.e. PMT containing CA descriptors, CAT, EMM streams or ECM streams) in relation to a certain elementary stream SHALL be delivered as part of either the Media Segments that carry the samples of the elementary stream or the Initialisation Segment.
-<li>The DRM related metadata (i.e. ECM stream) of a certain protection system (i.e. Conditional Access system in MPEG2TS terminology) in relation to a certain elementary stream SHALL have the same PID in all Segments in which it is included. Example: the BBTS defined ECM’s for the audio in Spanish is always PID 134, in all Representations where Spanish audio is present, at any bitrate.
+<li>The DRM related metadata (i.e. ECM stream) of a certain protection system (i.e. Conditional Access system in MPEG2TS terminology) in relation to a certain elementary stream SHALL have the same PID in all Segments in which it is included. Example: the BBTS defined ECM's for the audio in Spanish is always PID 134, in all Representations where Spanish audio is present, at any bitrate.
 </ul>
 </section>
 </section>
 
 <section id="has-media-formats-mp4"><h4>MP4 File Format Systems Layer</h4>
-<p>If the Representation@mimeType attribute equals “video/mp4”, then the carriage of A/V Content and related information (e.g. subtitles) SHALL be in compliance with the [[.OIPF_MEDIA2]] requirements on usage of the MP4 systems layer format, with the following restrictions:</p><ul>
+<p>If the Representation@mimeType attribute equals &ldquo;video/mp4&rdquo;, then the carriage of A/V Content and related information (e.g. subtitles) SHALL be in compliance with the [[.OIPF_MEDIA2]] requirements on usage of the MP4 systems layer format, with the following restrictions:</p><ul>
 <li>For every Representation, a [[!TS26234]] Initialisation Segment SHALL be available.<ul>
 <li>For all Representations, a reference to the Initialisation Segment SHALL be present in a &lt;InitialisationSegmentURL&gt; element in the &lt;Representation&gt; element.
-<li>An Initialisation Segment SHALL be delivered with MIME type “video/mp4”.
+<li>An Initialisation Segment SHALL be delivered with MIME type &ldquo;video/mp4&rdquo;.
 <li>Initialisation Segments SHALL be formatted as specified in [[!TS26234]], section 12.4.2.2. For every media stream of the (set of partial) Representation(s), the <i>moov</i>-box in the Initialisation Segments SHALL contain a <i>trak</i>-box describing the samples of the media streams in compliance with [[!ISOFF]].
 </ul>
 <li>Every Representation SHALL consist of Media Segments that are formatted as specified in [[!TS26234]], section 12.4.2.3.<ul>
-<li>A Media Segment SHALL be delivered with MIME type “video/vnd.3gpp.Segment” as specified in [[!TS26244]]
+<li>A Media Segment SHALL be delivered with MIME type &ldquo;video/vnd.3gpp.Segment&rdquo; as specified in [[!TS26244]]
 <li>To allow a terminal to seek to any Segment with a certain index and start playback with perfect audio/video synchronization, every <i>traf</i>-box of a track that contains audio SHOULD contain a [[!TS26244]] <i>tfad</i>-box. The contents of the box SHALL be such that if the terminal starts the playback of the audio samples of a Segment as specified in the box, then the audio and video of the Segment are played in perfect sync.
 </ul>
-<li>The Initialisation Segment and the Media Segments are formatted such that a file that consists of the Initialisation Segment and an arbitrary selection of Media Segments of either any complete Representation (@group attribute equal to zero) or the set of partial Representations (@group attribute unequal to zero), stored in order of the sequence_number in their mfhd-box (i.e. increasing order and no duplicates), is an [[!ISOFF]] compliant file. (Note that this statement assumes that [[!ISOFF]] allows for ‘gaps’ in the sequence_numbers of consecutive moof-boxes; i.e. the difference in the sequence_number of consecutive moof-boxes may be larger than one).
+<li>The Initialisation Segment and the Media Segments are formatted such that a file that consists of the Initialisation Segment and an arbitrary selection of Media Segments of either any complete Representation (@group attribute equal to zero) or the set of partial Representations (@group attribute unequal to zero), stored in order of the sequence_number in their mfhd-box (i.e. increasing order and no duplicates), is an [[!ISOFF]] compliant file. (Note that this statement assumes that [[!ISOFF]] allows for ‘gaps' in the sequence_numbers of consecutive moof-boxes; i.e. the difference in the sequence_number of consecutive moof-boxes may be larger than one).
 <li>Regardless of the allocation of Components Streams to Representations,<ul>
 <li>Component Streams of the same Component SHALL be carried in track fragments that have the same trackID (in the <i>tfhd</i>-box).
 <li>Component Streams of different Components SHALL be carried in track fragments that have different trackIDs (in the <i>tfhd</i>-box).</ul>
@@ -510,8 +510,8 @@ If Segments are protected, then the corresponding &lt;Representation&gt;-element
 <li>With MIPMP format, the DRM related metadata is not located in the <i>moov</i>-box but referenced from the <i>moov</i>-box as a separate track carrying an Object Descriptor Stream. The samples of the IPMP Object Descriptor Stream SHALL be delivered as part of the Initialisation Segment in a dedicated <i>mdat</i>-box located after the <i>moov</i>-box.</ul>
 </ul>
 <p>NOTE: MIPMP uses cipher block chaining mode, whereas PDCF allows cipher block chaining mode or counter mode. When cipher block chaining is used for encryption, Media Segments need to be encrypted independently of each other. Given that this specification requires a Segment to start with a RAP and given that both MIPMP and PDCF require each access unit to start with its own IV and be encrypted separately, no additional requirements are needed to achieve independent encryption of media Segments.<p>
-<p>The “Access Unit Format Header”, as defined for the PDCF format allows the generation of samples that are identical to samples that comply with the MIPMP defined method of “Stream Encryption”. This means that a Service Provider may simultaneously address devices that support the MIPMP format and devices that support the PDCF format by providing different Initialisation Segments for the same Media Segments. The following additional constraints to the PDCF encryption method achieve this:</p><ul>
-<li>the PDCF “Encryption Method” is set to AES_128_CBC (cipher block chaining mode)
+<p>The &ldquo;Access Unit Format Header&rdquo;, as defined for the PDCF format allows the generation of samples that are identical to samples that comply with the MIPMP defined method of &ldquo;Stream Encryption&rdquo;. This means that a Service Provider may simultaneously address devices that support the MIPMP format and devices that support the PDCF format by providing different Initialisation Segments for the same Media Segments. The following additional constraints to the PDCF encryption method achieve this:</p><ul>
+<li>the PDCF &ldquo;Encryption Method&rdquo; is set to AES_128_CBC (cipher block chaining mode)
 <li>"PaddingScheme" is set to RFC_2630 (Padding according to RFC 2630 [[!RFC2630]])
 <li>"SelectiveEncryption" is not used.
 </ul>
@@ -533,7 +533,7 @@ If Segments are protected, then the corresponding &lt;Representation&gt;-element
 <p>In order to start trick mode and easily switch between trick and normal play mode at any time and support for reverse playing, the trick mode streams may be composed of intra frame only with a fixed interval.</p>
 </section>
 <section id="has-use-case-ts-seeking"><h4>MPEG-2 TS Seeking</h4>
-<p>To determine the random access point in a media Segment, the client should download and search RAP one by one till the required RAP is found. The ‘random_acess_indicator’ and ‘elementary_stream_priority_indicator’ in adaptation field of the transport stream may be used for locating every RAP.</p>
+<p>To determine the random access point in a media Segment, the client should download and search RAP one by one till the required RAP is found. The ‘random_acess_indicator' and ‘elementary_stream_priority_indicator' in adaptation field of the transport stream may be used for locating every RAP.</p>
 </section>
 </section>
 </section>
@@ -576,14 +576,14 @@ If Segments are protected, then the corresponding &lt;Representation&gt;-element
 <section class="appendix" id="oipf-has-component-management"><h2>OIPF HAS Component Management (Informative)</h2>
 <p>A &lt;Representation&gt; element with the @group attribute set to zero as defined in [[!TS26234]] corresponds to a particular version of the full Content item with all its elements (video, audio, subtitles, etc). If all Representations have the @group attribute set to zero, the different Representations listed in the MPD correspond to full, alternate versions that differ in one or more particular aspects (bitrate, language, spatial resolution, etc). This means that the terminal needs at every moment to download and present Segments of only one Representation. While this provides a quite simple and straightforward model it has an important lack of flexibility in the following sense: if there are many alternatives for a particular Component (e.g. audio in different languages) and there are also a number of different bitrate alternatives, all combinations should be available at the server and consequently some media data is redundantly stored.</p>
 <p>For example, if a service provides 2 audio languages and the video in 2 bitrate levels, then it would need to provide 4 different Representations; however, there will be groups of 2 Representations which share exactly the same bulky video (they only differ in audio). This causes an important waste of storage space in the server. Even if the server can be optimized with respect to this (e.g. to build the Segments in real time from the elementary streams stored separately in its disks), this cannot be done in standard the HTTP caches.</p>
-<p>In order to solve this problem, [[!TS26234]] includes the concept of partial Representations in the MPD though the @group attribute. When this attribute has a value different from 0, the Representation does not include all Components of the Content Resource, but only a subset of them (e.g. “audio in French”). An OIPF terminal needs to be able to identify the Representations that it requires, download their Segments independently and combine them for playback at the terminal side.</p>
+<p>In order to solve this problem, [[!TS26234]] includes the concept of partial Representations in the MPD though the @group attribute. When this attribute has a value different from 0, the Representation does not include all Components of the Content Resource, but only a subset of them (e.g. &ldquo;audio in French&rdquo;). An OIPF terminal needs to be able to identify the Representations that it requires, download their Segments independently and combine them for playback at the terminal side.</p>
 <p>In case of the example service above, the server may serve 2 Representations with 2 different bitrate versions of a movie with English audio, and separately it can serve a Representation with just the French audio. This way, all combinations are possible (all bitrates at all languages) but with roughly half the required storage in the server and the HTTP caches compared to when all possible combinations are separately stored as complete Representations. Figure <a href="#component-management-example-figure" class="sectionRef"></a> depicts the grouping of Componts and Components Streams into Representations for this example.</p>
 <figure id="component-management-example-figure">
 <img src="images/Component_Management_Example.jpg" alt="Figure 4" style="width:90%" />
 <figcaption>Figure ####: Component management example</figcaption>
 </figure>
 <p>In this example the Representations HQRep and LQRep would have the same non-zero value for the @group attribute; FrRep would have a different non-zero value. Additionlly both HQRep and LQRep would carry &lt;Component&gt; elements that describe the Video and Audio-En Components; the FrRep would carry a &lt;Component&gt; element for the Audio-Fr Component.</p>
-<p>This Component-aware scenario relates to the process for selecting and presenting the desired set of Components. This process may also be applied for Content that is delivered through other mechanisms than the HTTP adaptive streaming protocol described in this document. In the context of OIPF (for example using the DAE “Extensions to video/broadcast for playback of selected Components”), this process operates may utilize information contained in the MPEG2-TS or MP4 metadata. Information contained in the Initialisation Segment may also be used in this process.</p>
+<p>This Component-aware scenario relates to the process for selecting and presenting the desired set of Components. This process may also be applied for Content that is delivered through other mechanisms than the HTTP adaptive streaming protocol described in this document. In the context of OIPF (for example using the DAE &ldquo;Extensions to video/broadcast for playback of selected Components&rdquo;), this process operates may utilize information contained in the MPEG2-TS or MP4 metadata. Information contained in the Initialisation Segment may also be used in this process.</p>
 
 <p>The following is an example process for Component selection:</p><ol>
 <li>Retrieve the MPD. If the MPD includes both, decide if you want to play the partial or non-partial Representations. It is RECOMMENDED to use the partial Representations.
@@ -592,14 +592,14 @@ If Segments are protected, then the corresponding &lt;Representation&gt;-element
 <li>If present, retrieve the Initialisation Segment of the Representation.
 <li>Retrieve Media Segments of the chosen Representation.
 <li>Find the elementary streams in the downloaded Initialisation Segment / Media Segments. Typically select one video and one audio stream. If there are options, select from those.
-<li>Setup the “player” to play the selected Component Streams. Play them.
+<li>Setup the &ldquo;player&rdquo; to play the selected Component Streams. Play them.
 <li>While playing, allow the user to select other/additional Component Streams in the Initialisation Segment / Media Segments.
 <li>To switch to a different bitrate, select an alternate non-partial Representation and continue from step 2b.</ol>
 <li>In case of a partial Representations:<ol type="a">
 <li> Based on the metadata in the MPD (typically the @bandwidth-attribute and the &lt;Component&gt; element) select the initial Representations.
 <li>If present, retrieve the Initialisation Segment of the Period.
 <li>Retrieve Media Segments of the chosen Representations.
-<li>Based on the @id’s of the &lt;Components&gt; elements, or using information from the Initialisation Segment, setup the “player” to play the selected Component Streams. Play them.
+<li>Based on the @id's of the &lt;Components&gt; elements, or using information from the Initialisation Segment, setup the &ldquo;player&rdquo; to play the selected Component Streams. Play them.
 <li>While playing, allow the user to select other/additional Component Streams. If other/additional streams are selected, continue from step 3c.
 <li>To switch to a different bitrate of one of the chosen partial Representations, select an alternate partial Representation with the same value for the @group attribute and continue from step 3c.
 </ol>
@@ -612,7 +612,7 @@ If Segments are protected, then the corresponding &lt;Representation&gt;-element
 <p>Unlike MPEG-2 TS, the MP4 system layer ([[!ISOFF]]) does not define a system clock or global timestamps that link the various elementary streams to the system clock. Instead, every track has its own independent timeline, specified based on the durations of samples. The decoding time of a sample is calculated by summing up the durations of all samples since the start of the track. The composition time of a sample is either identical to the decoding time, or indicated by an offset to the decoding time.</p>
 <p>In the context of adaptive streaming (and especially in case of live streaming), a terminal may want to start playback at any point in the Content without having access to the durations of all samples since the start of the track. Audio/video synchronization would not be a problem if at the start of each Segment, audio and video would always be perfectly aligned. This however is not possible, because video frames and audio frames are typically unequal in duration. Consequently, a Segment that contains an integer number of audio and video frames will not have equal durations of audio and video data.</p>
 <p>For example, that a movie consists of an audio and a video elementary stream, where the video is sampled at 25fps and the audio is sampled at 48 kHz and framed using 1024 audio samples per frame. This means that the duration of a video frame is 40 ms and the duration of an audio frame is 21.33 ms. Say also that these elementary streams are delivered using this specification and the MP4 system layer, with the following parameters:</p><ul>
-<li>timescale as specified in the <i>mvhd</i>-box: 25 (“ticks” per second)
+<li>timescale as specified in the <i>mvhd</i>-box: 25 (&ldquo;ticks&rdquo; per second)
 <li>timescale as specified in the <i>mdhd</i>-box of the video track: 25
 <li>timescale as specified in the <i>mdhd-box</i> of the audio track: 48000
 <li>Segment duration as specified in the MPD: 2 seconds
@@ -643,10 +643,10 @@ For this case, Table <a href="#example-av-synchronization" class="tableRef"></a>
 </figure>
 
 <p>The <i>tfad</i>-box allows adding empty-time into a track at the accuracy of the timescale of the <i>mvhd</i>-box, which in this example is 25 and equal to the video. The <i>tfad</i>-box also allows specifying to skip certain samples of a track at the timescale of the track, which in this example is 48000. To achieve perfect audio/video sync in this example, Segment 5 may include a <i>tfad</i>-box in the audio track with the following contents:</p><ul>
-<li>Entry 1 (“1:empty” in Figure <a href="#example-tfad-box" class="figureRef"></a>):
+<li>Entry 1 (&ldquo;1:empty&rdquo; in Figure <a href="#example-tfad-box" class="figureRef"></a>):
 <li>Segment_duration=1
-<li>media_time= -1 (i.e. “empty” time)
-<li>Entry 2 (“2:start from here” in Figure <a href="#example-tfad-box" class="figureRef"></a>):
+<li>media_time= -1 (i.e. &ldquo;empty&rdquo; time)
+<li>Entry 2 (&ldquo;2:start from here&rdquo; in Figure <a href="#example-tfad-box" class="figureRef"></a>):
 <li>Segment duration=99
 <li>media_time=1664
 </ul>
@@ -661,7 +661,7 @@ For this case, Table <a href="#example-av-synchronization" class="tableRef"></a>
 <figcaption>Figure ####: Partial Representation MP4 Example</figcaption>
 </figure>
 
-<p>In the above example, each Segment has a sequence number in the MPD (i.e. the Segment index value) and contains a single movie fragment with a sequence number in the <i>mfhd</i>-box. Segments of the Representations “HQRep” and “LQRep” contain samples of both audio (English) and video tracks. Note that in this example the service is required to put each alternate video track on the same TrackID and define a common Init Segment for all partial Representations. Consequently each Component Stream will have its own sample description (in the <i>trak</i>-box of track 1) in the common <i>mvhd</i>-box.</p>
+<p>In the above example, each Segment has a sequence number in the MPD (i.e. the Segment index value) and contains a single movie fragment with a sequence number in the <i>mfhd</i>-box. Segments of the Representations &ldquo;HQRep&rdquo; and &ldquo;LQRep&rdquo; contain samples of both audio (English) and video tracks. Note that in this example the service is required to put each alternate video track on the same TrackID and define a common Init Segment for all partial Representations. Consequently each Component Stream will have its own sample description (in the <i>trak</i>-box of track 1) in the common <i>mvhd</i>-box.</p>
 <p>If a terminal selects to retrieve French audio in combination with the video, then it may retrieve the sequence of Segments as depicted in Figure <a href="#partial-representation-retrieval-figure" class="figureRef"></a>.</p>
 <figure id="partial-representation-retrieval-figure">
 <img src="images/Partial_Representation_Retrieval.jpg" alt="Figure 7" style="width:90%" />
