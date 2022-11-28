@@ -95,7 +95,7 @@
 			"Web-Storage":"W3C, \"<a href=http://www.w3.org/TR/2011/CR-webstorage-20111208/>Web Storage</a>\", W3C Candidate Recommendation 08 December 2011",
 			"Widgets-DigSig":"W3C, \"<a href=http://www.w3.org/TR/2011/PR-widgets-digsig-20110811/>XML Digital Signatures for Widgets</a>\", W3C Proposed Recommendation 11 August 2011",
 			
-			"DASH":"ISO/IEC 23009-1, Information technology — Dynamic adaptive streaming over HTTP (DASH) — Part 1: Media presentation description and segment formats",
+			"DASH":"ISO/IEC 23009-1, Information technology &mdash; Dynamic adaptive streaming over HTTP (DASH) &mdash; Part 1: Media presentation description and segment formats",
 			"DLNA":"DLNA Networked Device Interoperability Guidelines, August 2009",
 			
 			"TIMING-CONTROL":"W3C, Timing control for script-based animations, W3C Working Draft 21 February 2012",
@@ -271,7 +271,7 @@ Note: This terminology references the DLNA RUI specification.</td></tr>
 
 <section id="application-definition">
 <h2>Application Definition</h2>
-<p>This section defines what is meant by the concept of a ‘DAE application'; which files and assets are considered to be part of a DAE application and how this relates to DAE application security and lifecycle.</p>
+<p>This section defines what is meant by the concept of a 'DAE application'; which files and assets are considered to be part of a DAE application and how this relates to DAE application security and lifecycle.</p>
 <p>A DAE application is either:</p><ul>
 <li>An associated collection of documents (HTML or SVG where supported) from within a common boundary (see section <a href="#application-boundaries" class="sectionRef"></a> for more details), or
 <li>A Widget as specified in section <a href="#widgets" class="sectionRef"></a>.
@@ -302,7 +302,7 @@ Note: This terminology references the DLNA RUI specification.</td></tr>
 <p>Each application has an associated DOM <code>Window</code> object and a DOM <code>Document</code> object that represents the document that is currently loaded for that application. Even &ldquo;windowless&rdquo; applications that are never made visible have an associated DOM Window object.</p>
 <section>
 <h4>Manipulating an application's DOM Window object</h4>
-<p>Standard DOM <code>Window</code> methods are used to resize, scroll, position and access the application document (see section <a href="#use-of-the-display" class="sectionRef"></a>). Many browsers restrict the size or location of windows; these restrictions SHALL NOT be enforced for windows associated with applications within the browser area. Any area of the display available to DAE applications may be used by any application. Thus, ‘widget'-style applications can create a small window that contains only the application without needing to be concerned with any minimum size restrictions enforced by browsers.</p>
+<p>Standard DOM <code>Window</code> methods are used to resize, scroll, position and access the application document (see section <a href="#use-of-the-display" class="sectionRef"></a>). Many browsers restrict the size or location of windows; these restrictions SHALL NOT be enforced for windows associated with applications within the browser area. Any area of the display available to DAE applications may be used by any application. Thus, 'widget'-style applications can create a small window that contains only the application without needing to be concerned with any minimum size restrictions enforced by browsers.</p>
 </section>
 </section>
 <section id="security-model">
@@ -428,7 +428,7 @@ Note: This terminology references the DLNA RUI specification.</td></tr>
 <p>All events dispatched using the standard <code>dispatchEvent()</code> method are normal DOM events, not cross-application events. As defined in HTML5 Web Messaging as referenced in [[.OIPF_WSTVP2]], the OITF SHALL support the <code>window.postMessage()</code> method for cross-document messaging. The method takes two arguments; a message (of type String) to be dispatched and the targetOrigin, which defines the expected origin (i.e. domain) of the target window, or &ldquo;<code>*</code>&rdquo; if the message can be sent to the target regardless of its origin. The target of the event is the &ldquo;window&rdquo; of a specific application. Applications can use this method to send events to other applications. The receiving application MAY receive those events and interpret them, or MAY dispatch them in its DOM using standard DOM dispatchEvent() methods.</p>
 <p>The visibility of an application SHALL NOT affect the cross-application event handling algorithm as defined above &mdash; an active application SHALL receive cross-application events even when it is not visible.</p>
 <p>Incoming key events are dispatched using the cross-application event handling algorithm as defined above.</p>
-<p>NOTE: This event dispatch model enables key events to be dispatched to multiple applications. Applications wishing to become the primary receiver for key events SHOULD call <a href="#application-activateinput" class="apiRef">Application.activateInput()</a>. Even though <code>Application.activateInput()</code> is called, another application may subsequently be activated. In order to ensure that sensitive key input (e.g. PINs or credit card details) is limited only to the application it is intended for, applications SHOULD check that they are the primary receiver of the key events (using the <a href="#application-isprimaryreceiver" class="apiRef">Application.isPrimaryReceiver</a> property and/or the <code>ApplicationPrimaryReceiver</code> and <code>ApplicationNotPrimaryReceiver</code> events defined in section <a href="#new-dom-events-for-application-support" class="sectionRef"></a>) and SHOULD ‘absorb' key events by calling the <code>stopPropagation()</code> method on the DOM2 <code>key</code> event.</p>
+<p>NOTE: This event dispatch model enables key events to be dispatched to multiple applications. Applications wishing to become the primary receiver for key events SHOULD call <a href="#application-activateinput" class="apiRef">Application.activateInput()</a>. Even though <code>Application.activateInput()</code> is called, another application may subsequently be activated. In order to ensure that sensitive key input (e.g. PINs or credit card details) is limited only to the application it is intended for, applications SHOULD check that they are the primary receiver of the key events (using the <a href="#application-isprimaryreceiver" class="apiRef">Application.isPrimaryReceiver</a> property and/or the <code>ApplicationPrimaryReceiver</code> and <code>ApplicationNotPrimaryReceiver</code> events defined in section <a href="#new-dom-events-for-application-support" class="sectionRef"></a>) and SHOULD 'absorb' key events by calling the <code>stopPropagation()</code> method on the DOM2 <code>key</code> event.</p>
 <section id="behaviour-of-the-back-key">
 <h4>Behaviour of the BACK key</h4>
 <p>OIPF applications may use the methods on the <code>History</code> object to navigate the history list. The history list SHALL NOT go back beyond the initial page of an OIPF application.</p>
@@ -556,12 +556,12 @@ Note: This terminology references the DLNA RUI specification.</td></tr>
 <h4>HTTP Adaptive Streaming</h4>
 <p>If the OITF supports HAS content then it SHALL support the MIME type as specified for the Media Presentation Descriptor (MPD) in [[!TS26234]], i.e. &ldquo;video/vnd.3gpp.mpd&rdquo;, and in the HAS specification [[.OIPF_HAS2]]. If the OITF supports MPEG DASH content then it SHALL support the MIME type as specified for the Media Presentation Descriptor (MPD) in Annex C of [[!DASH]], i.e. &ldquo;<code>application/dash+xml</code>&rdquo;.</p>
 <p>The MPD SHALL be retrieved by specifying a URL. To this end, the OITF SHALL fetch the MPD from the URL, after which the MPD SHALL be interpreted and an initial (set of partial) Representation(s) selected.</p>
-<p>When the URL is passed to the OITF in the <code>data</code> property of a A/V Control object as defined in section <a href="#media-playback-apis" class="sectionRef"></a>, and either a HAS MPD is not valid according to the XML Schema and semantics as defined in <a href="volume2a.html#oipf-has-mpd-schema" class="extRef">Annex A</a> of [[.OIPF_HAS2]] or an MPEG DASH MPD is not valid according to the XML Schema and semantics as defined in [[!DASH]] or [[.OIPF_HAS2]], then the A/V Control object SHALL go to play state 6 (‘error'), with error value 4 (‘content corrupt or invalid').</p>
+<p>When the URL is passed to the OITF in the <code>data</code> property of a A/V Control object as defined in section <a href="#media-playback-apis" class="sectionRef"></a>, and either a HAS MPD is not valid according to the XML Schema and semantics as defined in <a href="volume2a.html#oipf-has-mpd-schema" class="extRef">Annex A</a> of [[.OIPF_HAS2]] or an MPEG DASH MPD is not valid according to the XML Schema and semantics as defined in [[!DASH]] or [[.OIPF_HAS2]], then the A/V Control object SHALL go to play state 6 ('error'), with error value 4 ('content corrupt or invalid').</p>
 <p>If the OITF supports HAS content then HAS SHALL also be supported through the <a href="#video-broadcast" class="apiRef">video/broadcast</a> object for live content. If the OITF supports MPEG DASH content then MPEG DASH SHALL also be supported through the video/broadcast object for live content. This SHALL be done using <a href="#channel-class">Channel</a> objects returned from calls to the <code>createChannelObject( Integer idType, Integer onid, Integer tsid, Integer sid, Integer sourceID, String ipBroadcastID )</code> method where the <code>idType</code> argument is <code>ID_IPTV_URI</code> and the <code>ipBroadcastID</code> argument is a URL which points to an MPD for Scheduled Content (live streaming) over HTTP.</p>
 </section>
 <section id="multicast-streaming">
 <h4>Multicast streaming</h4>
-<p>If an OITF has indicated support for IPTV channels through a <code>&lt;video_broadcast&gt;</code> element with type ID_IPTV_* (as defined in section <a href="#channel-constants" class="sectionRef"></a>) the OITF SHALL support passing a content-access descriptor through the ‘<code>contentAccessDescriptorURL</code>' argument of the ‘<a href="#video-broadcast-setchannel" class="apiRef">setChannel</a>'-method of the <a href="#video-broadcast" class="apiRef">video/broadcast</a> object (as defined in section <a href="#video-broadcast-methods" class="sectionRef"></a>). If the content-access descriptor includes DRM information, the OITF SHALL pass this information to the DRM agent.</p>
+<p>If an OITF has indicated support for IPTV channels through a <code>&lt;video_broadcast&gt;</code> element with type ID_IPTV_* (as defined in section <a href="#channel-constants" class="sectionRef"></a>) the OITF SHALL support passing a content-access descriptor through the '<code>contentAccessDescriptorURL</code>' argument of the '<a href="#video-broadcast-setchannel" class="apiRef">setChannel</a>'-method of the <a href="#video-broadcast" class="apiRef">video/broadcast</a> object (as defined in section <a href="#video-broadcast-methods" class="sectionRef"></a>). If the content-access descriptor includes DRM information, the OITF SHALL pass this information to the DRM agent.</p>
 </section>
 </section>
 </section>
@@ -968,7 +968,7 @@ Applications which are independent of both broadcasters and the currently select
 <tr><td>5.4.4.24 SimpleApplicationBoundaryDescriptorType</td><td>Encodes an application boundary</td><td>Required</td></tr>
 <tr><td>FLUTESessionDescriptor as defined by <a href="volume3.html#sdns-FLUTESessionDescriptor-schema" class="extRef">Annex B.6</a> of [[.OIPF_META2]]</td><td>Support for distributing applications through multicast</td><td>SHALL be supported if OITFs support FLUTE.</td></tr>
 </table>
-<p>Elements and descriptors marked as ‘Ignored' SHALL NOT be processed for DAE applications. Servers MAY include these in application signalling.</p>
+<p>Elements and descriptors marked as 'Ignored' SHALL NOT be processed for DAE applications. Servers MAY include these in application signalling.</p>
 <p>The application control code SHALL be interpreted as follows for DAE applications:</p>
 <table class="simple" id='dae-application-control-codes'>
 <caption>Table ####: DAE application control codes</caption>
@@ -1223,7 +1223,7 @@ NOTE: How uniqueness is achieved is currently not defined.
 <h1>Formats</h1>
 <section id="web-standards-tv-profile">
 <h2>Web Standards TV Profile</h2>
-<p>An OITF SHALL support the Web Standards TV Profile defined in [[.OIPF_WSTVP2]]. The MIME type used for DAE documents SHALL be one of the MIME types defined in the HTML5 specification as referenced by [[.OIPF_WSTVP2]] for HTML or XHTML documents, or the value ‘<code>application/cehtml+xml; charset="UTF8"</code>'.</p>
+<p>An OITF SHALL support the Web Standards TV Profile defined in [[.OIPF_WSTVP2]]. The MIME type used for DAE documents SHALL be one of the MIME types defined in the HTML5 specification as referenced by [[.OIPF_WSTVP2]] for HTML or XHTML documents, or the value '<code>application/cehtml+xml; charset="UTF8"</code>'.</p>
 
 <section id="wstvp-additional-restrictions-and-requirements">
 
@@ -3448,7 +3448,7 @@ This section is intentionally left empty.
 <section id="codfolder-class">
 <h3>The CODFolder class</h3>
 <p><code>CODFolder</code> represents a folder in a CoD catalogue.  Folders may contain other folders, and an asset may be present in more than one folder.</p>
-<p>Because a content list may contain a large number of items, the contents of the list are made available on demand using a paging model.  Applications MAY request the contents of the list in ‘pages' of an arbitrary size.  The data SHALL be fetched from the appropriate source, and application SHALL be notified when the data is available.</p>
+<p>Because a content list may contain a large number of items, the contents of the list are made available on demand using a paging model.  Applications MAY request the contents of the list in 'pages' of an arbitrary size.  The data SHALL be fetched from the appropriate source, and application SHALL be notified when the data is available.</p>
 <p>Each folder is described by a <code>GroupInformation</code> element in the BCG Group Information Table.</p>
 
 <section id="codfolder-properties">
@@ -3765,7 +3765,7 @@ For assets without an appropriate <code>RelatedMaterial</code> element, the valu
 <tr><td colspan="3" class="api-signature">String <b>sendDRMMessage</b>( String msgType, String msg, String DRMSystemID )</td></tr>
 <tr>
 <td class="dae-method-table-label">Description</td>
-<td colspan="2">Send message to the DRM agent, using a message type as defined by the DRM system. Returns a unique ID to identify the message, to be passed as the ‘msgID' argument for the callback function registered through <a href="#oipfdrmagent-ondrmmessageresult" class="apiRef">onDRMMessageResult</a>. This is an asynchronous method. Applications will be notified of the results of the operation via events dispatched to <a href="#oipfdrmagent-ondrmmessageresult" class="apiRef">onDRMMessageResult</a> and corresponding DOM events.</td></tr>
+<td colspan="2">Send message to the DRM agent, using a message type as defined by the DRM system. Returns a unique ID to identify the message, to be passed as the 'msgID' argument for the callback function registered through <a href="#oipfdrmagent-ondrmmessageresult" class="apiRef">onDRMMessageResult</a>. This is an asynchronous method. Applications will be notified of the results of the operation via events dispatched to <a href="#oipfdrmagent-ondrmmessageresult" class="apiRef">onDRMMessageResult</a> and corresponding DOM events.</td></tr>
 <tr><td class="dae-method-table-label" rowspan="3">Arguments</td>
 <td class="dae-method-table-argument">msgType</td><td><p>A globally unique message type as defined by the DRM system, for example:</p><pre>
  application/vnd.marlin.drm.actiontoken+xml 
@@ -3938,7 +3938,7 @@ NOTE: the above DOM events are directly dispatched to the event target, and will
 <tr><td colspan="3" class="api-signature">Boolean <b>isIGSupportedMethod</b>( String methodName )</td></tr>
 <tr>
 <td class="dae-method-table-label">Description</td>
-<td colspan="2"><p>Shall return <code>true</code> when the IG supports the method specified in the ‘<code>methodName</code>' argument. If the function returns <code>false</code>, it indicates that IG does not support the specified method.</p></td></tr>
+<td colspan="2"><p>Shall return <code>true</code> when the IG supports the method specified in the '<code>methodName</code>' argument. If the function returns <code>false</code>, it indicates that IG does not support the specified method.</p></td></tr>
 <tr><td class="dae-method-table-label">Arguments</td>
 <td class="dae-method-table-argument">methodName</td><td>The name of the method to be checked for support.</td></tr>
 </table>
@@ -5290,7 +5290,7 @@ typedef Collection&lt;<a href="#parentalrating-class" class="apiRef">ParentalRat
 <tr><td>Friday</td><td>0x20 (i.e. 00100000)</td></tr>
 <tr><td>Saturday</td><td>0x40 (i.e. 01000000)</td></tr>
 </table>
-<p>These bitfield values can be ‘OR'-ed together to repeat a recording on more than one day of a week (e.g. weekdays) </p>
+<p>These bitfield values can be 'OR'-ed together to repeat a recording on more than one day of a week (e.g. weekdays) </p>
 <p>A value of 0x00 indicates that the recording will not be repeated.</p>
 </td></tr>
 <tr><td class="dae-method-table-argument">channelID</td><td>The identifier of the channel from which the broadcasted content is to be recorded. Specifies either a ccid or ipBroadcastID (as defined by the <a href="#channel-class" class="apiRef">Channel</a> object in section <a href="#channel-class" class="sectionRef"></a>) </td></tr>
@@ -6198,7 +6198,7 @@ This section is intentionally left empty.
 </section>
 <section id="searchresults-class">
 <h3>The SearchResults class</h3>
-<p>The <code>SearchResults</code> class represents the results of a metadata search.  Since the result set may contain a large number of items, applications request a ‘window' on to the result set, similar to the functionality provided by the OFFSET and LIMIT clauses in SQL.</p>
+<p>The <code>SearchResults</code> class represents the results of a metadata search.  Since the result set may contain a large number of items, applications request a 'window' on to the result set, similar to the functionality provided by the OFFSET and LIMIT clauses in SQL.</p>
 <p>Applications MAY request the contents of the result in groups of an arbitrary size, based on an offset from the beginning of the result set. The data SHALL be fetched from the appropriate source, and the application SHALL be notified when the data is available.</p>
 <p>The set of results SHALL only be valid if a call to <a href="#searchresults-getresults" class="apiRef">getResults()</a> has been made and a <code>MetadataSearch</code> event notifying the application that results are available has been dispatched. If this event has not been dispatched, the set of results SHALL be empty (i.e. the value of the <a href="#searchresults-totalsize" class="apiRef">totalSize</a> property SHALL be 0 and calls to <a href="#searchresults-item" class="apiRef">item()</a> SHALL return <code>undefined</code>).</p>
 <p>In addition to the properties and methods defined below a <code>SearchResults</code> object SHALL support the array notation to access the results in this collection.</p>
@@ -6481,8 +6481,8 @@ This section is intentionally left empty.
 <td class="dae-method-table-label">Description</td>
 <td colspan="2"><p>Requests the OITF to switch a (logical or physical) tuner to the channel specified by channel and render the received broadcast content in the area of the browser allocated for the <code>video/broadcast</code> object. </p>
 <p>If the channel specifies an <a href="#channel-idtype" class="apiRef">idType</a> attribute value which is not supported by the OITF or a combination of properties that does not identify a valid channel, the request to switch channel SHALL fail and the OITF SHALL trigger the function specified by the <a href="#video-broadcast-onchannelchangeerror" class="apiRef">onChannelChangeError</a> property, specifying the value 0 (&ldquo;Channel not supported by tuner&rdquo;) for the <code>errorState</code>, and dispatch the corresponding DOM event (see below). </p> 
-<p>If the channel specifies an <a href="#channel-idtype" class="apiRef">idType</a> attribute value supported by the OITF, and the combination of properties defines a valid channel, the OITF SHALL relay the channel switch request to a local physical tuner that is currently not in use by another <code>video/broadcast</code> object and that can tune to the specified channel. If no tuner satisfying these requirements is available (i.e. all physical tuners that could receive the specified channel are in use), the request SHALL fail and OITF SHALL trigger the function specified by the <a href="#video-broadcast-onchannelchangeerror" class="apiRef">onChannelChangeError</a> property, specifying the value ‘2' (&ldquo;tuner locked by other object&rdquo;) for the <code>errorState</code> and dispatch the corresponding DOM event (see below). If multiple tuners satisfying these requirements are available, the OITF selects one.</p>
-<p>If the channel specifies an IP broadcast channel, and the OITF supports <a href="#channel-idtype" class="apiRef">idType</a> <code>ID_IPTV_SDS</code> or <code>ID_IPTV_URI</code>, the OITF SHALL relay the channel switch request to a logical ‘tuner' that can resolve the URI of the referenced IP broadcast channel. If no logical tuner can resolve the URI of the referenced IP broadcast channel, the request SHALL fail and the OITF SHOULD trigger the function specified by the <a href="#video-broadcast-onchannelchangeerror" class="apiRef">onChannelChangeError</a> property, specifying the value 8 (&ldquo;cannot resolve URI of referenced IP channel&rdquo;) for the <code>errorState</code>, and dispatch the corresponding DOM event.</p>
+<p>If the channel specifies an <a href="#channel-idtype" class="apiRef">idType</a> attribute value supported by the OITF, and the combination of properties defines a valid channel, the OITF SHALL relay the channel switch request to a local physical tuner that is currently not in use by another <code>video/broadcast</code> object and that can tune to the specified channel. If no tuner satisfying these requirements is available (i.e. all physical tuners that could receive the specified channel are in use), the request SHALL fail and OITF SHALL trigger the function specified by the <a href="#video-broadcast-onchannelchangeerror" class="apiRef">onChannelChangeError</a> property, specifying the value '2' (&ldquo;tuner locked by other object&rdquo;) for the <code>errorState</code> and dispatch the corresponding DOM event (see below). If multiple tuners satisfying these requirements are available, the OITF selects one.</p>
+<p>If the channel specifies an IP broadcast channel, and the OITF supports <a href="#channel-idtype" class="apiRef">idType</a> <code>ID_IPTV_SDS</code> or <code>ID_IPTV_URI</code>, the OITF SHALL relay the channel switch request to a logical 'tuner' that can resolve the URI of the referenced IP broadcast channel. If no logical tuner can resolve the URI of the referenced IP broadcast channel, the request SHALL fail and the OITF SHOULD trigger the function specified by the <a href="#video-broadcast-onchannelchangeerror" class="apiRef">onChannelChangeError</a> property, specifying the value 8 (&ldquo;cannot resolve URI of referenced IP channel&rdquo;) for the <code>errorState</code>, and dispatch the corresponding DOM event.</p>
 <p>The optional attribute <code>contentAccessDescriptorURL</code> allows for the inclusion of a Content Access Streaming Descriptor (the format of which is defined in Annex <a href="#content-access-streaming-descriptor-format" class="sectionRef"></a>) to provide additional information for dealing with IPTV broadcasts that are (partially) DRM-protected. The descriptor may for example include Marlin action tokens or a previewLicense. The attribute SHALL be <code>undefined</code> or <code>null</code> if it is not applicable. If the attribute <code>contentAccessDescriptorURL</code> is present, the <code>trickplay</code> attribute shall take a value of either <code>true</code> or <code>false</code>.</p>
 <p>If the Transport Stream cannot be found, either via the DSD or the (ONID,TSID) pair, then a call to <a href="#video-broadcast-onchannelchangeerror" class="apiRef">onChannelChangeError</a> with <code>errorState</code>=5 (&ldquo;unknown channel&rdquo;) SHALL be triggered, and the corresponding DOM event dispatched.</p>
 <p>If the OITF succeeds in tuning to a valid transport stream but this transport stream does not contain the requested service in the PAT, the OITF SHALL remain tuned to that location and SHALL trigger a call to <a href="#video-broadcast-onchannelchangeerror" class="apiRef">onChannelChangeError</a> with <code>errorState</code>=12 (&ldquo;specified channel not found in transport stream&rdquo;), and dispatch the corresponding DOM event.</p>
@@ -6630,7 +6630,7 @@ For the intrinsic events listed in the table below, a corresponding DOM event SH
 <p>The specified function is called with one argument, <code>speed</code>, which is defined as follows:</p><ul>
 <li><code>Number speed</code> &mdash; the playback speed of the media at the time the event was dispatched.
 </ul>
-<p>If the playback reaches the beginning of the time-shift buffer at rewind playback speed, then the play state is changed to 2 (‘paused') and a <code>PlaySpeedChanged</code> event with a speed of 0 is generated. If the playback reaches the end of the time-shift buffer at fast-forward playback speed, then the play speed is set to 1.0 and a <code>PlaySpeedChanged</code> event is generated. 
+<p>If the playback reaches the beginning of the time-shift buffer at rewind playback speed, then the play state is changed to 2 ('paused') and a <code>PlaySpeedChanged</code> event with a speed of 0 is generated. If the playback reaches the end of the time-shift buffer at fast-forward playback speed, then the play speed is set to 1.0 and a <code>PlaySpeedChanged</code> event is generated. 
 </p></td></tr>
 </table>
 <table class="dae-property-table" id="video-broadcast-onplaypositionchanged">
@@ -6782,7 +6782,7 @@ If property is not set the default value of the property is according to <a href
 <td colspan="1"><p>Pause playback of the broadcast.</p>
 <p>The action taken depends on the value of the <a href="#video-broadcast-timeshiftmode" class="apiRef">timeShiftMode</a> property.</p>
 <p>If the value of the <a href="#video-broadcast-timeshiftmode" class="apiRef">timeShiftMode</a> property is 0, if trick play is not supported for the channel currently being rendered, or if the current time shift mode is not supported for the type of channel being presented (e.g. attempting to use network resource to time shift a DVB or analogue channel) this method shall return false.</p>
-<p>If the timeshift mode is set to 1 or 3 (local resources) and if recording has not yet been started, this method will start recording the broadcast that is currently being rendered live (i.e., not time-shifted) in the <code>video/broadcast</code> object. If the OITF has buffered the ‘live' broadcasted content, the recording starts with the content that is currently being rendering in the <code>video/broadcast</code> object. If the recording started successfully, the rendering of the broadcasted content is paused, i.e. a still-image video frame is shown. </p>
+<p>If the timeshift mode is set to 1 or 3 (local resources) and if recording has not yet been started, this method will start recording the broadcast that is currently being rendered live (i.e., not time-shifted) in the <code>video/broadcast</code> object. If the OITF has buffered the 'live' broadcasted content, the recording starts with the content that is currently being rendering in the <code>video/broadcast</code> object. If the recording started successfully, the rendering of the broadcasted content is paused, i.e. a still-image video frame is shown. </p>
 <p>If the timeshift mode is set to 2 (network resources) then the OITF shall follow the procedures defined in section <a href="#network-timeshift-of-broadcast-services" class="sectionRef"></a> and returns true. Since this operation is asynchronous when the procedure are executed successful the rendering of the broadcasted content is paused, i.e. a still-image video frame is shown, and <code>PlaySpeedChanged</code> event is generated. </p>
 <p>If the specified timeshift mode is not supported, this method shall return false.  Otherwise, this method shall return true.  Acquiring the necessary resources to enable the specified timeshift mode may be an asynchronous operation; applications may receive updates of this process by registering a listener for <code>RecordingEvents</code> as defined in section <a href="#video-broadcast-extensions-recording-timeshift-events" class="sectionRef"></a>.</p>
 <p>If trick play is not supported for the channel currently being rendered, this method shall return <code>false</code>, otherwise <code>true</code> is returned.  </p>
@@ -6858,7 +6858,7 @@ If property is not set the default value of the property is according to <a href
 <tr>
 <td class="dae-method-table-label">Description</td>
 <td colspan="2"><p>Requests the OITF to switch a (logical or physical) tuner to the specified  channel and render the received broadcast content in the area of the browser allocated for the <code>video/broadcast</code> object, as specified by the <a href="#video-broadcast-setchannel" class="apiRef">setChannel(Channel channel, Boolean trickPlay, String contentAccessDescriptorURL)</a> method in section <a href="#video-broadcast-methods" class="sectionRef"></a>. </p>
-<p>The additional <code>offSet</code> attribute optionally specifies the desired offset with respect to the live broadcast in number of seconds from which the OITF SHOULD start playback immediately after the channel switch (whereby offSet is given as a positive value for seeking to a time in the past). If an OITF cannot start playback from the desired position, as indicated by the specified <code>offSet</code> (e.g. because the OITF did not, or could not, record the specified channel prior to the call to <code>setChannel</code>), if the specified <code>offSet</code> is ‘0', or if the <code>offSet</code> is not specified, the OITF SHALL start playback from the live position after the specified channel switch.</p></td></tr>
+<p>The additional <code>offSet</code> attribute optionally specifies the desired offset with respect to the live broadcast in number of seconds from which the OITF SHOULD start playback immediately after the channel switch (whereby offSet is given as a positive value for seeking to a time in the past). If an OITF cannot start playback from the desired position, as indicated by the specified <code>offSet</code> (e.g. because the OITF did not, or could not, record the specified channel prior to the call to <code>setChannel</code>), if the specified <code>offSet</code> is '0', or if the <code>offSet</code> is not specified, the OITF SHALL start playback from the live position after the specified channel switch.</p></td></tr>
 <tr><td class="dae-method-table-label" rowspan="4">Arguments</td>
 <td class="dae-method-table-argument">channel</td><td>As defined for method <a href="#video-broadcast-setchannel" class="apiRef">setChannel()</a> in section <a href="#video-broadcast-methods" class="sectionRef"></a>.</td></tr>
 <tr><td class="dae-method-table-argument">trickplay</td><td>Optional flag as defined for method <a href="#video-broadcast-setchannel" class="apiRef">setChannel()</a> in section <a href="#video-broadcast-methods" class="sectionRef"></a>.</td></tr>
@@ -7252,19 +7252,19 @@ typedef Collection&lt;<a href="#channel-class" class="apiRef">Channel</a>&gt; Ch
 <tr><td>TYPE_OTHER</td><td>2</td><td>Used in the <a href="#channel-channeltype" class="apiRef">channelType</a> property to indicate that the type of the channel is unknown, or known but not of type TV or radio.</td></tr>
 <tr><td>TYPE_ALL</td><td>128</td><td>Used during channel scanning to indicate that all TV, radio and other channel types should scanned.</td></tr>
 <tr><td>TYPE_HBB_DATA</td><td>256</td><td>Reserved for data services defined by [[TS102796]].</td></tr>
-<tr><td>ID_ANALOG</td><td>0</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate an analogue channel identified by the property ‘<a href="#channel-freq" class="apiRef">freq</a>' and optionally ‘<a href="#channel-cni" class="apiRef">cni</a>' or ‘<a href="#channel-name" class="apiRef">name</a>'.</td></tr>
-<tr><td>ID_DVB_C</td><td>10</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a DVB-C channel identified by the three properties: ‘<a href="#channel-onid" class="apiRef">onid</a>', ‘<a href="#channel-tsid" class="apiRef">tsid</a>', ‘<a href="#channel-sid" class="apiRef">sid</a>'.</td></tr>
-<tr><td>ID_DVB_S</td><td>11</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a DVB-S channel identified by the three properties: ‘<a href="#channel-onid" class="apiRef">onid</a>', ‘<a href="#channel-tsid" class="apiRef">tsid</a>', ‘<a href="#channel-sid" class="apiRef">sid</a>'.</td></tr>
-<tr><td>ID_DVB_T</td><td>12</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a DVB-T channel identified by the three properties: ‘<a href="#channel-onid" class="apiRef">onid</a>', ‘<a href="#channel-tsid" class="apiRef">tsid</a>', ‘<a href="#channel-sid" class="apiRef">sid</a>'.</td></tr>
+<tr><td>ID_ANALOG</td><td>0</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate an analogue channel identified by the property '<a href="#channel-freq" class="apiRef">freq</a>' and optionally '<a href="#channel-cni" class="apiRef">cni</a>' or '<a href="#channel-name" class="apiRef">name</a>'.</td></tr>
+<tr><td>ID_DVB_C</td><td>10</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a DVB-C channel identified by the three properties: '<a href="#channel-onid" class="apiRef">onid</a>', '<a href="#channel-tsid" class="apiRef">tsid</a>', '<a href="#channel-sid" class="apiRef">sid</a>'.</td></tr>
+<tr><td>ID_DVB_S</td><td>11</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a DVB-S channel identified by the three properties: '<a href="#channel-onid" class="apiRef">onid</a>', '<a href="#channel-tsid" class="apiRef">tsid</a>', '<a href="#channel-sid" class="apiRef">sid</a>'.</td></tr>
+<tr><td>ID_DVB_T</td><td>12</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a DVB-T channel identified by the three properties: '<a href="#channel-onid" class="apiRef">onid</a>', '<a href="#channel-tsid" class="apiRef">tsid</a>', '<a href="#channel-sid" class="apiRef">sid</a>'.</td></tr>
 <tr><td>ID_DVB_SI_DIRECT</td><td>13</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a channel that is identified through its delivery system descriptor as defined by DVB-SI [[!EN300468]] section 6.2.13.</td></tr>
-<tr><td>ID_DVB_C2</td><td>14</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a DVB-C or DVB-C2 channel identified by the three properties: ‘<a href="#channel-onid" class="apiRef">onid</a>', ‘<a href="#channel-tsid" class="apiRef">tsid</a>', ‘<a href="#channel-sid" class="apiRef">sid</a>'.</td></tr>
-<tr><td>ID_DVB_S2</td><td>15</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a DVB-S or DVB-S2 channel identified by the three properties: ‘<a href="#channel-onid" class="apiRef">onid</a>', ‘<a href="#channel-tsid" class="apiRef">tsid</a>', ‘<a href="#channel-sid" class="apiRef">sid</a>'.</td></tr>
-<tr><td>ID_DVB_T2</td><td>16</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a DVB-T or DVB-T2 channel identified by the three properties: ‘<a href="#channel-onid" class="apiRef">onid</a>', ‘<a href="#channel-tsid" class="apiRef">tsid</a>', ‘<a href="#channel-sid" class="apiRef">sid</a>'.</td></tr>
-<tr><td>ID_ISDB_C</td><td>20</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a ISDB-C channel identified by the three properties: ‘<a href="#channel-onid" class="apiRef">onid</a>', ‘<a href="#channel-tsid" class="apiRef">tsid</a>', ‘<a href="#channel-sid" class="apiRef">sid</a>'.</td></tr>
-<tr><td>ID_ISDB_S</td><td>21</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a ISDB-S channel identified by the three properties: ‘<a href="#channel-onid" class="apiRef">onid</a>', ‘<a href="#channel-tsid" class="apiRef">tsid</a>', ‘<a href="#channel-sid" class="apiRef">sid</a>'.</td></tr>
-<tr><td>ID_ISDB_T</td><td>22</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a ISDB-T channel identified by the three properties: ‘<a href="#channel-onid" class="apiRef">onid</a>', ‘<a href="#channel-tsid" class="apiRef">tsid</a>', ‘<a href="#channel-sid" class="apiRef">sid</a>'.</td></tr>
-<tr><td>ID_ATSC_T</td><td>30</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a ATSC-T channel identified by the property ‘<a href="#channel-sourceid" class="apiRef">sourceid</a>'.</td></tr>
-<tr><td>ID_IPTV_SDS</td><td>40</td><td>Used in the idType property to indicate an IP broadcast channel identified through SD&amp;S by a DVB textual service identifier specified in the format &ldquo;ServiceName.DomainName&rdquo; as value for property ‘<a href="#channel-ipbroadcastid" class="apiRef">ipBroadcastID</a>', with <code>ServiceName</code> and <code>DomainName</code> as defined in [[!DVB-IPTV]]. This idType SHALL be used to indicate Scheduled content service defined by [[.OIPF_PROT2]].</td></tr>
+<tr><td>ID_DVB_C2</td><td>14</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a DVB-C or DVB-C2 channel identified by the three properties: '<a href="#channel-onid" class="apiRef">onid</a>', '<a href="#channel-tsid" class="apiRef">tsid</a>', '<a href="#channel-sid" class="apiRef">sid</a>'.</td></tr>
+<tr><td>ID_DVB_S2</td><td>15</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a DVB-S or DVB-S2 channel identified by the three properties: '<a href="#channel-onid" class="apiRef">onid</a>', '<a href="#channel-tsid" class="apiRef">tsid</a>', '<a href="#channel-sid" class="apiRef">sid</a>'.</td></tr>
+<tr><td>ID_DVB_T2</td><td>16</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a DVB-T or DVB-T2 channel identified by the three properties: '<a href="#channel-onid" class="apiRef">onid</a>', '<a href="#channel-tsid" class="apiRef">tsid</a>', '<a href="#channel-sid" class="apiRef">sid</a>'.</td></tr>
+<tr><td>ID_ISDB_C</td><td>20</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a ISDB-C channel identified by the three properties: '<a href="#channel-onid" class="apiRef">onid</a>', '<a href="#channel-tsid" class="apiRef">tsid</a>', '<a href="#channel-sid" class="apiRef">sid</a>'.</td></tr>
+<tr><td>ID_ISDB_S</td><td>21</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a ISDB-S channel identified by the three properties: '<a href="#channel-onid" class="apiRef">onid</a>', '<a href="#channel-tsid" class="apiRef">tsid</a>', '<a href="#channel-sid" class="apiRef">sid</a>'.</td></tr>
+<tr><td>ID_ISDB_T</td><td>22</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a ISDB-T channel identified by the three properties: '<a href="#channel-onid" class="apiRef">onid</a>', '<a href="#channel-tsid" class="apiRef">tsid</a>', '<a href="#channel-sid" class="apiRef">sid</a>'.</td></tr>
+<tr><td>ID_ATSC_T</td><td>30</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate a ATSC-T channel identified by the property '<a href="#channel-sourceid" class="apiRef">sourceid</a>'.</td></tr>
+<tr><td>ID_IPTV_SDS</td><td>40</td><td>Used in the idType property to indicate an IP broadcast channel identified through SD&amp;S by a DVB textual service identifier specified in the format &ldquo;ServiceName.DomainName&rdquo; as value for property '<a href="#channel-ipbroadcastid" class="apiRef">ipBroadcastID</a>', with <code>ServiceName</code> and <code>DomainName</code> as defined in [[!DVB-IPTV]]. This idType SHALL be used to indicate Scheduled content service defined by [[.OIPF_PROT2]].</td></tr>
 <tr><td>ID_IPTV_URI</td><td>41</td><td>Used in the <a href="#channel-idtype" class="apiRef">idType</a> property to indicate an IP broadcast channel identified by a DVB MCAST URI (i.e. <code>dvb-mcast://</code>) or by a URI referencing a HAS or MPEG DASH MPD (i.e. <code>http://</code> or <code>https://</code>), as value for property <a href="#channel-ipbroadcastid" class="apiRef">ipBroadcastID</a>.</td></tr>
 </table>
 </section>
@@ -7285,7 +7285,7 @@ typedef Collection&lt;<a href="#channel-class" class="apiRef">Channel</a>&gt; Ch
 </table>
 <table class="dae-property-table" id="channel-ccid">
 <tr><td class="api-signature">readonly String <b>ccid</b></td></tr>
-<tr><td><p>Unique identifier of a channel within the scope of the OITF. The ccid is defined by the OITF and SHALL have prefix ‘<code>ccid</code>': e.g. ‘ccid:<i>{tunerID.}</i>majorChannel<i>{.minorChannel}</i>'.  </p>
+<tr><td><p>Unique identifier of a channel within the scope of the OITF. The ccid is defined by the OITF and SHALL have prefix '<code>ccid</code>': e.g. 'ccid:<i>{tunerID.}</i>majorChannel<i>{.minorChannel}</i>'.  </p>
 <p>Note: the format of this string is platform-dependent.</p></td></tr>
 </table>
 <table class="dae-property-table" id="channel-tunerid">
@@ -7387,7 +7387,7 @@ typedef Collection&lt;<a href="#channel-class" class="apiRef">Channel</a>&gt; Ch
 <table class="dae-property-table" id="channel-longname">
 <tr><td class="api-signature">String <b>longName</b></td></tr>
 <tr><td><p>The long name of the channel. If both short and long names are being transmitted, this property SHALL contain the long name of the station (e.g. 'Home Box Office'). If the long name is not available, this property SHALL be <code>undefined</code>.</p>
-<p>The value of this property may be derived from the Name element that is a child of the BCG <code>ServiceInformation</code> element describing the channel, where the <code>length</code> attribute of the <code>Name</code> element has the value ‘long'.</p></td></tr>
+<p>The value of this property may be derived from the Name element that is a child of the BCG <code>ServiceInformation</code> element describing the channel, where the <code>length</code> attribute of the <code>Name</code> element has the value 'long'.</p></td></tr>
 </table>
 <table class="dae-property-table" id="channel-description">
 <tr><td class="api-signature">String <b>description</b></td></tr>
@@ -7885,7 +7885,7 @@ More than one of these values may be arithmetically summed in order to indicate 
 <table class="simple" id="av-control-properties-for-video-or-audio">
 <caption>Table ####: Properties of the A/V Control Object when the type attribute refers to video or audio</caption>
 <tr><th>Property type and name</th><th>Property Definition</th></tr>
-<tr><td>String data</td><td>String data [RW] &mdash; media URL. If the value of data is changed while media is playing playback is stopped (resulting in a play state change). The default value is the empty string. If the value of this attribute is changed, the related data-attribute inside the DOM tree SHOULD be changed accordingly. If the value of this attribute is set to an empty string or is changed, the resources (files, server connections, etc…) currently owned by the object SHALL be released. The value set in this property MAY include a temporal fragment interval according to <a href="http://www.w3.org/TR/media-frags/#naming-time" class="extRef">section 4.2.1</a> of [[!Media-Fragments-URI]] in which case the derived begin time and end time SHALL serve as bounds for playback. The Normal Play Time format SHALL be used. The begin time SHALL behave as start-of-media and the end time SHALL behave as end-of-media. If the value of temporal fragment interval is changed then there will be no change in the play state unless the interval is changed to period outside of the current play position.</td></tr>
+<tr><td>String data</td><td>String data [RW] &mdash; media URL. If the value of data is changed while media is playing playback is stopped (resulting in a play state change). The default value is the empty string. If the value of this attribute is changed, the related data-attribute inside the DOM tree SHOULD be changed accordingly. If the value of this attribute is set to an empty string or is changed, the resources (files, server connections, etc&hellip;) currently owned by the object SHALL be released. The value set in this property MAY include a temporal fragment interval according to <a href="http://www.w3.org/TR/media-frags/#naming-time" class="extRef">section 4.2.1</a> of [[!Media-Fragments-URI]] in which case the derived begin time and end time SHALL serve as bounds for playback. The Normal Play Time format SHALL be used. The begin time SHALL behave as start-of-media and the end time SHALL behave as end-of-media. If the value of temporal fragment interval is changed then there will be no change in the play state unless the interval is changed to period outside of the current play position.</td></tr>
 <tr><td>readonly Number playPosition</td><td>The play position in number of milliseconds since the beginning as denoted by the server (i.e. in relation to NPT 0.0 as described in <a href="http://tools.ietf.org/html/rfc2326#section-3.6" class="extRef">section 3.6</a> of [[!RTSP]]) of the media referenced by attribute data when data refers to a single media item. If the play position cannot be determined, the playPosition SHALL be undefined.</td></tr>
 <tr><td>readonly Number playTime</td><td>The estimated total duration in milliseconds of the media referenced by data when data refers to a single media item. If the duration of the media cannot be determined, the playTime SHALL be undefined.</td></tr>
 <tr><td>readonly Number playState</td><td>Indication of the current play state as follows: <ul class="nobullet">
@@ -7893,7 +7893,7 @@ More than one of these values may be arithmetically summed in order to indicate 
 <li>1 - playing; the current media pointed to by data is currently playing. 
 <li>2 - paused; the current media pointed to by data has been paused.
 <li>3 - connecting; connect to media server, i.e. waiting for connection to media server to be established, upon first connection or after the connection was lost. In addition, DRM rights necessary for playback of protected content are also retrieved during this state.
-<li>4 - buffering; the buffer is being filled in order to have sufficient data available to initiate or continue playback. In this state, playback is stalled due to insufficient data in the buffer to continue playback. The player waits until sufficient data has been buffered to continue playback. For video objects, whilst being in this state, the player SHOULD show the last completed video frame that was shown before entering this state. This playstate is an intermediate state to reach playState 1 (‘playing'). The OITF SHOULD buffer the content in the background whilst in playState 2 (‘paused'). However, this background buffering does not result into a state change to state 4. 
+<li>4 - buffering; the buffer is being filled in order to have sufficient data available to initiate or continue playback. In this state, playback is stalled due to insufficient data in the buffer to continue playback. The player waits until sufficient data has been buffered to continue playback. For video objects, whilst being in this state, the player SHOULD show the last completed video frame that was shown before entering this state. This playstate is an intermediate state to reach playState 1 ('playing'). The OITF SHOULD buffer the content in the background whilst in playState 2 ('paused'). However, this background buffering does not result into a state change to state 4. 
 <li>5 - finished; the playback of the current media has reached the end of the media. 
 <li>6 - error; an error occurred during media playback, preventing the current media to start/continue playing.
 </ul></td></tr>
@@ -7922,10 +7922,10 @@ More than one of these values may be arithmetically summed in order to indicate 
 <table class="simple" id="av-control-methods-for-video-or-audio">
 <caption>Table ####: Methods of the A/V Control Object when the type attribute refers to video or audio</caption>
 <tr><th>Method signature</th><th>Method Definition</th></tr>
-<tr><td>Boolean play(Number speed)</td><td>Plays the media referenced by data, starting at the current play position denoted by <code>playPosition</code>, at the supported speed closest to the value of attribute speed. Negative speeds reverse playback. If no speed is specified, it defaults to 1. A speed of 0 will pause playback. This method SHALL always return <code>true</code>. If the playback reached the beginning of the media at rewind playback speed, then the play state SHALL be changed to 2 (‘paused'). A play speed event (see section <a href="#av-control-trickmodes-events" class="sectionRef"></a> of this specification) SHALL be generated when the operation has completed, regardless of the new play speed. If the play speed is not changed, the argument of the event SHALL be set to the previous play speed.</td></tr>
+<tr><td>Boolean play(Number speed)</td><td>Plays the media referenced by data, starting at the current play position denoted by <code>playPosition</code>, at the supported speed closest to the value of attribute speed. Negative speeds reverse playback. If no speed is specified, it defaults to 1. A speed of 0 will pause playback. This method SHALL always return <code>true</code>. If the playback reached the beginning of the media at rewind playback speed, then the play state SHALL be changed to 2 ('paused'). A play speed event (see section <a href="#av-control-trickmodes-events" class="sectionRef"></a> of this specification) SHALL be generated when the operation has completed, regardless of the new play speed. If the play speed is not changed, the argument of the event SHALL be set to the previous play speed.</td></tr>
 <tr><td>Boolean stop()</td><td>Stops playback and resets the <code>playPosition</code> to 0 as defined by 5.7.1.f.12 of [[!CEA-2014-A]].</td></tr>
-<tr><td>Boolean seek(Number pos)</td><td><p>If <code>seek()</code> is called while the player is in state 1 (&ldquo;playing&rdquo;), then it sets the current play position (in milliseconds) to the value of pos and MAY change play state to 4 (‘buffering'). </p>
-<p>If the player is in state 2 (‘paused'), then the <code>seek()</code> method seeks to the new position, but the play state and the rendered image is not changed.</p>
+<tr><td>Boolean seek(Number pos)</td><td><p>If <code>seek()</code> is called while the player is in state 1 (&ldquo;playing&rdquo;), then it sets the current play position (in milliseconds) to the value of pos and MAY change play state to 4 ('buffering'). </p>
+<p>If the player is in state 2 ('paused'), then the <code>seek()</code> method seeks to the new position, but the play state and the rendered image is not changed.</p>
 <p>If the player is in states 0 (&ldquo;stopped&rdquo;), 5 (&ldquo;finished&rdquo;) or 6 (&ldquo;error&rdquo;), then the new play position SHALL be retained and SHALL be used (if possible) as the starting position for playing back the content item indicated by the data property when the <code>play()</code> method is called. NOTE: changing the content item resets the play position to the beginning of the new content item.</p>
 <p>If the player is in states 3 (&ldquo;connecting&rdquo;) or 4 (&ldquo;buffering&rdquo;) then the <code>seek()</code> method seeks to the new play position and MAY change play state to 3 (&ldquo;connecting&rdquo;).</p>
 <p>If the new playback position is valid, the value of the <code>playPosition</code> attribute SHALL be set to the new value before this method returns.</p>
@@ -7963,15 +7963,15 @@ More than one of these values may be arithmetically summed in order to indicate 
 <p>The following clarifications apply:</p><ol>
 <li>A detailed description for all the states in this state diagram is given above in the definition of the <code>playState</code> property. 
 <li>If the value of the <code>allocationMethod</code> property is <code>DYNAMIC_ALLOCATION</code> the following SHALL apply:<ol type="a">
-<li>Scarce resources for playback using the A/V Control object, such as the MPEG decoder, are claimed during state 3 (‘<code>connecting</code>'), state 4 (‘<code>buffering</code>') or during state transitions from state 3 (‘<code>connecting</code>') to state 4 (‘<code>buffering</code>'), from state 4 (‘<code>buffering</code>') to state 1 (‘<code>playing</code>') or from state 0 (‘<code>stopped</code>') or from state 3 (‘<code>connecting</code>') to state 2 (‘<code>paused</code>'). 
-<li>If at any point in time during playback the scarce resources are not available anymore, due to a resource conflict, then the play state of the A/V Control object SHALL be set to 6 (‘<code>error</code>') with a detailed error code of 3 (‘<code>insufficient resources</code>'). 
-<li>Scarce resources for playback using the A/V Control object SHALL be released when state 6 (‘<code>error</code>') or 0 (‘<code>stopped</code>') or 5 (‘<code>finished</code>') are reached. </ol>
+<li>Scarce resources for playback using the A/V Control object, such as the MPEG decoder, are claimed during state 3 ('<code>connecting</code>'), state 4 ('<code>buffering</code>') or during state transitions from state 3 ('<code>connecting</code>') to state 4 ('<code>buffering</code>'), from state 4 ('<code>buffering</code>') to state 1 ('<code>playing</code>') or from state 0 ('<code>stopped</code>') or from state 3 ('<code>connecting</code>') to state 2 ('<code>paused</code>'). 
+<li>If at any point in time during playback the scarce resources are not available anymore, due to a resource conflict, then the play state of the A/V Control object SHALL be set to 6 ('<code>error</code>') with a detailed error code of 3 ('<code>insufficient resources</code>'). 
+<li>Scarce resources for playback using the A/V Control object SHALL be released when state 6 ('<code>error</code>') or 0 ('<code>stopped</code>') or 5 ('<code>finished</code>') are reached. </ol>
 <li>In addition, if the A/V Control object gets destroyed, e.g. because another URL is loaded into the containing window, scarce resources claimed for playback using the A/V Control object SHALL be released, except in cases described for the optional <code>persist</code> property of A/V Control objects.
-<li>When the <code>data</code> attribute and/or the type attribute of the <code>HTMLObjectElement</code> representing the A/V Control object is given a different value, the object SHALL go to state 0 (‘<code>stopped</code>').
-<li>For playback of DRM protected content, the rights for playback are retrieved during state 3 (‘<code>connecting</code>').
-<li>If the play position reaches the end of the available content the A/V Control object SHALL be set to state 5 (‘<code>finished</code>') in addition to generating a playback speed change of zero.
+<li>When the <code>data</code> attribute and/or the type attribute of the <code>HTMLObjectElement</code> representing the A/V Control object is given a different value, the object SHALL go to state 0 ('<code>stopped</code>').
+<li>For playback of DRM protected content, the rights for playback are retrieved during state 3 ('<code>connecting</code>').
+<li>If the play position reaches the end of the available content the A/V Control object SHALL be set to state 5 ('<code>finished</code>') in addition to generating a playback speed change of zero.
 <li>If there is an attempt to <code>play()</code> with a speed in the positive direction (forward or &gt; 0) and there is no content available then the request fails.
-<li>If the play position reaches the beginning of the available content the A/V Control object SHALL be set to state 2 (‘<code>paused</code>') in addition to generating a playback speed change of zero.
+<li>If the play position reaches the beginning of the available content the A/V Control object SHALL be set to state 2 ('<code>paused</code>') in addition to generating a playback speed change of zero.
 <li>If there is an attempt to <code>play()</code> with a speed in the negative direction (rewind or &lt; 0) and there is no content available then the request fails.
 <li>If <code>seek()</code> is performed beyond the available content the request is rejected and the current playout is maintained.
 <li>When a A/V Control object stops being rendered as defined in section 10.1 of the HTML5 specification as referenced by [[!OIPF_WSTVP2]] an OITF MAY release scarce resources allocated for that object. Vice versa, an A/V Control object which is not visible but is still being rendered SHALL still be decoding video if it is in the playing state and any audio associated with the currently playing media will still be audible.  State transitions caused by calls to methods on the A/V Control object, or due to permanent or transient errors, will occur as shown above regardless of the visibility of the object. Section <a href="#claiming-scarce-resources" class="sectionRef"></a> describes the effect on scarce resources when an A/V Control object is removed from the DOM tree.
@@ -7983,8 +7983,8 @@ More than one of these values may be arithmetically summed in order to indicate 
 <section id="using-av-control-for-streaming-content">
 <h4>Using an A/V Control object to play streaming content</h4>
 <p>If an A/V Control object is used to play streamed content using either RTSP or HTTP the OITF then the following holds:</p><ol>
-<li>If <code>play(0)</code> is called in state 0 (‘<code>stopped</code>'), the A/V Control object SHALL automatically go to play state 2 (‘<code>paused</code>'). The necessary resources are secured and no external signalling is performed.
-<li>If <code>play(0)</code> is called in the connecting or buffering state, the A/V Control object SHALL automatically go to play state 2 (‘<code>paused</code>')
+<li>If <code>play(0)</code> is called in state 0 ('<code>stopped</code>'), the A/V Control object SHALL automatically go to play state 2 ('<code>paused</code>'). The necessary resources are secured and no external signalling is performed.
+<li>If <code>play(0)</code> is called in the connecting or buffering state, the A/V Control object SHALL automatically go to play state 2 ('<code>paused</code>')
 <li>If <code>play()</code> is called in the paused state with an argument other than 0, the A/V Control object SHALL transition to one of the following states as follows:<ol type="a">
 <li>If there is no connection to the server, the A/V Control object SHALL transition to the connecting state.
 <li>If there is a connection to the server but insufficient content is buffered to resume playback immediately, the A/V Control object SHALL transition to the buffering state.
@@ -7995,15 +7995,15 @@ More than one of these values may be arithmetically summed in order to indicate 
 <h4>Using an A/V Control object to play downloaded content</h4>
 <p>If an A/V Control object is used to play content that has been downloaded and stored on the OITF (by using method <a href="#av-control-setsource" class="apiRef">setSource()</a> as defined in section <a href="#av-control-extensions-for-playing-media-objects" class="sectionRef"></a>) then the following holds:</p><ol>
 <li>if the download was triggered using <a href="#downloadtrigger-registerdownloadurl" class="apiRef">registerDownloadURL</a> or the download was triggered using a Content Access Download Descriptor with &lt;TransferType&gt; value &ldquo;playable_download&rdquo; as defined in Annex <a href="#content-access-download-descriptor-format" class="sectionRef"></a>, then:<ol type="a">
-<li>if the <code>play()</code> method is called before sufficient data has been download to initiate playback, then the play state of the A/V Control object SHALL be set to 6 (‘error') with a detailed error code of 5 (&ldquo;content not available&rdquo;).</ol> 
+<li>if the <code>play()</code> method is called before sufficient data has been download to initiate playback, then the play state of the A/V Control object SHALL be set to 6 ('error') with a detailed error code of 5 (&ldquo;content not available&rdquo;).</ol> 
 <li>if the downloaded content was triggered using a Content Access Download Descriptor with &lt;TransferType&gt; value &ldquo;full_download&rdquo; as defined in Annex <a href="#content-access-download-descriptor-format" class="sectionRef"></a>, then:<ol type="a">
-<li>if the <code>play()</code> method is called whilst the content is still downloading and has not yet successfully completed, then the play state of the A/V Control object SHALL be set to 6 (‘error') with a detailed error code of 5 (&ldquo;content not available&rdquo;).
+<li>if the <code>play()</code> method is called whilst the content is still downloading and has not yet successfully completed, then the play state of the A/V Control object SHALL be set to 6 ('error') with a detailed error code of 5 (&ldquo;content not available&rdquo;).
 </ol></ol>
 </section>
 <section id="using-av-control-for-recorded-content">
 <h4>Using an A/V Control object to play recorded content</h4>
 <p>If an A/V Control object is used to play content that has been recorded or is being recorded on the OITF (by using method <a href="#av-control-setsource" class="apiRef">setSource()</a> as defined in section <a href="#av-control-extensions-for-playing-media-objects" class="sectionRef"></a>) then the following holds:</p><ol>
-<li>if the <code>play()</code> method is called before sufficient data has been recorded to initiate playback, then the play state of the A/V Control object SHALL be set to 6 (‘error') with a detailed error code of 5 (&ldquo;content not available&rdquo;).
+<li>if the <code>play()</code> method is called before sufficient data has been recorded to initiate playback, then the play state of the A/V Control object SHALL be set to 6 ('error') with a detailed error code of 5 (&ldquo;content not available&rdquo;).
 </ol>
 </section>
 <section id="using-av-control-for-content_fragments">
@@ -8021,7 +8021,7 @@ More than one of these values may be arithmetically summed in order to indicate 
 
 <section id="av-control-extensions-for-playback-through-casd">
 <h3>Extensions to A/V Control object for playback through Content-Access Streaming Descriptor</h3>
-<p>As specified in section <a href="#unicast-streaming" class="sectionRef"></a>, an OITF SHALL support setting up the A/V stream using the information provided by a valid Content Access Streaming Descriptor referred to by the ‘<code>data</code>' attribute. To this end, the OITF SHALL fetch the Content Access Streaming Descriptor from the URL provided by the <code>data</code> attribute, after which the descriptor SHALL be interpreted, resulting in an appropriate <code>&lt;ContentURL&gt;</code> to be selected (e.g. based on which DRM system the OITF supports). The OITF SHALL then initiate a streaming CoD session to the selected <code>&lt;ContentURL&gt;</code>, after which playback can be started when the <code>play()</code> method is invoked. </p>
+<p>As specified in section <a href="#unicast-streaming" class="sectionRef"></a>, an OITF SHALL support setting up the A/V stream using the information provided by a valid Content Access Streaming Descriptor referred to by the '<code>data</code>' attribute. To this end, the OITF SHALL fetch the Content Access Streaming Descriptor from the URL provided by the <code>data</code> attribute, after which the descriptor SHALL be interpreted, resulting in an appropriate <code>&lt;ContentURL&gt;</code> to be selected (e.g. based on which DRM system the OITF supports). The OITF SHALL then initiate a streaming CoD session to the selected <code>&lt;ContentURL&gt;</code>, after which playback can be started when the <code>play()</code> method is invoked. </p>
 <p>The OITF SHALL pass included DRM-information of the selected content and DRM system ID as part of the <code>&lt;DRMControlInformation&gt;</code> elements of a Content Access Streaming Descriptor to the DRM agent, if it supports a DRM agent with a matching <code>DRMSystemID</code> as per section <a href="#drm-capability-indication" class="sectionRef"></a>.</p>
 <p>If the Content Access Streaming Descriptor is not valid according to the XML Schema and semantics as defined in Annex <a href="#content-access-streaming-descriptor-format" class="sectionRef"></a>, the A/V Control object SHALL go to playState 6 (i.e. error), with error value 4, which is defined as follows in addition to the error states identified by bullet 5 of [Req. 5.7.1.f] of CEA-2014-A:</p><ul class="nobullet">
 <li>4: content corrupt or invalid.
@@ -8215,7 +8215,7 @@ Note: the above DOM event is directly dispatched to the event target, and will n
 <table class="dae-property-table" id="av-control-onreadytoplay">
 <tr><td class="api-signature">function <b>onReadyToPlay</b></td></tr>
 <tr><td><p>The function that gets called when enough (as determined by the OITF) of the media after the current play position has been buffered to start/continue playback.</p>
-<p>This event SHALL be generated whenever there is a state transition between state 4 (&ldquo;<code>buffering</code>&rdquo;) and state 1 (&ldquo;<code>playing</code>&rdquo;). The event SHALL also be generated at the moment that enough data has been buffered to start playback, whilst in state 2 (‘<code>paused</code>'). </p></td></tr>
+<p>This event SHALL be generated whenever there is a state transition between state 4 (&ldquo;<code>buffering</code>&rdquo;) and state 1 (&ldquo;<code>playing</code>&rdquo;). The event SHALL also be generated at the moment that enough data has been buffered to start playback, whilst in state 2 ('<code>paused</code>'). </p></td></tr>
 </table>
 
 <table class="dae-property-table" id="av-control-onrepresentationchange">
@@ -8252,12 +8252,12 @@ Note: the above DOM event is directly dispatched to the event target, and will n
 
 <table class="dae-property-table" id="av-control-currentrepresentation">
 <tr><td class="api-signature">readonly Integer <b>currentRepresentation</b></td></tr>
-<tr><td>When a HAS stream or DASH stream is being presented return Representation that is being presented. The Representation is identified by the bandwidth attribute in the Representation element of the MPD (as defined in [[!OIPF_HAS2]] or [[!DASH]]). The bandwidth is only available in play state 1 (‘<code>playing</code>'), in other states the value is undefined.</td></tr>
+<tr><td>When a HAS stream or DASH stream is being presented return Representation that is being presented. The Representation is identified by the bandwidth attribute in the Representation element of the MPD (as defined in [[!OIPF_HAS2]] or [[!DASH]]). The bandwidth is only available in play state 1 ('<code>playing</code>'), in other states the value is undefined.</td></tr>
 </table>
 
 <table class="dae-property-table" id="av-control-currentrepresentationid">
 <tr><td class="api-signature">readonly String <b>currentRepresentationId</b></td></tr>
-<tr><td>If a stream is being presented that is described by an MPD and the MPD includes an <code>id</code> attribute on the representation then return the <code>id</code> of the Representation that is being presented. If any other type of stream is being presented or if the player is in a state other than play state 1 (‘<code>playing</code>') then the value is undefined.</td></tr>
+<tr><td>If a stream is being presented that is described by an MPD and the MPD includes an <code>id</code> attribute on the representation then return the <code>id</code> of the Representation that is being presented. If any other type of stream is being presented or if the player is in a state other than play state 1 ('<code>playing</code>') then the value is undefined.</td></tr>
 </table>
 
 <table class="dae-property-table" id="av-control-maxrepresentation">
@@ -8295,7 +8295,7 @@ Note: the above DOM event is directly dispatched to the event target, and will n
 <tr><td colspan="3" class="api-signature">Boolean <b>setBufferingStrategy</b>( String name )</td></tr>
 <tr><td class="dae-method-table-label">Description</td>
 <td colspan="2"><p>Request to change the buffering strategy to that given by name. </p>
-<p>This method can be called during any play state, including play state 1 (‘<code>playing</code>').</p>
+<p>This method can be called during any play state, including play state 1 ('<code>playing</code>').</p>
 <p>This method returns <code>true</code> if the buffering strategy has been successfully changed to the preferred buffering strategy. The method returns <code>false</code> if the buffering strategy has not been successfully changed.</p>
 <p>If the OITF does not distinguish between the two modes, the method returns <code>false</code>.</p>
 </td></tr>
@@ -8311,7 +8311,7 @@ Note: the above DOM event is directly dispatched to the event target, and will n
 <tr><td colspan="3" class="api-signature">Boolean <b>setRepresentationStrategyStrategy</b>( Integer maxBandwidth, Integer minBandwidth, 	Integer position )</td></tr>
 <tr><td class="dae-method-table-label">Description</td>
 <td colspan="2"><p>Request to change the strategy for selecting which Representation to use from the specified position for HTTP Adaptive Streaming or MPEG DASH. The indicated bandwidth represents the maximum and minimum bandwidth to be allowed. Representations outside of the upper and lower limits SHALL NOT be selected. If data has already been fetched outside these limits then there is no requirement to discard that data.</p>
-<p>This method can be called during any play state, including play state 1 (‘<code>playing</code>'). Only one change in strategy is in effect and any previous strategy that has not taken effect is overwritten. This method returns <code>true</code> if the strategy has been successfully changed. The method returns <code>false</code> if the buffering strategy has not been successfully changed. </p>
+<p>This method can be called during any play state, including play state 1 ('<code>playing</code>'). Only one change in strategy is in effect and any previous strategy that has not taken effect is overwritten. This method returns <code>true</code> if the strategy has been successfully changed. The method returns <code>false</code> if the buffering strategy has not been successfully changed. </p>
 <p>The value of <code>maxBandwidth</code> shall be greater than <code>minBandwidth</code> otherwise the method shall return <code>false</code>. The range between the bandwidth from <code>maxBandwidth</code> and <code>minBandwidth</code> shall allow for at least one of the values from property <a href="#av-control-availablerepresentationsbandwidth" class="apiRef">availableRepresentationsBandwidth</a> otherwise the method shall return <code>false</code>.</p>
 <p>If the Period changes and no Representations remain that are within the set Representation strategy then the <code>maxBandwidth</code> and <code>minBandwidth</code> SHALL be reset to <code>undefined</code>. In order to avoid this from occurring the max and/or min bandwidth have to be immediately modified when the <a href="#av-control-onperiodchange" class="apiRef">onPeriodChange</a> function is called.</p>
 </td></tr>
@@ -8648,12 +8648,12 @@ Example usage:<pre class="javascript">
 <table class="dae-property-table" id="oipfcapabilities-extrasdvideodecodes">
 <tr><td class="api-signature">readonly Number <b>extraSDVideoDecodes</b></td></tr>
 <tr><td><p>This property holds the number of possible additional decodes for SD video. Depending on the current usage of system resources this value may vary. The value of this property is likely to change if an HD video is started.</p>
-<p>Adding an A/V Control object or <code>video/broadcast</code> object may still fail, even if <code>extraSDVideoDecodes</code> is larger than 0. For A/V Control objects, in case of failure the play state for the A/V Control object shall be set to 6 (‘<code>error</code>') with a detailed error code of 3 (‘<code>insufficient resources</code>'). For <code>video/broadcast</code> objects, in case of failure the play state of the <code>video/broadcast</code> object shall be set to 0 (‘<code>unrealized</code>') with a detailed error code of 11 (‘<code>insufficient resources</code>').</p></td></tr>
+<p>Adding an A/V Control object or <code>video/broadcast</code> object may still fail, even if <code>extraSDVideoDecodes</code> is larger than 0. For A/V Control objects, in case of failure the play state for the A/V Control object shall be set to 6 ('<code>error</code>') with a detailed error code of 3 ('<code>insufficient resources</code>'). For <code>video/broadcast</code> objects, in case of failure the play state of the <code>video/broadcast</code> object shall be set to 0 ('<code>unrealized</code>') with a detailed error code of 11 ('<code>insufficient resources</code>').</p></td></tr>
 </table>
 <table class="dae-property-table" id="oipfcapabilities-extrahdvideodecodes">
 <tr><td class="api-signature">readonly Number <b>extraHDVideoDecodes</b></td></tr>
 <tr><td><p>This property holds the number of possible additional decodes for HD video. Depending on the current usage of system resources this value may vary. The value of this property is likely to change if an SD video is started.</p>
-<p>Adding an A/V Control object or <code>video/broadcast</code> object may still fail, even if <code>extraHDVideoDecodes</code> is larger than 0. For A/V Control objects, in case of failure the play state for the A/V Control object shall be set to 6 (‘<code>error</code>') with a detailed error code of 3 (‘<code>insufficient resources</code>'). For <code>video/broadcast</code> objects, in case of failure the play state of the <code>video/broadcast</code> object shall be set to 0 (‘<code>unrealized</code>') with a detailed error code of 11 (‘<code>insufficient resources</code>').</p></td></tr>
+<p>Adding an A/V Control object or <code>video/broadcast</code> object may still fail, even if <code>extraHDVideoDecodes</code> is larger than 0. For A/V Control objects, in case of failure the play state for the A/V Control object shall be set to 6 ('<code>error</code>') with a detailed error code of 3 ('<code>insufficient resources</code>'). For <code>video/broadcast</code> objects, in case of failure the play state of the <code>video/broadcast</code> object shall be set to 0 ('<code>unrealized</code>') with a detailed error code of 11 ('<code>insufficient resources</code>').</p></td></tr>
 </table>
 </section>
 <section id="oipfcapabilities-methods">
@@ -8914,7 +8914,7 @@ The <code>IntegerCollection</code> class represents a collection of <code>Intege
 <section id="programme-recording-extensions">
 <h4>Recording extensions to Programme</h4>
 <p>The OITF SHALL support the following extensions to the <a href="#programme-class" class="apiRef">Programme</a> class.</p>
-<p>Clients supporting the recording management APIs defined in this section SHALL indicate this by adding the attribute "<code>manageRecordings</code>" to the <code>&lt;recording&gt;</code> element with a value unequal to ‘<code>none</code>' in the client capability description as defined in section <a href="#pvr-capability" class="sectionRef"></a>.</p>
+<p>Clients supporting the recording management APIs defined in this section SHALL indicate this by adding the attribute "<code>manageRecordings</code>" to the <code>&lt;recording&gt;</code> element with a value unequal to '<code>none</code>' in the client capability description as defined in section <a href="#pvr-capability" class="sectionRef"></a>.</p>
 <p>The functionality as described in this section is subject to the security model of section <a href="#dae-security" class="sectionRef"></a>.</p>
 <table class="dae-property-table"  id="programme-recording">
 <tr><td class="api-signature">readonly <a href="#scheduledrecording-class" class="apiRef">ScheduledRecording</a> <b>recording</b></td></tr>
@@ -9613,8 +9613,8 @@ The OITF SHALL generates a session modification request over the HNI-IGI includi
 <p>For HTTP, if the data property references a content-access streaming descriptor that includes the optional &ldquo;Duration&rdquo; attribute then the property value SHALL be derived from the value encoded in that attribute.</p>
 <p>Otherwise, if the data property references an MPEG DASH MPD and the <code>@mediaPresentationDuration</code> attribute is present then the property value SHALL be derived from the value encoded in that attribute.</p>
 <p>Otherwise, if the  data property references a file in the MP4 file format (as defined in  <a href="volume2.html#system-mp4-file-format" class="extRef">section 4.2</a> of [[.OIPF_MEDIA2]]) then</p><ul> 
-<li>If that file is fragmented, the property value SHALL be derived from the value indicated in the <code>fragment_duration</code> of the ‘mehd' box if that box is present
-<li>If that file is not fragmented, the property value SHALL be derived from the value indicated in the duration of the ‘mvhd' box. Otherwise the property value MAY be determined using the &ldquo;<code>Content-Length</code>&rdquo; HTTP header, although it is noted that this method does not work for variable bit rate content.</ul>
+<li>If that file is fragmented, the property value SHALL be derived from the value indicated in the <code>fragment_duration</code> of the 'mehd' box if that box is present
+<li>If that file is not fragmented, the property value SHALL be derived from the value indicated in the duration of the 'mvhd' box. Otherwise the property value MAY be determined using the &ldquo;<code>Content-Length</code>&rdquo; HTTP header, although it is noted that this method does not work for variable bit rate content.</ul>
 <p>If information is not available the value SHALL be <code>undefined</code>. Note this may happen at the beginning of playing a video and GET_PARAMETER has not returned a value.</p>
 </td></tr>
 <tr><td><code class="wrap">readonly Number <b>playState</b></code></td>
@@ -9761,8 +9761,8 @@ The format of the URI is outside the scope of this specification except that:<ul
 <p>Section 8.1 of [[.OIPF_WSTVP2]] requires support for temporal clipping based on Normal Play Time as defined in <a href="http://www.w3.org/TR/media-frags/#naming-time" class="extRef">section 4.2.1</a> of the Media Fragments URI specification [[!Media-Fragments-URI]]. URLs including these temporal clipping fragments SHALL be supported as follows;</p><ul>
 <li>HTTP URIs including a temporal clipping fragment SHALL be supported. Mapping from time to byte position as defined in <a href="http://www.w3.org/TR/2011/WD-media-frags-recipes-20111201#processing-protocol-UA-mapped" class="extRef">section 2.1</a> (&ldquo;UA mapped byte ranges&rdquo;) of  [[!MEDIA_FRAGMENTS_HTTP]]  SHOULD be supported. Mapping of normal play time to byte ranges in the server defined in <a href="http://www.w3.org/TR/2011/WD-media-frags-recipes-20111201/#processing-protocol-Server-mapped" class="extRef">section 2.2</a> (&ldquo;server mapped byte ranges&rdquo;) of [[!MEDIA_FRAGMENTS_HTTP]] MAY be supported.
 <li>If the OITF supports RTSP then RTSP URIs including a temporal clipping fragment SHALL be supported. The normal play time specified in the URI SHALL be used by the OITF to determine the starting time and ending time of the media. The normal play time SHOULD be mapped to the RTSP protocol as define in <a href="http://www.w3.org/TR/2011/WD-media-frags-recipes-20111201/#rtsp-media-fragment-processing" class="extRef">Annex A</a> (&ldquo;Processing media fragment URIs in RTSP&rdquo;) of [[!MEDIA_FRAGMENTS_HTTP]].
-<li>If the OITF has local PVR capability then the OITF SHALL support use of temporal clipping fragments with the URI returned by the ‘uri' property of the Recording class. This specification is intentionally silent about how mapping from normal play time to byte positions within the recorded content is performed.
-<li>If the OITF has support for downloading content then the OITF SHALL support use of temporal clipping fragments with the URI returned by the ‘uri' property of the Download class. This specification is intentionally silent about how mapping from normal play time to byte positions within the downloaded content is performed.
+<li>If the OITF has local PVR capability then the OITF SHALL support use of temporal clipping fragments with the URI returned by the 'uri' property of the Recording class. This specification is intentionally silent about how mapping from normal play time to byte positions within the recorded content is performed.
+<li>If the OITF has support for downloading content then the OITF SHALL support use of temporal clipping fragments with the URI returned by the 'uri' property of the Download class. This specification is intentionally silent about how mapping from normal play time to byte positions within the downloaded content is performed.
 </ul>
 <p>The begin time SHALL behave as start-of-media and the end time SHALL behave as end-of-media. If the value of temporal fragment interval is changed then there will be no change in the play state unless the interval is changed so that the current play position is outside the interval.</p>
 </section>
@@ -9802,11 +9802,11 @@ The format of the URI is outside the scope of this specification except that:<ul
 <li>A value of 0x06 in the stream_type field in the PMT and the presence of a teletext_descriptor in the ES loop in the PMT and an entry in that descriptor with Teletext_type set to 0x02 or 0x05 &rarr; SUBTITLES.</ul></td>
 <td>Track has a VisualSampleEntry (handler_type =&rdquo;vide&rdquo;) &rarr; COMPONENT_TYPE_VIDEO<br /><br />
 Track has an AudioSampleEntry (handler_type = &ldquo;soun&rdquo;) &rarr; COMPONENT_TYPE_AUDIO</td>
-<td>Defined by the value of the ‘@contentType' attribute</td></tr>
+<td>Defined by the value of the '@contentType' attribute</td></tr>
 
 <tr><td rowspan="6">Name: encoding<br />
 Type: A string identifying the video or audio format as defined in <a href="volume2.html#media-section" class="extRef">section 3</a> of [[.OIPF_MEDIA2]] or the subtitle format as defined in section <a href="#avcomponent-properties" class="sectionRef"></a></td>
-<td colspan="2">Property type is COMPONENT_TYPE_VIDEO</td><td> </td><td rowspan="6">Defined by the ‘@codecs' attribute</td></tr>
+<td colspan="2">Property type is COMPONENT_TYPE_VIDEO</td><td> </td><td rowspan="6">Defined by the '@codecs' attribute</td></tr>
 <tr><td colspan="2">&rarr; &ldquo;video/mpeg&rdquo; or &ldquo;video/mp2t&rdquo;. </td><td>Track has a sample description type &ldquo;avc1&rdquo; &rarr; &ldquo;video/mp4&rdquo;.</td></tr>
 <tr><td colspan="3">Property type is COMPONENT_TYPE_AUDIO</td></tr>
 <tr><td colspan="2">
@@ -9841,10 +9841,10 @@ Presence of a CA_descriptor in the PMT in the elementary stream information loop
 <td>Derived from the stream_content and component_type fields in the component_descriptor.</td>
 <td>Undefined</td>
 <td>Not defined</td>
-<td>Defined by the value of the ‘@par' attribute</td>
+<td>Defined by the value of the '@par' attribute</td>
 </tr>
 <tr><td rowspan="4">Name: language<br />Type: String containing an ISO 639-2 language code as defined in [[!ISO639-2]]<br /><br />Only defined for audio and subtitle components.</td>
-<td colspan="3">Property type is COMPONENT_TYPE_AUDIO</td><td rowspan="4">Defined by the value of the ‘@lang' attribute in the MPD, whether set explicitly or inherited. The contents of the language field in the ‘mdhd&rdquo; of the track SHALL be ignored.</td></tr>
+<td colspan="3">Property type is COMPONENT_TYPE_AUDIO</td><td rowspan="4">Defined by the value of the '@lang' attribute in the MPD, whether set explicitly or inherited. The contents of the language field in the 'mdhd&rdquo; of the track SHALL be ignored.</td></tr>
 <tr><td colspan="2">For audio components, the contents of the ISO_639_language_code field in the ISO_639_language_descriptor In the ES loop of the PMT unless overridden by the ISO_639_language_code field in the supplementary_audio_descriptor.</td><td>The contents of the language field in the media header &ldquo;mdhd&rdquo; of the track.</td></tr>
 <tr><td colspan="3">Property type is COMPONENT_TYPE_SUBTITLE</td></tr>
 <tr><td colspan="2">For subtitles, the contents of the ISO_639_language_code field in the subtitling_descriptor or teletext_descriptor, as appropriate.</td><td>The contents of the language field in the media header &ldquo;mdhd&rdquo; of the track.</td></tr>
@@ -9939,7 +9939,7 @@ NOTE This specification does not itself include a logical channel number mechani
 <tr><td><code>channelMaxBitRate</code></td><td>Assigned by the terminal.</td><td>Assigned by the OITF to the value provided in BroadcastDiscovery/ServiceList/SingleService/MaxBitrate (if present), otherwise <code>undefined</code></td></tr>
 <tr><td><code>channelTTR</code></td><td>Assigned by the terminal.</td><td>Assigned by the OITF to the value provided in BroadcastDiscovery/ServiceList/SingleService/TimeToRenegotiate (if present), otherwise <code>undefined</code></td></tr>
 <tr><td><code>recordable</code></td><td>Assigned by the terminal.</td><td>Implementation dependent</td></tr>
-<tr><td><code>longName</code></td><td>Assigned by the terminal.</td><td>Set by the OITF to the Name element that is a child of the BCG <code>ServiceInformation</code> element describing the channel, where the <code>length</code> attribute of the <code>Name</code> element has the value ‘long'</td></tr>
+<tr><td><code>longName</code></td><td>Assigned by the terminal.</td><td>Set by the OITF to the Name element that is a child of the BCG <code>ServiceInformation</code> element describing the channel, where the <code>length</code> attribute of the <code>Name</code> element has the value 'long'</td></tr>
 <tr><td><code>description</code></td><td>Assigned by the terminal.</td><td>Set by the OITF to BroadcastDiscovery/ServiceList/SingleService/SI/Description (if present), otherwise set to the <code>ServiceDescription</code> element that is a child of the BCG <code>ServiceInformation</code> element describing this channel.</td></tr>
 <tr><td><code>authorised</code></td><td>Assigned by the terminal.</td><td>Implementation dependent</td></tr>
 <tr><td><code>genre</code></td><td>Assigned by the terminal.</td><td>Set by the OITF to BroadcastDiscovery/ServiceList/SingleService/SI/ContentGenre (if present), otherwise set to the values of any <code>ServiceGenre</code> elements that are children of the BCG <code>ServiceInformation</code> element describing the channel.</td></tr>
@@ -10110,13 +10110,13 @@ CADD.originSiteName if present.</td></tr>
 <tr><td><code>isEncrypted</code></td><td colspan="2">True if a CA_descriptor is present in the PMT:<ul>
 <li>in the program information loop.
 <li>or in a elementary stream information loop describing a stream.</ul>
-Note: Some channels may have a static PMT but the content may not be encrypted. As the transport scrambling control bits in TS packet header are not checked, the property gives only an indication.</td><td>True, if the scheme type set to ‘cenc' and scheme version set to 0x00010000 and default_isEncrypted set to 0x1 in the Track Encryption Box (see note 1)</td></tr>
+Note: Some channels may have a static PMT but the content may not be encrypted. As the transport scrambling control bits in TS packet header are not checked, the property gives only an indication.</td><td>True, if the scheme type set to 'cenc' and scheme version set to 0x00010000 and default_isEncrypted set to 0x1 in the Track Encryption Box (see note 1)</td></tr>
 <tr><td><code>DRMSystemIds</code></td><td colspan="2">CA_system_ID in CA_descriptors in the PMT</td><td>UUID in SystemID in the Protection System Specific Header box (see note 2 and note 3)</td></tr>
 <tr><td><code>getDRMPrivateData</code></td><td colspan="2">Private data bytes in CA_descriptors in the PMT</td><td>Data in the Protection System Specific Header box</td></tr>
 </table>
 <p>NOTE 1: This specification does not handle the case where track common encryption information is overridden at sample level.</p>
-<p>NOTE 2: the DRMSystemId retrieved from an ‘cenc' protected file is by default an UID and returned as an UUID URN as defined in [[!RFC4122]]. For example "<code>urn:uuid:706D6953-656C-5244-4D48-656164657221</code>".</p>
-<p>NOTE 3: When the UUID is referring to a DRM managed by the OITF, the <code>DRMSystemId</code> and <code>getDRMPrivateData()</code> mapping may be overridden. For example Marlin uses the UUID &ldquo;<code>urn:uid:69F908AF-238 4816-46EA-910C-CD5DCCCB0A3A</code>&rdquo; in ‘cenc' protected files. This UUID should be mapped to the OIPF DRMSystemID for Marlin, i.e. &ldquo;<code>urn:dvb:casystemid:19188</code>&rdquo;</p>
+<p>NOTE 2: the DRMSystemId retrieved from an 'cenc' protected file is by default an UID and returned as an UUID URN as defined in [[!RFC4122]]. For example "<code>urn:uuid:706D6953-656C-5244-4D48-656164657221</code>".</p>
+<p>NOTE 3: When the UUID is referring to a DRM managed by the OITF, the <code>DRMSystemId</code> and <code>getDRMPrivateData()</code> mapping may be overridden. For example Marlin uses the UUID &ldquo;<code>urn:uid:69F908AF-238 4816-46EA-910C-CD5DCCCB0A3A</code>&rdquo; in 'cenc' protected files. This UUID should be mapped to the OIPF DRMSystemID for Marlin, i.e. &ldquo;<code>urn:dvb:casystemid:19188</code>&rdquo;</p>
 </section>
 <section>
 <h3>Exposing Audio Description streams as AVComponent objects</h3>
@@ -10552,7 +10552,7 @@ function resultMuticastNotifFromRD(remoteDeviceHandle, reqHandle, dynamic) {
 <p>In order to fix a known vulnerability in SSL and TLS renegotiation, an OITF SHALL support the Renegotiation Indication Extension as specified in [[!RFC5746]] for all TLS versions.</p>
 <p>An OITF SHALL deem a TLS connection to have failed if any of the following conditions apply:</p><ul>
 <li>Certificate chain fails validation as per RFC 5280 [[!RFC5280]] <a href="http://tools.ietf.org/html/rfc5280#section-6" class="extRef">section 6</a>.
-<li>The host name or IP address contained in the server certificate does not match the host name or IP address requested. When verifying the host name against the server-supplied certificate, the ‘*' wildcard and the subjectAltName extension of type dNSName shall be supported as defined in RFC 2818 [[!RFC2818]].
+<li>The host name or IP address contained in the server certificate does not match the host name or IP address requested. When verifying the host name against the server-supplied certificate, the '*' wildcard and the subjectAltName extension of type dNSName shall be supported as defined in RFC 2818 [[!RFC2818]].
 </ul>
 <p>An OITF SHALL not provide the user with an option to bypass these conditions.</p>
 </section>
@@ -10564,7 +10564,7 @@ function resultMuticastNotifFromRD(remoteDeviceHandle, reqHandle, dynamic) {
 <li><code>TLS_RSA_WITH_AES_256_CBC_SHA</code>
 <li><code>TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA</code>
 </ul>
-<p>An OITF SHALL NOT support ‘anonymous' cipher suites for TLS connections.</p>
+<p>An OITF SHALL NOT support 'anonymous' cipher suites for TLS connections.</p>
 
 </section>
 <section>
@@ -10737,7 +10737,7 @@ function resultMuticastNotifFromRD(remoteDeviceHandle, reqHandle, dynamic) {
         DRMSystemID="urn:dvb:casystemid:19188"/&gt;
 &lt;/profilelist&gt;
 </pre>
-<li>A hybrid device providing access to its ATSC terrestrial tuner (supporting two different parental rating schemes), DVB-IPTV ‘tuner', and PVR functionality to DAE applications, but not exposing ‘trickmode' or ‘controlled' key events to DAE applications running in the browser:<pre class="xml-document">
+<li>A hybrid device providing access to its ATSC terrestrial tuner (supporting two different parental rating schemes), DVB-IPTV 'tuner', and PVR functionality to DAE applications, but not exposing 'trickmode' or 'controlled' key events to DAE applications running in the browser:<pre class="xml-document">
 &lt;profilelist&gt;
     &lt;ui_profile name="OITF_HD_UIPROF+PVR+IPTV_SDS"&gt;
         &lt;ext&gt;
@@ -10942,7 +10942,7 @@ function resultMuticastNotifFromRD(remoteDeviceHandle, reqHandle, dynamic) {
 &lt;/xs:complexType&gt; 
 </pre>
 <p>And with the following semantics:</p><ul>
-<li><b>&lt;drm&gt;</b> - indicates whether or not the client supports a DRM content protection system for downloading and streaming content. If included in the RUI Client capability description, the value of this element SHALL be a space separated list of zero or more names of supported file and/or container formats for protected content by the DRM system indicated by the  "DRMSystemID" attribute, such as the OMA DRM Content Format (DCF). Valid values include: a system layer format name of the first column of Table <a href="volume2.html#protav" class="extRef">3</a> of [[.OIPF_MEDIA2]], and  a protection format of the second column of Table <a href="volume2.html#protav" class="extRef">3</a> of [[.OIPF_MEDIA2]], concatenated with an underscore ‘_'. In case of the Gateway centric approach defined by [[.OIPF_CSP2]], this value indicates the system layer and protection formats which are supported by the combination of OITF and CSP Gateway. Values are not case sensitive.
+<li><b>&lt;drm&gt;</b> - indicates whether or not the client supports a DRM content protection system for downloading and streaming content. If included in the RUI Client capability description, the value of this element SHALL be a space separated list of zero or more names of supported file and/or container formats for protected content by the DRM system indicated by the  "DRMSystemID" attribute, such as the OMA DRM Content Format (DCF). Valid values include: a system layer format name of the first column of Table <a href="volume2.html#protav" class="extRef">3</a> of [[.OIPF_MEDIA2]], and  a protection format of the second column of Table <a href="volume2.html#protav" class="extRef">3</a> of [[.OIPF_MEDIA2]], concatenated with an underscore '_'. In case of the Gateway centric approach defined by [[.OIPF_CSP2]], this value indicates the system layer and protection formats which are supported by the combination of OITF and CSP Gateway. Values are not case sensitive.
 </ul>
 <p>The &lt;drm&gt; element has the following attributes:</p><ul>
 <li>attribute &ldquo;<b>DRMSystemID</b>&rdquo; SHALL include a supported DRM system. Valid values for the "DRMSystemID" include the values as defined by element <code>DRMSystemID</code> in <a href="volume3.html#drmcontrolinformation-type" class="extRef">table 9</a> of <a href="volume3.html#drm-control-information-extension" class="extRef">section 3.3.2</a> of [[.OIPF_META2]]. For example, for Marlin, the DRMSystemID value is &ldquo;urn:dvb:casystemid:19188&rdquo;. In case of the Gateway centric approach defined by [[.OIPF_CSP2]], this DRMSystemID attribute indicates the DRM System(s) of UNIS-CSP-G which is supported by the combination of OITF and CSP Gateway.
@@ -10960,7 +10960,7 @@ function resultMuticastNotifFromRD(remoteDeviceHandle, reqHandle, dynamic) {
 <p>If an OITF supports streaming A/V content to the client, the client SHALL indicate this by including a non-empty list of &lt;audio_profile&gt; and/or &lt;video_profile&gt; elements in the RUI client capability description. The &lt;audio_profile&gt; and &lt;video_profile&gt; elements SHALL adhere to the following requirements in addition to what has been defined by bullet v) and w) of [Req. 5.2.1.a] of CEA-2014-A: </p><ul>
 <li>Valid values for the &ldquo;type&rdquo; attribute of the &lt;audio_profile&gt; and &lt;video_profile&gt; elements include the MIME types given in section <a href="volume2.html#media-section" class="extRef">3</a> of [[.OIPF_MEDIA2]].
 <li>Valid values for the name attribute of the &lt;audio_profile&gt; and &lt;video_profile&gt; elements SHALL include the DLNA media format profiles (as required by CEA-2014-A) as well as the following:<ul>
-<li>for &lt;video_profile&gt; elements: the system format name, the video format name and the audio format name for A/V contents, concatenated with an underscore ‘_', as defined in section <a href="volume2.html#media-section" class="extRef">3</a> of [[.OIPF_MEDIA2]]. 2D and 3D capabilities SHALL be signalled separately.
+<li>for &lt;video_profile&gt; elements: the system format name, the video format name and the audio format name for A/V contents, concatenated with an underscore '_', as defined in section <a href="volume2.html#media-section" class="extRef">3</a> of [[.OIPF_MEDIA2]]. 2D and 3D capabilities SHALL be signalled separately.
 <li>for &lt;audio_profile&gt; elements: the audio format name for pure audio contents in Table <a href="volume2.html#pure-audio" class="extRef">4</a> of [[.OIPF_MEDIA2]].
 <li>for both &lt;video_profile&gt;, and &lt;audio_profile&gt; elements, it is allowed to include multiple profile names corresponding to the same MIME type, by separating each profile name with a whitespace character.</ul>
 <li>Valid values for the &ldquo;transport&rdquo;-attribute include (a space-separated list of ) the protocol names as defined in the column &ldquo;Name for &lt;protocol&gt;&rdquo; in <a href="volume4.html#annex-e-1" class="extRef">Annex E.1</a> of [[.OIPF_PROT2]], whereby the value &ldquo;http&rdquo; as specified as default value for the &ldquo;transport&rdquo;-attribute in CEA-2014-A SHALL correspond to value &ldquo;http-get&rdquo;. HAS support (as defined by [[.OIPF_HAS2]]) is indicated by using &ldquo;has&rdquo; as the protocol name as indicated in <a href="volume4.html#annex-e-1" class="extRef">Annex E.1</a> of [[.OIPF_PROT2]]. MPEG DASH support (as defined by [[.OIPF_HAS2]]) is indicated by using &ldquo;dash&rdquo; as the protocol name as indicated in <a href="volume4.html#annex-e-1" class="extRef">Annex E.1</a> of [[.OIPF_PROT2]].
@@ -10992,7 +10992,7 @@ function resultMuticastNotifFromRD(remoteDeviceHandle, reqHandle, dynamic) {
 
 &lt;audio_profile name="MPEG1_L3" type="audio/mpeg" transport="http-get"/&gt;
 </pre>
-<p>The example below is for a terminal supporting 3D video. Note that the first two values in the ‘name' strings refer to 2D capabilities, and the third value refers to 3D capabilities.</p><pre class="xml-document">
+<p>The example below is for a terminal supporting 3D video. Note that the first two values in the 'name' strings refer to 2D capabilities, and the third value refers to 3D capabilities.</p><pre class="xml-document">
 &lt;video_profile
     name="TS_MPEG2_SD_25_AC3 TS_AVC_HD_25_HEAAC TS_AVC_3D_25_HEAAC"
     type="video/mpeg"
@@ -11969,7 +11969,7 @@ Multiple &lt;DRMControlInformation&gt; elements MAY be included for a single &lt
 <li><b><i>&lt;ChannelConfig&gt;</i></b> - mandatory root element of the Client Channel Listing. 
 <li><b><i>&lt;ChannelList&gt;</i></b> - mandatory container element for zero or more &lt;Channel&gt; elements, the order of which corresponds to the channel order as managed by the OITF.
 <li><b><i>&lt;Channel&gt;</i></b> - element that represents a channel that can be received by a tuner of the OITF. The element has the following attributes:<ol type="a">
-<li>Mandatory attribute &ldquo;<code>ccid</code>&rdquo; which specifies a unique identifier of the channel within the scope of the OITF. The format of <code>ccid</code> SHALL have a prefix ‘ccid:', e.g., ‘ccid:{tuner.}majorChannel{.minorChannel}'. The <code>ccid</code> is defined and managed by the OITF.
+<li>Mandatory attribute &ldquo;<code>ccid</code>&rdquo; which specifies a unique identifier of the channel within the scope of the OITF. The format of <code>ccid</code> SHALL have a prefix 'ccid:', e.g., 'ccid:{tuner.}majorChannel{.minorChannel}'. The <code>ccid</code> is defined and managed by the OITF.
 <li>Optional attribute &ldquo;<code>channelType</code>&rdquo; which indicates the type of media content carried over the channel. Valid values are specified in section <a href="#channel-constants" class="sectionRef"></a>. If not included, the default value is &ldquo;<code>TYPE_OTHER</code>&rdquo;.
 <li>Mandatory attribute &ldquo;<code>idType</code>&rdquo; which specifies the type of identification that is used for the channel. Valid values are specified in section <a href="#channel-constants" class="sectionRef"></a>.
 <li>Optional attribute &ldquo;tunerID&rdquo; which specifies a unique identifier of the tuner within the scope of the OITF.
@@ -12494,11 +12494,11 @@ typedef Collection&lt;Channel&gt; ChannelList
 <tr><td rowspan="4">Components (e.g. subtitles, languages)</td>
 <td>AVComponentCollection getComponents( Integer componentType )</td>
 <td>AVComponentCollection getComponents( Integer componentType )</td>
-<td>audioLanguage = ‘auto' |  &lt;list-of-language-ids&gt;<br />
-subtitleLanguage = ‘auto' |  &lt;list-of-language-ids&gt;<br />
-audioType = ‘auto' | ‘normal' | ‘descriptive'<br />
-subtitleType = ‘auto' | ‘normal' | ‘hearingImpaired' | ‘none'<br />
-teletextType = ‘auto' | ‘normal' | ‘none'<br /></td>
+<td>audioLanguage = 'auto' |  &lt;list-of-language-ids&gt;<br />
+subtitleLanguage = 'auto' |  &lt;list-of-language-ids&gt;<br />
+audioType = 'auto' | 'normal' | 'descriptive'<br />
+subtitleType = 'auto' | 'normal' | 'hearingImpaired' | 'none'<br />
+teletextType = 'auto' | 'normal' | 'none'<br /></td>
 <td></td>
 </tr>
 <tr>

@@ -892,7 +892,7 @@ The OITF SHALL send an HTTP POST request to the IG on the HNI-IGI interface, as 
 <tr><td><ul class="liststart-2">
 <li>An m-line for an RTSP stream of format:    m=&lt;media&gt; &lt;port&gt; &lt;transport&gt; &lt;fmt&gt;<ul>
 <li>The &lt;media&gt; field SHALL have a value of &ldquo;application&rdquo;.
-<li>The &lt;port&gt; field SHALL be set according to [[!SDP-TCP]]. The &ldquo;a=setup&rdquo; attribute SHALL be set to ‘active', and port field SHALL be set to a value of &ldquo;9&rdquo;, which is the discard port.
+<li>The &lt;port&gt; field SHALL be set according to [[!SDP-TCP]]. The &ldquo;a=setup&rdquo; attribute SHALL be set to 'active', and port field SHALL be set to a value of &ldquo;9&rdquo;, which is the discard port.
 <li>The &lt;transport&gt; field SHALL be set to &ldquo;TCP&rdquo; or &ldquo;TCP/TLS&rdquo;.  The former SHALL be used when RTSP runs directly on top of TCP and the latter SHALL be used when RTSP runs on top of TLS, which in turn runs on top of TCP.
 <li>The &lt;fmt&gt; parameter SHALL be included and set to &ldquo;iptv_rtsp&rdquo;<br />(ex. m=application 9 tcp iptv_rtsp)</ul>
 <li>An &ldquo;a=setup&rdquo; attribute SHALL be present and set to &ldquo;active&rdquo; as defined in [[!SDP-TCP]]<br />(ex. a=setup:active)
@@ -2840,7 +2840,7 @@ The PSI SHALL be &ldquo;OIPF_IPTV_ServiceProfile@&lt;domainname&gt;&rdquo; where
   xmlns:tns="urn:oipf:config:ig:2009"
   xmlns:enum="urn:ietf:params:xml:ns:enum-token-1.0"
   xmlns="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;!—schema filename is config-ig.xsd --&gt;
+  &lt;!--schema filename is config-ig.xsd --&gt;
   &lt;xs:annotation&gt;
     &lt;xs:documentation xml:lang="en"&gt;
       This schema is copyrighted by the Open IPTV Forum ("OIPF") and distributed in conjunction
@@ -5727,7 +5727,7 @@ Switching from a PPV service to a multicast content service over NPI-4 SHALL be 
 <p>If subscription to notification of changes is requested by the OITF, the IG SHALL send a SUBSCRIBE request to the IPTV Service Profile FE in accordance with RFC 5875 [[!XCAP-EVT]] and RFC 5874 [[!XCAP-DFF]].</p>
 <p>The IG will process the request from the OITF and will generate a SUBSCRIBE request, that SHALL be as specified in [[!TS183063]] section 5.1.5.1.</p>
 <p>A well-known PSI mechanism SHALL be used in the request URI of the SUBSCRIBE request.</p>
-<p>Note: For changes that apply to a very large number of subscribers, it is up to Service Provider to set up proper rules in the ‘notifier function' to make the notification procedure scalable.</p>
+<p>Note: For changes that apply to a very large number of subscribers, it is up to Service Provider to set up proper rules in the 'notifier function' to make the notification procedure scalable.</p>
 </section>
 <section id="s6-1-3-3-1-2"><h6>Processing of notifications</h6>
 <p>Refer to [[!TS183063]] section 5.1.5.2</p>
@@ -6677,7 +6677,7 @@ The CDF SHALL reply with an RTSP 200 OK message to the Cluster Controller.
 </section>
 <section id="s7-2"><h2>Protocols for Service Access and Control</h2>
 <section id="s7-2-1"><h3>Performance Monitoring over UNIT-18</h3>
-<p><i>QoS metrics</i> can be classified as those that need to be reported regularly, i.e. ‘sample metrics', and those that are typically REQUIRED when the service ends, i.e., ‘cumulative metrics'. Periodic RTCP reports are more appropriate for transport of sample metrics (see section <a href="#s9-2-1" class="sectionRef">9.2.1</a>, &ldquo;<a href="#s9-2-1" class="sectionTitleRef"></a>&rdquo;), while on-demand or scheduled RTSP reports are especially suitable for transport of cumulative metrics. In general, an IPTV service might need a combination of both.</p>
+<p><i>QoS metrics</i> can be classified as those that need to be reported regularly, i.e. 'sample metrics', and those that are typically REQUIRED when the service ends, i.e., 'cumulative metrics'. Periodic RTCP reports are more appropriate for transport of sample metrics (see section <a href="#s9-2-1" class="sectionRef">9.2.1</a>, &ldquo;<a href="#s9-2-1" class="sectionTitleRef"></a>&rdquo;), while on-demand or scheduled RTSP reports are especially suitable for transport of cumulative metrics. In general, an IPTV service might need a combination of both.</p>
 <p>This section specifies the OPTIONAL RTSP mechanisms for performance monitoring of unicast content streaming services.</p>
 <p>If the OITF supports QoS metrics and has been suitably configured to use them, then the unicast content streamign session initiation request over HNI-IGI interface SHALL include the selected (i.e. accepted by client) or modified (for re-negotiation) QoS metrics for either the session level or media level.</p>
 <p>The <i>QoS metrics</i> negotiation SHALL start at the Cluster Controller (CC) on reception of a response to an RTSP DESCRIBE including metrics information embedded in the session description. The RTSP DESCRIBE at the CC is triggered by a SIP OPTIONS request for missing parameters from the CDN Controller, as per section <a href="#s7-1-1-2-2" class="sectionRef">7.1.1.2.2</a>, &ldquo;<a href="#s7-1-1-2-2" class="sectionTitleRef"></a>.&rdquo;</p>
@@ -6701,7 +6701,7 @@ OIPF-QoS-Metrics-Att = &ldquo;a=&rdquo; &ldquo;OIPF-QoS-Metrics&rdquo; &ldquo;:&
   Ranges-Specifier = as defined in RFC 2326 [RTSP]
   CRLF = %d13.10
 </pre>
-<p>This specification defines two new RTSP Headers to negotiate and report the ‘cumulative metrics' during session setup. These new RTSP headers follow the semantics of [[!PSS]], and are accordingly called <i>OIPF-QoS-Metrics</i> and <i>OIPF-QoS-Feedback</i>. They SHALL be used as follows:</p><ul>
+<p>This specification defines two new RTSP Headers to negotiate and report the 'cumulative metrics' during session setup. These new RTSP headers follow the semantics of [[!PSS]], and are accordingly called <i>OIPF-QoS-Metrics</i> and <i>OIPF-QoS-Feedback</i>. They SHALL be used as follows:</p><ul>
 <li><i>OIPF-QoS-Metrics</i> SHALL be used for setting up and controlling the reporting of cumulative metrics, i.e. turn on/off reporting, negotiate the set of metrics, its frequency and the report range. This header can be sent in requests and responses of the RTSP Methods SETUP, SET_PARAMETER, OPTIONS (with Session ID) and PLAY. The OITF SHOULD use the OPTIONS (with Session ID) or SET_PARAMETER RTSP methods to turn off the QoS feedback.
 <p>The ABNF [[ABNF]] definition is as follows:</p>
 <pre class="abnf">
@@ -7168,7 +7168,7 @@ rtcp-xr-attrib = &ldquo;a=&rdquo; &ldquo;rtcp-xr&rdquo; &ldquo;:&rdquo; [xr-form
 <li>Option 61: Client identifier. In this specification, the DHCP Client Identifier used in OITF devices is the deviceID, defined as follows:<ul>
 <li>deviceID &mdash; Identifies the device. It SHALL be unique within the home network and SHALL NOT change between restarts. The deviceID SHALL be the SHA-1 hash of the MAC address of the interface used to connect to the IPTV service as bytes concatenated with the domain name received via DHCP option 15 in ASCII characters:<ul>
 <li>deviceID = SHA-1(X)<br />
-where: X = (MAC address as bytes) + (domain name in ASCII characters) and the ‘+' denotes the concatenation operation.  SHA-1 SHALL be used as specified in [[!SHA-1]]. The domain name SHALL be set to the domain name received via DHCP option 15 (see section <a href="#s12-1-1-1-2" class="sectionRef">12.1.1.1.2</a>, &ldquo;<a href="#s12-1-1-1-2" class="sectionTitleRef"></a>.&rdquo;)
+where: X = (MAC address as bytes) + (domain name in ASCII characters) and the '+' denotes the concatenation operation.  SHA-1 SHALL be used as specified in [[!SHA-1]]. The domain name SHALL be set to the domain name received via DHCP option 15 (see section <a href="#s12-1-1-1-2" class="sectionRef">12.1.1.1.2</a>, &ldquo;<a href="#s12-1-1-1-2" class="sectionTitleRef"></a>.&rdquo;)
 </ul></ul></ul>
 <p>For the IG and AG to support TR-069 based remote management, the following SHALL be supported:</p><ul>
 <li>Option 43: Vendor Specific Information is used to retrieve the Remote Management Server IP address or fully qualified domain name (FQDN). This information SHALL be provided by the DHCP server.
@@ -7564,7 +7564,7 @@ Content-Length: 0<br />
 </td></tr>
 </table>
 <p><b>Notes:</b></p>
-<p>Specifying both a ‘From' and a ‘To' allows an identity to publish on behalf of another identity</p>
+<p>Specifying both a 'From' and a 'To' allows an identity to publish on behalf of another identity</p>
 <p>Here the server has requested a shorter expiration time that will be handled internally by the IG</p>
 
 </section>
@@ -8855,8 +8855,8 @@ where
   &lt;BCServiceId&gt; is the string defined above.
   &lt;BCPackageId&gt; is the service package ID string defined above.
 </pre>
-<p>(BNF notation). As seen in this notation the multi_list parameter can contain one or more source_unit parameters with multicast addresses that can be separated with either ‘,' or ‘-'.</p>
-<p>When they are separated with ‘-' it means that it is a range of addresses. In addition there can OPTIONALly be a list of source addresses within the source unit parameter which is applicable for all the multicast addresses within the source unit parameter.</p>
+<p>(BNF notation). As seen in this notation the multi_list parameter can contain one or more source_unit parameters with multicast addresses that can be separated with either ',' or '-'.</p>
+<p>When they are separated with '-' it means that it is a range of addresses. In addition there can OPTIONALly be a list of source addresses within the source unit parameter which is applicable for all the multicast addresses within the source unit parameter.</p>
 </section>
 </section>
 <section class="appendix" id="protocol-names"><!--annex E --><h1>&lt;protocol&gt; names</h1>
@@ -9543,7 +9543,7 @@ The &ldquo;Error&rdquo; value MAY be used by the CPE to indicate a locally defin
 <img alt="FIGURE 23" src="images/LocationOfPacketLossRelativeToRETServer.png" />
 </figure>
 <section id="annex-m-1-3-1"><h4>Packet loss event upstream of the RET server</h4>
-<p>The packet loss events indicated as &ldquo;1&rdquo; and ‘2&rdquo; in Figure <a href="#packet-loss-location-relative-to-ret-server" class="figureRef">23</a> are examples of packet loss events upstream of the RET server.
+<p>The packet loss events indicated as &ldquo;1&rdquo; and '2&rdquo; in Figure <a href="#packet-loss-location-relative-to-ret-server" class="figureRef">23</a> are examples of packet loss events upstream of the RET server.
 <p>The RET server is able to detect such packet loss event as there are missing packets in the IP multicast streams received by the RET server. Upon such packet loss detection, the RET server transmits a RTCP FB NACK on the IP multicast RET towards the RET-enabled OITFs.</p>
 <p>Those OITFs that  were  instructed with SD&amp;S to wait a random or fixed period before sending a (unicast) RTCP FB NACK upon packet loss detection (i.e. non-immediate reporters), SHALL abstain from sending a unicast RTCP FB NACK when receiving the RTCP FB NACK in the IP multicast RET within this waiting period. This mechanism allows to prevention or mitigation of NACK storms. </p>
 <p>Note: DVB SD&amp;S contains attributes for multicast RET by which it can signal to OITFs the duration of the waiting period, if any, and this waiting period can be different per OITF.</p>

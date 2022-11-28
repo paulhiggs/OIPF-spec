@@ -285,7 +285,7 @@ Figure <a href="#f4" class="figureRef">4</a> shows a call flow for the managemen
 <tr><td class="label">Step 1:</td><td>The OITF established a scheduled content and performs content reporting as required by the IPTV Control FE.</td></tr>
 <tr><td class="label">Step 2:</td><td>The OITF performs content reporting when user performs zapping then stops for the configured time.</td></tr>
 <tr><td class="label">Step 3:</td><td>The OITF issues an HTTP HNI-IG PENDING_IG request to the IG. This request can be issued at any time after step 1.</td></tr>
-<tr><td class="label">Step 4:</td><td>At some point in time, the IPTV control FE decided that it does not want any more content reporting. The IPTV control FE sends a SIP UPDATE with the Recv-Info header set to ‘nil' to the ASM to that effect.</td></tr>
+<tr><td class="label">Step 4:</td><td>At some point in time, the IPTV control FE decided that it does not want any more content reporting. The IPTV control FE sends a SIP UPDATE with the Recv-Info header set to 'nil' to the ASM to that effect.</td></tr>
 <tr><td class="label">Step 5:</td><td>The ASM forwards the SIP UPDATE to the IG.</td></tr>
 <tr><td class="label">Step 6:</td><td>The IG forwards the SIP UPDATE in an HTTP 200 OK response to the OITF</td></tr>
 <tr><td class="label">Steps 7-9:</td><td>The OITF issues an HTTP POST request to the IG that includes the SIP 200 OK response. The SIP 200 OK is forwarded all the way to the IPTV control FE.</td></tr>

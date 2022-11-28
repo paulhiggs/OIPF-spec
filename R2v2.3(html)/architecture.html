@@ -320,7 +320,7 @@ The Access Network infrastructure (which may include the Internet) is used for t
 <tr><td>RUI</td><td>Remote User Interface</td></tr>
 <tr><td>SAA</td><td>Service Access Authentication</td></tr>
 <tr><td>SAML</td><td>Security Assertion Markup Language</td></tr>
-<tr><td>SCART</td><td>Syndicat des Constructeurs d'Appareils Radiorécepteurs et Téléviseurs</td></tr>
+<tr><td>SCART</td><td>Syndicat des Constructeurs d'Appareils Radior&eacute;cepteurs et T&eacute;l&eacute;viseurs</td></tr>
 <tr><td>S-CSCF</td><td>Serving Call Session Control Function</td></tr>
 <tr><td>SD</td><td>Standard Definition</td></tr>
 <tr><td>SD&amp;S</td><td>DVB Service Discovery and Selection</td></tr>
@@ -387,7 +387,7 @@ The Open IPTV Forum was established with the intent to specify common and open a
 <li><b>The Unmanaged Model:</b> concerns access to and delivery of content services delivered over an unmanaged network (e.g., the Internet) without any quality of service guarantees. </ul>
 <section><h3>The Managed Model</h3>
 <p>The managed model deals with content services delivered over an end-to-end managed network. The end user can access content that is made available by the operator. The operator plays the &ldquo;Content Aggregation&rdquo; and &ldquo;Content Delivery&rdquo; roles:</p><ul>
-<li><b>Content Provider:</b> provides content and associated metadata to be delivered via the managed operator network. It provides the bundled content to the IPTV service provider through the Content Provider Interface (CPI). A content provider normally retains the rights to the audiovisual content (movies, documentaries, TV programs…etc.). It can be a production company, or a distributor/vendor. 
+<li><b>Content Provider:</b> provides content and associated metadata to be delivered via the managed operator network. It provides the bundled content to the IPTV service provider through the Content Provider Interface (CPI). A content provider normally retains the rights to the audiovisual content (movies, documentaries, TV programs, etc&hellip;). It can be a production company, or a distributor/vendor. 
 <li><b>IPTV Service Provider:</b> is a content aggregator that prepares the content provided by the content provider for delivery by providing additional metadata, content encryption, advertising etc. The Service Provider Interface (SPI) links the IPTV Service Provider to the Service Platform Provider. 
 <li><b>Service Platform Provider:</b> provides the means to control the access to the service prior to delivery to the end user. The Service Platform Provider (SPP) might offer a set of enablers to enrich the IPTV services, such as handling charging information generation. The Transport and Control Interface (TCI) links the Service Platform Provider to the Network Provider
 <li><b>Network Provider:</b>  provides transport resources for delivery of authorized content to the consumer domain. It also provides the communications between the consumer domain and the Service Platform Provider. The User to Network Interface (UNI) links the Network Provider to the consumer domain.</ul>
@@ -3064,7 +3064,7 @@ The following diagram shows Start-ver and Catch-up specific flows over the refer
 </figure>
 <p>The following is a brief description of the steps in the flow. As a precondition, the User must be IMS registered via the Authentication and Session Management prior to the call flow.</p>
 <table class="sequence">
-<tr><td>1.</td><td>A network (POTS, PLMN, IMS …) notifies the Caller ID enabler about an incoming voice call related to a POTS, PLMN, IMS number/identity associated with an IPTV user. This message contains the caller's identity (caller ID) and called identity (called ID), but should also carry additional information (i.e. the network originating the notification, etc.)</td></tr>
+<tr><td>1.</td><td>A network (POTS, PLMN, IMS &hellip;) notifies the Caller ID enabler about an incoming voice call related to a POTS, PLMN, IMS number/identity associated with an IPTV user. This message contains the caller's identity (caller ID) and called identity (called ID), but should also carry additional information (i.e. the network originating the notification, etc.)</td></tr>
 <tr><td>2.</td><td>The Caller ID enabler generates and sends a SIP MESSAGE (that includes the caller Id, the called Id, additional information) towards the Authentication and Session Management FE associated with the End User.</td></tr>
 <tr><td>3.</td><td>The SIP MESSAGE is proxied to the IMS Gateway, where it is intercepted by the Authentication and Session management function.</td></tr>
 <tr><td>4.</td><td>The Auth/Session Mgmt. function in the IG invokes the third party notification functionality of the IG OITF Server function. </td></tr>
@@ -3350,9 +3350,9 @@ This section is vacant. An informative description of the remote access feature 
 <li>Service access data
 <li>Trick play data
 <li>Service interaction data</ul>
-<p><b>Service access data</b> describes the entries for the user's access to the IPTV services (scheduled, CoD, PVR etc). It includes ‘service type', ‘user id', ‘target content id', ‘access begin time', ‘access end time', ‘access location', ‘terminal type' and other extensible parameters for each specific service, e.g.  the license, the event type.</p>
-<p><b>Trick play data</b> describes the user operations (FF, RW, PLAY, PAUSE, etc.) upon the content which can be randomly accessed, e.g. downloaded or CoD/TsTV/PVR content. It includes ‘operation type', ‘user id', ‘target content id', ‘operation begin time' , 'operation end time' and other extensible parameters e.g. the play speed, offset </p>
-<p><b>Service interaction data</b> describes the user actions that mostly occur during the interactive/hybrid services (rate, vote, gamble, comment, dial click-to-call, etc.). It includes also ‘action type', ‘user id', ‘target content id', ‘action begin time' , 'action end time' and other extensible parameters e.g. the rating level, the commenting text, the call number for click-to-call dial. </p>
+<p><b>Service access data</b> describes the entries for the user's access to the IPTV services (scheduled, CoD, PVR etc). It includes 'service type', 'user id', 'target content id', 'access begin time', 'access end time', 'access location', 'terminal type' and other extensible parameters for each specific service, e.g. the license, the event type.</p>
+<p><b>Trick play data</b> describes the user operations (FF, RW, PLAY, PAUSE, etc.) upon the content which can be randomly accessed, e.g. downloaded or CoD/TsTV/PVR content. It includes 'operation type', 'user id', 'target content id', 'operation begin time', 'operation end time' and other extensible parameters e.g. the play speed, offset </p>
+<p><b>Service interaction data</b> describes the user actions that mostly occur during the interactive/hybrid services (rate, vote, gamble, comment, dial click-to-call, etc.). It includes also 'action type', 'user id', 'target content id', 'action begin time' , 'action end time' and other extensible parameters e.g. the rating level, the commenting text, the call number for click-to-call dial. </p>
 <p>This is not an exhaustive list and other data types may be defined. </p>
 <p>Appendix <a href="#audience-research-data-model" class="sectionRef">F</a> provides an example of an audience research data model.</p>
 

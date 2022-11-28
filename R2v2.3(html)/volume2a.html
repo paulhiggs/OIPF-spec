@@ -247,7 +247,7 @@
 <p>For the TCA, content items provided in the protected MP4 file format SHALL include both the DASH ContentProtection element in the MPD, and the MP4 extensions as specified in section 2 of [[!MAS]] or [[!MAF]], whereby the <code>ContentProtection</code> element contains mandatory Marlin related information (i.e. the <code>@schemeIdUri</code> attribute with specified URI signalling that the Segments are protected by Marlin). Note that [[!MAS]] and [[!MAF]] both in turn refer to MPEG Common Encryption [[!CENC]].</p>
 <p>For content items provided in the MP4 common encryption format ([[!MAS]], section 2.3), if a segment is protected, the following restrictions shall apply:</p>
 <ul>
-<li>When a Protection System Specific Header (‘pssh') box for Marlin is delivered in content, the box SHALL be delivered as part of the Initialization Segment and located in the Movie (‘moov') box.
+<li>When a Protection System Specific Header ('pssh') box for Marlin is delivered in content, the box SHALL be delivered as part of the Initialization Segment and located in the Movie ('moov') box.
 </ul>
 </section>
 </section>
@@ -407,11 +407,11 @@
 </section>
 <section id="has-segmentation-constraints"><h3>Segmentation Constraints</h3>
 <p>The OITF SHALL support Segments as specified in [[!TS26234]] with the following constraints:</p><ul>
-<li>Each Segment SHALL start with a random access point (RAP) and the @startWithRAP attribute SHALL be present and set to ‘true' in all &lt;Representation&gt; elements in the MPD.
+<li>Each Segment SHALL start with a random access point (RAP) and the @startWithRAP attribute SHALL be present and set to 'true' in all &lt;Representation&gt; elements in the MPD.
 <li>Byte Ranges SHALL NOT be used as a mechanism for identifying Segments. As a consequence the elements &lt;InitialisationSegmentURL&gt; and &lt;Url&gt; SHALL NOT include the optional attribute @range. Note that this does not preclude the use of HTTP requests with byte ranges to retrieve parts of a Segment.
 <li>To enable seamless switching:<ul>
 <li>Different Component Streams of the same Component SHALL be encoded in the same media format but MAY be different in the profile of that format. Section <a href="#has-adaptive-media-formats" class="sectionRef"></a> in this document references [[.OIPF_MEDIA2]] for the media formats, which specifies (profiles of) media formats for various media types. So if for example a Representation contains a Component Stream of a certain video Component that is encoded using H.264/AVC using the HD profile, then all Representations that have a Component Stream of that Component must use H.264/AVC but may use different configurations of H.264/AVC within the HD profile or SD Profile.
-<li>Segments of Representations with the same value for the @group attribute SHALL be time aligned. The attributes ‘segmentAlignmentFlag' and ‘bitstreamSwitchingFlag' SHALL be present and set to ‘true' in all ‘Period' elements in the MPD.
+<li>Segments of Representations with the same value for the @group attribute SHALL be time aligned. The attributes 'segmentAlignmentFlag' and 'bitstreamSwitchingFlag' SHALL be present and set to 'true' in all 'Period' elements in the MPD.
 <p>For the set of Representations that have the same value for the @group attribute, the signaled Segment durations SHALL:</p><ul>
 <li>either be equal for all Representations in the set,
 <li>or equal for all Representations in the set without a &lt;TrickMode&gt; element and a multiple of this value for the Representations in the set with a &lt;TrickMode&gt; element. In this case there SHALL be at least one Representation in the set for which the &lt;TrickMode&gt; element is absent.
@@ -493,7 +493,7 @@ If Segments are protected, then the corresponding &lt;Representation&gt;-element
 <li>A Media Segment SHALL be delivered with MIME type &ldquo;video/vnd.3gpp.Segment&rdquo; as specified in [[!TS26244]]
 <li>To allow a terminal to seek to any Segment with a certain index and start playback with perfect audio/video synchronization, every <i>traf</i>-box of a track that contains audio SHOULD contain a [[!TS26244]] <i>tfad</i>-box. The contents of the box SHALL be such that if the terminal starts the playback of the audio samples of a Segment as specified in the box, then the audio and video of the Segment are played in perfect sync.
 </ul>
-<li>The Initialisation Segment and the Media Segments are formatted such that a file that consists of the Initialisation Segment and an arbitrary selection of Media Segments of either any complete Representation (@group attribute equal to zero) or the set of partial Representations (@group attribute unequal to zero), stored in order of the sequence_number in their mfhd-box (i.e. increasing order and no duplicates), is an [[!ISOFF]] compliant file. (Note that this statement assumes that [[!ISOFF]] allows for ‘gaps' in the sequence_numbers of consecutive moof-boxes; i.e. the difference in the sequence_number of consecutive moof-boxes may be larger than one).
+<li>The Initialisation Segment and the Media Segments are formatted such that a file that consists of the Initialisation Segment and an arbitrary selection of Media Segments of either any complete Representation (@group attribute equal to zero) or the set of partial Representations (@group attribute unequal to zero), stored in order of the sequence_number in their mfhd-box (i.e. increasing order and no duplicates), is an [[!ISOFF]] compliant file. (Note that this statement assumes that [[!ISOFF]] allows for 'gaps' in the sequence_numbers of consecutive moof-boxes; i.e. the difference in the sequence_number of consecutive moof-boxes may be larger than one).
 <li>Regardless of the allocation of Components Streams to Representations,<ul>
 <li>Component Streams of the same Component SHALL be carried in track fragments that have the same trackID (in the <i>tfhd</i>-box).
 <li>Component Streams of different Components SHALL be carried in track fragments that have different trackIDs (in the <i>tfhd</i>-box).</ul>
@@ -533,7 +533,7 @@ If Segments are protected, then the corresponding &lt;Representation&gt;-element
 <p>In order to start trick mode and easily switch between trick and normal play mode at any time and support for reverse playing, the trick mode streams may be composed of intra frame only with a fixed interval.</p>
 </section>
 <section id="has-use-case-ts-seeking"><h4>MPEG-2 TS Seeking</h4>
-<p>To determine the random access point in a media Segment, the client should download and search RAP one by one till the required RAP is found. The ‘random_acess_indicator' and ‘elementary_stream_priority_indicator' in adaptation field of the transport stream may be used for locating every RAP.</p>
+<p>To determine the random access point in a media Segment, the client should download and search RAP one by one till the required RAP is found. The 'random_acess_indicator' and 'elementary_stream_priority_indicator' in adaptation field of the transport stream may be used for locating every RAP.</p>
 </section>
 </section>
 </section>
